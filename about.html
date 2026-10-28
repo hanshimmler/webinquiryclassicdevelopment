@@ -1,0 +1,500 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>AKos Compound Catalog — Building Blocks &amp; Screening Compounds</title>
+    <meta name="description" content="Search 40M+ building blocks, screening compounds and custom synthesis options from AKos and its global supplier network. Request a quote in one business day." />
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+
+
+    <script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+
+
+    <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+
+
+
+    <style>
+
+
+
+
+
+        .jqx-fill-state-normal {
+            background-color: transparent;
+            border-style: none;
+        }
+
+        .jqx-fill-state-hover {
+            background-color: #A80D0D;
+            color: white;
+        }
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+        .search {
+            display: flex;
+            align-items: normal;
+            justify-content: center
+        }
+
+        /*.navigation-container {
+            height: 60px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            display: block;
+            align-items: center;
+            background-color: rgb(138, 30, 30);
+        }*/
+
+        .navigation-container {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: rgb(138, 30, 30);
+        }
+
+        .navigation-row {
+            width: 100%;
+        }
+
+        .navigationflex-item {
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+            color: white;
+        }
+
+            .navigationflex-item:hover {
+                color: white;
+                opacity: 0.8;
+                border: none;
+                background-color: transparent;
+            }
+
+
+        .unselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body >
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+    
+    <div style="height: 100%; background-color: #fbfaf7;">
+
+        <div class="navigation-container">
+
+
+
+            <!--<div style="float: left;"><img style="display: flex; align-items: normal; justify-content: center;" src="images/AK0S-logo-weit.png" height="60" width="80" /></div>-->
+            <!--<div style="float: left; ">
+
+
+        <a aria-label="Consulting &amp; Solutions home" style="background-color: rgb(138, 30, 30);" class="flex min-w-0 items-center gap-3 md:gap-4 active" href="/" data-status="active" aria-current="page">
+            <img src="images/AK0S-logo-weit.png" alt="" width="80" height="60" class="h-16 w-auto md:h-[4.55rem]">
+            <div class="hidden min-w-0 md:block">
+                <div style="color: white;" class="text-balance font-display text-[10px] font-semibold uppercase tracking-[0.1em] text-white md:text-[11px] leading-[1.15] lg:max-[1179px]:text-[10.5px] lg:max-[1179px]:tracking-[0.04em]">Consulting &amp; Solutions Deutschland GmbH</div>
+                <div style="color: white;" class="truncate text-[9px] uppercase tracking-[0.08em] text-white/70 md:text-[10px] leading-none mt-0.5">Any Kind of Organic Substances</div>
+            </div>
+        </a>
+
+    </div>-->
+
+            <div style="float: left;"><a href="https://akos-chem.de/" target="_blank"><img style="display: flex; align-items: normal; justify-content: center;" src="akoslogo.jpg" height="58" width="603"></a></div>
+
+
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Search" id='btn_navigation_search' /></span></div>
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Draw structure" id='btn_navigation_drawstructure' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Results" id='btn_navigation_results' /></span></div>
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="About us" id='btn_navigation_about' /></span></div>
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Contact us" id='btn_navigation_contact' /></span></div>
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' value="test" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; float: right; margin-right: 20px; cursor: pointer; background-color: white; color: #8A1E1E; " /></span></div>
+
+
+            <!--<div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' style="float: left; margin-left: 20px; cursor: pointer" /></span></div>-->
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <div style="height: 50px; padding: 5px; background-color: #fbfaf7;">
+            <center><div id="Aboutpagenotificationcontainer" style="width: 80%; height: 50px; background-color: rrgba(217, 74, 74, 0.25);"></div></center>
+        </div>
+
+
+
+
+
+        <div style="float: left;"><b>About us</b><br /><br />For more than 25 years AKOS has supported various customers with tailored chemical solutions. With a long history rooted in excellence, we specialize in sourcing high-quality chemicals and facilitating custom synthesis projects for a diverse range of clients.<br /><br />Our mission is to be the leading provider of chemical solutions, connecting clients with top-quality products and custom synthesis services. We strive to foster innovation, collaboration, and excellence in everything we do, empowering our clients to accelerate procurement process and achieve their goals and advance science and technology worldwide.<br /><br />Our unique constantly updated database <font color="red">(>40 M structures)</font> of molecules for different purposes, extensive industry knowledge and a vast network of suppliers allow us to deliver tailored solutions that meet your unique requirements. From <font color="red">Building Blocks, Screening compounds</font> to <font color="red">Bioactive Probes</font> and <font color="red">Drug Conjugates</font>, we are committed to providing reliable, cost-effective, and timely services.<br /><br />Leveraging our network of trusted suppliers and contractors, we can easily source the ideal partner for <font color="red">custom synthesis</font> needs ensuring rapid and cost-effective solutions for our customers.<br /><br />We’ll support you with <font color="red">A</font>ny <font color="red">K</font>ind of <font color="red">O</font>rganic <font color="red">S</font>ubstances for your needs!<br /><br /><b>Chemical Building Blocks.</b><br /><br />AKOS database provides an access to diverse available chemical building blocks from trusted supplier and partners. We can ensure quick delivery in required format and scale needed for further application.<br /><br /><b>Screening Compounds.</b><br /><br />AKOS database contains diverse drug-like, lead-like and fragment-like compounds from various suppliers around the world, You can easily select the most attractive and diverse chemotypes according to your needs. Upon the request we are ready to design the reliable set/library taking into account rational MedChem and Chemoinformatic parameters as well as customer’s requirements. We can also ensure required formatting and compound management.<br /><br /><b>Custom synthesis.</b><br /><br />AKOS provides custom synthesis solution for the tasks of different complexity. Based on our experience and network of trusted suppliers we are ready to find you the best partner for our customers to synthesize diverse reference compounds, designed molecules, peptides, natural products, heterobifunctional molecules, drug conjugates etc. Upon the request we can provide the synthesis of compound libraries and specific sets of compounds.</div>
+
+
+
+
+
+
+
+    </div>
+
+        
+        
+
+
+
+        <div id="jqxLoader"></div>
+
+
+
+
+        
+
+
+        <div style="display: none" id="messagenotification">
+            <div id="messagenotification_content"></div>
+        </div>
+
+
+        
+
+        
+
+        <script>
+            
+
+            function closenotification(notificationid) {
+
+
+
+
+
+
+
+                if ($('#' + notificationid).length > 0) {
+
+
+
+                    $('#' + notificationid).jqxNotification('closeAll');
+
+
+                }
+
+
+
+            }
+
+
+
+            function isNotEmpty(value) {
+
+
+
+                if (typeof value !== 'undefined') {
+
+
+
+                    if (value !== null) {
+
+
+                        if (value) {
+
+
+
+                            return true;
+
+
+                        } else {
+
+
+
+
+                            return false;
+
+
+                        }
+
+
+
+                    } else {
+
+
+                        return false;
+
+
+                    }
+
+
+
+
+
+
+                } else {
+                    return false;
+                }
+
+
+
+            }
+
+
+
+
+            
+
+
+            $(document).ready(function () {
+
+                
+
+                if (sessionStorage.getItem("sessionid") === null) {
+                    
+                    $('#jqxLoader').jqxLoader('open');
+                    $.ajax({
+                        type: "GET",
+                        url: "https://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/CreateSessionID",
+                        cache: false,
+
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            if (response.errorflag) {
+
+                                closenotification("messagenotification");
+
+
+                                $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Aboutpagenotificationcontainer" });
+
+                                $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                var sessionid = response.resultobject;
+
+                                
+
+                                sessionStorage.setItem("sessionid", sessionid);
+
+
+
+
+                            }
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+
+
+                            closenotification("messagenotification");
+
+                            $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Aboutpagenotificationcontainer" });
+
+                            $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Status : " + error.status);
+                            $("#messagenotification").jqxNotification("open");
+                        }
+                    });
+
+
+
+
+                } else {
+
+
+                    
+                }
+
+
+
+
+
+                
+                document.getElementById("messagenotification").style.display = 'block';
+
+
+                
+
+                var ketcher;
+
+                //$("#messagenotification").jqxNotification({
+                //    width: 250,
+                //    position: "top-right",
+                //    opacity: 0.9,
+                //    autoOpen: false,
+                //    animationOpenDelay: 800,
+                //    autoClose: false,
+                //    autoCloseDelay: 3000,
+                //    showCloseButton: true
+                //});
+
+
+                
+
+                var btn_navigation_search = $("#btn_navigation_search");
+
+                
+                btn_navigation_search.jqxButton({ width: 120, height: 50});
+
+                btn_navigation_search.click(function (event) {
+
+                    window.location.href = "https://akoscompounds.de/webinquiryappbingo/index.html";
+                });
+
+                var btn_navigation_drawstructure = $("#btn_navigation_drawstructure");
+
+                
+
+                btn_navigation_drawstructure.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_drawstructure.click(function (event) {
+
+                    window.location.href = "https://akoscompounds.de/webinquiryappbingo/draw-search.html";
+                });
+
+                var btn_navigation_results = $("#btn_navigation_results");
+
+                
+
+                btn_navigation_results.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_results.click(function (event) {
+
+                    window.location.href = "https://akoscompounds.de/webinquiryappbingo/results.html";
+                });
+
+
+
+                var btn_navigation_about = $("#btn_navigation_about");
+
+
+
+                btn_navigation_about.jqxButton({ width: 120, height: 50 });
+
+
+                $("#btn_navigation_about").css("text-decoration", "underline");
+
+                $("#btn_navigation_about").css("text-decoration-thickness", "2px");
+
+                btn_navigation_about.click(function (event) {
+
+                    window.location.href = "https://akoscompounds.de/webinquiryappbingo/about.html";
+                });
+                
+
+
+                var btn_navigation_contact = $("#btn_navigation_contact");
+
+                
+
+                btn_navigation_contact.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_contact.click(function (event) {
+
+                    window.location.href = "https://akoscompounds.de/webinquiryappbingo/contact.html";
+                });
+                
+
+                var btn_navigation_requests = $("#btn_navigation_requests");
+
+                //btn_navigation_requests.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_requests.jqxButton({ width: 100, height: 50, imgPosition: "left", textPosition: "left", imgSrc: "images/shopping_cart.png", textImageRelation: "imageBeforeText" });
+
+
+                if (sessionStorage.getItem("shoppingitems") === null) {
+
+                    //$('#btn_navigation_requests').jqxButton({ value: "Requests (0)"});
+
+                    $('#btn_navigation_requests').jqxButton({ value: "Cart (0)" });
+
+                   
+
+                    
+                } else {
+
+                    var data = sessionStorage.getItem("shoppingitems")
+
+                    var rows = JSON.parse(data);
+
+                    //$('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")"});
+
+                    $('#btn_navigation_requests').jqxButton({ value: "Cart (" + rows.length + ")" });
+
+
+                    
+
+
+                }
+
+                
+                $("#btn_navigation_requests").on('click', function () {
+
+                    window.location.href = "https://akoscompounds.de/webinquiryappbingo/requests.html";
+
+                    
+
+
+
+
+                });
+
+                
+
+                
+
+                
+
+                
+
+
+
+            });
+
+        </script>
+</body>
+</html>

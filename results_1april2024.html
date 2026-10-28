@@ -1,0 +1,2575 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>AKos webrequest</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxwindow.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.edit.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.columnsresize.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.columnsreorder.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.sort.js"></script>
+    
+    <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
+    
+    <script type="text/javascript" src="jqwidgets/jqxform.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxvalidator.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxnumberinput.js"></script>
+
+    
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxexport.js"></script>
+
+    
+
+    <script type="text/javascript" src="jqwidgets/jqxtextarea.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+
+    <script type="text/javascript" src="scripts/vfs_fonts.js"></script>
+    <style>
+
+        .jqx-window-header {
+            height: 20px;
+        }
+
+        .jqx-fill-state-hover {
+            background-color: DarkGrey;
+        }
+
+        .jqx-grid-card-cell-label {
+            display: none;
+        }
+
+        .jqx-grid-card-cell table {
+            padding: 0px;
+        }
+
+        .jqx-grid-card-cell {
+            padding: 0px;
+        }
+
+
+        .jqx-notification-container {
+            z-index: 100000;
+        }
+
+
+
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+
+        .LightSeaGreen {
+            background-color: LightSeaGreen;
+        }
+
+        .LightGreen {
+            background-color: LightGreen;
+        }
+
+        .LightBlue {
+            background-color: LightBlue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        
+
+        .navigation-container {
+           
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            display: block;
+            align-items: center;
+        }
+
+        .navigation-row {
+            width: 100%;
+        }
+
+        .navigationflex-item {
+            padding: 10px;
+            
+            text-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+
+    <div style="height: 100%">
+
+        <div class="navigation-container" style="height: 50px;">
+
+            
+            <div class="navigation-row"><img class="navigationflex-item" style="padding: 0px;float: left; margin-left: 10px;" src="images/akos_logo_4rings_1_blue.jpg" height="50" width="100" /></div>
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Search" id='btn_navigation_search' /></span></div>
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Draw structure" id='btn_navigation_drawstructure' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Results" id='btn_navigation_results' /></span></div>
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Contact Us" id='btn_navigation_contact' /></span></div>
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' style="float: right; margin-right: 10px; cursor: pointer" /></span></div>
+
+            
+
+
+
+
+
+
+        </div>
+
+        <div id="grid_relatedcids" style="margin-top: 20px "></div>
+
+
+
+    </div>
+    <div id="popupwindowshoppingcard" originator="" style="display: none; position: fixed; left: 50%; top: 50%;">
+        <div>Add quantity and add to Requests</div>
+        <div style="overflow: hidden;">
+            <form id="popupwindowshoppingcardform" action="./">
+                <table>
+                    <tr>
+                        <td align="right">AKos number:</td>
+                        <td align="left"><input id="akosnumber" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Quantity:</td>
+                        <td align="left"><div id="quantity"></div></td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td align="right">Unit:</td>
+                        <td align="left"><div id="units"></div></td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="right">Additional information:</td>
+
+                        <td align="left"><textarea id="additionalinformation"></textarea></td>
+                    </tr>
+
+                    <tr>
+
+
+                        <td style="display: none" align="left"><input id="popupwindowshoppingcardform_casnumber" /></td>
+                    </tr>
+
+                    <tr>
+
+
+                        <td style="display: none" align="left"><input id="popupwindowshoppingcardform_molname" /></td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="right"></td>
+
+                        <td align="right" style="padding-top: 10px;"><input style="float: right; cursor: pointer" type="button" id="btn_popupwindowshoppingcard_addquantity" value="Add to Requests" /></td>
+                    </tr>
+
+
+
+
+
+
+
+                </table>
+                
+            </form>
+        </div>
+    </div>
+
+    
+
+
+    <div style="display: none" id="zoomketcherwindow">
+        <div>Zoom</div>
+        <div style="overflow: hidden;">
+            <div>
+                <div>
+                    <iframe id="zoomketcherwindow_ketcher" src="ketcher.html" style="width: 100%; height: 100%"></iframe>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="jqxLoader"></div>
+
+
+
+    <div style="display: none" id="structurecomparisonwindow">
+        <div>
+
+
+        </div>
+        <div>
+            <!--<div>
+                <img id="structurecomparisongridimage" src=''>
+            </div>-->
+            
+        </div>
+    </div>
+
+
+    <div style="display: none" id="confirmwindow">
+        <div>
+
+
+        </div>
+        <div>
+            <div>
+                You already added this compound to your shopping card. Do you want to continue?
+            </div>
+            <div>
+                <div style="float: right; margin-top: 15px;">
+                    <input type="button" id="ok" value="Yes" style="margin-right: 10px" />
+                    <input type="button" id="cancel" value="No" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="display: none" id="cartitemaddednotificationwindow">
+        <div>
+
+
+
+        </div>
+        <div>
+            <div>
+                <div><img width='16' height='16' src='images/add.png' style='vertical-align:middle; margin-right: 5px;' /><span>Quantity added to Requests</span></div>
+                
+            </div>
+            <div style="display: flex; flex-direction: column; ">
+                <div style="float: right; margin-top: 15px;">
+                    <input type="button" id="addadditionalquantity" value="" style="margin-right: 10px; cursor: pointer " />
+
+                </div>
+                <div style="float: right; margin-top: 15px;">
+                    <input type="button" id="gotorequests" value="Send request" style="margin-right: 10px; cursor: pointer " />
+
+                </div>
+                <div style="float: right; margin-top: 15px;">
+
+                    <input type="button" id="continue" value="Add quantity for other compounds" style="cursor: pointer" />
+                </div>
+
+                <div style="float: left; margin-top: 15px;">
+
+                    <div id="cartitemaddednotificationwindow_checkbox" style='float: left;'><span>Do not show this message again</span></div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+
+
+
+
+
+
+    <div style="display: none" id="messagenotification">
+        <div id="messagenotification_content"></div>
+    </div>
+
+    
+
+    <script>
+        var shoppingakosnumber;
+
+        var units = [
+            {
+                "UnitUIlabel": "milligram",
+                "UnitValue": "mg"
+            },
+            {
+                "UnitUIlabel": "gram",
+                "UnitValue": "g"
+            },
+            {
+                "UnitUIlabel": "kilogram",
+                "UnitValue": "kg"
+            },
+            {
+                "UnitUIlabel": "milliliter",
+                "UnitValue": "ml"
+            },
+            {
+                "UnitUIlabel": "liter",
+                "UnitValue": "l"
+            }
+
+        ];
+
+
+        var editshoppingrow = -1;
+
+        var editcontactrow = -1;
+
+
+        var downloadFile = function (data, type, fileName) {
+
+            let file;
+
+            if (!fileName) {
+                return data;
+            }
+
+            if (data instanceof Blob) {
+                file = data;
+            }
+            else {
+                file = new Blob([data], { type: type });
+            }
+
+            if (window.navigator.msSaveOrOpenBlob) { // Edge
+                window.navigator.msSaveOrOpenBlob(file, fileName);
+            }
+            else { // Chrome, Firefox, Safari
+                const a = document.createElement('a'),
+                    url = URL.createObjectURL(file);
+
+                a.href = url;
+                a.download = fileName;
+                a.style.position = 'absolute';
+                a.style.visibility = 'hidden';
+
+                document.body.appendChild(a);
+
+                a.click();
+
+                setTimeout(function () {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 0);
+            }
+        };
+
+
+
+        var cellsrenderer_pubchemstructure_cid = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+            var html = "<img width='100' height= '100' src='https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/" + value + "/PNG?image_size=200x200'" + " style='border-style: solid;border-color:black;' title='Click to Zoom structure' >";
+
+
+            return html;
+
+
+
+
+
+
+
+
+        };
+
+        var cellsrenderer_akosdbstructure = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+            var datarow = $("#grid_relatedcids").jqxGrid("getrowdata", row);
+
+
+
+
+
+            
+            
+            var html = "<img width='200' height= '200' src='http://akoscompounds.de/webinquiryappbingo/structureimages/" + datarow.registryid + ".png" + "'" + " title='Click to Zoom structure' >";
+
+
+            return html;
+
+
+
+
+
+
+
+
+        };
+
+        var cellsrenderer_structureimageurl = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+
+
+            
+            var format = { target: '"_blank"' };
+            var html = $.jqx.dataFormat.formatlink(value, format);
+            return html;
+
+
+
+
+
+
+
+
+        };
+
+
+
+
+
+        function isNotEmpty(value) {
+
+
+
+            if (typeof value !== 'undefined') {
+
+
+
+                if (value !== null) {
+
+
+                    if (value) {
+
+
+
+                        return true;
+
+
+                    } else {
+
+
+
+
+                        return false;
+
+
+                    }
+
+
+
+                } else {
+
+
+                    return false;
+
+
+                }
+
+
+
+
+
+
+            } else {
+                return false;
+            }
+
+
+
+        }
+
+
+
+
+        var cellclass = function (row, columnfield, value) {
+
+            var datarow = $("#grid_relatedcids").jqxGrid("getrowdata", row);
+
+
+            if (datarow.type == "EXACT") {
+
+                return 'LightGreen';
+            } else if (datarow.type == "EXACT+") {
+
+                return 'LightSeaGreen';
+            } else if (datarow.type == "SIMILAR") {
+
+                return 'LightBlue';
+            } 
+
+
+
+        }
+
+        var mycellclass = function (row, columnfield, value) {
+
+
+            return 'LightSeaGreen';
+
+            
+
+
+
+        }
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+        $(document).ready(function () {
+
+            
+
+            var btn_navigation_search = $("#btn_navigation_search");
+
+            btn_navigation_search.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_search.click(function (event) {
+
+                window.location.href = "index.html";
+            });
+
+            var btn_navigation_drawstructure = $("#btn_navigation_drawstructure");
+
+            btn_navigation_drawstructure.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_drawstructure.click(function (event) {
+
+                window.location.href = "draw-search.html";
+            });
+
+            var btn_navigation_results = $("#btn_navigation_results");
+
+            btn_navigation_results.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_results.click(function (event) {
+
+                window.location.href = "results.html";
+            });
+
+
+            
+            var btn_navigation_contact = $("#btn_navigation_contact");
+
+            
+
+            btn_navigation_contact.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_contact.click(function (event) {
+
+                window.location.href = "contact.html";
+            });
+
+
+            var btn_navigation_requests = $("#btn_navigation_requests");
+
+           
+
+            
+
+            
+            btn_navigation_requests.jqxButton({ width: 120, height: 50 });
+
+            if (sessionStorage.getItem("shoppingitems") === null) {
+
+                $('#btn_navigation_requests').jqxButton({ value: "Requests (0)" });
+
+                
+            } else {
+
+                var data = sessionStorage.getItem("shoppingitems")
+
+                var rows = JSON.parse(data);
+
+                $('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")" });
+
+                
+
+
+            }
+
+
+            btn_navigation_requests.click(function (event) {
+
+
+                
+
+                window.location.href = "requests.html";
+
+               
+
+
+
+
+            });
+
+           
+
+
+
+
+
+            document.getElementById("popupwindowshoppingcard").style.display = 'block';
+
+            
+            document.getElementById("messagenotification").style.display = 'block';
+
+
+            document.getElementById("cartitemaddednotificationwindow").style.display = 'block';
+
+            
+
+            
+
+            var ketcher;
+
+            $("#messagenotification").jqxNotification({
+                width: 250,
+                position: "top-right",
+                opacity: 0.9,
+                autoOpen: false,
+                animationOpenDelay: 800,
+                autoClose: false,
+                autoCloseDelay: 3000,
+                showCloseButton: true
+            });
+
+
+            
+
+
+            $("#zoomketcherwindow").jqxWindow({
+                width: 800,
+                height: 700,
+                position: "center",
+                resizable: true,
+                isModal: false,
+                autoOpen: false,
+
+                modalOpacity: 0.01
+
+
+            });
+
+            $('#structurecomparisonwindow').jqxWindow({
+
+                width: '80%',
+                height: '80%',
+                //minWidth: '50%',
+                //minHeight: '50%',
+
+                //width: 800,
+                //height: 700,
+                position: "center",
+                resizable: true,
+                isModal: false,
+                autoOpen: false,
+
+                modalOpacity: 0.01
+                
+            });
+
+            $("#structurecomparisonwindow").on('open', function () {
+
+
+                var height = $('#structurecomparisonwindow').jqxWindow('height');
+                var width = $('#structurecomparisonwindow').jqxWindow('width');
+                
+
+                //alert("Height " + height + " width " + width);
+
+                if (height !== '80%' && width !== '80%') {
+
+                    $('#structurecomparisonwindow').jqxWindow({ height: "80%" });
+                    $('#structurecomparisonwindow').jqxWindow({ width: "80%" });
+
+                    
+
+                }
+
+            });
+
+            $("#akosnumber").jqxInput({ height: 30, width: 200, disabled: true });
+
+            
+            $("#quantity").jqxNumberInput({ inputMode: 'advanced', decimalDigits: 0, groupSeparator: "", digits: 4, groupSize: 0, width: 200, height: 23, spinButtons: false });
+
+
+            
+
+            $('#additionalinformation').jqxTextArea({ placeHolder: 'Enter information', height: 90, width: 200, minLength: 1 });
+
+
+
+            
+
+            $('#additionalinformation').jqxTextArea('val', '');
+
+
+
+
+
+
+
+            $("#popupwindowshoppingcard").jqxWindow({
+
+                position: "center",
+                resizable: false,
+                isModal: false,
+                autoOpen: false,
+                
+                modalOpacity: 0.01
+
+
+            });
+            $("#popupwindowshoppingcard").on('open', function () {
+
+                $('#popupwindowshoppingcard').jqxWindow({ width: 350 });
+                $('#popupwindowshoppingcard').jqxWindow({ height: 300 });
+                
+            });
+
+
+
+            
+
+            $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ width: 120, height: 35, textPosition: "center" });
+
+            
+
+
+            $("#btn_popupwindowshoppingcard_addquantity").click(function () {
+
+
+
+                
+
+
+                var validationresult = $('#popupwindowshoppingcardform').jqxValidator('validate');
+                if (validationresult) {
+
+                    
+
+                    var akosnumber = $("#akosnumber").val();
+
+
+
+                    var unitvalue = $("#units").jqxDropDownList('val');
+
+
+                    var quantityvalue = $('#quantity').jqxNumberInput('val');
+
+                    
+
+                    
+
+                    var row = {};
+
+
+                    
+                    row["strucutureimageurl"] = "<a href='http://akoscompounds.de/webinquiryappbingo/structureimages/" + $("#akosnumber").val() + ".png" + "' target='_blank'>" + $("#akosnumber").val() + "</a>";
+
+
+                    row["cid"] = $("#akosnumber").val();
+                    row["registryid"] = $("#akosnumber").val();
+                    row["quantity"] = quantityvalue;
+                    row["unit"] = unitvalue;
+                    row["additionalinformation"] = $("#additionalinformation").val();
+
+                    row["casnumber"] = $("#popupwindowshoppingcardform_casnumber").val();
+
+                    row["molname"] = $("#popupwindowshoppingcardform_molname").val();
+
+                    if (sessionStorage.getItem("shoppingitems") === null) {
+
+                        var rows = new Array();
+
+                        rows.push(row);
+
+                        var jsonstring = JSON.stringify(rows);
+
+                        
+
+                        sessionStorage.setItem("shoppingitems", jsonstring);
+
+                        $('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")" });
+
+                        
+
+                    } else {
+
+                        var data = sessionStorage.getItem("shoppingitems")
+
+                        var rows = JSON.parse(data);
+
+                        rows.push(row);
+
+                        var jsonstring = JSON.stringify(rows);
+
+                        sessionStorage.setItem("shoppingitems", jsonstring);
+
+                        $('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")" });
+                        
+
+                    }
+
+                    $("#popupwindowshoppingcard").jqxWindow('close');
+
+                    $("#cartitemaddednotificationwindow").jqxWindow({ title: akosnumber });
+
+                    if (sessionStorage.getItem("show_cartitemaddednotificationwindow") != null) {
+
+                        if (!sessionStorage.getItem("show_cartitemaddednotificationwindow")) {
+
+                            $("#cartitemaddednotificationwindow").jqxWindow('open');
+
+                        }
+                    } else {
+
+                        $("#cartitemaddednotificationwindow").jqxWindow('open');
+
+                    }
+
+                    
+
+                    
+
+
+
+
+                } else {
+
+
+                    
+
+                }
+
+            });
+
+
+            
+
+
+            var quantity_liter_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+                
+
+
+
+                if (value > 1 && unitvalue == "l") {
+
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+
+            var quantity_milliliter_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+                
+
+
+
+                if (value > 1000 && unitvalue == "ml") {
+
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+            var quantity_milliliter_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+                
+
+
+
+                if (value > 1000 && unitvalue == "ml") {
+
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+            var quantity_kilogram_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+                
+
+
+
+                if (value > 1 && unitvalue == "kg") {
+
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+
+            var quantity_gram_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+                
+
+
+
+                if (value > 1000 && unitvalue == "g") {
+
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+
+            var quantity_valuehigherthanzero_validationrule = function (input, commit) {
+
+                
+
+                var value = $('#quantity').jqxNumberInput('val');
+
+
+
+                if (value <= 0) {
+
+                    
+
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+            $('#popupwindowshoppingcardform').jqxValidator({
+                rules: [
+                    { input: '#akosnumber', message: 'AKos number is required!', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#quantity', message: 'You need to enter a number higher than 0', action: 'keyup, blur', rule: quantity_valuehigherthanzero_validationrule },
+
+                    { input: '#quantity', message: 'Only up to 1 liter can be requested', action: 'keyup, blur', rule: quantity_liter_validationrule },
+
+                    { input: '#quantity', message: 'Only up to 1000 milliliter can be requested', action: 'keyup, blur', rule: quantity_milliliter_validationrule },
+
+                    { input: '#quantity', message: 'Only up to 1 kilo gram can be requested', action: 'keyup, blur', rule: quantity_kilogram_validationrule },
+
+                    { input: '#quantity', message: 'Only up to 1000 gram can be requested', action: 'keyup, blur', rule: quantity_gram_validationrule },
+
+                    { input: '#additionalinformation', message: 'Maximum length is 255 characters', action: 'keyup, blur', rule: 'maxLength=255' }
+
+
+
+
+
+
+
+
+                ]
+            });
+
+            
+
+            if (sessionStorage.getItem("shoppingitems") === null) {
+
+                
+                $('#btn_navigation_requests').jqxButton({ value: "Requests (0)" });
+            } else {
+
+                var data = sessionStorage.getItem("shoppingitems")
+
+                var rows = JSON.parse(data);
+
+                $('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")" });
+
+                
+
+
+            }
+
+            $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top', isModal: true, text: "Processing..." });
+
+            
+
+            $('#cartitemaddednotificationwindow').jqxWindow({
+                autoOpen: false,
+                
+
+                height: 250, width: 260,
+                resizable: false, isModal: true, modalOpacity: 0.3,
+                closeButtonAction: 'close',
+                
+                showCloseButton: true,
+                initContent: function () {
+                   
+
+                    $('#gotorequests').jqxButton({ width: '240px' });
+
+                    $('#gotorequests').click(function (event) {
+
+
+                        
+                        $('#cartitemaddednotificationwindow').jqxWindow('close');
+
+                        window.location.href = "requests.html";
+
+
+                    });
+
+
+
+
+
+                    $('#continue').jqxButton({ width: '240px' });
+
+                    $('#continue').click(function (event) {
+
+
+                        
+                        $('#cartitemaddednotificationwindow').jqxWindow('close');
+
+                    });
+
+                    var title = $('#cartitemaddednotificationwindow').jqxWindow('title');
+
+                    let buttonvalue = "Add more quantity for " + title;
+
+                    $('#addadditionalquantity').jqxButton({ width: '240px', value: buttonvalue });
+
+                    $('#addadditionalquantity').click(function (event) {
+
+                        var title = $('#cartitemaddednotificationwindow').jqxWindow('title');
+                        
+                        $('#cartitemaddednotificationwindow').jqxWindow('close');
+                        
+                        $("#akosnumber").val(title);
+                        $('#quantity').jqxNumberInput('val', 0);
+
+                        var source = {
+                            datatype: "json",
+                            datafields: [
+                                { name: 'UnitUIlabel' },
+                                { name: 'UnitValue' }
+                            ],
+                            localdata: units,
+                            async: true
+                        };
+                        var dataAdapter = new $.jqx.dataAdapter(source);
+                        $("#units").jqxDropDownList({
+                            selectedIndex: 1, source: dataAdapter, displayMember: "UnitUIlabel", valueMember: "UnitValue", width: 200, height: 30
+                        });
+
+                        $('#additionalinformation').jqxTextArea('val', '');
+
+                        
+                        $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+
+                        $("#popupwindowshoppingcard").jqxWindow('open');
+
+
+
+                    });
+
+
+                    $("#cartitemaddednotificationwindow_checkbox").jqxCheckBox({ width: 250, height: 25 });
+
+                    $("#cartitemaddednotificationwindow_checkbox").on('change', function (event) {
+                        var checked = event.args.checked;
+
+                        
+
+                        if (checked) {
+
+                            sessionStorage.setItem("show_cartitemaddednotificationwindow", false);
+
+
+
+                            
+                        }
+                        else {
+                            
+                        }
+                    });
+
+
+
+                }
+            });
+
+
+
+
+            
+
+
+
+            $('#confirmwindow').jqxWindow({
+                autoOpen: false,
+                
+                maxHeight: 180, maxWidth: 280, minHeight: 30, minWidth: 250, height: 165, width: 270,
+                resizable: false, isModal: true, modalOpacity: 0.3,
+                okButton: $('#ok'), cancelButton: $('#cancel'),
+                showCloseButton: false,
+                initContent: function () {
+                    $('#ok').jqxButton({ width: '65px' });
+                    $('#cancel').jqxButton({ width: '65px' });
+                    $('#cancel').focus();
+                }
+            });
+
+            
+            
+
+
+
+
+
+
+            if (sessionStorage.getItem("showgrid") != null) {
+
+                
+
+                if (sessionStorage.getItem("showgrid")) {
+
+                    document.getElementById("grid_relatedcids").style.display = 'block';
+                }
+
+
+
+            }
+
+
+            var style = {
+                
+                backgroundColor: 'LemonChiffon'
+                
+            };
+
+            function sortBy(field) {
+                return function (a, b) {
+
+                    return a - b;
+                    //return (a[field] > b[field]) - (a[field] < b[field])
+                };
+            }
+
+
+
+            //var customsortfunc = function (column, direction) {
+
+
+            //    //alert("This is customsortfunc")
+
+            //    var currentgriddata = sessionStorage.getItem("griddata");
+
+            //    var currentgridjsondata = JSON.parse(currentgriddata);
+
+            //    var sortdata = new Array();
+            //    if (direction == 'ascending') direction = true;
+            //    if (direction == 'descending') direction = false;
+            //    if (direction != null) {
+            //        for (i = 0; i < currentgridjsondata.length; i++) {
+            //            sortdata.push(currentgridjsondata[i]);
+            //        }
+            //    }
+            //    else sortdata = currentgridjsondata;
+            //    var tmpToString = Object.prototype.toString;
+            //    Object.prototype.toString = (typeof column == "function") ? column : function () { return this[column] };
+            //    if (direction != null) {
+            //        //sortdata.sort(compare);
+            //        sortdata.sort(sortBy(column))
+            //        if (!direction) {
+            //            sortdata.reverse();
+            //        }
+            //    }
+            //    source.localdata = sortdata;
+            //    $("#grid_relatedcids").jqxGrid('updatebounddata', 'sort');
+            //    Object.prototype.toString = tmpToString;
+            //}
+
+
+            // custom comparer.
+            //var compare = function (value1, value2) {
+            //    value1 = String(value1).toLowerCase();
+            //    value2 = String(value2).toLowerCase();
+            //    try {
+            //        var tmpvalue1 = parseFloat(value1);
+            //        if (isNaN(tmpvalue1)) {
+            //            if (value1 < value2) { return -1; }
+            //            if (value1 > value2) { return 1; }
+            //        }
+            //        else {
+            //            var tmpvalue2 = parseFloat(value2);
+            //            if (tmpvalue1 < tmpvalue2) { return -1; }
+            //            if (tmpvalue1 > tmpvalue2) { return 1; }
+            //        }
+            //    }
+            //    catch (error) {
+            //        var er = error;
+            //    }
+            //    return 0;
+            //};
+
+            function compare(a, b) {
+
+
+
+                return b.similarityvalue - a.similarityvalue;
+
+                //if (a.similarityvalue < b.similarityvalue) {
+                //    return -1;
+                //}
+                //if (a.similarityvalue > b.similarityvalue) {
+                //    return 1;
+                //}
+                //return 0;
+            }
+
+
+            $("#grid_relatedcids").jqxGrid({
+                width: "100%",
+                
+                autoheight: true,
+                rowsheight: 200,
+
+                enablebrowserselection: true,
+
+                
+                columnsresize: true,
+
+
+                selectionmode: 'singlecell',
+                
+                showheader: true,
+                showstatusbar: false,
+
+                showtoolbar: true,
+                toolbarheight: 40,
+                rendertoolbar: function (statusbar) {
+
+                    var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+
+                    var exporthtmlbutton = $("<div style='float: right; margin-right: 5px;cursor: pointer'><span style='margin-left: 4px; position: relative; top: -3px;'>Export to HTML</span></div>");
+                    container.append(exporthtmlbutton);
+
+                    var exportsdfbutton = $("<div style='float: right; margin-right: 5px; cursor: pointer'><span style='margin-left: 4px; position: relative; top: -3px;'>Export to SDF</span></div>");
+                    container.append(exportsdfbutton);
+
+
+                    //var extendedfullstructuresearchbutton = $("<div style='float: left; margin-left: 5px; cursor: pointer'><span style='margin-left: 4px; position: relative; top: -3px;'>Extended search</span></div>");
+                    //container.append(extendedfullstructuresearchbutton);
+
+
+                    var similaritysearchbutton = $("<div style='float: left; margin-left: 5px; cursor: pointer'><span style='margin-left: 4px; position: relative; top: -3px;'>Similarity search</span></div>");
+                    container.append(similaritysearchbutton);
+
+                    var sortbytypebutton = $("<div style='float: left; margin-left: 20px; cursor: pointer'><span style='margin-left: 4px; position: relative; top: -3px;'>Sort by Type</span></div>");
+                    container.append(sortbytypebutton);
+
+
+                    var sortbysimilaritybutton = $("<div style='float: left; margin-left: 5px; cursor: pointer'><span style='margin-left: 4px; position: relative; top: -3px;'>Sort by Similarity</span></div>");
+                    container.append(sortbysimilaritybutton);
+
+                    var showstructuregridbutton = $("<div style='float: left; margin-left: 5px; cursor: pointer'><span style='margin-left: 4px; position: relative; top: -3px;'>Test</span></div>");
+                    container.append(showstructuregridbutton);
+
+                    var numberofhits = $("<div id='numberofhits' style='font-size: 20px; float: right; margin-right: 10px;   height: 30px'><center></center></div>");
+
+                    
+
+
+
+                    container.append(numberofhits);
+
+                    
+
+                    statusbar.append(container);
+
+                    showstructuregridbutton.jqxButton({ width: 110, height: 20, template: 'primary' });
+
+                    showstructuregridbutton.click(function (event) {
+
+                        $('#jqxLoader').jqxLoader('open');
+                        // create akosnumber list
+
+                        var rows = $('#grid_relatedcids').jqxGrid('getrows');
+
+                        var akosnumbers = [];
+
+
+                        for (var i = 0; i < rows.length; i++) {
+
+
+                            akosnumbers.push(rows[i].registryid);
+
+
+
+                        }
+
+                        debugger;
+
+                        
+                        var jdata;
+                        
+
+                        if (sessionStorage.getItem("structurequery") !== null) {
+
+                            var stringifiedstructurequery = sessionStorage.getItem("structurequery");
+
+                            jdata = JSON.parse(stringifiedstructurequery);
+
+
+                            jdata.akosnumbers = akosnumbers;
+
+                        } else {
+
+                            jdata = {};
+
+                            jdata.akosnumbers = akosnumbers;
+
+
+                        }
+
+
+                        $.ajax({
+                            type: "POST",
+
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/CreateAkosdbstructuresgrid",
+                            cache: false,
+                            data: JSON.stringify(jdata),
+                            success: function (response) {
+                                $('#jqxLoader').jqxLoader('close');
+                                if (response.errorflag) {
+
+                                   
+                                    $('#messagenotification').jqxNotification({ template: 'error' });
+                                    $("#messagenotification").find("div").first().text("Error calling CreateAkosdbstructuresgrid. Message : " + response.errortext);
+                                    $("#messagenotification").jqxNotification("open");
+                                } else {
+
+                                    $('#jqxLoader').jqxLoader('close');
+
+                                    let filename = response.resultobject;
+
+
+                                    let imagesrc = "http://akoscompounds.de/webinquiryappbingo/akosdbstructuresgrids/" + filename;
+
+
+
+                                    //alert(imagesrc)
+
+                                    $("#structurecomparisonwindow").jqxWindow('open');
+
+                                    let content = "<img src='" + imagesrc + "'" + " style='width: 100%; height: 100 %' "+"'"+">";
+
+                                    $("#structurecomparisonwindow").jqxWindow('setContent', content)
+
+                                    //if ($("#structurecomparisonwindow").find("#structurecomparisongridimage").length) {
+
+                                    //    $("#structurecomparisonwindow").jqxWindow('open');
+                                    //    var image = $("#structurecomparisonwindow").find("structurecomparisongridimage")
+
+                                    //    image.src = filename;
+
+                                        
+                                    //} else {
+
+                                    //    alert("html element not found")
+
+                                    //}
+
+                                    
+
+                                    
+
+
+                                    
+
+                                }
+                            },
+                            error: function (error) {
+                                $('#jqxLoader').jqxLoader('close');
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling CreateAkosdbstructuresgrid. Status : " + error.status);
+                                $("#messagenotification").jqxNotification("open");
+                            }
+                        });
+
+
+
+                        
+
+
+                    });
+
+
+                    exporthtmlbutton.jqxButton({ width: 110, height: 20, template: 'primary' });
+                    exporthtmlbutton.click(function (event) {
+
+                        
+
+
+                        const mediumTime = new Intl.DateTimeFormat("en", {
+                            timeStyle: "medium",
+                            dateStyle: "medium"
+                        });
+                        
+
+                        var currentdate = mediumTime.format(Date.now());
+
+                        currentdate = currentdate.replaceAll(',', '')
+
+                        currentdate = currentdate.replaceAll(' ', '_')
+                        
+                        currentdate = currentdate.replaceAll(':', '-')
+
+
+                        const filename = "akosresult_" + currentdate;
+
+                        var rows = $('#grid_relatedcids').jqxGrid('getrows');
+                        var jsonstring = JSON.stringify(rows);
+
+                        
+                        
+                        
+
+                        $("#grid_relatedcids").jqxGrid('exportview', 'html', filename);
+
+
+                        $('#messagenotification').jqxNotification({ template: 'success' });
+                        
+                        $("#messagenotification").find("div").first().text("File downloaded");
+                        $("#messagenotification").jqxNotification("open");
+
+                        
+
+
+                    });
+
+                    exportsdfbutton.jqxButton({ width: 100, height: 20, template: 'primary' });
+                    exportsdfbutton.click(function (event) {
+
+
+                        
+
+                        var rows = $('#grid_relatedcids').jqxGrid('getrows');
+
+                        var akosnumbers = [];
+
+
+                        for (var i = 0; i < rows.length; i++) {
+
+
+                            akosnumbers.push(rows[i].registryid);
+
+
+
+                        }
+
+                       
+
+
+                        
+
+                        $.ajax({
+                            type: "POST",
+                            
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/CreateSDFileForAKosnumbers",
+                            cache: false,
+                            data: JSON.stringify(akosnumbers),
+                            success: function (response) {
+                                $('#jqxLoader').jqxLoader('close');
+                                if (response.errorflag) {
+                                    $('#messagenotification').jqxNotification({ template: 'error' });
+                                    $("#messagenotification").find("div").first().text("Error calling CreateSDFileForAKosnumbers. Message : " + response.errortext);
+                                    $("#messagenotification").jqxNotification("open");
+                                } else {
+
+
+                                    let data = response.resultobject;
+
+                                    
+
+
+                                    const mediumTime = new Intl.DateTimeFormat("en", {
+                                        timeStyle: "medium",
+                                        dateStyle: "medium"
+                                    });
+                                    
+
+                                    var currentdate = mediumTime.format(Date.now());
+
+                                    currentdate = currentdate.replaceAll(',', '')
+
+                                    currentdate = currentdate.replaceAll(' ', '_')
+
+                                    currentdate = currentdate.replaceAll(':', '-')
+
+
+                                    const filename = "akosresult_" + currentdate+".sdf"
+
+                                    downloadFile(data, 'text/plain', filename);
+
+                                    $('#messagenotification').jqxNotification({ template: 'success' });
+                                    
+                                    $("#messagenotification").find("div").first().text("File downloaded");
+                                    $("#messagenotification").jqxNotification("open");
+
+                                }
+                            },
+                            error: function (error) {
+                                $('#jqxLoader').jqxLoader('close');
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling CreateSDFileForAKosnumbers. Status : " + error.status);
+                                $("#messagenotification").jqxNotification("open");
+                            }
+                        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    });
+
+                    //extendedfullstructuresearchbutton.jqxButton({ width: 110, height: 20, template: 'primary' });
+
+                    //if (sessionStorage.getItem("enableextendedfullstructuresearchbutton") !== null) {
+
+
+
+                    //    var benableextendedfullstructuresearchbutton = sessionStorage.getItem("enableextendedfullstructuresearchbutton")
+
+
+
+                    //    if (benableextendedfullstructuresearchbutton === "true") {
+
+
+
+                    //        extendedfullstructuresearchbutton.jqxButton({ disabled: false });
+
+                    //    } else {
+
+
+
+                    //        extendedfullstructuresearchbutton.jqxButton({ disabled: true });
+
+                    //    }
+
+
+                    //}
+
+                    //extendedfullstructuresearchbutton.click(function (event) {
+
+                    //    $('#jqxLoader').jqxLoader('open');
+
+                    //    if (sessionStorage.getItem("structurequery") === null) {
+
+                    //        $('#jqxLoader').jqxLoader('close');
+                    //        $('#messagenotification').jqxNotification({ template: 'error' });
+                    //        $("#messagenotification").find("div").first().text("No query structure found");
+                    //        $("#messagenotification").jqxNotification("open");
+
+                    //    } else {
+
+
+
+
+                    //        var structuredata = sessionStorage.getItem("structurequery");
+
+
+
+                    //        var jdata = JSON.parse(structuredata);
+
+                    //        if (!isNotEmpty(jdata.smiles)) {
+
+
+
+                    //            $('#jqxLoader').jqxLoader('close');
+                    //            $('#messagenotification').jqxNotification({ template: 'error' });
+                    //            $("#messagenotification").find("div").first().text("Query structure is missing smiles");
+                    //            $("#messagenotification").jqxNotification("open");
+
+                    //        } else {
+
+
+                    //            //alert(sessionStorage.getItem("griddata"))
+                    //            //alert("Calling Executesimilaritysearch")
+
+
+                    //            var currentgriddata = sessionStorage.getItem("griddata");
+
+                    //            var currentgridjsondata = JSON.parse(currentgriddata);
+
+                    //            let myArray = [];
+
+
+                    //            for (let i = 0; i < currentgridjsondata.length; i++) {
+                    //                let obj = currentgridjsondata[i];
+
+                    //                let registryid = obj.registryid;
+
+                    //                myArray.push(registryid);
+
+                                    
+                    //            }
+
+                    //            jdata.exclusionlist = myArray;
+
+                    //            //alert(JSON.stringify(jdata));
+
+
+                    //            $.ajax({
+                    //                type: "POST",
+                    //                url: "http://akoscompounds.de/webinquiriesapibingo/api/akoswebrequestsapi/Extendedfullstructuresearch",
+                    //                cache: false,
+                    //                data: JSON.stringify(jdata),
+                    //                success: function (response) {
+                    //                    $('#jqxLoader').jqxLoader('close');
+                    //                    if (response.errorflag) {
+                    //                        $('#messagenotification').jqxNotification({ template: 'error' });
+                    //                        $("#messagenotification").find("div").first().text("Error calling Extendedfullstructuresearch. Message : " + response.errortext);
+                    //                        $("#messagenotification").jqxNotification("open");
+                    //                    } else {
+
+                    //                        debugger;
+                    //                        var data = response.extendedfullstructuresearchresults;
+
+                    //                        var tempdata = JSON.stringify(data);
+
+                    //                        var newgridjsondata = JSON.parse(tempdata);
+
+
+                    //                        //alert(JSON.stringify(data));
+
+                    //                        var currentgriddata = sessionStorage.getItem("griddata");
+
+                    //                        var currentgridjsondata = JSON.parse(currentgriddata);
+
+                    //                        let finalgriddata = [];
+
+                    //                        var arrayLength = currentgridjsondata.length;
+                    //                        for (var i = 0; i < arrayLength; i++) {
+
+                    //                            finalgriddata.push(currentgridjsondata[i]);
+                    //                            //console.log(myStringArray[i]);
+                    //                            //Do something
+                    //                        }
+
+
+
+
+                    //                        //finalgriddata.push(currentgridjsondata);
+                    //                        //finalgriddata.push(newgridjsondata);
+
+
+                    //                        arrayLength = newgridjsondata.length;
+                    //                        for (var i = 0; i < arrayLength; i++) {
+
+                    //                            finalgriddata.push(newgridjsondata[i]);
+                    //                            //console.log(myStringArray[i]);
+                    //                            //Do something
+                    //                        }
+
+
+
+                    //                        //alert(JSON.stringify(finalgriddata));
+
+
+                    //                        //let finalgriddata = Object.assign(currentgridjsondata, newgridjsondata)
+
+                    //                        var relatedcids_gridsource_dataFields = [
+
+                    //                            { name: 'strucutureimageurl', type: 'string' },
+
+                    //                            { name: 'cid', type: 'int' },
+
+                    //                            { name: 'registryid', type: 'string' },
+
+                    //                            { name: 'type', type: 'string' },
+
+                    //                            { name: 'bisidenticalwithquery', type: 'bool' },
+
+                    //                            { name: 'molname', type: 'string' },
+
+                    //                            { name: 'molformula', type: 'string' },
+
+                    //                            { name: 'molweight', type: 'number' },
+
+                    //                            { name: 'casnumber', type: 'string' },
+
+                    //                            { name: 'similarityvalue', type: 'number' }
+                    //                        ];
+
+
+                    //                        var relatedcids_gridsource = {
+
+                    //                            //sort: customsortfunc,
+
+                    //                            datatype: "json",
+
+                    //                            datafields: relatedcids_gridsource_dataFields,
+
+
+
+
+                    //                            localdata: finalgriddata
+
+
+                    //                        };
+
+                    //                        var relatedcids_griddataAdapter = new $.jqx.dataAdapter(relatedcids_gridsource);
+
+                    //                        $("#grid_relatedcids").jqxGrid({ source: relatedcids_griddataAdapter });
+
+                    //                        $('#grid_relatedcids').jqxGrid('updatebounddata');
+
+                    //                        var exportdata = JSON.stringify(finalgriddata);
+
+
+                    //                        sessionStorage.setItem("griddata", exportdata);
+
+                    //                        document.getElementById('numberofhits').innerText = "Number of hits " + finalgriddata.length;
+
+                    //                        // disable extendedfullstructuresearch button
+
+                    //                        extendedfullstructuresearchbutton.jqxButton({ disabled: true });
+
+                                            
+
+                    //                        sessionStorage.setItem("enableextendedfullstructuresearchbutton", false);
+
+
+
+
+
+                    //                    }
+                    //                },
+                    //                error: function (error) {
+                    //                    $('#jqxLoader').jqxLoader('close');
+                    //                    $('#messagenotification').jqxNotification({ template: 'error' });
+                    //                    $("#messagenotification").find("div").first().text("Error calling Extendedfullstructuresearch. Status : " + error.status);
+                    //                    $("#messagenotification").jqxNotification("open");
+                    //                }
+                    //            });
+
+
+
+                    //        }
+
+                    //    }
+
+                        
+
+
+
+
+                    //});
+
+                    similaritysearchbutton.jqxButton({ width: 120, height: 20, template: 'primary' });
+
+
+                    
+
+                    if (sessionStorage.getItem("enablesimilaritybutton") !== null) {
+
+                        
+
+                        var benablesimilaritybutton = sessionStorage.getItem("enablesimilaritybutton")
+
+                        
+
+                        if (benablesimilaritybutton === "true") {
+
+                            
+
+                            similaritysearchbutton.jqxButton({ disabled: false });
+
+                        } else {
+
+                            
+
+                            similaritysearchbutton.jqxButton({ disabled: true });
+
+                        }
+
+                        
+                    }
+
+                    similaritysearchbutton.click(function (event) {
+
+                        $('#jqxLoader').jqxLoader('open');
+
+                        if (sessionStorage.getItem("structurequery") === null) {
+
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("No query structure found");
+                            $("#messagenotification").jqxNotification("open");
+
+                        } else {
+
+
+                            
+
+                            var structuredata = sessionStorage.getItem("structurequery");
+
+                            
+
+                            var jdata = JSON.parse(structuredata);
+
+                            if (!isNotEmpty(jdata.smiles)) {
+
+                                
+
+                                $('#jqxLoader').jqxLoader('close');
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Query structure is missing smiles");
+                                $("#messagenotification").jqxNotification("open");
+
+                            } else {
+
+                                
+
+                                //alert("Calling Executesimilaritysearch")
+
+                                var currentgriddata = sessionStorage.getItem("griddata");
+
+                                var currentgridjsondata = JSON.parse(currentgriddata);
+
+                                let myArray = [];
+
+
+                                for (let i = 0; i < currentgridjsondata.length; i++) {
+                                    let obj = currentgridjsondata[i];
+
+                                    let registryid = obj.registryid;
+
+                                    myArray.push(registryid);
+
+
+                                }
+
+                                jdata.exclusionlist = myArray;
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Executesimilaritysearch",
+                                    cache: false,
+                                    data: JSON.stringify(jdata),
+                                    success: function (response) {
+                                        $('#jqxLoader').jqxLoader('close');
+                                        if (response.errorflag) {
+                                            $('#messagenotification').jqxNotification({ template: 'error' });
+                                            $("#messagenotification").find("div").first().text("Error calling Executesimilaritysearch. Message : " + response.errortext);
+                                            $("#messagenotification").jqxNotification("open");
+                                        } else {
+
+                                            debugger;
+                                            var data = response.similaritysearchresults;
+
+                                            var tempdata = JSON.stringify(data);
+
+                                            var newgridjsondata = JSON.parse(tempdata);
+
+
+                                            //alert(JSON.stringify(data));
+
+                                            var currentgriddata = sessionStorage.getItem("griddata");
+
+                                            var currentgridjsondata = JSON.parse(currentgriddata);
+
+                                            let finalgriddata = [];
+
+                                            var arrayLength = currentgridjsondata.length;
+                                            for (var i = 0; i < arrayLength; i++) {
+
+                                                finalgriddata.push(currentgridjsondata[i]);
+                                                //console.log(myStringArray[i]);
+                                                //Do something
+                                            }
+
+
+
+
+                                            //finalgriddata.push(currentgridjsondata);
+                                            //finalgriddata.push(newgridjsondata);
+
+
+                                            arrayLength = newgridjsondata.length;
+                                            for (var i = 0; i < arrayLength; i++) {
+
+                                                finalgriddata.push(newgridjsondata[i]);
+                                                //console.log(myStringArray[i]);
+                                                //Do something
+                                            }
+
+
+
+                                            //alert(JSON.stringify(finalgriddata));
+
+
+                                            //let finalgriddata = Object.assign(currentgridjsondata, newgridjsondata)
+
+                                            var relatedcids_gridsource_dataFields = [
+
+                                                { name: 'strucutureimageurl', type: 'string' },
+
+                                                { name: 'cid', type: 'int' },
+
+                                                { name: 'registryid', type: 'string' },
+
+                                                { name: 'type', type: 'string' },
+
+                                                { name: 'bisidenticalwithquery', type: 'bool' },
+
+                                                { name: 'molname', type: 'string' },
+
+                                                { name: 'molformula', type: 'string' },
+
+                                                { name: 'molweight', type: 'number' },
+
+                                                { name: 'casnumber', type: 'string' },
+
+                                                { name: 'similarityvalue', type: 'number'}
+                                            ];
+
+
+                                            var relatedcids_gridsource = {
+
+                                                //sort: customsortfunc,
+
+                                                datatype: "json",
+
+                                                datafields: relatedcids_gridsource_dataFields,
+
+
+
+
+                                                localdata: finalgriddata
+
+
+                                            };
+
+                                            var relatedcids_griddataAdapter = new $.jqx.dataAdapter(relatedcids_gridsource);
+
+                                            $("#grid_relatedcids").jqxGrid({ source: relatedcids_griddataAdapter });
+
+                                            $('#grid_relatedcids').jqxGrid('updatebounddata');
+
+                                            var exportdata = JSON.stringify(finalgriddata);
+
+
+                                            sessionStorage.setItem("griddata", exportdata);
+
+                                            document.getElementById('numberofhits').innerText = "Number of hits " + finalgriddata.length;
+
+                                            // disable similarity button
+
+                                            similaritysearchbutton.jqxButton({ disabled: true });
+
+                                            sessionStorage.setItem("enablesimilaritybutton", false);
+
+                                            
+
+                                            
+
+                                            
+
+                                        }
+                                    },
+                                    error: function (error) {
+                                        $('#jqxLoader').jqxLoader('close');
+                                        $('#messagenotification').jqxNotification({ template: 'error' });
+                                        $("#messagenotification").find("div").first().text("Error calling Executesimilaritysearch. Status : " + error.status);
+                                        $("#messagenotification").jqxNotification("open");
+                                    }
+                                });
+
+
+
+                            }
+
+                        }
+
+                        
+
+
+                    });
+
+                    sortbytypebutton.jqxButton({ width: 110, height: 20, template: 'primary' });
+
+                    sortbytypebutton.click(function (event) {
+
+
+                        $('#grid_relatedcids').jqxGrid('sortby', 'type', 'asc');
+
+
+                    });
+
+                    sortbysimilaritybutton.jqxButton({ width: 120, height: 20, template: 'primary' });
+
+                    sortbysimilaritybutton.click(function (event) {
+
+
+                        //debugger;
+
+                        //$('#grid_relatedcids').jqxGrid('sortby', 'similarityvalue', 'desc');
+
+                        var currentgriddata = sessionStorage.getItem("griddata");
+
+                        var currentgridjsondata = JSON.parse(currentgriddata);
+
+                        var sortdata = new Array();
+
+
+                        for (i = 0; i < currentgridjsondata.length; i++) {
+                            sortdata.push(currentgridjsondata[i]);
+                        }
+
+                        
+                        debugger;
+
+                        sortdata.sort(compare)
+
+                        //if (direction == 'ascending') direction = true;
+                        //if (direction == 'descending') direction = false;
+                        //if (direction != null) {
+                            
+                        //}
+                        //else sortdata = currentgridjsondata;
+                        //var tmpToString = Object.prototype.toString;
+                        //Object.prototype.toString = (typeof column == "function") ? column : function () { return this[column] };
+                        //if (direction != null) {
+                        //    //sortdata.sort(compare);
+                        //    sortdata.sort(sortBy(column))
+                        //    if (!direction) {
+                        //        sortdata.reverse();
+                        //    }
+                        //}
+
+
+                        
+
+
+                        const bisidenticalindex = sortdata.findIndex(x => x.bisidenticalwithquery == true);
+
+
+                        //alert("index bisidentical " + bisidenticalindex);
+
+                        sortdata.unshift(sortdata.splice(bisidenticalindex, 1)[0]);
+
+                        //let finalsortedgriddata = [];
+
+                        //var arrayLength = sortdata.length;
+                        //for (var i = 0; i < arrayLength; i++) {
+
+                        //    finalgriddata.push(currentgridjsondata[i]);
+                        //    //console.log(myStringArray[i]);
+                        //    //Do something
+                        //}
+
+                        var relatedcids_gridsource_dataFields = [
+
+                            { name: 'strucutureimageurl', type: 'string' },
+
+                            { name: 'cid', type: 'int' },
+
+                            { name: 'registryid', type: 'string' },
+
+                            { name: 'type', type: 'string' },
+
+                            { name: 'bisidenticalwithquery', type: 'bool' },
+
+                            { name: 'molname', type: 'string' },
+
+                            { name: 'molformula', type: 'string' },
+
+                            { name: 'molweight', type: 'number' },
+
+                            { name: 'casnumber', type: 'string' },
+
+                            { name: 'similarityvalue', type: 'number' }
+                        ];
+
+                        var relatedcids_gridsource = {
+
+                            //sort: customsortfunc,
+
+                            datatype: "json",
+
+                            datafields: relatedcids_gridsource_dataFields,
+
+
+
+
+                            localdata: sortdata
+
+
+                        };
+
+                        var relatedcids_griddataAdapter = new $.jqx.dataAdapter(relatedcids_gridsource);
+
+                        $("#grid_relatedcids").jqxGrid({ source: relatedcids_griddataAdapter });
+                        
+                        $("#grid_relatedcids").jqxGrid('updatebounddata');
+
+                        var exportdata = JSON.stringify(sortdata);
+                        sessionStorage.setItem("griddata", exportdata);
+                        //Object.prototype.toString = tmpToString;
+                    });
+
+                    
+                    document.getElementById('numberofhits').innerText = "Number of hits "+"0"
+
+                },
+                renderstatusbar: function (statusbar) {
+
+                    
+
+
+                },
+
+
+
+
+
+                columns: [
+
+
+                    { text: 'Structure', datafield: 'strucutureimageurl', width: 200, hidden: true, editable: false },
+
+
+                    { text: '', datafield: 'cid', width: 200, cellsrenderer: cellsrenderer_akosdbstructure, editable: false, exportable: false },
+
+                    { text: 'AKos number', datafield: 'registryid', cellclassname: cellclass, width: 200 },
+
+                    { text: 'Type', datafield: 'type', cellclassname: cellclass, width: 100 },
+
+                    { text: 'Molname', datafield: 'molname', cellclassname: cellclass },
+
+                    { text: 'CAS Number', datafield: 'casnumber', cellclassname: cellclass },
+
+                    { text: 'Molformula', datafield: 'molformula', cellclassname: cellclass },
+
+                    { text: 'Molweight', datafield: 'molweight', cellclassname: cellclass },
+
+                    { text: 'Similarity', datafield: 'similarityvalue', cellclassname: cellclass },
+
+                    //{ text: 'Fullmatch', datafield: 'bisidenticalwithquery', cellclassname: cellclass },
+
+                    {
+                        text: "",
+                        datafield: "Add",
+                        columntype: "custom",
+                        width: 160,
+                        exportable: false,
+                        style: style,
+
+                        
+                        
+                        cellsrenderer: function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
+
+                            
+
+                            var html = "<div style='width: 160px; height: 200px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='height: 40px; width: 100px;cursor: pointer' value='Add quantity' /></center></div>";
+
+
+                            return html;
+
+
+                        },
+                        
+                        buttonclick: function (row) {
+                            
+
+
+                            var data = $('#grid_relatedcids').jqxGrid('getrowdata', row);
+                            $("#akosnumber").val(data.registryid);
+
+
+
+                            
+
+                            $('#quantity').jqxNumberInput('val', 0);
+
+
+                            
+
+                            var source = {
+                                datatype: "json",
+                                datafields: [
+                                    { name: 'UnitUIlabel' },
+                                    { name: 'UnitValue' }
+                                ],
+                                localdata: units,
+                                async: true
+                            };
+                            var dataAdapter = new $.jqx.dataAdapter(source);
+                            $("#units").jqxDropDownList({
+                                selectedIndex: 1, source: dataAdapter, displayMember: "UnitUIlabel", valueMember: "UnitValue", width: 200, height: 30
+                            });
+                            
+
+
+                            $('#additionalinformation').jqxTextArea('val', '');
+
+
+                            $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+                            
+
+                            $("#popupwindowshoppingcard").jqxWindow('open');
+
+
+                        }
+                    }
+                ]
+            });
+
+            
+
+            if (sessionStorage.getItem("griddata") != null) {
+
+                
+
+                var data = sessionStorage.getItem("griddata");
+
+
+                
+
+                var importdata = JSON.parse(data);
+
+                var relatedcids_gridsource_dataFields = [
+
+                    { name: 'strucutureimageurl', type: 'string' },
+
+                    { name: 'cid', type: 'int' },
+
+                    { name: 'registryid', type: 'string' },
+
+                    { name: 'type', type: 'string' },
+
+                    { name: 'bisidenticalwithquery', type: 'bool' },
+
+                    { name: 'molname', type: 'string' },
+
+                    { name: 'molformula', type: 'string' },
+
+                    { name: 'molweight', type: 'number' },
+
+                    { name: 'casnumber', type: 'string' },
+
+                    { name: 'similarityvalue', type: 'number' },
+
+                    
+                ];
+
+
+                var relatedcids_gridsource = {
+
+                    datatype: "json",
+
+                    datafields: relatedcids_gridsource_dataFields,
+
+
+
+
+                    localdata: importdata
+
+
+                };
+
+                var relatedcids_griddataAdapter = new $.jqx.dataAdapter(relatedcids_gridsource);
+
+                $("#grid_relatedcids").jqxGrid({ source: relatedcids_griddataAdapter });
+
+                $('#grid_relatedcids').jqxGrid('updatebounddata');
+
+                
+
+                document.getElementById('numberofhits').innerText = "Number of hits " + importdata.length;
+
+
+                
+
+            }
+
+
+
+            
+
+
+            $("#grid_relatedcids").on("cellclick", function (event) {
+
+
+                
+
+
+                var args = event.args;
+                // row's bound index.
+                var rowBoundIndex = args.rowindex;
+                // row's visible index.
+                var rowVisibleIndex = args.visibleindex;
+                // right click.
+                var rightclick = args.rightclick;
+                // original event.
+                var ev = args.originalEvent;
+                // column index.
+                var columnindex = args.columnindex;
+                // column data field.
+                var dataField = args.datafield;
+
+
+                $("#grid_relatedcids").jqxGrid('selectrow', rowBoundIndex);
+
+                
+
+                if (dataField == "cid") {
+
+                    var datarow = $('#grid_relatedcids').jqxGrid('getrowdata', rowBoundIndex);
+                    
+                    var akosnumber = datarow.registryid
+
+                    
+                    jdata = {};
+
+                    
+                    jdata.akosnumber = akosnumber;
+
+                    $('#jqxLoader').jqxLoader('open');
+                    $.ajax({
+
+                        type: "POST",
+                        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/GetMolfiledataforAkosnumber",
+                        cache: false,
+                        data: JSON.stringify(jdata),
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            if (response.errorflag) {
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling GetMolfiledataforAkosnumber. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                var molfile = response.resultobject;
+
+
+                                var ketcherFrame = document.getElementById('zoomketcherwindow_ketcher');
+
+                                var ketcher = ketcherFrame.contentWindow.ketcher;
+
+                                ketcher.setMolecule(molfile);
+
+                                $("#zoomketcherwindow").jqxWindow('open');
+
+
+
+                            }
+
+
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling GetMolfiledataforAkosnumber. Status : " + error.status);
+                            $("#messagenotification").jqxNotification("open");
+
+
+                        }
+
+
+
+
+                    });
+
+
+
+                } else {
+
+
+
+                    if (dataField === "Add") {
+
+
+
+
+
+                        var data = $('#grid_relatedcids').jqxGrid('getrowdata', rowBoundIndex);
+
+                        $("#akosnumber").val(data.registryid);
+
+
+                        $('#quantity').jqxNumberInput('val', 0);
+
+                        var source = {
+                            datatype: "json",
+                            datafields: [
+                                { name: 'UnitUIlabel' },
+                                { name: 'UnitValue' }
+                            ],
+                            localdata: units,
+                            async: true
+                        };
+                        var dataAdapter = new $.jqx.dataAdapter(source);
+                        $("#units").jqxDropDownList({
+                            selectedIndex: 1, source: dataAdapter, displayMember: "UnitUIlabel", valueMember: "UnitValue", width: 200, height: 30
+                        });
+
+                        $('#additionalinformation').jqxTextArea('val', '');
+
+                        
+                        $("#popupwindowshoppingcardform_casnumber").val(data.casnumber);
+
+                        $("#popupwindowshoppingcardform_molname").val(data.molname);
+
+                        $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+
+                        $("#popupwindowshoppingcard").jqxWindow('open');
+
+                        
+
+                    }
+                    
+
+
+
+
+
+
+
+
+
+
+                }
+
+
+            });
+
+
+            
+
+
+
+        });
+
+    </script>
+</body>
+</html>

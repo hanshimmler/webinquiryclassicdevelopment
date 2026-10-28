@@ -1,0 +1,3399 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>AKos Compound Catalog — Building Blocks &amp; Screening Compounds</title>
+    <meta name="description" content="Search 40M+ building blocks, screening compounds and custom synthesis options from AKos and its global supplier network. Request a quote in one business day." />
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+
+
+
+    <script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxgrid.grouping.js"></script>
+
+
+    <script type="text/javascript" src="jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.edit.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.columnsresize.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.columnsreorder.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.sort.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxwindow.js"></script>
+
+
+    <script type="text/javascript" src="jqwidgets/jqxform.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxvalidator.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxnumberinput.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxcombobox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxexport.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxradiobutton.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttongroup.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxtextarea.js"></script>
+
+
+    <script type="text/javascript" src="scripts/vfs_fonts.js"></script>
+    <script type="text/javascript" src="scripts/jszip.min.js"></script>
+
+
+
+
+
+    <style>
+
+        /*input[type=button]:hover {
+            background-color: #A80D0D;
+            color: white;
+        }*/
+
+
+
+        .jqx-fill-state-normal {
+            background-color: transparent;
+            border-style: none;
+        }
+
+        /*.jqx-fill-state-hover {
+            background-color: #A80D0D;
+            color: white;
+        }*/
+
+
+        .jqx-fill-state-hover {
+            background-color: white;
+            color: black;
+        }
+
+        .jqx-grid-group-cell {
+            border-width: 0 1px 1px 0;
+        }
+
+        .jqx-notification-container {
+            z-index: 100000;
+        }
+
+
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+
+
+
+        /*.navigation-container {
+            height: 60px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            display: block;
+            align-items: center;
+            background-color: rgb(138, 30, 30);
+        }*/
+
+        .navigation-container {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: rgb(138, 30, 30);
+        }
+
+        .navigation-row {
+            width: 100%;
+        }
+
+        .navigationflex-item {
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+            color: white;
+        }
+
+            .navigationflex-item:hover {
+                color: white;
+                opacity: 0.8;
+                border: none;
+                background-color: transparent;
+            }
+
+        .columnheader {
+            background-color: #8A1E1E;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div style="height: 100%; background-color: #fbfaf7;">
+
+        <div class="navigation-container">
+
+
+
+            <!--<div style="float: left;"><img style="display: flex; align-items: normal; justify-content: center;" src="images/AK0S-logo-weit.png" height="60" width="80" /></div>-->
+
+
+            <div style="float: left;"><a href="https://akos-chem.de/" target="_blank"><img style="display: flex; align-items: normal; justify-content: center;" src="akoslogo.jpg" height="58" width="603"></a></div>
+
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Search" id='btn_navigation_search' /></span></div>
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Draw structure" id='btn_navigation_drawstructure' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Results" id='btn_navigation_results' /></span></div>
+
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="About us" id='btn_navigation_about' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Contact us" id='btn_navigation_contact' /></span></div>
+
+
+
+            <!--<div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' style="float: left; margin-left: 20px; cursor: pointer" /></span></div>-->
+
+            <div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' value="test" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; float: right; margin-right: 20px; cursor: pointer; background-color: white; color: #8A1E1E;" /></span></div>
+
+
+
+            <!--<div id="Requestspagenotificationcontainer" style="float: right; margin-right: 20px; width: 600px; height: 50px; background-color: rrgba(217, 74, 74, 0.25);"></div>-->
+
+
+
+
+
+
+        </div>
+
+        <div style="height: 50px; padding: 5px; background-color: #fbfaf7;">
+            <center><div id="Requestspagenotificationcontainer" style="width: 80%; height: 50px; background-color: rrgba(217, 74, 74, 0.25);"></div></center>
+        </div>
+
+
+
+
+
+
+
+        <div id="Requestspagenotification">For US-customer: Please always enter the address of your organization/company in the address field. Compulsory: town and state.</div>
+
+
+
+
+
+        <div style="display: none;margin-top: 15px;" id="shoppinggrid"></div>
+
+        <div class="navigation-row"><span><input class="navigationflex-item" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; float: right; margin-top: 10px; cursor: pointer; border-style: solid" type="button" value="Send request" id='btn_sendrequest' /></span></div>
+
+
+
+        <div class="navigation-row"><span><input class="navigationflex-item" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; float: right; margin-right: 10px; margin-top: 10px; cursor: pointer; border-style: solid" type="button" value="Add more requests" id='btn_navigation_requests_continueshopping' /></span></div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div id="popupwindowshoppingcard" style="display: none;position: fixed; left: 50%; top: 50%;">
+        <div></div>
+        <div style="overflow: hidden;">
+            <form id="popupwindowshoppingcardform" action="./">
+                <table>
+                    <tr>
+                        <td align="right">AKos number:</td>
+                        <td align="left"><input id="akosnumber" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Quantity:</td>
+                        <td align="left"><div id="quantity"></div></td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="right">Unit:</td>
+                        <td align="left"><div id="units"></div></td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="right">Additional information:</td>
+
+                        <td align="left"><textarea id="additionalinformation"></textarea></td>
+                    </tr>
+
+
+                    <tr>
+
+
+                        <td style="display: none" align="left"><input id="popupwindowshoppingcardform_casnumber" /></td>
+                    </tr>
+
+                    <tr>
+
+
+                        <td style="display: none" align="left"><input id="popupwindowshoppingcardform_molname" /></td>
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+                    <tr>
+                        <td align="right"></td>
+
+                        <td style="padding-top: 10px;" align="right"><input id="btn_popupwindowshoppingcard" style="height: 40px; width: 100px; -moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; cursor: pointer; border-style: solid " type="button" value="" /></td>
+                    </tr>
+
+
+
+
+
+
+
+                </table>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <div id="popupwindowcontactcard" style="display: none;position: fixed; left: 50%; top: 50%;">
+        <div>Add contact</div>
+        <div style="overflow: hidden;">
+            <form id="popupwindowcontactcardform" action="./">
+                <table>
+                    <tr>
+                        <td align="right">Title:</td>
+                        <td align="left"><div id="title"></div></td>
+                    </tr>
+                    <tr>
+                        <td align="right">First name:</td>
+                        <td align="left"><input id="firstname" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Last name:</td>
+                        <td align="left"><input id="lastname" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">eMail:</td>
+                        <td align="left"><input id="email" /></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">Company:</td>
+                        <td align="left"><input id="company" /></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">Address:</td>
+
+                        <td align="left"><textarea id="address"></textarea></td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="right">Country:</td>
+                        <td align="left"><div id="country"></div></td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td align="right"></td>
+
+                        <td style="padding-top: 10px;" align="right"><input style="-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; margin-right: 5px; cursor: pointer; border-style: solid" type="button" id="btn_submitrequest" value="Submit request" /><input id="btn_popupwindowcontactcard_cancel" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; cursor: pointer; border-style: solid" type="button" value="Cancel" /></td>
+                    </tr>
+
+
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <div style="display: none" id="zoomketcherwindow">
+        <div>Zoom</div>
+        <div style="overflow: hidden;">
+            <div>
+                <div>
+                    <iframe id="zoomketcherwindow_ketcher" src="ketcher.html" style="width: 100%; height: 100%"></iframe>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="jqxLoader"></div>
+
+
+
+
+
+
+
+
+    <div style="display: none" id="deleteallrequests_confirmwindow">
+        <div>
+
+
+        </div>
+        <div>
+            <div>
+                <center>Do you really want to delete all requests?</center>
+            </div>
+            <div>
+                <div style="float: right; margin-top: 15px;">
+                    <input type="button" id="deleteallrequests_confirmwindow_ok" value="Yes" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; margin-right: 10px; border-style: solid" />
+                    <input type="button" id="deleteallrequests_confirmwindow_cancel" value="No" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; border-style: solid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none" id="deletesinglerequest_confirmwindow">
+        <div>
+
+
+        </div>
+        <div>
+            <div>
+                <center>Do you really want to delete the selected request?</center>
+            </div>
+            <div>
+                <div style="float: right; margin-top: 15px;">
+                    <input type="button" id="deletesinglerequest_confirmwindow_ok" value="Yes" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; margin-right: 10px; border-style: solid" />
+                    <input type="button" id="deletesinglerequest_confirmwindow_cancel" value="No" style="-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; border-style: solid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="display: none" id="messagenotification">
+        <div id="messagenotification_content"></div>
+    </div>
+
+    <div style="display: none" id="messagenotification_autoclose">
+        <div id="messagenotification_content_autoclose"></div>
+    </div>
+
+
+
+
+    <!--<div id="popupwindowfeedbackform" style="display: none;position: fixed; left: 50%; top: 50%;">
+        <div>Feedback</div>
+        <div id='feedbackform' style="width: 400px; height: auto;"></div>
+    </div>-->
+
+
+
+    <div id="popupwindowfeedbackform">
+        <div>Feedback</div>
+        <div id='feedbackform' style="width: 100%; height: auto;"></div>
+        <!--<div id='feedbackform'></div>-->
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var shoppingakosnumber;
+
+        var units = [
+            {
+                "UnitUIlabel": "milligram",
+                "UnitValue": "mg"
+            },
+            {
+                "UnitUIlabel": "gram",
+                "UnitValue": "g"
+            },
+            {
+                "UnitUIlabel": "kilogram",
+                "UnitValue": "kg"
+            },
+            {
+                "UnitUIlabel": "milliliter",
+                "UnitValue": "ml"
+            },
+            {
+                "UnitUIlabel": "liter",
+                "UnitValue": "l"
+            }
+
+        ];
+
+
+        var editshoppingrow = -1;
+
+        var editcontactrow = -1;
+
+
+
+        var countries = [
+            { name: 'Afghanistan', code: 'AF' },
+            { name: 'Aland Islands', code: 'AX' },
+            { name: 'Albania', code: 'AL' },
+            { name: 'Algeria', code: 'DZ' },
+            { name: 'American Samoa', code: 'AS' },
+            { name: 'AndorrA', code: 'AD' },
+            { name: 'Angola', code: 'AO' },
+            { name: 'Anguilla', code: 'AI' },
+            { name: 'Antarctica', code: 'AQ' },
+            { name: 'Antigua and Barbuda', code: 'AG' },
+            { name: 'Argentina', code: 'AR' },
+            { name: 'Armenia', code: 'AM' },
+            { name: 'Aruba', code: 'AW' },
+            { name: 'Australia', code: 'AU' },
+            { name: 'Austria', code: 'AT' },
+            { name: 'Azerbaijan', code: 'AZ' },
+            { name: 'Bahamas', code: 'BS' },
+            { name: 'Bahrain', code: 'BH' },
+            { name: 'Bangladesh', code: 'BD' },
+            { name: 'Barbados', code: 'BB' },
+            { name: 'Belarus', code: 'BY' },
+            { name: 'Belgium', code: 'BE' },
+            { name: 'Belize', code: 'BZ' },
+            { name: 'Benin', code: 'BJ' },
+            { name: 'Bermuda', code: 'BM' },
+            { name: 'Bhutan', code: 'BT' },
+            { name: 'Bolivia', code: 'BO' },
+            { name: 'Bosnia and Herzegovina', code: 'BA' },
+            { name: 'Botswana', code: 'BW' },
+            { name: 'Bouvet Island', code: 'BV' },
+            { name: 'Brazil', code: 'BR' },
+            { name: 'British Indian Ocean Territory', code: 'IO' },
+            { name: 'Brunei Darussalam', code: 'BN' },
+            { name: 'Bulgaria', code: 'BG' },
+            { name: 'Burkina Faso', code: 'BF' },
+            { name: 'Burundi', code: 'BI' },
+            { name: 'Cambodia', code: 'KH' },
+            { name: 'Cameroon', code: 'CM' },
+            { name: 'Canada', code: 'CA' },
+            { name: 'Cape Verde', code: 'CV' },
+            { name: 'Cayman Islands', code: 'KY' },
+            { name: 'Central African Republic', code: 'CF' },
+            { name: 'Chad', code: 'TD' },
+            { name: 'Chile', code: 'CL' },
+            { name: 'China', code: 'CN' },
+            { name: 'Christmas Island', code: 'CX' },
+            { name: 'Cocos (Keeling) Islands', code: 'CC' },
+            { name: 'Colombia', code: 'CO' },
+            { name: 'Comoros', code: 'KM' },
+            { name: 'Congo', code: 'CG' },
+            { name: 'Congo, The Democratic Republic of the', code: 'CD' },
+            { name: 'Cook Islands', code: 'CK' },
+            { name: 'Costa Rica', code: 'CR' },
+            { name: 'Cote D\'Ivoire', code: 'CI' },
+            { name: 'Croatia', code: 'HR' },
+            { name: 'Cuba', code: 'CU' },
+            { name: 'Cyprus', code: 'CY' },
+            { name: 'Czech Republic', code: 'CZ' },
+            { name: 'Denmark', code: 'DK' },
+            { name: 'Djibouti', code: 'DJ' },
+            { name: 'Dominica', code: 'DM' },
+            { name: 'Dominican Republic', code: 'DO' },
+            { name: 'Ecuador', code: 'EC' },
+            { name: 'Egypt', code: 'EG' },
+            { name: 'El Salvador', code: 'SV' },
+            { name: 'Equatorial Guinea', code: 'GQ' },
+            { name: 'Eritrea', code: 'ER' },
+            { name: 'Estonia', code: 'EE' },
+            { name: 'Ethiopia', code: 'ET' },
+            { name: 'Falkland Islands (Malvinas)', code: 'FK' },
+            { name: 'Faroe Islands', code: 'FO' },
+            { name: 'Fiji', code: 'FJ' },
+            { name: 'Finland', code: 'FI' },
+            { name: 'France', code: 'FR' },
+            { name: 'French Guiana', code: 'GF' },
+            { name: 'French Polynesia', code: 'PF' },
+            { name: 'French Southern Territories', code: 'TF' },
+            { name: 'Gabon', code: 'GA' },
+            { name: 'Gambia', code: 'GM' },
+            { name: 'Georgia', code: 'GE' },
+            { name: 'Germany', code: 'DE' },
+            { name: 'Ghana', code: 'GH' },
+            { name: 'Gibraltar', code: 'GI' },
+            { name: 'Greece', code: 'GR' },
+            { name: 'Greenland', code: 'GL' },
+            { name: 'Grenada', code: 'GD' },
+            { name: 'Guadeloupe', code: 'GP' },
+            { name: 'Guam', code: 'GU' },
+            { name: 'Guatemala', code: 'GT' },
+            { name: 'Guernsey', code: 'GG' },
+            { name: 'Guinea', code: 'GN' },
+            { name: 'Guinea-Bissau', code: 'GW' },
+            { name: 'Guyana', code: 'GY' },
+            { name: 'Haiti', code: 'HT' },
+            { name: 'Heard Island and Mcdonald Islands', code: 'HM' },
+            { name: 'Holy See (Vatican City State)', code: 'VA' },
+            { name: 'Honduras', code: 'HN' },
+            { name: 'Hong Kong', code: 'HK' },
+            { name: 'Hungary', code: 'HU' },
+            { name: 'Iceland', code: 'IS' },
+            { name: 'India', code: 'IN' },
+            { name: 'Indonesia', code: 'ID' },
+            { name: 'Iran, Islamic Republic Of', code: 'IR' },
+            { name: 'Iraq', code: 'IQ' },
+            { name: 'Ireland', code: 'IE' },
+            { name: 'Isle of Man', code: 'IM' },
+            { name: 'Israel', code: 'IL' },
+            { name: 'Italy', code: 'IT' },
+            { name: 'Jamaica', code: 'JM' },
+            { name: 'Japan', code: 'JP' },
+            { name: 'Jersey', code: 'JE' },
+            { name: 'Jordan', code: 'JO' },
+            { name: 'Kazakhstan', code: 'KZ' },
+            { name: 'Kenya', code: 'KE' },
+            { name: 'Kiribati', code: 'KI' },
+            { name: 'Korea, Democratic People\'S Republic of', code: 'KP' },
+            { name: 'Korea, Republic of', code: 'KR' },
+            { name: 'Kuwait', code: 'KW' },
+            { name: 'Kyrgyzstan', code: 'KG' },
+            { name: 'Lao People\'S Democratic Republic', code: 'LA' },
+            { name: 'Latvia', code: 'LV' },
+            { name: 'Lebanon', code: 'LB' },
+            { name: 'Lesotho', code: 'LS' },
+            { name: 'Liberia', code: 'LR' },
+            { name: 'Libyan Arab Jamahiriya', code: 'LY' },
+            { name: 'Liechtenstein', code: 'LI' },
+            { name: 'Lithuania', code: 'LT' },
+            { name: 'Luxembourg', code: 'LU' },
+            { name: 'Macao', code: 'MO' },
+            { name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK' },
+            { name: 'Madagascar', code: 'MG' },
+            { name: 'Malawi', code: 'MW' },
+            { name: 'Malaysia', code: 'MY' },
+            { name: 'Maldives', code: 'MV' },
+            { name: 'Mali', code: 'ML' },
+            { name: 'Malta', code: 'MT' },
+            { name: 'Marshall Islands', code: 'MH' },
+            { name: 'Martinique', code: 'MQ' },
+            { name: 'Mauritania', code: 'MR' },
+            { name: 'Mauritius', code: 'MU' },
+            { name: 'Mayotte', code: 'YT' },
+            { name: 'Mexico', code: 'MX' },
+            { name: 'Micronesia, Federated States of', code: 'FM' },
+            { name: 'Moldova, Republic of', code: 'MD' },
+            { name: 'Monaco', code: 'MC' },
+            { name: 'Mongolia', code: 'MN' },
+            { name: 'Montserrat', code: 'MS' },
+            { name: 'Morocco', code: 'MA' },
+            { name: 'Mozambique', code: 'MZ' },
+            { name: 'Myanmar', code: 'MM' },
+            { name: 'Namibia', code: 'NA' },
+            { name: 'Nauru', code: 'NR' },
+            { name: 'Nepal', code: 'NP' },
+            { name: 'Netherlands', code: 'NL' },
+            { name: 'Netherlands Antilles', code: 'AN' },
+            { name: 'New Caledonia', code: 'NC' },
+            { name: 'New Zealand', code: 'NZ' },
+            { name: 'Nicaragua', code: 'NI' },
+            { name: 'Niger', code: 'NE' },
+            { name: 'Nigeria', code: 'NG' },
+            { name: 'Niue', code: 'NU' },
+            { name: 'Norfolk Island', code: 'NF' },
+            { name: 'Northern Mariana Islands', code: 'MP' },
+            { name: 'Norway', code: 'NO' },
+            { name: 'Oman', code: 'OM' },
+            { name: 'Pakistan', code: 'PK' },
+            { name: 'Palau', code: 'PW' },
+            { name: 'Palestinian Territory, Occupied', code: 'PS' },
+            { name: 'Panama', code: 'PA' },
+            { name: 'Papua New Guinea', code: 'PG' },
+            { name: 'Paraguay', code: 'PY' },
+            { name: 'Peru', code: 'PE' },
+            { name: 'Philippines', code: 'PH' },
+            { name: 'Pitcairn', code: 'PN' },
+            { name: 'Poland', code: 'PL' },
+            { name: 'Portugal', code: 'PT' },
+            { name: 'Puerto Rico', code: 'PR' },
+            { name: 'Qatar', code: 'QA' },
+            { name: 'Reunion', code: 'RE' },
+            { name: 'Romania', code: 'RO' },
+            { name: 'Russian Federation', code: 'RU' },
+            { name: 'RWANDA', code: 'RW' },
+            { name: 'Saint Helena', code: 'SH' },
+            { name: 'Saint Kitts and Nevis', code: 'KN' },
+            { name: 'Saint Lucia', code: 'LC' },
+            { name: 'Saint Pierre and Miquelon', code: 'PM' },
+            { name: 'Saint Vincent and the Grenadines', code: 'VC' },
+            { name: 'Samoa', code: 'WS' },
+            { name: 'San Marino', code: 'SM' },
+            { name: 'Sao Tome and Principe', code: 'ST' },
+            { name: 'Saudi Arabia', code: 'SA' },
+            { name: 'Senegal', code: 'SN' },
+            { name: 'Serbia and Montenegro', code: 'CS' },
+            { name: 'Seychelles', code: 'SC' },
+            { name: 'Sierra Leone', code: 'SL' },
+            { name: 'Singapore', code: 'SG' },
+            { name: 'Slovakia', code: 'SK' },
+            { name: 'Slovenia', code: 'SI' },
+            { name: 'Solomon Islands', code: 'SB' },
+            { name: 'Somalia', code: 'SO' },
+            { name: 'South Africa', code: 'ZA' },
+            { name: 'South Georgia and the South Sandwich Islands', code: 'GS' },
+            { name: 'Spain', code: 'ES' },
+            { name: 'Sri Lanka', code: 'LK' },
+            { name: 'Sudan', code: 'SD' },
+            { name: 'Suriname', code: 'SR' },
+            { name: 'Svalbard and Jan Mayen', code: 'SJ' },
+            { name: 'Swaziland', code: 'SZ' },
+            { name: 'Sweden', code: 'SE' },
+            { name: 'Switzerland', code: 'CH' },
+            { name: 'Syrian Arab Republic', code: 'SY' },
+            { name: 'Taiwan', code: 'TW' },
+            { name: 'Tajikistan', code: 'TJ' },
+            { name: 'Tanzania, United Republic of', code: 'TZ' },
+            { name: 'Thailand', code: 'TH' },
+            { name: 'Timor-Leste', code: 'TL' },
+            { name: 'Togo', code: 'TG' },
+            { name: 'Tokelau', code: 'TK' },
+            { name: 'Tonga', code: 'TO' },
+            { name: 'Trinidad and Tobago', code: 'TT' },
+            { name: 'Tunisia', code: 'TN' },
+            { name: 'Turkey', code: 'TR' },
+            { name: 'Turkmenistan', code: 'TM' },
+            { name: 'Turks and Caicos Islands', code: 'TC' },
+            { name: 'Tuvalu', code: 'TV' },
+            { name: 'Uganda', code: 'UG' },
+            { name: 'Ukraine', code: 'UA' },
+            { name: 'United Arab Emirates', code: 'AE' },
+            { name: 'United Kingdom', code: 'GB' },
+            { name: 'United States', code: 'US' },
+            { name: 'United States Minor Outlying Islands', code: 'UM' },
+            { name: 'Uruguay', code: 'UY' },
+            { name: 'Uzbekistan', code: 'UZ' },
+            { name: 'Vanuatu', code: 'VU' },
+            { name: 'Venezuela', code: 'VE' },
+            { name: 'Viet Nam', code: 'VN' },
+            { name: 'Virgin Islands, British', code: 'VG' },
+            { name: 'Virgin Islands, U.S.', code: 'VI' },
+            { name: 'Wallis and Futuna', code: 'WF' },
+            { name: 'Western Sahara', code: 'EH' },
+            { name: 'Yemen', code: 'YE' },
+            { name: 'Zambia', code: 'ZM' },
+            { name: 'Zimbabwe', code: 'ZW' }
+        ];
+
+        var titles = [
+
+            { name: 'Mr.', code: 'Mr' },
+            { name: 'Mrs.', code: 'Mrs' },
+            { name: 'Ms.', code: 'Ms' },
+            { name: 'Dr.', code: 'Dr' },
+            { name: 'Prof.', code: 'Prof' }
+
+        ];
+
+
+
+
+        function closenotification(notificationid) {
+
+
+
+
+
+
+
+            if ($('#' + notificationid).length > 0) {
+
+
+
+                $('#' + notificationid).jqxNotification('closeAll');
+
+
+            }
+
+
+
+        }
+
+
+
+
+
+        function isNotEmpty(value) {
+
+
+
+            if (typeof value !== 'undefined') {
+
+
+
+                if (value !== null) {
+
+
+                    if (value) {
+
+
+
+                        return true;
+
+
+                    } else {
+
+
+
+
+                        return false;
+
+
+                    }
+
+
+
+                } else {
+
+
+                    return false;
+
+
+                }
+
+
+
+
+
+
+            } else {
+                return false;
+            }
+
+
+
+        }
+
+        var cellsrenderer_akosdbstructure = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+            var datarow = $("#shoppinggrid").jqxGrid("getrowdata", row);
+
+
+
+
+
+
+            var html = "<img width='80' height= '80' src='https://akoscompounds.de/webinquiryappbingo/structureimages/" + datarow.registryid + ".png" + "'" + " title='Click to Zoom structure' >";
+
+
+            return html;
+
+
+
+
+
+
+
+
+        };
+
+
+        var cellsrenderer_deleterow = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+            
+
+
+
+
+
+
+            var html = "<div style='width: 160px; height: 80px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; height: 40px; width: 100px;cursor: pointer' value='Delete request' /></center></div>";
+
+
+            return html;
+
+
+
+
+
+
+
+
+        };
+
+        var cellsrenderer_quantityinformation = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+
+            var html = "<ul style='padding: 0px'>";
+
+            const myArray = value.split("^");
+
+            for (var i = 0; i < myArray.length; i++) {
+                var quantityinfo = myArray[i];
+                html += "<li style='margin-left: 2px;padding: 0px'>" + quantityinfo + "</li>";
+
+            }
+
+            html += "</ul>";
+
+            return html;
+
+
+
+
+
+
+
+
+        };
+
+
+
+
+        var cellclassreport = function (row, columnfield, value) {
+
+            var datarow = $("#popupwindowreport_grid").jqxGrid("getrowdata", row);
+
+            if (datarow.bisidenticalwithquery) {
+
+                return 'green';
+            }
+        }
+
+
+
+
+
+
+
+        var downloadFile = function (data, type, fileName) {
+
+            let file;
+
+            if (!fileName) {
+                return data;
+            }
+
+            if (data instanceof Blob) {
+                file = data;
+            }
+            else {
+                file = new Blob([data], { type: type });
+            }
+
+            if (window.navigator.msSaveOrOpenBlob) { // Edge
+                window.navigator.msSaveOrOpenBlob(file, fileName);
+            }
+            else { // Chrome, Firefox, Safari
+                const a = document.createElement('a'),
+                    url = URL.createObjectURL(file);
+
+                a.href = url;
+                a.download = fileName;
+                a.style.position = 'absolute';
+                a.style.visibility = 'hidden';
+
+                document.body.appendChild(a);
+
+                a.click();
+
+                setTimeout(function () {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 0);
+            }
+        };
+
+
+        $(document).ready(function () {
+
+
+
+            document.getElementById("popupwindowshoppingcard").style.display = 'block';
+
+
+
+
+            document.getElementById("popupwindowcontactcard").style.display = 'block';
+
+            document.getElementById("zoomketcherwindow").style.display = 'block';
+
+
+
+            document.getElementById("deleteallrequests_confirmwindow").style.display = 'block';
+
+            document.getElementById("deletesinglerequest_confirmwindow").style.display = 'block';
+
+            document.getElementById("messagenotification").style.display = 'block';
+
+
+
+            document.getElementById("messagenotification_autoclose").style.display = 'block';
+
+            document.getElementById("shoppinggrid").style.display = 'block';
+
+            document.getElementById("popupwindowfeedbackform").style.display = 'block';
+
+            $("#popupwindowfeedbackform").jqxWindow({
+
+                position: "center", resizable: false, isModal: false, autoOpen: false, width: 550, height: 350
+
+            });
+
+
+            closenotification("Requestspagenotification");
+
+
+            closenotification("messagenotification");
+
+
+            $("#Requestspagenotification").jqxNotification({
+                width: "100%", height: "100%", opacity: 0.9, autoOpen: false,
+                closeOnClick: true, autoClose: false, showCloseButton: true, template: "info", appendContainer: "#Requestspagenotificationcontainer"
+            });
+
+            $("#Requestspagenotification").jqxNotification("open");
+
+
+
+
+
+            var btn_navigation_search = $("#btn_navigation_search");
+
+            btn_navigation_search.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_search.click(function (event) {
+
+                window.location.href = "https://akoscompounds.de/webinquiryappbingo/index.html";
+            });
+
+            var btn_navigation_drawstructure = $("#btn_navigation_drawstructure");
+
+            btn_navigation_drawstructure.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_drawstructure.click(function (event) {
+
+                window.location.href = "https://akoscompounds.de/webinquiryappbingo/draw-search.html";
+            });
+
+            var btn_navigation_results = $("#btn_navigation_results");
+
+            btn_navigation_results.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_results.click(function (event) {
+
+                window.location.href = "https://akoscompounds.de/webinquiryappbingo/results.html";
+            });
+
+
+            var btn_navigation_contact = $("#btn_navigation_contact");
+
+
+
+            btn_navigation_contact.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_contact.click(function (event) {
+
+                window.location.href = "https://akoscompounds.de/webinquiryappbingo/contact.html";
+            });
+
+            var btn_navigation_about = $("#btn_navigation_about");
+
+
+
+            btn_navigation_about.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_about.click(function (event) {
+
+                window.location.href = "https://akoscompounds.de/webinquiryappbingo/about.html";
+            });
+
+
+
+
+
+
+            var btn_navigation_requests = $("#btn_navigation_requests");
+
+
+            //btn_navigation_requests.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_requests.jqxButton({ width: 100, height: 50, imgPosition: "left", textPosition: "left", imgSrc: "images/shopping_cart.png", textImageRelation: "imageBeforeText" });
+
+
+
+
+            if (sessionStorage.getItem("shoppingitems") === null) {
+
+                $('#btn_navigation_requests').jqxButton({ value: "Cart (0)" });
+
+
+            } else {
+
+                var data = sessionStorage.getItem("shoppingitems")
+
+                var rows = JSON.parse(data);
+
+                $('#btn_navigation_requests').jqxButton({ value: "Cart (" + rows.length + ")" });
+
+
+
+
+            }
+
+
+
+            //btn_navigation_requests.click(function (event) {
+
+            //    window.location.href = "requests.html";
+
+
+
+
+
+
+            //});
+
+            $("#btn_navigation_requests").on('click', function () {
+
+
+
+
+
+                window.location.href = "https://akoscompounds.de/webinquiryappbingo/requests.html";
+
+            });
+
+
+
+
+            var btn_navigation_requests_continueshopping = $("#btn_navigation_requests_continueshopping");
+
+
+
+            btn_navigation_requests_continueshopping.jqxButton({ width: 150, height: 50 });
+
+            btn_navigation_requests_continueshopping.click(function (event) {
+
+                window.location.href = "https://akoscompounds.de/webinquiryappbingo/index.html";
+
+
+
+
+
+
+            });
+
+            var btn_sendrequest = $("#btn_sendrequest");
+
+
+
+
+            btn_sendrequest.jqxButton({ width: 150, height: 50, template: "danger" });
+
+            btn_sendrequest.click(function (event) {
+
+
+                var numberofshoppingitems = $('#shoppinggrid').jqxGrid('getrows');
+
+                if (numberofshoppingitems.length == 0) {
+
+                    requestbutton.jqxTooltip({ autoHideDelay: 2000, content: 'No items added to shopping list', position: 'left', autoHide: true, trigger: "none", closeOnClick: true });
+
+                    requestbutton.jqxTooltip("open");
+                } else {
+
+
+
+
+
+
+
+                    // validate request items
+
+
+                    $("#popupwindowcontactcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowcontactcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowcontactcard").jqxWindow("height") / 2);
+
+                    $("#popupwindowcontactcard").jqxWindow({ resizable: true });
+                    $("#popupwindowcontactcard").jqxWindow('open');
+
+
+
+
+
+                }
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var source = {
+                datatype: "json",
+                datafields: [
+                    { name: 'UnitUIlabel' },
+                    { name: 'UnitValue' }
+                ],
+                localdata: units,
+                async: true
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+            $("#units").jqxDropDownList({
+                selectedIndex: 1, source: dataAdapter, displayMember: "UnitUIlabel", valueMember: "UnitValue", width: 200, height: 30
+            });
+
+
+
+            var source = {
+                datatype: "json",
+                datafields: [
+                    { name: 'name' },
+                    { name: 'code' }
+                ],
+                localdata: countries,
+                async: true
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+            $("#country").jqxComboBox({
+                source: dataAdapter, displayMember: "name", valueMember: "code", width: 255, height: 30
+            });
+
+
+
+            var titlesource = {
+                datatype: "json",
+                datafields: [
+                    { name: 'name' },
+                    { name: 'code' }
+                ],
+                localdata: titles,
+                async: true
+            };
+            var titledataAdapter = new $.jqx.dataAdapter(titlesource);
+            $("#title").jqxComboBox({
+                source: titledataAdapter, displayMember: "name", valueMember: "code", width: 200, height: 30
+            });
+
+
+
+
+            var style = {
+
+                backgroundColor: 'LemonChiffon'
+
+            };
+
+            $("#shoppinggrid").jqxGrid({
+                width: "100%",
+
+                rowsheight: 80,
+                selectionmode: 'singlecell',
+                autoheight: true,
+                groupable: true,
+                sortable: false,
+                filterable: false,
+                showgroupmenuitems: false,
+                showgroupsheader: false,
+
+                enablebrowserselection: true,
+
+
+
+
+
+                source: {
+                    unboundmode: true, datafields: [
+                        { name: 'cid', type: 'string' },
+                        { name: 'registryid' },
+
+                        { name: 'casnumber' },
+                        { name: 'molname' },
+
+                        { name: 'quantity' },
+                        { name: 'unit' },
+                        { name: 'additionalinformation' }
+                    ]
+                },
+
+                rendered: function (type) {
+
+
+                    if (type == "full") {
+
+                        $("#shoppinggrid").jqxGrid('expandallgroups');
+
+                    }
+                },
+
+                showtoolbar: true,
+                toolbarheight: 60,
+                rendertoolbar: function (statusbar) {
+
+
+
+                    /*var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");*/
+
+                    var container = $("<div style='float: left; display: flex; flex-direction: row; justify-content: center; align-items: center; height: 60px;'></div>");
+
+
+
+
+
+
+
+
+                    var exportxlsbutton = $("<div style='-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; float: left; margin-left: 5px;cursor: pointer; border-style: solid'><span style='display: flex; align-items: normal; justify-content: center;'>Export to Excel</span></div>");
+                    container.append(exportxlsbutton);
+
+                    var exportsdfbutton = $("<div style='-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; float: left; margin-left: 5px;cursor: pointer; border-style: solid'><span style='display: flex; align-items: normal; justify-content: center;'>Export to SDF</span></div>");
+                    container.append(exportsdfbutton);
+
+                    var deleteallshoppingitemsbutton = $("<div style='-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; float: left; margin-left: 20px;cursor: pointer; border-style: solid'><span style='display: flex; align-items: normal; justify-content: center;'>Delete all</span></div>");
+                    container.append(deleteallshoppingitemsbutton);
+
+
+
+
+
+
+
+                    statusbar.append(container);
+
+
+                    exportsdfbutton.jqxButton({ width: 100, height: 20, template: 'default' });
+                    exportsdfbutton.click(function (event) {
+
+
+
+                        var rows = $('#shoppinggrid').jqxGrid('getrows');
+
+                        var akosnumbers = [];
+
+
+                        for (var i = 0; i < rows.length; i++) {
+
+
+                            akosnumbers.push(rows[i].registryid);
+
+
+
+                        }
+
+
+                        $('#jqxLoader').jqxLoader('open');
+
+
+                        jdata = {};
+
+                        if (sessionStorage.getItem("sessionid") !== null) {
+
+                            var sessionid = sessionStorage.getItem("sessionid");
+
+                            if (isNotEmpty(sessionid)) {
+
+                                jdata.sessionid = sessionid;
+
+
+                            }
+                        }
+
+
+                        jdata.akosnumbers = akosnumbers;
+
+
+                        $.ajax({
+                            type: "POST",
+
+                            url: "https://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/CreateSDFileForAKosnumbers",
+                            cache: false,
+                            data: JSON.stringify(jdata),
+                            success: function (response) {
+                                $('#jqxLoader').jqxLoader('close');
+                                if (response.errorflag) {
+
+                                    closenotification("Requestspagenotification");
+
+
+                                    closenotification("messagenotification");
+
+
+                                    $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Requestspagenotificationcontainer" });
+                                    $("#messagenotification").find("div").first().text("Error calling CreateSDFileForAKosnumbers. Message : " + response.errortext);
+                                    $("#messagenotification").jqxNotification("open");
+                                } else {
+
+
+                                    let data = response.resultobject;
+
+
+
+                                    const mediumTime = new Intl.DateTimeFormat("en", {
+                                        timeStyle: "medium",
+                                        dateStyle: "medium"
+                                    });
+
+
+                                    var currentdate = mediumTime.format(Date.now());
+
+                                    currentdate = currentdate.replaceAll(',', '')
+
+                                    currentdate = currentdate.replaceAll(' ', '_')
+
+                                    currentdate = currentdate.replaceAll(':', '-')
+
+
+                                    const filename = "akosrequest_" + currentdate + ".sdf";
+                                    downloadFile(data, 'text/plain', filename);
+
+
+
+                                    closenotification("Requestspagenotification");
+
+
+                                    closenotification("messagenotification");
+
+                                    $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'success', appendContainer: "#Requestspagenotificationcontainer" });
+
+                                    $("#messagenotification").find("div").first().text("File downloaded");
+                                    $("#messagenotification").jqxNotification("open");
+
+                                }
+                            },
+                            error: function (error) {
+                                $('#jqxLoader').jqxLoader('close');
+
+                                closenotification("Requestspagenotification");
+
+
+                                closenotification("messagenotification");
+
+
+                                $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Requestspagenotificationcontainer" });
+                                $("#messagenotification").find("div").first().text("Error calling CreateSDFileForAKosnumbers. Status : " + error.status);
+                                $("#messagenotification").jqxNotification("open");
+                            }
+                        });
+
+
+
+
+
+
+
+
+                    });
+
+
+
+
+
+
+
+
+                    deleteallshoppingitemsbutton.jqxButton({ width: 100, height: 20, template: "default" });
+                    deleteallshoppingitemsbutton.click(function (event) {
+
+                        $("#deleteallrequests_confirmwindow").jqxWindow({ width: 300, height: 100 });
+
+
+                        $('#deleteallrequests_confirmwindow').jqxWindow('open')
+
+                        $('#deleteallrequests_confirmwindow').on('close', function (event) {
+
+                            if (event.args.dialogResult.OK) {
+                                var eventData = 'OK';
+                            } else if (event.args.dialogResult.Cancel) {
+                                var eventData = 'Cancel';
+                            } else {
+                                var eventData = 'None';
+                            }
+
+
+
+                            if (eventData == "Cancel") {
+
+
+                                return;
+                            } else {
+
+                                var rows = $("#shoppinggrid").jqxGrid('getrows');
+                                var ids = new Array();
+                                for (var i = 0; i < rows.length; i++) {
+                                    var id = $("#shoppinggrid").jqxGrid('getrowid', i);
+                                    ids.push(id);
+                                }
+                                $("#shoppinggrid").jqxGrid('deleterow', ids);
+
+
+
+                                sessionStorage.removeItem("shoppingitems");
+
+                                $('#btn_navigation_requests').jqxButton({ value: "Cart (0)" });
+
+
+                            }
+
+
+
+                        });
+
+
+
+                    });
+
+
+
+
+
+
+                    exportxlsbutton.jqxButton({ width: 150, height: 20, template: 'default' });
+
+                    exportxlsbutton.click(function (event) {
+
+
+
+
+
+                        $('#shoppinggrid').jqxGrid('cleargroups');
+
+                        $('#shoppinggrid').jqxGrid('addgroup', 'registryid');
+
+                        $("#shoppinggrid").jqxGrid('expandallgroups');
+
+
+
+                        const mediumTime = new Intl.DateTimeFormat("en", {
+                            timeStyle: "medium",
+                            dateStyle: "medium"
+                        });
+
+
+                        var currentdate = mediumTime.format(Date.now());
+
+                        currentdate = currentdate.replaceAll(',', '')
+
+                        currentdate = currentdate.replaceAll(' ', '_')
+
+                        currentdate = currentdate.replaceAll(':', '-')
+
+
+                        const filename = "akosrequest_" + currentdate;
+
+                        $("#shoppinggrid").jqxGrid('exportview', 'xlsx', filename);
+
+
+
+                        closenotification("Requestspagenotification");
+
+
+                        closenotification("messagenotification");
+
+                        $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'success', appendContainer: "#Requestspagenotificationcontainer" });
+
+                        $("#messagenotification").find("div").first().text("File downloaded");
+                        $("#messagenotification").jqxNotification("open");
+                    });
+
+
+
+
+
+
+
+
+
+
+
+
+                },
+                columns: [
+                    { text: 'Picturelink', datafield: 'strucutureimageurl', width: 100, hidden: true, editable: false, exportable: false },
+                    { text: '', classname: 'columnheader', dataField: 'cid', width: 80, cellsrenderer: cellsrenderer_akosdbstructure, editable: false, exportable: false },
+                    { text: 'AKos Number', classname: 'columnheader', dataField: 'registryid', width: 250 },
+
+                    { text: 'CAS number', classname: 'columnheader', dataField: 'casnumber', width: 250 },
+
+                    { text: 'Molname', classname: 'columnheader', dataField: 'molname', width: 250 },
+
+                    { text: 'Quantity', classname: 'columnheader', dataField: 'quantity', width: 80 },
+                    { text: 'Unit', classname: 'columnheader', dataField: 'unit', width: 50 },
+                    { text: 'Additional information', classname: 'columnheader', dataField: 'additionalinformation' },
+
+
+                    
+
+                    {
+                        text: "",
+
+                        exportable: false,
+                        datafield: "add",
+                        columntype: "custom",
+                        width: 160,
+                        classname: 'columnheader',
+                        /*style: style,*/
+                        cellsrenderer: function () {
+
+                            /*var html = "<div style='width: 160px; height: 80px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='height: 40px; width: 150px;cursor: pointer; border-style: solid' value='Add additional quantity' /></center></div>";*/
+
+                            var html = "<div style='width: 160px; height: 80px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; height: 40px; width: 150px;cursor: pointer' value='Add additional quantity' /></center></div>";
+
+
+
+
+
+                            return html;
+
+
+                        },
+                        buttonclick: function (row) {
+
+
+
+
+
+                            var data = $('#shoppinggrid').jqxGrid('getrowdata', row);
+
+                            $("#akosnumber").val(data.registryid);
+
+                            $('#quantity').jqxNumberInput('val', 0);
+
+
+                            var source = {
+                                datatype: "json",
+                                datafields: [
+                                    { name: 'UnitUIlabel' },
+                                    { name: 'UnitValue' }
+                                ],
+                                localdata: units,
+                                async: true
+                            };
+                            var dataAdapter = new $.jqx.dataAdapter(source);
+                            $("#units").jqxDropDownList({
+                                selectedIndex: 1, source: dataAdapter, displayMember: "UnitUIlabel", valueMember: "UnitValue", width: 200, height: 30
+                            });
+
+                            $('#additionalinformation').jqxTextArea('val', '');
+
+
+
+                            $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+
+
+                            $("#popupwindowshoppingcard").jqxWindow({ title: 'Add' });
+
+
+
+
+                            $("#btn_popupwindowshoppingcard").jqxButton({ value: "Add" });
+
+
+                            $('#popupwindowshoppingcard').jqxWindow({ width: 350 });
+                            $('#popupwindowshoppingcard').jqxWindow({ height: 300 });
+
+
+                            $("#popupwindowshoppingcard").jqxWindow('open');
+
+
+                        }
+                    },
+                    {
+                        text: "", exportable: false,
+                        datafield: "edit",
+                        columntype: "custom",
+                        width: 160,
+                        classname: 'columnheader',
+                        /*style: style,*/
+                        cellsrenderer: function () {
+
+
+
+                            /*var html = "<div style='width: 160px; height: 80px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='height: 40px; width: 150px;cursor: pointer; border-style: solid' value='Edit request' /></center></div>";*/
+
+                            var html = "<div style='width: 160px; height: 80px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; height: 40px; width: 100px;cursor: pointer' value='Edit request' /></center></div>";
+
+
+
+                            return html;
+
+
+                        },
+                        buttonclick: function (row) {
+
+                            alert("edit")
+
+                            editshoppingrow = row;
+
+                            var data = $('#shoppinggrid').jqxGrid('getrowdata', editshoppingrow);
+
+                            $("#akosnumber").val(data.registryid);
+                            $('#quantity').val(data.quantity);
+
+
+                            $("#units").jqxDropDownList('val', data.unit);
+                            $("#additionalinformation").val(data.additionalinformation);
+                            $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+                            $("#popupwindowshoppingcard").jqxWindow({ title: 'Edit' });
+
+
+
+                            $("#btn_popupwindowshoppingcard").jqxButton({ value: "Edit" });
+
+
+                            $('#popupwindowshoppingcard').jqxWindow({ width: 350 });
+                            $('#popupwindowshoppingcard').jqxWindow({ height: 300 });
+
+
+                            $("#popupwindowshoppingcard").jqxWindow('open');
+                        }
+                    },
+
+                    { text: '', classname: 'columnheader', width: 160, cellsrenderer: cellsrenderer_deleterow },
+                    //{
+                    //    text: "",
+
+                    //    exportable: false,
+                    //    datafield: "ID",
+                    //    columntype: "button",
+                    //    width: 160,
+                    //    /*style: style,*/
+                    //    cellsrenderer: function () {
+
+
+
+
+                    //        /*var html = "<div style='width: 160px; height: 80px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='height: 40px; width: 150px;cursor: pointer; border-style: solid' value='Delete request' /></center></div>";*/
+
+                    //        var html = "<div style='width: 160px; height: 80px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='-moz-border-radius: 20px; -webkit-border-radius: 20px; color: white; background-color: #8A1E1E; height: 40px; width: 100px;cursor: pointer' value='Delete request' /></center></div>";
+
+
+
+                    //        return html;
+
+
+                    //    },
+                    //    buttonclick: function (row) {
+
+                    //        var value = $('#shoppinggrid').jqxGrid('getcellvalue', row, "ID");
+
+
+                    //        alert(value)
+
+                    //        //$("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+
+
+                    //        //$("#popupwindowshoppingcard").jqxWindow({ title: 'Add' });
+
+
+
+
+                    //        //$("#btn_popupwindowshoppingcard").jqxButton({ value: "Add" });
+
+
+                    //        //$('#popupwindowshoppingcard').jqxWindow({ width: 350 });
+                    //        //$('#popupwindowshoppingcard').jqxWindow({ height: 300 });
+
+
+                    //        //$("#popupwindowshoppingcard").jqxWindow('open');
+
+                    //        //$("#deletesinglerequest_confirmwindow").jqxWindow({ width: 300, height: 100 });
+
+
+                    //        //$('#deletesinglerequest_confirmwindow').jqxWindow('open')
+
+                    //        //$('#deletesinglerequest_confirmwindow').on('close', function (event) {
+
+                    //        //    if (event.args.dialogResult.OK) {
+                    //        //        var eventData = 'OK';
+                    //        //    } else if (event.args.dialogResult.Cancel) {
+                    //        //        var eventData = 'Cancel';
+                    //        //    } else {
+                    //        //        var eventData = 'None';
+                    //        //    }
+
+
+
+                    //        //    if (eventData == "Cancel") {
+
+
+                    //        //        return;
+                    //        //    } else {
+
+                    //        //        var id = $("#shoppinggrid").jqxGrid("getrowid", row);
+                    //        //        var rowData = $("#shoppinggrid").jqxGrid("getrowdatabyid", id);
+                    //        //        var commit = $("#shoppinggrid").jqxGrid("deleterow", id);
+
+                    //        //        var rows = $('#shoppinggrid').jqxGrid('getrows');
+
+
+
+
+                    //        //        var jsonstring = JSON.stringify(rows);
+
+                    //        //        sessionStorage.setItem("shoppingitems", jsonstring);
+
+
+
+                    //        //        $('#btn_navigation_requests').jqxButton({ value: "Cart (" + rows.length + ")" });
+
+                    //        //        //var rows = $("#shoppinggrid").jqxGrid('getrows');
+                    //        //        //var ids = new Array();
+                    //        //        //for (var i = 0; i < rows.length; i++) {
+                    //        //        //    var id = $("#shoppinggrid").jqxGrid('getrowid', i);
+                    //        //        //    ids.push(id);
+                    //        //        //}
+                    //        //        //$("#shoppinggrid").jqxGrid('deleterow', ids);
+
+
+
+                    //        //        //sessionStorage.removeItem("shoppingitems");
+
+                    //        //        //$('#btn_navigation_requests').jqxButton({ value: "Cart (0)" });
+
+
+                    //        //    }
+
+
+
+                    //        //});
+
+
+
+                            
+
+
+
+
+
+
+                    //    }
+                    //}
+
+                ]
+            });
+
+
+            //$("#shoppinggrid").on("cellclick", function (event) {
+            //    // event arguments.
+            //    const args = event.args;
+            //    // row's bound index.
+            //    const rowBoundIndex = args.rowindex;
+            //    // row's visible index.
+            //    const rowVisibleIndex = args.visibleindex;
+            //    // right click.
+            //    const rightclick = args.rightclick;
+            //    // original event.
+            //    const ev = args.originalEvent;
+            //    // column index.
+            //    const columnindex = args.columnindex;
+            //    // column data field.
+            //    const dataField = args.datafield;
+            //    // cell value
+            //    const value = args.value;
+
+            //    alert("rowBoundIndex " + args.rowindex + " rowVisibleIndex " + args.visibleindex + " columnindex " + args.columnindex + " dataField " + args.datafield + " value " + args.value)
+
+            //    if (columnindex == 11) {
+
+
+            //    }
+
+            //});
+
+
+            $("#shoppinggrid").on("cellclick", function (event) {
+
+
+
+
+
+                var args = event.args;
+                // row's bound index.
+                var rowBoundIndex = args.rowindex;
+                // row's visible index.
+                var rowVisibleIndex = args.visibleindex;
+                // right click.
+                var rightclick = args.rightclick;
+                // original event.
+                var ev = args.originalEvent;
+                // column index.
+                var columnindex = args.columnindex;
+                // column data field.
+                var dataField = args.datafield;
+
+
+                $("#shoppinggrid").jqxGrid('selectrow', rowBoundIndex);
+
+
+                if (columnindex == 11) {
+
+                    // delete requested
+
+
+                    $("#deletesinglerequest_confirmwindow").jqxWindow({ width: 300, height: 100 });
+
+
+
+                    $('#deletesinglerequest_confirmwindow').jqxWindow('open')
+
+
+                    $('#deletesinglerequest_confirmwindow').on('close', function (event) {
+
+
+                        if (event.args.dialogResult.OK) {
+
+                            var eventData = 'OK';
+
+                        } else if (event.args.dialogResult.Cancel) {
+
+                            var eventData = 'Cancel';
+
+                        } else {
+
+                            var eventData = 'None';
+
+                        }
+
+
+
+
+                        if (eventData == "Cancel") {
+
+
+
+                            return;
+
+                        } else {
+
+
+                            var rowid = $("#shoppinggrid").jqxGrid("getrowid", args.rowindex);
+
+                            
+
+                            var commit = $("#shoppinggrid").jqxGrid("deleterow", rowid);
+
+
+                            var rows = $('#shoppinggrid').jqxGrid('getrows');
+
+
+
+
+
+                            var jsonstring = JSON.stringify(rows);
+
+
+                            sessionStorage.setItem("shoppingitems", jsonstring);
+
+
+
+
+                            $('#btn_navigation_requests').jqxButton({ value: "Cart (" + rows.length + ")" });
+
+
+
+
+
+
+                        }
+
+                    });
+
+
+
+
+                } else if (dataField == "cid") {
+
+                    var datarow = $('#shoppinggrid').jqxGrid('getrowdata', rowBoundIndex);
+
+                    var akosnumber = datarow.registryid
+
+                    jdata = {};
+
+
+                    jdata.akosnumber = akosnumber;
+
+                    $('#jqxLoader').jqxLoader('open');
+                    $.ajax({
+
+                        type: "POST",
+
+                        url: "https://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/GetMolfiledataforAkosnumber",
+                        cache: false,
+                        data: JSON.stringify(jdata),
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            if (response.errorflag) {
+
+                                closenotification("Requestspagenotification");
+
+
+                                closenotification("messagenotification");
+
+
+
+                                $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Requestspagenotificationcontainer" });
+                                $("#messagenotification").find("div").first().text("Error calling GetMolfiledataforAkosnumber. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                var molfile = response.resultobject;
+
+
+                                var ketcherFrame = document.getElementById('zoomketcherwindow_ketcher');
+
+                                var ketcher = ketcherFrame.contentWindow.ketcher;
+
+                                ketcher.setMolecule(molfile);
+
+                                $("#zoomketcherwindow").jqxWindow({ width: 800, height: 700 });
+
+
+                                $("#zoomketcherwindow").jqxWindow('open');
+
+
+
+                            }
+
+
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+
+                            closenotification("Requestspagenotification");
+
+
+                            closenotification("messagenotification");
+
+
+                            $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Requestspagenotificationcontainer" });
+                            $("#messagenotification").find("div").first().text("Error calling GetMolfiledataforAkosnumber. Status : " + error.status);
+                            $("#messagenotification").jqxNotification("open");
+
+
+                        }
+
+
+
+
+                    });
+
+
+
+                } else {
+
+                    if (dataField === "add") {
+
+                        var data = $('#shoppinggrid').jqxGrid('getrowdata', rowBoundIndex);
+
+
+
+                        $("#akosnumber").val(data.registryid);
+
+
+                        $("#popupwindowshoppingcardform_casnumber").val(data.casnumber);
+
+                        $("#popupwindowshoppingcardform_molname").val(data.molname);
+
+
+
+
+                        $('#quantity').jqxNumberInput('val', 0);
+
+
+                        var source = {
+                            datatype: "json",
+                            datafields: [
+                                { name: 'UnitUIlabel' },
+                                { name: 'UnitValue' }
+                            ],
+                            localdata: units,
+                            async: true
+                        };
+                        var dataAdapter = new $.jqx.dataAdapter(source);
+                        $("#units").jqxDropDownList({
+                            selectedIndex: 1, source: dataAdapter, displayMember: "UnitUIlabel", valueMember: "UnitValue", width: 200, height: 30
+                        });
+
+                        $('#additionalinformation').jqxTextArea('val', '');
+
+                        $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+
+
+                        $("#popupwindowshoppingcard").jqxWindow({ title: 'Add' });
+
+
+
+
+                        $("#btn_popupwindowshoppingcard").jqxButton({ value: "Add" });
+
+                        $('#popupwindowshoppingcard').jqxWindow({ width: 350 });
+                        $('#popupwindowshoppingcard').jqxWindow({ height: 300 });
+
+
+                        $("#popupwindowshoppingcard").jqxWindow('open');
+                    }
+
+                    if (dataField === "edit") {
+
+                        editshoppingrow = rowBoundIndex;
+
+                        var data = $('#shoppinggrid').jqxGrid('getrowdata', editshoppingrow);
+
+                        $("#akosnumber").val(data.registryid);
+                        $('#quantity').val(data.quantity);
+
+
+                        $("#units").jqxDropDownList('val', data.unit);
+                        $("#additionalinformation").val(data.additionalinformation);
+                        $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+                        $("#popupwindowshoppingcard").jqxWindow({ title: 'Edit' });
+
+
+
+                        $("#btn_popupwindowshoppingcard").jqxButton({ value: "Edit" });
+
+
+                        $('#popupwindowshoppingcard').jqxWindow({ width: 350 });
+                        $('#popupwindowshoppingcard').jqxWindow({ height: 300 });
+
+
+
+                        $("#popupwindowshoppingcard").jqxWindow('open');
+                    }
+
+                    //if (dataField === "delete") {
+
+                    //    var id = $("#shoppinggrid").jqxGrid("getrowid", rowBoundIndex);
+                    //    var rowData = $("#shoppinggrid").jqxGrid("getrowdatabyid", id);
+                    //    var commit = $("#shoppinggrid").jqxGrid("deleterow", id);
+
+
+
+                    //    var rows = $('#shoppinggrid').jqxGrid('getrows');
+
+                    //    var jsonstring = JSON.stringify(rows);
+
+                    //    sessionStorage.setItem("shoppingitems", jsonstring);
+
+                    //    $('#btn_navigation_requests').jqxButton({ value: "Cart (" + rows.length + ")" });
+
+
+
+                    //}
+                }
+
+
+            });
+
+            if (sessionStorage.getItem("shoppingitems") != null) {
+
+                var data = sessionStorage.getItem("shoppingitems");
+                var importdata = JSON.parse(data);
+
+                var jsonstring = JSON.stringify(importdata);
+
+
+
+                var shoppinggrid_gridsource_dataFields = [
+
+                    { name: 'strucutureimageurl', type: 'string' },
+
+                    { name: 'cid', type: 'string' },
+
+                    { name: 'registryid', type: 'string' },
+
+                    { name: 'casnumber', type: 'string' },
+
+                    { name: 'molname', type: 'string' },
+
+                    { name: 'quantity', type: 'number' },
+
+                    { name: 'unit', type: 'string' },
+
+                    { name: 'additionalinformation', type: 'string' }
+                ];
+
+                var shoppinggrid_gridsource = {
+
+                    datatype: "json",
+
+                    datafields: shoppinggrid_gridsource_dataFields,
+
+
+
+
+                    localdata: importdata
+
+
+                };
+
+                var shoppinggrid_griddataAdapter = new $.jqx.dataAdapter(shoppinggrid_gridsource);
+
+                $("#shoppinggrid").jqxGrid({ source: shoppinggrid_griddataAdapter });
+
+                $('#shoppinggrid').jqxGrid('updatebounddata');
+
+                $('#shoppinggrid').jqxGrid('cleargroups');
+
+                $('#shoppinggrid').jqxGrid('addgroup', 'registryid');
+
+                $("#shoppinggrid").jqxGrid('expandallgroups');
+
+            }
+
+
+
+
+            var ketcher;
+
+            //$("#messagenotification").jqxNotification({
+            //    width: 250,
+            //    position: "top-right",
+            //    opacity: 0.9,
+            //    autoOpen: false,
+            //    animationOpenDelay: 800,
+            //    autoClose: false,
+            //    autoCloseDelay: 3000,
+            //    showCloseButton: true
+            //});
+
+            //$("#messagenotification_autoclose").jqxNotification({
+            //    width: 250,
+            //    position: "top-right",
+            //    opacity: 0.9,
+            //    autoOpen: false,
+            //    animationOpenDelay: 800,
+            //    autoClose: true,
+            //    autoCloseDelay: 3000,
+            //    showCloseButton: true
+            //});
+
+
+
+
+
+
+
+
+
+
+
+            $("#zoomketcherwindow").jqxWindow({
+                width: 800,
+                height: 700,
+                position: "center",
+                resizable: true,
+                isModal: false,
+                autoOpen: false,
+
+                modalOpacity: 0.01
+
+
+            });
+
+            $("#akosnumber").jqxInput({ height: 30, width: 200, disabled: true });
+
+
+            $("#quantity").jqxNumberInput({ inputMode: 'advanced', decimalDigits: 0, groupSeparator: "", digits: 4, groupSize: 0, width: 200, height: 23, spinButtons: false });
+
+
+
+
+
+
+
+            $('#additionalinformation').jqxTextArea({ placeHolder: 'Enter information', height: 90, width: 200, minLength: 1 });
+            $('#additionalinformation').jqxTextArea('val', '');
+
+
+
+
+
+
+
+
+
+            $("#popupwindowshoppingcard").jqxWindow({
+
+                position: "center",
+                resizable: true,
+                isModal: false,
+                autoOpen: false,
+
+                modalOpacity: 0.01
+
+
+            });
+            $("#popupwindowshoppingcard").on('open', function () {
+
+                $('#popupwindowshoppingcard').jqxWindow({ width: 350 });
+                $('#popupwindowshoppingcard').jqxWindow({ height: 300 });
+                if (editshoppingrow >= 0) {
+
+                } else {
+
+
+
+
+                }
+            });
+
+            $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+
+            $("#popupwindowshoppingcard").on('close', function () {
+
+                editshoppingrow = -1;
+
+            });
+
+            $("#btn_popupwindowshoppingcard").jqxButton({});
+
+            $("#btn_popupwindowshoppingcard").click(function () {
+
+                var validationresult = $('#popupwindowshoppingcardform').jqxValidator('validate');
+
+                if (validationresult) {
+
+
+                    var buttonvalue = $("#btn_popupwindowshoppingcard").jqxButton('val');
+
+
+
+                    if (buttonvalue === "Add") {
+
+
+
+                        var akosnumber = $("#akosnumber").val();
+
+
+
+
+
+
+
+                        var unitvalue = $("#units").jqxDropDownList('val');
+
+
+                        var quantityvalue = $('#quantity').jqxNumberInput('val');
+
+
+
+
+
+
+
+                        var row = {};
+
+
+
+                        row["strucutureimageurl"] = "<a href='https://akoscompounds.de/webinquiryappbingo/structureimages/" + $("#akosnumber").val() + ".png" + "' target='_blank'>" + $("#akosnumber").val() + "</a>";
+
+
+                        row["cid"] = $("#akosnumber").val();
+                        row["registryid"] = $("#akosnumber").val();
+                        row["quantity"] = quantityvalue;
+                        row["unit"] = unitvalue;
+                        row["additionalinformation"] = $("#additionalinformation").val();
+
+
+                        row["casnumber"] = $("#popupwindowshoppingcardform_casnumber").val();
+
+                        row["molname"] = $("#popupwindowshoppingcardform_molname").val();
+
+                        if (sessionStorage.getItem("shoppingitems") === null) {
+
+                            var rows = new Array();
+
+                            rows.push(row);
+
+                            var jsonstring = JSON.stringify(rows);
+
+
+
+                            sessionStorage.setItem("shoppingitems", jsonstring);
+
+                            $('#btn_navigation_requests').jqxButton({ value: "Cart (" + rows.length + ")" });
+
+
+
+                        } else {
+
+                            var data = sessionStorage.getItem("shoppingitems")
+
+                            var rows = JSON.parse(data);
+
+                            rows.push(row);
+
+                            var jsonstring = JSON.stringify(rows);
+
+                            sessionStorage.setItem("shoppingitems", jsonstring);
+
+                            $('#btn_navigation_requests').jqxButton({ value: "Cart (" + rows.length + ")" });
+
+
+
+                        }
+
+                        if (sessionStorage.getItem("shoppingitems") != null) {
+
+                            var data = sessionStorage.getItem("shoppingitems");
+                            var importdata = JSON.parse(data);
+
+                            var jsonstring = JSON.stringify(importdata);
+
+
+
+                            var shoppinggrid_gridsource_dataFields = [
+
+                                { name: 'strucutureimageurl', type: 'string' },
+
+                                { name: 'cid', type: 'string' },
+
+                                { name: 'registryid', type: 'string' },
+
+                                { name: 'casnumber', type: 'string' },
+
+                                { name: 'molname', type: 'string' },
+
+                                { name: 'quantity', type: 'number' },
+
+                                { name: 'unit', type: 'string' },
+
+                                { name: 'additionalinformation', type: 'string' }
+                            ];
+
+                            var shoppinggrid_gridsource = {
+
+                                datatype: "json",
+
+                                datafields: shoppinggrid_gridsource_dataFields,
+
+
+
+
+                                localdata: importdata
+
+
+                            };
+
+                            var shoppinggrid_griddataAdapter = new $.jqx.dataAdapter(shoppinggrid_gridsource);
+
+                            $("#shoppinggrid").jqxGrid({ source: shoppinggrid_griddataAdapter });
+
+                            $('#shoppinggrid').jqxGrid('updatebounddata');
+
+                            $('#shoppinggrid').jqxGrid('cleargroups');
+
+                            $('#shoppinggrid').jqxGrid('addgroup', 'registryid');
+
+                            $("#shoppinggrid").jqxGrid('expandallgroups');
+
+
+
+
+
+                        }
+
+
+
+                        $("#popupwindowshoppingcard").jqxWindow('close');
+
+                    } else {
+
+
+
+
+
+                        var rowID = $('#shoppinggrid').jqxGrid('getrowid', editshoppingrow);
+                        var data = $('#shoppinggrid').jqxGrid('getrowdatabyid', rowID);
+                        const rowquantity = data.quantity;
+
+                        const rowunit = data.unit;
+
+
+
+                        var row = {};
+                        row["registryid"] = $("#akosnumber").val();
+
+                        var unitvalue = $("#units").jqxDropDownList('val');
+
+
+                        var quantityvalue = $('#quantity').jqxNumberInput('val');
+
+                        row["quantity"] = quantityvalue;
+                        row["unit"] = unitvalue;
+                        row["additionalinformation"] = $("#additionalinformation").val();
+
+                        row["casnumber"] = $("#popupwindowshoppingcardform_casnumber").val();
+
+                        row["molname"] = $("#popupwindowshoppingcardform_molname").val();
+
+                        if (rowquantity != quantityvalue || rowunit != unitvalue) {
+
+                            var allrows = $('#shoppinggrid').jqxGrid('getrows');
+
+                            for (var i = 0; i < allrows.length; i++) {
+
+
+
+                                var shoppinggridrow = allrows[i];
+
+
+
+
+
+
+                            }
+
+
+                        }
+
+                        $('#shoppinggrid').jqxGrid('updaterow', rowID, row);
+
+                        $('#shoppinggrid').jqxGrid('expandallgroups');
+
+                        var rows = $('#shoppinggrid').jqxGrid('getrows');
+
+                        var jsonstring = JSON.stringify(rows);
+
+                        sessionStorage.setItem("shoppingitems", jsonstring);
+
+
+                        $("#popupwindowshoppingcard").jqxWindow('close');
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                };
+
+
+
+
+
+            });
+
+
+
+
+            var quantity_liter_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+
+
+
+
+                if (value > 1 && unitvalue == "l") {
+
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+
+            var quantity_milliliter_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+
+
+
+
+                if (value > 1000 && unitvalue == "ml") {
+
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+            var quantity_milliliter_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+
+
+
+
+                if (value > 1000 && unitvalue == "ml") {
+
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+            var quantity_kilogram_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+
+
+
+
+                if (value > 1 && unitvalue == "kg") {
+
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+
+            var quantity_gram_validationrule = function (input, commit) {
+                var value = $('#quantity').jqxNumberInput('val');
+
+                var unitvalue = $("#units").jqxDropDownList('val');
+
+
+
+
+
+                if (value > 1000 && unitvalue == "g") {
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+
+            var quantity_valuehigherthanzero_validationrule = function (input, commit) {
+
+
+                var value = $('#quantity').jqxNumberInput('val');
+
+
+                if (value <= 0) {
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: true });
+                    return false;
+                } else {
+                    $("#btn_popupwindowshoppingcard").jqxButton({ disabled: false });
+                    return true;
+                }
+
+            };
+
+            $('#popupwindowshoppingcardform').jqxValidator({
+                rules: [
+                    { input: '#akosnumber', message: 'AKos number is required!', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#quantity', message: 'You need to enter a number higher than 0', action: 'keyup, blur', rule: quantity_valuehigherthanzero_validationrule },
+
+                    { input: '#quantity', message: 'Only up to 1 liter can be requested', action: 'keyup, blur', rule: quantity_liter_validationrule },
+
+                    { input: '#quantity', message: 'Only up to 1000 milliliter can be requested', action: 'keyup, blur', rule: quantity_milliliter_validationrule },
+
+                    { input: '#quantity', message: 'Only up to 1 kilo gram can be requested', action: 'keyup, blur', rule: quantity_kilogram_validationrule },
+
+                    { input: '#quantity', message: 'Only up to 1000 gram can be requested', action: 'keyup, blur', rule: quantity_gram_validationrule },
+
+                    { input: '#additionalinformation', message: 'Maximum length is 255 characters', action: 'keyup, blur', rule: 'maxLength=255' }
+
+
+
+
+
+
+
+
+                ]
+            });
+
+
+
+            $("#email").jqxInput({ placeHolder: "Enter email address", opened: false, height: 30, width: 255, minLength: 1, maxLength: 200 });
+            $('#email').jqxInput('val', '');
+            $("#firstname").jqxInput({ placeHolder: "Enter first name", opened: false, height: 30, width: 255, minLength: 1, maxLength: 50 });
+            $('#firstname').jqxInput('val', '');
+            $("#lastname").jqxInput({ placeHolder: "Enter last name", opened: false, height: 30, width: 255, minLength: 1 });
+            $('#lastname').jqxInput('val', '');
+            $("#company").jqxInput({ placeHolder: "Enter company name", opened: false, height: 30, width: 255, minLength: 1, maxLength: 255 });
+            $('#company').jqxInput('val', '');
+
+
+
+            $('#address').jqxTextArea({ placeHolder: 'Enter company address', height: 90, width: 255, minLength: 1 });
+
+
+            $('#address').jqxTextArea('val', '');
+
+
+
+            $("#popupwindowcontactcard").jqxWindow({
+                position: "center", resizable: true, isModal: true, autoOpen: false, cancelButton: $("#btn_popupwindowcontactcard_cancel"), modalOpacity: 0.3
+            });
+
+
+
+
+
+
+            $("#popupwindowcontactcard").on('open', function () {
+
+
+                //$("#Requestspagenotification").jqxNotification({
+                //    width: "100%", height: "100%", opacity: 0.9, autoOpen: false,
+                //    closeOnClick: true, autoClose: false, showCloseButton: true, template: "info", appendContainer: "#Requestspagenotificationcontainer"
+                //});
+
+                //$("#Requestspagenotification").jqxNotification("open");
+
+                //$('#messagenotification').jqxNotification({ template: 'info', appendContainer: "#Requestspagenotificationcontainer", width: "100%" });
+                //$("#messagenotification").find("div").first().text("For US-customer: Please always enter the address of your organization/company in the address field. Compulsory: town and state.");
+                //$("#messagenotification").jqxNotification("open");
+
+                $('#popupwindowcontactcard').jqxWindow({ width: 370 });
+                $('#popupwindowcontactcard').jqxWindow({ height: 385 });
+
+            });
+
+            $("#popupwindowcontactcard").on('close', function () {
+
+                $("#messagenotification").jqxNotification("closeLast");
+
+                editcontactrow = -1;
+
+            });
+
+            $("#btn_popupwindowcontactcard_cancel").jqxButton({});
+            $("#btn_popupwindowcontactcard_cancel").click(function () {
+
+
+                $("#messagenotification").jqxNotification("closeLast");
+
+
+            });
+
+            $("#btn_submitrequest").jqxButton({ template: "danger" });
+            $("#btn_submitrequest").click(function () {
+
+
+
+
+                var validationresult = $('#popupwindowcontactcardform').jqxValidator('validate');
+                if (validationresult) {
+
+                    $("#messagenotification").jqxNotification("closeLast");
+
+                    var firstnamevalue = $("#firstname").val();
+
+
+                    var lastnamevalue = $("#lastname").val();
+
+                    var companyvalue = $("#company").val();
+
+
+                    var companyaddress = $("#address").val();
+
+
+                    var countryvalue = $("#country").jqxComboBox('val');
+
+
+
+                    var countryvalueindex = countries.map(i => i.code).indexOf(countryvalue);
+
+                    var countryobject = countries[countryvalueindex];
+
+                    var countryname = countryobject.name;
+
+                    if (countryname == "United States") {
+
+                        if (!isNotEmpty(companyaddress)) {
+
+
+
+                            closenotification("Requestspagenotification");
+
+
+                            closenotification("messagenotification");
+
+                            $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'warning', appendContainer: "#Requestspagenotificationcontainer" });
+                            $("#messagenotification").find("div").first().text("Dear US-customer: Please enter the address of your organization/company in the address field. Compulsory: town and state.");
+                            $("#messagenotification").jqxNotification("open");
+                            return;
+                        }
+
+
+
+
+                    }
+
+
+
+                    var emailvalue = $("#email").val();
+
+                    var titlevalue = $("#title").jqxComboBox('val');
+
+                    if (isNotEmpty(titlevalue)) {
+
+                        var titlevalueindex = titles.map(i => i.code).indexOf(titlevalue);
+
+                        var titleobject = titles[titlevalueindex];
+
+                        titlevalue = titleobject.name;
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+                    var row = {};
+                    row["firstname"] = firstnamevalue;
+                    row["lastname"] = lastnamevalue;
+                    row["company"] = companyvalue;
+
+                    row["address"] = companyaddress;
+
+
+                    row["country"] = countryvalue;
+
+
+                    row["countryname"] = countryname;
+
+
+                    row["email"] = emailvalue;
+
+
+
+
+                    row["title"] = titlevalue;
+
+
+
+                    var jdata = {};
+
+
+                    if (sessionStorage.getItem("sessionid") !== null) {
+
+                        var sessionid = sessionStorage.getItem("sessionid");
+
+                        if (isNotEmpty(sessionid)) {
+
+                            jdata.sessionid = sessionid;
+
+
+                        }
+                    }
+
+
+
+                    jdata.contactinformation = row;
+
+
+
+
+                    var requestdata = $("#shoppinggrid").jqxGrid('exportdata', 'json');
+
+
+
+
+                    var requestdata_as_array = JSON.parse(requestdata);
+
+
+
+
+                    jdata.requestdata = requestdata_as_array;
+
+
+
+
+
+                    $("#popupwindowcontactcard").jqxWindow('close');
+
+
+
+                    $('#jqxLoader').jqxLoader('open');
+
+                    $.ajax({
+                        type: "POST",
+
+                        url: "https://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/ProcessAKosrequest",
+
+                        cache: false,
+
+                        data: JSON.stringify(jdata),
+
+                        success: function (response) {
+
+                            $('#jqxLoader').jqxLoader('close');
+
+                            if (response.errorflag) {
+
+                                closenotification("Requestspagenotification");
+
+
+                                closenotification("messagenotification");
+
+                                $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Requestspagenotificationcontainer" });
+                                $("#messagenotification").find("div").first().text("Error calling ProcessAKosrequest. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+
+
+                            } else {
+
+                                closenotification("Requestspagenotification");
+
+
+                                closenotification("messagenotification");
+
+                                $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'success', appendContainer: "#Requestspagenotificationcontainer" });
+                                $("#messagenotification").find("div").first().text("Request has been sent. You will soon get a confirmation email.");
+                                $("#messagenotification").jqxNotification("open");
+
+
+
+                            }
+
+
+
+
+
+
+
+                        },
+                        error: function (error) {
+
+
+                            $('#jqxLoader').jqxLoader('close');
+
+                            closenotification("Requestspagenotification");
+
+
+                            closenotification("messagenotification");
+
+
+                            $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Requestspagenotificationcontainer" });
+                            $("#messagenotification").find("div").first().text("Error calling ProcessAKosrequest. Status : " + error.status);
+                            $("#messagenotification").jqxNotification("open");
+                        }
+                    });
+
+
+
+                    /*document.getElementById("popupwindowfeedbackform").style.display = 'block';*/
+
+                    //$("#popupwindowfeedbackform").jqxWindow({
+                    //    position: "center", resizable: false, isModal: false, autoOpen: false, width: 550, height: 350
+                    //});
+
+
+
+
+
+                    var feedbacktemplate = [
+
+
+                        {
+
+                            bind: 'rawfeedbackdata',
+                            type: 'custom',
+                            label: 'Help us to improve. Can you provide some feedback?',
+
+                            labelPosition: 'top',
+                            required: false,
+                            labelWidth: '200px',
+
+                            init: function (component) {
+
+
+
+                                var placeholderstring = 'Did you experience problems using the system?\n' + 'How do you like the user experience?\n' + 'Is there anything we can do to make the system better for you?\n' +
+                                    'What new features would you like from us next?\n' +
+                                    'or enter general feedback';
+                                component.jqxTextArea({
+
+                                    placeHolder: placeholderstring,
+                                    width: 520,
+
+
+                                    height: 200
+                                });
+
+                            }
+
+                        },
+
+
+                        {
+                            bind: 'emailaddress',
+                            type: 'text'
+
+                        },
+
+                        {
+                            type: 'blank',
+                            rowHeight: '10px'
+                        },
+                        {
+                            columns: [
+                                {
+
+                                    name: 'submitButton',
+                                    type: 'button',
+                                    text: 'Submit',
+                                    width: '90px',
+                                    height: '30px',
+                                    rowHeight: '40px',
+                                    columnWidth: '50%',
+                                    align: 'left'
+                                },
+
+                                {
+
+                                    name: 'cancelButton',
+                                    type: 'button',
+                                    text: 'No, thanks.',
+                                    width: '90px',
+                                    height: '30px',
+                                    rowHeight: '40px',
+                                    align: 'right',
+                                    columnWidth: '50%'
+                                }
+                            ]
+                        }
+                    ];
+
+
+                    var sampleValue = {
+                        'emailaddress': emailvalue
+                    };
+
+
+                    $('#feedbackform').jqxForm({
+                        template: feedbacktemplate,
+                        value: sampleValue
+
+                    });
+
+
+                    $("#feedbackform").jqxForm("hideComponent", "emailaddress");
+
+
+                    var btn_feedbackform_submit = $('#feedbackform').jqxForm('getComponentByName', 'submitButton');
+
+                    /*btn_feedbackform_submit.css("border", "1px solid grey");*/
+
+                    btn_feedbackform_submit.css("background-color", "#8A1E1E");
+
+                    btn_feedbackform_submit.css("-moz-border-radius", "20px");
+
+                    btn_feedbackform_submit.css("-webkit-border-radius", "20px");
+
+                    btn_feedbackform_submit.css("color", "white");
+
+                    btn_feedbackform_submit.on('click', function () {
+
+
+
+                        var formData = $('#feedbackform').val();
+
+
+                        if (isNotEmpty(formData.rawfeedbackdata)) {
+
+                            $('#jqxLoader').jqxLoader('open');
+
+                            $.ajax({
+                                type: "POST",
+                                url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Processfeedback",
+                                cache: false,
+                                data: JSON.stringify(formData),
+
+                                success: function (response) {
+                                    $('#jqxLoader').jqxLoader('close');
+
+
+                                    closenotification("Requestspagenotification");
+
+
+                                    closenotification("messagenotification");
+
+                                    $('#messagenotification').jqxNotification({ autoClose: true, width: "auto", height: 50, template: 'success', appendContainer: "#Requestspagenotificationcontainer" });
+
+                                    $("#messagenotification_autoclose").find("div").first().text("Thank you for providing feedback.");
+
+
+                                    $("#messagenotification_autoclose").jqxNotification("open");
+
+
+
+                                },
+                                error: function (error) {
+                                    $('#jqxLoader').jqxLoader('close');
+
+                                    closenotification("Requestspagenotification");
+
+
+                                    closenotification("messagenotification");
+
+
+                                    $('#messagenotification').jqxNotification({ autoClose: false, width: "auto", height: 50, template: 'error', appendContainer: "#Requestspagenotificationcontainer" });
+
+                                    $("#messagenotification_autoclose").find("div").first().text("Error processing provided feedback.");
+
+
+                                    $("#messagenotification_autoclose").jqxNotification("open");
+
+                                }
+                            });
+
+
+
+                            $("#popupwindowfeedbackform").jqxWindow('close');
+
+
+
+
+
+                        } else {
+
+                            btn_feedbackform_submit.jqxTooltip({ autoHideDelay: 2000, content: "Please enter your feedback", position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+                            btn_feedbackform_submit.jqxTooltip("open");
+                            return;
+
+                        }
+
+
+
+
+
+
+
+
+
+                    });
+
+
+                    var btn_feedbackform_cancel = $('#feedbackform').jqxForm('getComponentByName', 'cancelButton');
+
+                    /*btn_feedbackform_cancel.css("border", "1px solid grey");*/
+
+                    btn_feedbackform_cancel.css("background-color", "#8A1E1E");
+
+                    btn_feedbackform_cancel.css("-moz-border-radius", "20px");
+
+                    btn_feedbackform_cancel.css("-webkit-border-radius", "20px");
+
+                    btn_feedbackform_cancel.css("color", "white");
+
+
+                    btn_feedbackform_cancel.on('click', function () {
+
+                        $("#popupwindowfeedbackform").jqxWindow('close');
+
+                    });
+
+
+
+
+
+
+
+                    $("#popupwindowfeedbackform").jqxWindow({
+                        /*position: "center", resizable: false, isModal: false, autoOpen: false, width: 550, height: 350*/
+                        position: "center", resizable: false, isModal: false, autoOpen: false, width: 560, height: 350
+                    });
+
+
+                    $("#popupwindowfeedbackform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowfeedbackform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowfeedbackform").jqxWindow("height") / 2);
+
+
+                    $("#popupwindowfeedbackform").jqxWindow('open');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                }
+            });
+
+            var country_required_validationrule = function (input, commit) {
+                var value = $("#country").jqxComboBox('val');
+                if (isNotEmpty(value)) {
+
+                    return true;
+                } else {
+
+                    return false;
+                }
+
+            };
+            $('#popupwindowcontactcardform').jqxValidator({
+                rules: [
+                    { input: '#firstname', message: 'First name is required!', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#firstname', message: 'First name maximum length is 50 characters', action: 'keyup', rule: 'maxLength=50' },
+
+                    { input: '#email', message: 'EMail is required!', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#email', message: 'Invalid e-mail', action: 'keyup, blur', rule: 'email' },
+
+
+                    { input: '#email', message: 'EMail address maximum length is 200 characters', action: 'keyup', rule: 'maxLength=200' },
+
+                    { input: '#lastname', message: 'Last name is required', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#lastname', message: 'Last name maximum length is 50 characters', action: 'keyup', rule: 'maxLength=50' },
+
+
+
+                    { input: '#company', message: 'Company name is required', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#company', message: 'Company name maximum length is 255 characters', action: 'keyup', rule: 'maxLength=255' },
+
+
+                    { input: '#country', message: 'Country is required', action: 'keyup, blur', rule: country_required_validationrule }
+
+
+                ]
+            });
+
+            $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top', isModal: true, text: "Processing..." });
+
+
+
+
+
+
+
+
+
+            $('#deleteallrequests_confirmwindow').jqxWindow({
+                autoOpen: false,
+
+                height: 100, width: 300,
+                resizable: false, isModal: true, modalOpacity: 0.3,
+                okButton: $('#deleteallrequests_confirmwindow_ok'), cancelButton: $('#deleteallrequests_confirmwindow_cancel'),
+                showCloseButton: false,
+                initContent: function () {
+                    $('#deleteallrequests_confirmwindow_ok').jqxButton({ width: '65px' });
+                    $('#deleteallrequests_confirmwindow_cancel').jqxButton({ width: '65px' });
+                    $('#deleteallrequests_confirmwindow_cancel').focus();
+                }
+            });
+
+            $('#deletesinglerequest_confirmwindow').jqxWindow({
+                autoOpen: false,
+
+                height: 100, width: 300,
+                resizable: false, isModal: true, modalOpacity: 0.3,
+                okButton: $('#deletesinglerequest_confirmwindow_ok'), cancelButton: $('#deletesinglerequest_confirmwindow_cancel'),
+                showCloseButton: false,
+                initContent: function () {
+                    $('#deletesinglerequest_confirmwindow_ok').jqxButton({ width: '65px' });
+                    $('#deletesinglerequest_confirmwindow_cancel').jqxButton({ width: '65px' });
+                    $('#deletesinglerequest_confirmwindow_cancel').focus();
+                }
+            });
+
+
+
+
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>

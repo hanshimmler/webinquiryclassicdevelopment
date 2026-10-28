@@ -1,0 +1,761 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>AKos webrequest</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxwindow.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.edit.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.columnsresize.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.columnsreorder.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.sort.js"></script>
+    
+    <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
+    
+    <script type="text/javascript" src="jqwidgets/jqxform.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxvalidator.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxnumberinput.js"></script>
+
+    
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxexport.js"></script>
+
+    
+
+    <script type="text/javascript" src="jqwidgets/jqxtextarea.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+
+    <script type="text/javascript" src="scripts/vfs_fonts.js"></script>
+    <style>
+
+        .jqx-window-header {
+            height: 20px;
+        }
+
+        .jqx-fill-state-hover {
+            background-color: DarkGrey;
+        }
+
+        .jqx-grid-card-cell-label {
+            display: none;
+        }
+
+        .jqx-grid-card-cell table {
+            padding: 0px;
+        }
+
+        .jqx-grid-card-cell {
+            padding: 0px;
+        }
+
+
+        .jqx-notification-container {
+            z-index: 100000;
+        }
+
+
+
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+
+        .LightSeaGreen {
+            background-color: LightSeaGreen;
+        }
+
+        .LightGreen {
+            background-color: LightGreen;
+        }
+
+        .LightBlue {
+            background-color: LightBlue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        
+
+        .navigation-container {
+           
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            display: block;
+            align-items: center;
+        }
+
+        .navigation-row {
+            width: 100%;
+        }
+
+        .navigationflex-item {
+            padding: 10px;
+            
+            text-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+    <div style="height: 100%">
+
+
+
+        <div id="cardviewgrid" style="margin-top: 20px "></div>
+
+
+
+    </div>
+
+    <div id="jqxLoader"></div>
+
+
+
+
+
+    <!--<div style="display: none" id="zoomketcherwindow">
+        <div>Zoom</div>
+        <div style="overflow: hidden;">
+            <div>
+                <div>
+                    <iframe id="zoomketcherwindow_ketcher" src="ketcher.html" style="width: 100%; height: 100%"></iframe>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>-->
+
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+        var cellsrenderer_akosdbstructure = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+
+            debugger;
+
+            var datarow = $("#cardviewgrid").jqxGrid("getrowdata", row);
+
+
+
+
+
+
+
+            var html = "<img width='200' height= '200' src='http://akoscompounds.de/webinquiryappbingo/akosdbstructuresgrids/" + datarow.imagename + "'" + " title='Click to select structure' >";
+
+
+            return html;
+
+
+
+
+
+
+
+
+        };
+
+        //var cellsrenderer_structureimageurl = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+
+
+
+        //    var format = { target: '"_blank"' };
+        //    var html = $.jqx.dataFormat.formatlink(value, format);
+        //    return html;
+
+
+
+
+
+
+
+
+        //};
+
+
+
+
+
+        function isNotEmpty(value) {
+
+
+
+            if (typeof value !== 'undefined') {
+
+
+
+                if (value !== null) {
+
+
+                    if (value) {
+
+
+
+                        return true;
+
+
+                    } else {
+
+
+
+
+                        return false;
+
+
+                    }
+
+
+
+                } else {
+
+
+                    return false;
+
+
+                }
+
+
+
+
+
+
+            } else {
+                return false;
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $(document).ready(function () {
+
+            $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top', isModal: true, text: "Processing..." });
+
+
+
+            $('#jqxLoader').jqxLoader('open');
+
+            
+
+            let jdata = {};
+
+            $.ajax({
+                type: "POST",
+
+
+
+                //url: "http://akoscompounds.de/webinquiriesapibingo/api/akoswebrequestsapi/Executeinitialsearch",
+                url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/CreateAkosdbstructuresgridtest",
+                cache: false,
+
+                data: JSON.stringify(jdata),
+
+                success: function (response) {
+
+
+
+                    $('#jqxLoader').jqxLoader('close');
+
+
+                    if (response.errorflag) {
+
+                        alert(response.errortext)
+                        
+
+
+                    } else {
+
+
+
+
+
+
+
+
+
+                        let data = response.structureimages;
+
+
+
+
+                        //alert(JSON.stringify(data));
+
+
+                        //var data = new Array();
+
+                        //var row = {};
+
+                        //row["structure"] = "";
+
+                        //row["registryid"] = "akos001783421";
+
+                        //row["similarityvalue"] = 1.0;
+
+
+
+                        //data[0] = row;
+
+                        //var row = {};
+
+                        //row["structure"] = "";
+
+                        //row["registryid"] = "akos002107975";
+
+                        //row["similarityvalue"] = 0.9;
+
+
+
+                        //data[1] = row;
+
+                        //var row = {};
+
+                        //row["structure"] = "";
+
+                        //row["registryid"] = "akos002108519";
+
+                        //row["similarityvalue"] = 0.9;
+
+
+
+                        //data[2] = row;
+
+                        //var row = {};
+
+                        //row["structure"] = "";
+
+                        //row["registryid"] = "akos015856344";
+
+                        //row["similarityvalue"] = 0.9;
+
+
+
+                        //data[3] = row;
+
+                        //var row = {};
+
+                        //row["structure"] = "";
+
+                        //row["registryid"] = "akos040753793";
+
+                        //row["similarityvalue"] = 0.9;
+
+
+
+                        //data[4] = row;
+
+                        //var row = {};
+
+                        //row["structure"] = "";
+
+                        //row["registryid"] = "akos015837762";
+
+                        //row["similarityvalue"] = 0.9;
+
+
+
+                        //data[5] = row;
+
+
+
+                        //var cardview_gridsource_dataFields = [
+
+                        //    { name: 'strucutureimageurl', type: 'string' },
+
+                        //    { name: 'cid', type: 'int' },
+
+                        //    { name: 'registryid', type: 'string' },
+
+                        //    { name: 'type', type: 'string' },
+
+                        //    { name: 'bisidenticalwithquery', type: 'bool' },
+
+                        //    { name: 'molname', type: 'string' },
+
+                        //    { name: 'molformula', type: 'string' },
+
+                        //    { name: 'molweight', type: 'number' },
+
+                        //    { name: 'casnumber', type: 'string' },
+
+                        //    { name: 'similarityvalue', type: 'number' },
+
+
+                        //];
+
+
+                        var cardviewgrid_gridsource = {
+
+                            datatype: "array",
+
+
+
+
+
+
+                            localdata: data
+
+
+                        };
+
+                        var cardviewgrid_griddataAdapter = new $.jqx.dataAdapter(cardviewgrid_gridsource, {
+                            loadComplete: function (data) { },
+                            loadError: function (xhr, status, error) { }
+                        });
+
+                        //var cardviewgrid_griddataAdapter = new $.jqx.dataAdapter(cardviewgrid_gridsource);
+
+                        //$("#cardviewgrid").jqxGrid({ source: cardviewgrid_griddataAdapter });
+
+                        //$('#cardviewgrid').jqxGrid('updatebounddata');
+
+                        debugger;
+
+                        $("#cardviewgrid").jqxGrid({
+
+                            cardview: true,
+
+                            cardsize: 6,
+
+                            cardheight: 250,
+
+
+
+
+
+                            width: "100%",
+
+                            source: cardviewgrid_griddataAdapter,
+
+                            //autoheight: true,
+
+                            //autorowheight : true,
+                            //rowsheight: 600,
+
+                            //enablebrowserselection: true,
+
+
+                            //columnsresize: true,
+
+
+                            selectionmode: 'singlecell',
+
+                            showheader: true,
+                            showstatusbar: false,
+
+                            showtoolbar: true,
+                            toolbarheight: 40,
+                            rendertoolbar: function (statusbar) {
+
+                                var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+
+
+
+
+
+                                statusbar.append(container);
+
+
+
+
+                            },
+                            renderstatusbar: function (statusbar) {
+
+
+
+
+                            },
+
+
+
+
+                            cardviewcolumns: [
+                                {
+                                    width: 'auto',
+                                    height: 200,
+                                    datafield: 'imagename'
+                                },
+                                {
+                                    width: 'auto',
+                                    height: 0,
+                                    datafield: 'registryid',
+
+                                    hidden: true
+                                }
+                                //{
+                                //    width: 'auto',
+                                //    //height: 'auto',
+                                //    datafield: 'similarityvalue'
+                                //}
+                            ],
+
+                            columns: [
+                                {
+                                    text: 'Structure',
+                                    datafield: 'imagename',
+                                    width: 200,
+                                    height: 200,
+                                    cellsrenderer: cellsrenderer_akosdbstructure
+                                },
+                                {
+                                    text: 'AKos number',
+                                    datafield: 'registryid',
+                                    width: 200,
+                                    hidden: true
+                                }
+                                //{
+                                //    text: "",
+                                //    datafield: "Select",
+                                //    columntype: "custom",
+                                //    width: 160,
+                                //    exportable: false,
+
+
+
+
+                                //    cellsrenderer: function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
+
+
+
+                                //        //var html = "<div style='width: 160px; height: 200px; margin: auto;text-align: center;display:table-cell;vertical-align: middle;'><center><input type='button' style='height: 40px; width: 100px;cursor: pointer' value='Select' /></center></div>";
+
+                                //        var html = "<span style='display: flex; align-items: normal; justify-content: center;cursor: pointer;'>Select</span>";
+
+
+                                //        return html;
+
+
+                                //    }
+
+                                //    //buttonclick: function (row) {
+
+                                //    //    debugger;
+
+                                //    //    var data = $('#cardviewgrid').jqxGrid('getrowdata', row);
+
+                                //    //    alert(data.registryid)
+
+
+
+
+                                //    //}
+                                //}
+                                //{
+                                //    text: 'Similarity',
+                                //    datafield: 'similarityvalue',
+                                //    width: 100
+                                //}
+
+                            ]
+                        });
+
+
+
+                        //var data = sessionStorage.getItem("griddata");
+
+
+                        debugger;
+
+                        //var importdata = JSON.parse(data);
+
+
+
+                        $('.jqx-grid-content').on('click', e => {
+
+                            const card = e.target.closest('.jqx-grid-card-cell');
+                            if (card) {
+
+                                let index = card.id;
+
+                                var datarow = $('#cardviewgrid').jqxGrid('getrowdata', index);
+
+                                alert(datarow.registryid)
+
+                                //alert('akos number ' + card.registryid);
+                            }
+
+                        });
+
+
+
+
+
+            //$("#cardviewgrid").on("cellclick", function (event) {
+
+
+
+            //    debugger;
+
+            //    var args = event.args;
+            //    // row's bound index.
+            //    var rowBoundIndex = args.rowindex;
+            //    // row's visible index.
+            //    var rowVisibleIndex = args.visibleindex;
+            //    // right click.
+            //    var rightclick = args.rightclick;
+            //    // original event.
+            //    var ev = args.originalEvent;
+            //    // column index.
+            //    var columnindex = args.columnindex;
+            //    // column data field.
+            //    var dataField = args.datafield;
+
+
+            //    //$("#cardviewgrid").jqxGrid('selectrow', rowBoundIndex);
+
+            //    var datarow = $('#cardviewgrid').jqxGrid('getrowdata', rowBoundIndex);
+
+            //    alert(datarow.registryid)
+
+
+
+
+            //});
+
+
+
+
+
+
+
+
+                    }
+
+                },
+                error: function (error) {
+
+                    $('#jqxLoader').jqxLoader('close');
+                    $('#messagenotification').jqxNotification({ template: 'error' });
+
+                    if (error.status == 500) {
+
+                        //$("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                        alert("Server is busy. Please try again in a few moments.")
+
+                    } else {
+
+                        //$("#messagenotification").find("div").first().text("Error calling CreateAkosdbstructuresgridtest. Status : " + error.status);
+
+                        alert("Error calling CreateAkosdbstructuresgridtest. Status : " + error.status)
+                    }
+
+
+                    
+
+
+                }
+            });
+
+
+
+
+
+            //var ketcher;
+
+
+
+
+
+
+
+            //$("#zoomketcherwindow").jqxWindow({
+            //    width: 800,
+            //    height: 700,
+            //    position: "center",
+            //    resizable: true,
+            //    isModal: false,
+            //    autoOpen: false,
+
+            //    modalOpacity: 0.01
+
+
+            //});
+
+            
+
+
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>

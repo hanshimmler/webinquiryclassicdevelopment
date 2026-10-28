@@ -1,0 +1,2994 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>AKos webrequest</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+
+
+    <script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+
+
+    <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxwindow.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxscrollview.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxeditor.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdropdownbutton.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxcombobox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxnavbar.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxpopover.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxvalidator.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxtextarea.js"></script>
+
+    <script type="text/javascript" src="scripts/demos.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdockpanel.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxnavigationbar.js"></script>
+
+
+
+    <style>
+
+        /*.chemicalbuildingblocksboxstyle {
+            box-sizing: border-box;
+            width: 100%;*/
+        /*height: min-content;*/
+
+        /*height: 100px;*/
+
+        /*display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;*/
+        /*box-shadow: 0px 1px 2px 0px #b11f1d, 0px 2px 4px 0px rgba(217, 74, 74, 0.25), 0px 4px 8px 0px rgba(219, 35, 35, 0.25);
+            overflow: hidden;
+            padding: 0px;
+            align-content: center;*/
+        /*flex-wrap: nowrap;*/
+        /*position: absolute;*/
+        /*border-radius: 12px;
+            border: 1px solid #000000;
+        }*/
+
+
+
+
+        .chemicalbuildingblocksboxstyle {
+            box-sizing: border-box;
+            width: 80%;
+            /*height: min-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;*/
+            box-shadow: 0px 1px 2px 0px #b11f1d, 0px 2px 4px 0px rgba(217, 74, 74, 0.25), 0px 4px 8px 0px rgba(219, 35, 35, 0.25);
+            overflow: hidden;
+            padding: 0px;
+            align-content: center;
+            /*align-content: center;
+            flex-wrap: nowrap;
+            position: absolute;*/
+            border-radius: 12px;
+            border: 1px solid #6b0202;
+        }
+
+        .screeningcompoundsboxstyle {
+            box-sizing: border-box;
+            width: 80%;
+            /*height: min-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;*/
+            box-shadow: 0px 1px 2px 0px #b11f1d, 0px 2px 4px 0px rgba(217, 74, 74, 0.25), 0px 4px 8px 0px rgba(219, 35, 35, 0.25);
+            overflow: hidden;
+            padding: 0px;
+            align-content: center;
+            /*align-content: center;
+            flex-wrap: nowrap;
+            position: absolute;*/
+            border-radius: 12px;
+            border: 1px solid #6b0202;
+        }
+
+        /*.customsynthesisboxstyle {
+            box-sizing: border-box;
+            width: 100%;*/
+        /*height: min-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;*/
+        /*box-shadow: 0px 1px 2px 0px #b11f1d, 0px 2px 4px 0px rgba(217, 74, 74, 0.25), 0px 4px 8px 0px rgba(219, 35, 35, 0.25);
+            overflow: hidden;
+            padding: 0px;
+            align-content: center;*/
+        /*flex-wrap: nowrap;
+            position: absolute;*/
+        /*border-radius: 12px;
+            border: 1px solid #ffffff;
+
+
+        }*/
+
+
+        .customsynthesisboxstyle {
+            box-sizing: border-box;
+            width: 80%;
+            /*height: min-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;*/
+            box-shadow: 0px 1px 2px 0px #b11f1d, 0px 2px 4px 0px rgba(217, 74, 74, 0.25), 0px 4px 8px 0px rgba(219, 35, 35, 0.25);
+            overflow: hidden;
+            padding: 0px;
+            align-content: center;
+            /*align-content: center;
+            flex-wrap: nowrap;
+            position: absolute;*/
+            border-radius: 12px;
+            border: 1px solid #6b0202;
+        }
+
+        .journeyboxstyle {
+            /*display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;*/
+            padding: 20px;
+            background-color: #ffffff;
+            overflow: hidden;
+            align-content: center;
+            /*flex-wrap: nowrap;*/
+            /*gap: 40px;
+            position: absolute;*/
+            border-radius: 0px 0px 0px 0px;
+        }
+
+        .footerstyle {
+            /*width: 1193px;
+            height: min-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;*/
+            background-color: #ffffff;
+            overflow: visible;
+            padding: 0px;
+            align-content: center;
+            /*flex-wrap: nowrap;*/
+            gap: 0px;
+            /*position: absolute;*/
+            border-radius: 0px 0px 0px 0px;
+        }
+
+
+        .photo {
+            width: 280px;
+            height: 620px;
+            background-color: #000;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .photosmall {
+            width: 600px;
+            height: 263px;
+            background-color: #000;
+            background-repeat: no-repeat;
+        }
+
+
+
+
+        .jqx-fill-state-normal {
+            background-color: transparent;
+            border-style: none;
+        }
+
+        .jqx-fill-state-hover {
+            background-color: #A80D0D;
+            color: white;
+        }
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+        .jqx-window-header {
+            height: 20px;
+        }
+
+        .search {
+            display: flex;
+            align-items: normal;
+            justify-content: center
+        }
+
+
+
+        .flex {
+            max-width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            margin-top: 10px;
+            position: relative;
+            width: 100%;
+            margin: 0px auto;
+            height: 250px;
+        }
+
+        .inner_left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: white;
+            width: 160px;
+            color: gray
+        }
+
+        .inner_right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 160px;
+            background: white;
+        }
+
+
+        .boxtext {
+            max-width: 30%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .boxpicture {
+            flex-basis: 50%;
+            height: 100%;
+            background-color: white;
+        }
+
+
+        .searchlabel {
+            display: flex;
+            align-items: normal;
+            justify-content: flex-start
+        }
+
+        .navigation-container {
+            height: 60px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            display: block;
+            align-items: center;
+        }
+
+        .navigation-row {
+            width: 100%;
+        }
+
+        .navigationflex-item {
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+        }
+
+
+        .unselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+
+        .vericaltext {
+            writing-mode: vertical-lr;
+            /*text-orientation: upright;*/
+            /*font-size: x-large;*/
+            font-size: large;
+        }
+
+
+
+        .parentmain {
+            display: flex;
+            width: 100%;
+            height: 40%;
+            align-items: center; /* Align Items Vertically */
+            /*justify-content: space-between;*/ /* Align Items Horizontally (with equal space in between each of them */
+            background: #eee;
+            margin-top: 5px;
+        }
+
+
+
+
+        .childrenmain {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        .child {
+            padding: 0 0px;
+            font-size: 30px;
+            background: #FFFFFF;
+            color: #000;
+            border: none;
+        }
+
+
+        .child1main {
+            padding: 0 0px;
+            font-size: 30px;
+            background: #FFFFFF;
+            color: #000;
+            border: none;
+            width: 95%;
+        }
+
+        .child2main {
+            padding: 0 0px;
+            background: #FFFFFF;
+            color: #000;
+            border: none;
+            width: 5%;
+        }
+
+        .parentquickrequestwindow {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            align-items: center; /* Align Items Vertically */
+            /*justify-content: space-between;*/ /* Align Items Horizontally (with equal space in between each of them */
+            background: #eee;
+            margin-top: 5px;
+        }
+
+        .childrenquickrequestwindow {
+            display: flex;
+        }
+
+        .childquickrequestwindow {
+            margin-right: 5px;
+            padding: 0 0px;
+            font-size: 30px;
+            background: #ccc;
+            color: #000;
+            border: solid;
+            border-width: thin;
+        }
+
+
+        .helpbtn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: none;
+            background: transparent;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: none;
+            background: transparent;
+        }
+
+            .btn:hover {
+                background-image: none !important;
+                background-color: rgb(168, 13, 13) !important;
+                color: white;
+            }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+
+
+
+
+    <div>
+
+        <div class="navigation-container">
+
+
+
+            <div style="float: left;"><img style="display: flex; align-items: normal; justify-content: center;" src="images/AK0S-logo-weit.png" height="60" width="80" /></div>
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Search" id='btn_navigation_search' /></span></div>
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Draw structure" id='btn_navigation_drawstructure' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Results" id='btn_navigation_results' /></span></div>
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="About us" id='btn_navigation_about' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Contact us" id='btn_navigation_contact' /></span></div>
+
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' style="float: left; margin-left: 20px; cursor: pointer" /></span></div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div id='jqxDockPanel' style="width: 100%; height: 100%;">
+        <div id='first' dock='top' style="margin-top: 10px;">
+
+            <center><div style="width: 300px"><h1>Your Supply Partner in Scientific Journey</h1></div></center>
+            <center><div style="margin-top: 20px; font-size: 16px; width: 400px">Access a constantly updated database of 40M+ compounds and a global supplier network — all in one place.</div></center>
+
+        </div>
+        <div id='second' dock='top' style='background: #368ba7; '>
+            <div class="parentmain" style="height: 30%">
+
+
+
+                <div class="childrenmain">
+                    <div class="child1main">
+
+                        <!--<div style="display: flex; align-items: normal; justify-content: center;">
+                            <img src="images/AK0S-logo-weit.png" style="height: 100px; width: 150px; margin-top: 30px; margin-right: 100px" />
+
+
+                        </div>
+
+                        <div style="display: flex; align-items: normal; justify-content: center;">
+
+                            <div style="font-size: 30px; color: #A80D0D;">Consulting & Solutions Deutschland GmbH</div>
+
+                        </div>-->
+
+
+
+
+
+
+
+                        <div class="search">
+
+
+                            <div id="registrynumberinput" style="margin-top: 30px;">
+                                <input type="text" />
+
+                            </div>
+
+
+
+                            <div><input type="button" value="Search" id='btn_namelookup' style="margin-top: 30px; margin-left: 10px; cursor: pointer; border-style: solid" /></div>
+                            <div><input type="button" value="Draw structure" id='btn_drawstructure' style="margin-top: 30px; margin-left: 10px; cursor: pointer; border-style: solid" /></div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="child2main" style="">
+
+
+                        <button class="btn" id="btn_quickrequest" style="">
+
+
+
+
+                            <div class='vericaltext'>Assisted request</div>
+
+
+
+                        </button>
+
+                        <button class="helpbtn" id="btn_assistedrequesthelp">
+
+                            <img src="images/help-26.png" alt="Assisted request information" />
+
+
+                        </button>
+
+                        <!--<div style="display: flex; justify-content: center; ">
+
+                            <button class="btn" id="btn_quickrequest">
+
+
+
+
+                                <div class='vericaltext'>Quick request</div>
+
+
+
+                            </button>
+
+
+
+                        </div>
+
+                        <div style="display: flex; justify-content: center; ">
+
+                            <button class="btn" id="btn_assistedrequesthelp">
+
+                                <img src="images/help-26.png" alt="Assisted request information" />
+
+
+                            </button>
+
+
+
+                        </div>-->
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id='third' dock='top'>
+            <center><div style="width: 400px;"><h2>We’ll support you with <span style="color:red;">A</span>ny <span style="color:red;">K</span>ind of <span style="color:red;">O</span>rganic <span style="color:red;">S</span>ubstances for your needs!</h2></div></center>
+            <center><div style="margin-top: 10px; font-size: 16px; width: 600px;">From the first idea to final delivery, AKos provides the compounds, knowledge, and network you need — becoming a reliable partner on every step of your scientific journey</div></center>
+
+
+            <div style="margin-top: 50px;">
+
+                <div style="width: 100%;display: flex;  justify-content: center; align-items: center; ">
+
+
+                    <div style="padding: 20px;">
+
+                        <div>
+
+                            <center>
+
+                                <div style="font-size: 64px;">40M+</div>
+                                <div style="font-size: 22px;">compounds</div>
+
+                            </center>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div style="padding: 20px;">
+
+
+                        <div>
+
+                            <center>
+
+                                <div style="font-size: 64px;">25</div>
+                                <div style="font-size: 22px;">years experience</div>
+
+                            </center>
+
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div style="padding: 20px;">
+
+                        <div>
+
+                            <center>
+
+                                <div style="font-size: 64px;">35+</div>
+                                <div style="font-size: 22px;">countries served</div>
+
+                            </center>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+            <div style="padding: 0px 100px; margin-top: 50px; height: 200px; margin: 100px 100px;" class="chemicalbuildingblocksboxstyle">
+
+                <!--<center><div><h3>Chemical Building Blocks</h3></div></center>
+                <center><div style="margin-top: 10px; font-size: 16px;">AKOS database provides an access to diverse available chemical building blocks from trusted supplier and partners. We can ensure quick delivery in required format and scale needed for further application.</div></center>-->
+
+                <div style="width: 100%;  line-height: 1.2; ">
+                    <h3>Chemical Building Blocks</h3>
+
+                </div>
+
+                <!--<div style="margin-top: 10px; font-size: 16px;">AKOS database provides an access to diverse available chemical building blocks from trusted supplier and partners. We can ensure quick delivery in required format and scale needed for further application.</div>-->
+
+                <div style="width: 100%; opacity: 0.65; text-align: left; line-height: 1.2; margin-top: 20px">
+
+                    AKOS database provides an access to diverse available chemical building blocks from trusted supplier and partners. We can ensure quick delivery in required format and scale needed for further application.
+
+                </div>
+            </div>
+
+
+            <!--<div class="screeningcompoundsboxstyle" style="margin-top: 50px; border: solid; border-radius: 12px; box-shadow: #B11F1D 0px 1px; box-shadow-blur: 2px; box-shadow-spread: 0px">-->
+            <!--<div class="screeningcompoundsboxstyle" style="margin-top: 50px; height: 200px; padding: 0 100px;">-->
+
+            <div style="padding: 0px 100px; margin-top: 50px; height: 200px; margin: 100px 100px;" class="screeningcompoundsboxstyle">
+
+                <div style="width: 100%;  line-height: 1.2; "><h3>Screening Compounds</h3></div>
+
+                <div style="width: 100%; opacity: 0.65; text-align: left; line-height: 1.2; margin-top: 20px;">AKOS database contains diverse drug-like, lead-like and fragment-like compounds from various suppliers around the world, You can easily select the most attractive and diverse chemotypes according to your needs. Upon the request we are ready to design the reliable set/library taking into account rational MedChem and Chemoinformatic parameters as well as customer’s requirements. We can also ensure required formatting and compound management.</div></center>
+
+                <!--<div>Screening Compounds</div>
+                <div style="margin-top: 10px;">AKOS database contains diverse drug-like, lead-like and fragment-like compounds from various suppliers around the world, You can easily select the most attractive and diverse chemotypes according to your needs. Upon the request we are ready to design the reliable set/library taking into account rational MedChem and Chemoinformatic parameters as well as customer’s requirements. We can also ensure required formatting and compound management.</div>-->
+
+
+
+
+            </div>
+
+
+            <!--<div style="margin-top: 50px; padding: 0 100px; height: 200px" class="customsynthesisboxstyle">-->
+
+            <div style="padding: 0px 100px; margin-top: 50px; height: 200px; margin: 100px 100px;" class="customsynthesisboxstyle">
+
+                <div style="width: 100%; line-height: 1.2;"><h3>Custom synthesis</h3></div>
+                <div style="width: 100%; opacity: 0.65; text-align: left; line-height: 1.2; margin-top: 20px;">AKOS provides custom synthesis solution for the tasks of different complexity. Based on our experience and network of trusted suppliers we are ready to find you the best partner for our customers to synthesize diverse reference compounds, designed molecules, peptides, natural products, heterobifunctional molecules, drug conjugates etc. Upon the request we can provide the synthesis of compound libraries and specific sets of compounds.</div>
+
+
+            </div>
+
+            <div style="margin-top: 50px;" class="journeyboxstyle">
+
+                <div style="font-size: 40px;"><center><b>From Idea to Discovery</b></center></div>
+                <center><div style="font-size: 40px; color: #999999;"><b>Start your journey with AKOS now!</b></div></center>
+
+                <div style="display: flex; justify-content: center; margin-top: 30px;">
+
+                    <button class="btn" style="background-color: rgb(168, 13, 13) !important; color: white;" id="btn_contactus">
+
+                        Contact us
+
+
+                    </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+        <div id='fourth' class="footerstyle">
+
+
+            <div class="parentquickrequestwindow" style="margin-top: 50px;">
+
+                <div style="width: 100%;display: flex;  justify-content: center; align-items: center; ">
+
+                    <div style="float: left; padding: 5px 50px;">
+
+
+                        <img style="display: flex; align-items: normal; justify-content: center;" src="images/AK0S-logo-weit.png" height="60" width="80" />
+
+
+                    </div>
+
+                    <div style="float: left; padding: 5px 50px;">
+
+                        <div>Tel. +49 7621 162 2778</div>
+
+                    </div>
+
+                    <div style="float: left; padding: 5px 50px;">
+
+                        <div><a href="mailto:compounds@akosgmbh.eu">compounds@akosgmbh.eu</a></div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div id="Startpagenotificationwindow" style="display: none;">
+
+        <div style="background-color: antiquewhite">
+            How to request/order compounds with AKos
+        </div>
+        <div>
+
+            <div id='jqxNavigationBar'>
+                <div>Offer</div>
+                <div>
+                    <ul>
+                        <li>
+
+                            <div style="padding: 10px">We send you an offer that shows all possible suppliers of the compound</div>
+
+                            <!--<div class="wrapper">
+                                <div class="inner_left">We send you an offer that shows all possible suppliers of the compound</div>-->
+                            <!--<div class="inner_right"><img style="border: 0" src="images/offerpicturewithouttext.jpg" width="342" height="263" onclick="offerimageclick()"></div>-->
+                            <!--</div>-->
+
+                        </li>
+
+                    </ul>
+                </div>
+                <div>Verification</div>
+                <div>
+                    <ul>
+                        <li>
+
+                            <div style="padding: 10px">If you are satisfied with an offer and order one or more substances, we will first send you the corresponding structures.</div>
+
+
+                            <!--<div class="wrapper">
+                                <div class="inner_left">If you are satisfied with an offer and order one or more substances, we will first send you the corresponding structures.</div>-->
+                            <!--<div class="inner_right"><img src="images/offerpicturewithouttext.jpg" width="342" height="263"> </div>-->
+                            <!--</div>-->
+
+                        </li>
+
+                    </ul>
+                </div>
+                <div>Delivery notification</div>
+                <div>
+                    <ul>
+                        <li>
+
+                            <div style="padding: 10px">When one or more substances are ready for delivery, you will receive written notification from us.</div>
+
+
+                            <!--<div class="wrapper">
+                                <div class="inner_left">When one or more substances are ready for delivery, you will receive written notification from us.</div>-->
+                            <!--<div class="inner_right"><img src="images/offerpicturewithouttext.jpg" width="342" height="263"> </div>-->
+                            <!--</div>-->
+
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div>Import  documents</div>
+                <div>
+                    <ul>
+                        <li>
+
+                            <div style="padding: 10px">If you require specific documents for import, we will send them to you as soon as possible.</div>
+
+
+                            <!--<div class="wrapper">
+                                <div class="inner_left">If you require specific documents for import, we will send them to you as soon as possible.</div>-->
+                            <!--<div class="inner_right"><img src="images/offerpicturewithouttext.jpg" width="342" height="263"> </div>-->
+                            <!--</div>-->
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!--<div id="appNotification">New! AKos <span style="color:tomato;">MOBILE APP</span> Click for more information.</div>-->
+
+    <div id="Startpagenotification">AKos compounds requests/orders explained</div>
+
+
+    <div id="assistedrequesthelpwindow" >
+        <div>About assisted request</div>
+        <div id="assistedrequesthelpwindow_helptext">
+
+
+        </div>
+    </div>
+
+    <div id="quickrequestpromptwindow">
+        <div></div>
+        <div>
+            <div style="margin-top: 10px;">
+                Do you want to create an assisted request?
+            </div>
+            <div>
+                <div style="margin-top: 15px; ">
+
+                    <!--<input type="button" style="float: left; margin-left: 2px" id="quickrequestpromptwindow_help" value="About assisted request" />
+
+                    <input type="button" style="float: right; margin-left: 10px" id="quickrequestpromptwindow_no" value="No" />
+                    <input type="button" style="float: right;" id="quickrequestpromptwindow_yes" value="Yes" />-->
+                    <!--<div style="float: left; margin-left: 2px; height: 20px; border-width: 1px; border-style: solid; padding: 10px;" id="quickrequestpromptwindow_help">About assisted request</div>-->
+
+                    <input type="button" style="float: left; margin-left: 2px;" value="About assisted request" id='quickrequestpromptwindow_help' />
+
+                    <!--<div style="height: 20px; border-width: 1px; border-style: solid; padding: 10px; float: right; margin-left: 10px" id="quickrequestpromptwindow_no">No</div>-->
+
+                    <input type="button" style="float: right; margin-left: 10px;" value="No" id='quickrequestpromptwindow_no' />
+
+
+
+                    <!--<div style="height: 20px; border-width: 1px; border-style: solid; padding: 10px; float: right;" id="quickrequestpromptwindow_yes">Yes</div>-->
+
+                    <input type="button" style="float: right; " value="Yes" id='quickrequestpromptwindow_yes' />
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="popupwindowquickrequestform" style="position: fixed; left: 50%; top: 50%;">
+        <div>AKos assisted request</div>
+        <div>
+
+
+
+
+            <div style="height: 20px; border-width: 1px; border-style: solid; padding:10px;" id="btn_quickrequestform_navbarhelppopoverheader">
+
+                Let us know what compound you would like to inquiry. You can also inquire a list of compounds. We will come back to you with quotation and availability details.
+
+
+            </div>
+
+
+            <div id="testform">
+
+                <div class="parentquickrequestwindow">
+
+                    <div class="childrenquickrequestwindow">
+
+                        <div class="childquickrequestwindow"><input id="firstname" /></div>
+
+
+
+                        <div class="childquickrequestwindow"><input id="lastname" /></div>
+
+                        <div class="childquickrequestwindow"><input id="company" /></div>
+
+                        <div class="childquickrequestwindow"><input id="email" /></div>
+
+                        <div class="childquickrequestwindow"><div id="country"></div></div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div style="margin-top: 5px; border: solid; border-width: thin; padding: 10px;">
+
+                    <b>How to enter your query?</b></br>You can use the following information that describe your molecule : AKos Number, CAS Number, Mol Name, Mol Formula, InChI, Smiles, PubChem/ChemSpider ID.<br />If none of the above matches your needs, feel free to express your molecule details using free text.<br />If possible we appreciate you also let us know the amount you would like to inquire for a given compound.
+
+                </div>
+
+
+                <div style="margin-top: 5px; border: solid; border-width: thin; "><textarea id="quickrequestformeditor"></textarea></div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div style="height: 33px; border-width: 1px; border-style: solid; padding: 10px; margin-top: 5px;">
+
+
+                <input type="button" id="btn_quickrequestform_ok" value="Send request" style="margin-right: 10px" />
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div id="appinfowindow" style="display: none;">
+        <div>
+            NEW: AKos inquiry Android phone and tablet app
+        </div>
+        <div>
+            <div style="margin-top: 2%;">
+
+                <div style="display: flex; align-items: normal; justify-content: center;padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">The app allows you to perform the identical tasks as our webpage with some extensions such as reusable search history, chemical intelligent auto-completion (PubChem), possibility to save contact information. The app supports so-called mobile deep linking for PubChem/ChemSpider and ChemExper AKos links. That means that clicking an AKos compound vendor link on e.g. PubChem/ChemSpider/ChemExper web pages opens the app instead of using a browser to open a web page.</div>
+
+
+                <div style="display: flex; align-items: center; justify-content: center;margin-top: 20px;">
+                    <div style="font-size: 30px;">App screenshots</div>
+                </div>
+
+
+
+
+                <div style="display: flex; align-items: center; justify-content: center;margin-top: 20px;">
+                    <div id="photoGallery2">
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/start.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/autocompletion.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/tooltip.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/history.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/results.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/structurezoom.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/amountvalidation_1.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/amountvalidation_2.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/nextaction.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/shop.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/navigation.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/contactform_1.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/contactform_2.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/requestsent.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/feedback.jpg)"></div>
+                        </div>
+
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/deeplinkscreenshot.jpg) "></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div style="display: flex; align-items: normal; justify-content: center; font-size: 20px; margin-top: 20px;padding-left: 10%; padding-right: 10%; padding-bottom: 1%;">How to install the app?</div>
+                <div style="display: flex; align-items: normal; justify-content: center; padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">Use your smartphone or tablet camera to scan the following QR code and open the APK file download page using your phone or tablet default browser.</div>
+                <div style="display: flex; align-items: normal; justify-content: center; padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;"><img src=images/qrcode_downloadpage.png></div>
+                <div style="display: flex; align-items: normal; justify-content: center; font-size: 20px;padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">Problems or questions?</div>
+                <div style="display: flex; align-items: normal; justify-content: center; padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">Send email to&nbsp;<span style="color:blue"><a href="mailto:it@akosgmbh.eu">it@akosgmbh.eu</a></span></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="jqxLoader"></div>
+
+
+
+
+
+    <div style="display: none" id="messagenotification">
+        <div id="messagenotification_content"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        var country_required_validationrule = function (input, commit) {
+
+
+            var value = $("#country").jqxDropDownList('val');
+
+
+
+            if (isNotEmpty(value)) {
+
+                return true;
+            } else {
+
+                return false;
+            }
+
+        };
+
+
+
+
+
+
+        function isNotEmpty(value) {
+
+
+
+            if (typeof value !== 'undefined') {
+
+
+
+                if (value !== null) {
+
+
+                    if (value) {
+
+
+
+                        return true;
+
+
+                    } else {
+
+
+
+
+                        return false;
+
+
+                    }
+
+
+
+                } else {
+
+
+                    return false;
+
+
+                }
+
+
+
+
+
+
+            } else {
+                return false;
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+        function doName2Structurelookup(origin) {
+
+
+
+
+
+            var n2sinput = $('#registrynumberinput').jqxInput('val');
+
+            if (isNotEmpty(n2sinput)) {
+
+
+                jdata = {};
+
+                if (sessionStorage.getItem("sessionid") !== null) {
+
+                    var sessionid = sessionStorage.getItem("sessionid");
+
+                    if (isNotEmpty(sessionid)) {
+
+                        jdata.sessionid = sessionid;
+
+
+                    }
+                }
+
+                jdata.name = n2sinput;
+
+                jdata.origin = origin;
+
+
+                $('#jqxLoader').jqxLoader('open');
+                $.ajax({
+                    type: "POST",
+
+                    url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Name2Structure",
+                    cache: false,
+                    data: JSON.stringify(jdata),
+                    success: function (response) {
+
+
+
+                        $('#jqxLoader').jqxLoader('close');
+
+                        if (response.errorflag) {
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                            $("#messagenotification").jqxNotification("open");
+                        } else {
+
+                            if (response.noCIDMatch) {
+
+
+
+
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually or send us an assisted request.");
+                                $("#messagenotification").jqxNotification("open");
+
+
+
+                                $('#quickrequestpromptwindow').jqxWindow('open');
+
+                                $("#quickrequestpromptwindow").jqxWindow("move", $(window).width() / 2 - $("#quickrequestpromptwindow").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+
+                            } else {
+
+
+                                var jData = {};
+                                jData.registryid = "";
+                                jData.smiles = response.smiles;
+                                jData.molfile = response.bestchoiceCIDMolfile;
+
+
+
+                                doSearch(jData);
+
+
+
+
+                            }
+
+
+                        }
+                    },
+                    error: function (error) {
+                        $('#jqxLoader').jqxLoader('close');
+                        $('#messagenotification').jqxNotification({ template: 'error' });
+
+                        if (error.status == 500) {
+
+                            $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                        } else {
+
+                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                        }
+
+
+
+
+                        $("#messagenotification").jqxNotification("open");
+                    }
+                });
+
+
+
+            } else {
+
+                $("#registrynumberinput").jqxTooltip({ autoHideDelay: 2000, content: "Please enter name", position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+                $("#registrynumberinput").jqxTooltip("open");
+
+                return;
+
+            }
+
+
+        }
+
+
+        function doSearch(jdata) {
+
+            if (sessionStorage.getItem("sessionid") !== null) {
+
+                var sessionid = sessionStorage.getItem("sessionid");
+
+                if (isNotEmpty(sessionid)) {
+
+                    jdata.sessionid = sessionid;
+
+
+                }
+
+
+
+
+
+            }
+
+
+            $('#jqxLoader').jqxLoader('open');
+
+            $.ajax({
+                type: "POST",
+
+
+
+
+                url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Executecompletefullstructuresearch",
+                cache: false,
+
+                data: JSON.stringify(jdata),
+
+                success: function (response) {
+
+
+
+                    $('#jqxLoader').jqxLoader('close');
+
+
+                    if (response.errorflag) {
+
+                        $('#messagenotification').jqxNotification({ template: 'error' });
+                        $("#messagenotification").find("div").first().text("Error calling Executecompletefullstructuresearch. Message : " + response.errortext);
+                        $("#messagenotification").jqxNotification("open");
+
+
+                    } else {
+
+
+
+
+
+
+
+
+
+                        var data = response.initialsearchresults;
+
+                        sessionStorage.setItem("structurequery", JSON.stringify(jdata));
+
+                        var exportdata = JSON.stringify(data);
+
+
+
+
+                        sessionStorage.setItem("griddata", exportdata);
+
+
+
+                        sessionStorage.setItem("enablesimilaritybutton", true);
+
+
+
+
+                        sessionStorage.setItem("searchexecuted", "YES");
+
+
+                        window.location.href = "results.html";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    }
+
+                },
+                error: function (error) {
+
+                    $('#jqxLoader').jqxLoader('close');
+                    $('#messagenotification').jqxNotification({ template: 'error' });
+
+                    if (error.status == 500) {
+
+                        $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                    } else {
+
+                        $("#messagenotification").find("div").first().text("Error calling Executecompletefullstructuresearch. Status : " + error.status);
+                    }
+
+
+                    $("#messagenotification").jqxNotification("open");
+
+
+                }
+            });
+
+
+        }
+
+
+
+
+
+
+        $(document).ready(function () {
+
+            debugger;
+
+            var btn_contactus = $("#btn_contactus");
+
+            $("#btn_contactus").on('click', function () {
+
+
+
+                location.href = 'mailto:compounds@akosgmbh.eu';
+
+
+            });
+
+
+
+            /*$("#jqxDockPanel").jqxDockPanel({ width: '100%', height: '50%' });*/
+
+            /*$("#jqxDockPanel").jqxDockPanel({  });*/
+
+            var btn_assistedrequesthelp = $("#btn_assistedrequesthelp");
+
+
+
+            $("#btn_assistedrequesthelp").on('click', function () {
+
+
+
+
+                $("#assistedrequesthelpwindow").jqxWindow('open');
+
+                $("#assistedrequesthelpwindow").jqxWindow("move", $(window).width() / 2 - $("#assistedrequesthelpwindow").jqxWindow("width") / 2, $(window).height() / 2 - $("#assistedrequesthelpwindow").jqxWindow("height") / 2);
+
+
+
+            });
+
+
+
+            document.getElementById("popupwindowquickrequestform").style.display = 'block';
+
+            document.getElementById("quickrequestpromptwindow").style.display = 'block';
+
+            document.getElementById("assistedrequesthelpwindow").style.display = 'block';
+
+            $("#assistedrequesthelpwindow").jqxWindow({
+                resizable: false,
+
+
+                width: "50%",
+                height: "90%",
+
+
+                autoOpen: false,
+                showCollapseButton: false,
+
+                showCloseButton: true,
+
+
+
+                initContent: function () {
+
+
+
+
+
+
+
+
+
+                }
+
+            });
+
+
+
+            $("#assistedrequesthelpwindow").jqxWindow('setContent', '<iframe scrolling="no" style="display:block;border:none; height:100vh; width:100%;" src="assistedrequesthelpwindow_helptext.html"></iframe >');
+
+            $('#testform').jqxValidator({
+
+                position: "bottom",
+
+                arrow: false,
+                rules: [
+
+
+                    { input: '#firstname', message: 'First name is required', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#lastname', message: 'Last name is required', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#company', message: 'Company name is required', action: 'keyup, blur', rule: 'required' },
+
+
+                    { input: '#email', message: 'E-mail is required', action: 'keyup, blur', rule: 'required' },
+
+
+                    { input: '#email', message: 'Invalid e-mail', action: 'keyup', rule: 'email' },
+
+
+                    { input: '#country', message: 'Country is required', action: 'keyup, blur, change', rule: country_required_validationrule },
+
+
+
+
+                    { input: '#quickrequestformeditor', message: 'Request details are required', action: 'keyup', rule: 'required' }
+
+                ]
+
+
+
+
+
+            });
+
+
+
+
+
+            var countries = [
+
+                { value: 'Afghanistan' },
+                { value: 'Aland Islands' },
+                { value: 'Albania' },
+                { value: 'Algeria' },
+                { value: 'American Samoa' },
+                { value: 'AndorrA' },
+                { value: 'Angola' },
+                { value: 'Anguilla' },
+                { value: 'Antarctica' },
+                { value: 'Antigua and Barbuda' },
+                { value: 'Argentina' },
+                { value: 'Armenia' },
+                { value: 'Aruba' },
+                { value: 'Australia' },
+                { value: 'Austria' },
+                { value: 'Azerbaijan' },
+                { value: 'Bahamas' },
+                { value: 'Bahrain' },
+                { value: 'Bangladesh' },
+                { value: 'Barbados' },
+                { value: 'Belarus' },
+                { value: 'Belgium' },
+                { value: 'Belize' },
+                { value: 'Benin' },
+                { value: 'Bermuda' },
+                { value: 'Bhutan' },
+                { value: 'Bolivia' },
+                { value: 'Bosnia and Herzegovina' },
+                { value: 'Botswana' },
+                { value: 'Bouvet Island' },
+                { value: 'Brazil' },
+                { value: 'British Indian Ocean Territory' },
+                { value: 'Brunei Darussalam' },
+                { value: 'Bulgaria' },
+                { value: 'Burkina Faso' },
+                { value: 'Burundi' },
+                { value: 'Cambodia' },
+                { value: 'Cameroon' },
+                { value: 'Canada' },
+                { value: 'Cape Verde' },
+                { value: 'Cayman Islands' },
+                { value: 'Central African Republic' },
+                { value: 'Chad' },
+                { value: 'Chile' },
+                { value: 'China' },
+                { value: 'Christmas Island' },
+                { value: 'Cocos (Keeling) Islands' },
+                { value: 'Colombia' },
+                { value: 'Comoros' },
+                { value: 'Congo' },
+                { value: 'Congo, The Democratic Republic of the' },
+                { value: 'Cook Islands' },
+                { value: 'Costa Rica' },
+                { value: 'Cote D\'Ivoire' },
+                { value: 'Croatia' },
+                { value: 'Cuba' },
+                { value: 'Cyprus' },
+                { value: 'Czech Republic' },
+                { value: 'Denmark' },
+                { value: 'Djibouti' },
+                { value: 'Dominica' },
+                { value: 'Dominican Republic' },
+                { value: 'Ecuador' },
+                { value: 'Egypt' },
+                { value: 'El Salvador' },
+                { value: 'Equatorial Guinea' },
+                { value: 'Eritrea' },
+                { value: 'Estonia' },
+                { value: 'Ethiopia' },
+                { value: 'Falkland Islands (Malvinas)' },
+                { value: 'Faroe Islands' },
+                { value: 'Fiji' },
+                { value: 'Finland' },
+                { value: 'France' },
+                { value: 'French Guiana' },
+                { value: 'French Polynesia' },
+                { value: 'French Southern Territories' },
+                { value: 'Gabon' },
+                { value: 'Gambia' },
+                { value: 'Georgia' },
+                { value: 'Germany' },
+                { value: 'Ghana' },
+                { value: 'Gibraltar' },
+                { value: 'Greece' },
+                { value: 'Greenland' },
+                { value: 'Grenada' },
+                { value: 'Guadeloupe' },
+                { value: 'Guam' },
+                { value: 'Guatemala' },
+                { value: 'Guernsey' },
+                { value: 'Guinea' },
+                { value: 'Guinea-Bissau' },
+                { value: 'Guyana' },
+                { value: 'Haiti' },
+                { value: 'Heard Island and Mcdonald Islands' },
+                { value: 'Holy See (Vatican City State)' },
+                { value: 'Honduras' },
+                { value: 'Hong Kong' },
+                { value: 'Hungary' },
+                { value: 'Iceland' },
+                { value: 'India' },
+                { value: 'Indonesia' },
+                { value: 'Iran, Islamic Republic Of' },
+                { value: 'Iraq' },
+                { value: 'Ireland' },
+                { value: 'Isle of Man' },
+                { value: 'Israel' },
+                { value: 'Italy' },
+                { value: 'Jamaica' },
+                { value: 'Japan' },
+                { value: 'Jersey' },
+                { value: 'Jordan' },
+                { value: 'Kazakhstan' },
+                { value: 'Kenya' },
+                { value: 'Kiribati' },
+                { value: 'Korea, Democratic People\'S Republic of' },
+                { value: 'Korea, Republic of' },
+                { value: 'Kuwait' },
+                { value: 'Kyrgyzstan' },
+                { value: 'Lao People\'S Democratic Republic' },
+                { value: 'Latvia' },
+                { value: 'Lebanon' },
+                { value: 'Lesotho' },
+                { value: 'Liberia' },
+                { value: 'Libyan Arab Jamahiriya' },
+                { value: 'Liechtenstein' },
+                { value: 'Lithuania' },
+                { value: 'Luxembourg' },
+                { value: 'Macao' },
+                { value: 'Macedonia, The Former Yugoslav Republic of' },
+                { value: 'Madagascar' },
+                { value: 'Malawi' },
+                { value: 'Malaysia' },
+                { value: 'Maldives' },
+                { value: 'Mali' },
+                { value: 'Malta' },
+                { value: 'Marshall Islands' },
+                { value: 'Martinique' },
+                { value: 'Mauritania' },
+                { value: 'Mauritius' },
+                { value: 'Mayotte' },
+                { value: 'Mexico' },
+                { value: 'Micronesia, Federated States of' },
+                { value: 'Moldova, Republic of' },
+                { value: 'Monaco' },
+                { value: 'Mongolia' },
+                { value: 'Montserrat' },
+                { value: 'Morocco' },
+                { value: 'Mozambique' },
+                { value: 'Myanmar' },
+                { value: 'Namibia' },
+                { value: 'Nauru' },
+                { value: 'Nepal' },
+                { value: 'Netherlands' },
+                { value: 'Netherlands Antilles' },
+                { value: 'New Caledonia' },
+                { value: 'New Zealand' },
+                { value: 'Nicaragua' },
+                { value: 'Niger' },
+                { value: 'Nigeria' },
+                { value: 'Niue' },
+                { value: 'Norfolk Island' },
+                { value: 'Northern Mariana Islands' },
+                { value: 'Norway' },
+                { value: 'Oman' },
+                { value: 'Pakistan' },
+                { value: 'Palau' },
+                { value: 'Palestinian Territory, Occupied' },
+                { value: 'Panama' },
+                { value: 'Papua New Guinea' },
+                { value: 'Paraguay' },
+                { value: 'Peru' },
+                { value: 'Philippines' },
+                { value: 'Pitcairn' },
+                { value: 'Poland' },
+                { value: 'Portugal' },
+                { value: 'Puerto Rico' },
+                { value: 'Qatar' },
+                { value: 'Reunion' },
+                { value: 'Romania' },
+                { value: 'Russian Federation' },
+                { value: 'RWANDA' },
+                { value: 'Saint Helena' },
+                { value: 'Saint Kitts and Nevis' },
+                { value: 'Saint Lucia' },
+                { value: 'Saint Pierre and Miquelon' },
+                { value: 'Saint Vincent and the Grenadines' },
+                { value: 'Samoa' },
+                { value: 'San Marino' },
+                { value: 'Sao Tome and Principe' },
+                { value: 'Saudi Arabia' },
+                { value: 'Senegal' },
+                { value: 'Serbia and Montenegro' },
+                { value: 'Seychelles' },
+                { value: 'Sierra Leone' },
+                { value: 'Singapore' },
+                { value: 'Slovakia' },
+                { value: 'Slovenia' },
+                { value: 'Solomon Islands' },
+                { value: 'Somalia' },
+                { value: 'South Africa' },
+                { value: 'South Georgia and the South Sandwich Islands' },
+                { value: 'Spain' },
+                { value: 'Sri Lanka' },
+                { value: 'Sudan' },
+                { value: 'Suriname' },
+                { value: 'Svalbard and Jan Mayen' },
+                { value: 'Swaziland' },
+                { value: 'Sweden' },
+                { value: 'Switzerland' },
+                { value: 'Syrian Arab Republic' },
+                { value: 'Taiwan' },
+                { value: 'Tajikistan' },
+                { value: 'Tanzania, United Republic of' },
+                { value: 'Thailand' },
+                { value: 'Timor-Leste' },
+                { value: 'Togo' },
+                { value: 'Tokelau' },
+                { value: 'Tonga' },
+                { value: 'Trinidad and Tobago' },
+                { value: 'Tunisia' },
+                { value: 'Turkey' },
+                { value: 'Turkmenistan' },
+                { value: 'Turks and Caicos Islands' },
+                { value: 'Tuvalu' },
+                { value: 'Uganda' },
+                { value: 'Ukraine' },
+                { value: 'United Arab Emirates' },
+                { value: 'United Kingdom' },
+                { value: 'United States' },
+                { value: 'United States Minor Outlying Islands' },
+                { value: 'Uruguay' },
+                { value: 'Uzbekistan' },
+                { value: 'Vanuatu' },
+                { value: 'Venezuela' },
+                { value: 'Viet Nam' },
+                { value: 'Virgin Islands, British' },
+                { value: 'Virgin Islands, U.S.' },
+                { value: 'Wallis and Futuna' },
+                { value: 'Western Sahara' },
+                { value: 'Yemen' },
+                { value: 'Zambia' },
+                { value: 'Zimbabwe' }
+            ];
+
+
+
+
+
+
+            $("#popupwindowquickrequestform").jqxWindow({
+                resizable: false,
+
+
+                width: "90%",
+                height: "90%",
+
+
+                autoOpen: false,
+                showCollapseButton: true,
+
+
+                initContent: function () {
+
+                    debugger;
+
+                    $("#firstname").jqxInput({ placeHolder: "First name", theme: "", height: "100%", width: "100%" });
+
+                    $('#firstname').jqxInput('val', '');
+
+
+
+
+                    $("#lastname").jqxInput({ placeHolder: "Last name", theme: "", height: "100%", width: "100%" });
+                    $('#lastname').jqxInput('val', '');
+
+
+                    $("#company").jqxInput({ placeHolder: "Company name", theme: "", height: "100%", width: "100%" });
+                    $('#company').jqxInput('val', '');
+
+                    $("#email").jqxInput({ placeHolder: "EMail", theme: "", width: "100%", height: "100%" });
+                    $('#email').jqxInput('val', '');
+
+                    var countries = new Array("Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic", "Congo, Republic of the", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Greenland", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Mongolia", "Morocco", "Monaco", "Mozambique", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", " Sao Tome", "Saudi Arabia", "Senegal", "Serbia and Montenegro", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe");
+
+
+                    $("#country").jqxDropDownList({ source: countries, placeHolder: "Select delivery country", height: 30, width: 180, theme: "" });
+
+                    let placeholdertext = "Please enter your inquiry details"
+
+                    $('#quickrequestformeditor').jqxTextArea({ placeHolder: placeholdertext, height: '60%', width: '100%', theme: "" });
+
+
+
+
+
+
+
+
+
+
+                }
+
+            });
+
+            $('#popupwindowquickrequestform').on('collapse', function (event) {
+
+                $('#testform').jqxValidator('hide');
+
+            });
+
+            $('#popupwindowquickrequestform').on('expand', function (event) {
+
+                $('#testform').jqxValidator('validate');
+
+            });
+
+            $('#popupwindowquickrequestform').on('close', function (event) {
+
+
+
+                $('#testform').jqxValidator('hide');
+
+            });
+
+
+
+
+
+
+
+            var btn_quickrequestform_ok = $("#btn_quickrequestform_ok");
+
+            btn_quickrequestform_ok.jqxButton({ template: 'primary' });
+
+            btn_quickrequestform_ok.click(function (event) {
+
+
+                var validationresult = $('#testform').jqxValidator('validate');
+
+                if (validationresult) {
+
+                    $('#testform').jqxValidator('hide');
+
+
+
+
+                    var firstname_value = $('#firstname').val();
+
+
+
+                    var lastname_value = $('#lastname').val();
+
+                    var company_value = $('#company').val();
+
+
+
+                    var email_value = $('#email').val();
+
+
+                    var country_value = $("#country").jqxDropDownList('val');
+
+
+
+
+
+
+                    var editor_value = $("#quickrequestformeditor").jqxTextArea('val')
+
+
+
+                    var jdata = {};
+
+                    jdata.firstname = firstname_value;
+
+                    jdata.lastname = lastname_value;
+
+                    jdata.companyname = company_value;
+
+                    jdata.email = email_value;
+
+                    jdata.country = country_value;
+
+                    jdata.requesttext = editor_value;
+
+                    $('#jqxLoader').jqxLoader('open');
+
+                    $.ajax({
+                        type: "POST",
+                        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/ProcessQuickrequest",
+                        cache: false,
+                        data: JSON.stringify(jdata),
+
+                        success: function (response) {
+
+
+
+                            $('#jqxLoader').jqxLoader('close');
+
+                            $('#messagenotification').jqxNotification({ template: 'info' });
+
+                            $("#messagenotification").find("div").first().text("Thank you. You will soon receive a confirmation mail from us.");
+
+
+                            $("#messagenotification").jqxNotification("open");
+
+
+
+                        },
+                        error: function (error) {
+
+                            debugger;
+
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+
+                            $("#messagenotification").find("div").first().text("Error. Message : " + error);
+
+
+                            $("#messagenotification").jqxNotification("open");
+
+                        }
+                    });
+
+
+                    $('#popupwindowquickrequestform').jqxWindow('close');
+
+                }
+            });
+
+
+
+            $("#btn_quickrequest").click(function () {
+
+
+                $('#popupwindowquickrequestform').jqxWindow('open');
+
+                $("#popupwindowquickrequestform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequestform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+
+            });
+
+
+
+            //$("#appNotification").jqxNotification({
+            //    width: "auto", opacity: 0.9, autoOpen: false,
+            //    closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+            //});
+
+            $("#Startpagenotification").jqxNotification({
+                width: "auto", opacity: 0.9, autoOpen: false,
+                closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (sessionStorage.getItem("sessionid") === null) {
+
+                $('#jqxLoader').jqxLoader('open');
+                $.ajax({
+                    type: "GET",
+                    url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/CreateSessionID",
+                    cache: false,
+
+                    success: function (response) {
+                        $('#jqxLoader').jqxLoader('close');
+                        if (response.errorflag) {
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Message : " + response.errortext);
+                            $("#messagenotification").jqxNotification("open");
+                        } else {
+
+                            var sessionid = response.resultobject;
+
+
+
+                            sessionStorage.setItem("sessionid", sessionid);
+
+
+
+
+                        }
+                    },
+                    error: function (error) {
+                        $('#jqxLoader').jqxLoader('close');
+                        $('#messagenotification').jqxNotification({ template: 'error' });
+                        $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Status : " + error.status);
+                        $("#messagenotification").jqxNotification("open");
+                    }
+                });
+
+
+
+
+            } else {
+
+
+
+            }
+
+
+
+
+
+
+            document.getElementById("messagenotification").style.display = 'block';
+
+
+
+
+            var ketcher;
+
+            $("#messagenotification").jqxNotification({
+                width: 250,
+                position: "top-right",
+                opacity: 0.9,
+                autoOpen: false,
+                animationOpenDelay: 800,
+                autoClose: false,
+                autoCloseDelay: 3000,
+                showCloseButton: true
+            });
+
+
+
+
+            /*$("#registrynumberinput").jqxInput({ placeHolder: "AKOS no.,CAS,name,MFCD no.", height: 50, width: 400 });*/
+
+
+            debugger;
+
+            $("#registrynumberinput").jqxInput({ placeHolder: "AKOS number,CAS number,Molname,Synonym, Smiles", height: 50, width: 400, theme: "" });
+
+
+
+
+            $("#registrynumberinput").on('keyup', function (e) {
+                if (e.key === 'Enter' || e.keyCode === 13) {
+
+                    doName2Structurelookup("registrynumberinput keyup");
+
+
+                }
+            });
+
+
+
+
+
+            $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top', isModal: true, text: "Processing..." });
+
+
+
+            var btn_navigation_search = $("#btn_navigation_search");
+
+
+            btn_navigation_search.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_search.click(function (event) {
+
+                window.location.href = "index.html";
+            });
+
+            var btn_navigation_drawstructure = $("#btn_navigation_drawstructure");
+
+
+
+            btn_navigation_drawstructure.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_drawstructure.click(function (event) {
+
+                window.location.href = "draw-search.html";
+            });
+
+            var btn_navigation_results = $("#btn_navigation_results");
+
+
+
+            btn_navigation_results.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_results.click(function (event) {
+
+                window.location.href = "results.html";
+            });
+
+
+
+            var btn_navigation_contact = $("#btn_navigation_contact");
+
+
+
+            btn_navigation_contact.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_contact.click(function (event) {
+
+                window.location.href = "contact.html";
+            });
+
+            var btn_navigation_about = $("#btn_navigation_about");
+
+
+
+            btn_navigation_about.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_about.click(function (event) {
+
+                window.location.href = "about.html";
+            });
+
+
+            var btn_navigation_requests = $("#btn_navigation_requests");
+
+            btn_navigation_requests.jqxButton({ width: 120, height: 50 });
+
+
+            if (sessionStorage.getItem("shoppingitems") === null) {
+
+                $('#btn_navigation_requests').jqxButton({ value: "Requests (0)" });
+
+
+
+
+            } else {
+
+                var data = sessionStorage.getItem("shoppingitems")
+
+                var rows = JSON.parse(data);
+
+                $('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")" });
+
+
+
+
+            }
+
+
+            btn_navigation_requests.click(function (event) {
+
+                window.location.href = "requests.html";
+
+
+
+
+
+
+            });
+
+
+            var drawstructurebutton = $("#btn_drawstructure");
+
+            drawstructurebutton.jqxButton({ width: 120, height: 50 });
+
+            drawstructurebutton.click(function (event) {
+
+
+                window.location.href = "draw-search.html";
+
+
+
+            });
+
+
+
+
+
+
+
+
+            var namelookupbutton = $("#btn_namelookup");
+
+            namelookupbutton.jqxButton({ width: 100, height: 50, template: 'default' });
+            namelookupbutton.click(function (event) {
+
+                doName2Structurelookup("btn_namelookup");
+
+
+
+            });
+
+
+
+
+
+
+            var searchparameters = window.location.search
+            if (isNotEmpty(searchparameters)) {
+
+
+
+
+
+
+
+                const params = new URLSearchParams(window.location.search);
+
+                const alluppercaseParams = new URLSearchParams();
+
+                for (const [name, value] of params) {
+                    alluppercaseParams.append(name.toUpperCase(), value);
+                }
+
+                var origin = alluppercaseParams.get('ORIGIN');
+
+                if (origin == "AKOSWEBSITE") {
+
+                    // do nothing
+                } else {
+
+                    var id = alluppercaseParams.get('ID');
+
+                    jdata = {};
+
+
+                    if (sessionStorage.getItem("sessionid") !== null) {
+
+                        var sessionid = sessionStorage.getItem("sessionid");
+
+                        if (isNotEmpty(sessionid)) {
+
+                            jdata.sessionid = sessionid;
+
+
+                        }
+                    }
+
+                    jdata.name = id;
+
+                    if (isNotEmpty(origin)) {
+
+                        if (origin == "PUBCHEM") {
+
+                            jdata.origin = "PubChemLink";
+
+                        }
+
+                        if (origin == "CHEMSPIDER") {
+
+                            jdata.origin = "ChemspiderLink";
+
+                        }
+
+                        if (origin == "ZINCDB") {
+
+                            jdata.origin = "ZincdbLink";
+
+                        }
+
+
+                        if (origin == "CHEMEXPER") {
+
+                            jdata.origin = "ChemexperLink";
+
+                        }
+
+                        if (origin == "AKOSWEBSITE") {
+
+                            jdata.origin = "AKoswebsiteLink";
+
+                        }
+
+
+                    }
+
+                    if (!isNotEmpty(jdata.origin)) {
+
+
+                        jdata.origin = "Link";
+                    }
+
+
+                    $('#jqxLoader').jqxLoader('open');
+
+                    var useragentinformationjdata = {};
+
+                    useragentinformationjdata.origin = jdata.origin
+
+                    useragentinformationjdata.name = id;
+
+                    useragentinformationjdata.useragentrawstring = navigator.userAgent
+
+
+                    $.ajax({
+                        type: "POST",
+
+                        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogUseragentinformation",
+                        cache: false,
+                        data: JSON.stringify(useragentinformationjdata),
+                        success: function (response) {
+
+                            $('#jqxLoader').jqxLoader('close');
+
+
+                            const agent = window.navigator.userAgent;
+
+
+
+                            const botUserAgentsArray = [
+                                'googlebot',
+                                'bingbot',
+                                'linkedinbot',
+                                'mediapartners-google',
+                                'lighthouse',
+                                'insights',
+                                'applebot',
+                                'ahrefs'
+
+                            ];
+
+                            var isBotUserAgent = 0;
+                            for (var j = 0; j < botUserAgentsArray.length; j++) {
+                                if (agent.toLowerCase().indexOf(botUserAgentsArray[j].toLowerCase()) !== -1) {
+
+                                    isBotUserAgent = 1;
+                                    break;
+                                }
+                            }
+
+                            if (isBotUserAgent == 0) {
+
+                                $('#jqxLoader').jqxLoader('open');
+
+
+                                $.ajax({
+                                    type: "POST",
+
+                                    url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Name2Structure",
+                                    cache: false,
+                                    data: JSON.stringify(jdata),
+                                    success: function (response) {
+
+
+
+
+
+
+
+                                        $('#jqxLoader').jqxLoader('close');
+                                        if (response.errorflag) {
+                                            $('#messagenotification').jqxNotification({ template: 'error' });
+                                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                                            $("#messagenotification").jqxNotification("open");
+                                        } else {
+
+                                            if (response.noCIDMatch) {
+
+                                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                                $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually or send us an assisted request.");
+                                                $("#messagenotification").jqxNotification("open");
+
+                                                $('#quickrequestpromptwindow').jqxWindow('open');
+
+                                                $("#quickrequestpromptwindow").jqxWindow("move", $(window).width() / 2 - $("#quickrequestpromptwindow").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+                                            } else {
+                                                var jData = {};
+                                                jData.registryid = "";
+
+                                                jData.molfile = response.bestchoiceCIDMolfile;
+
+                                                jData.smiles = response.smiles;
+
+                                                doSearch(jData);
+
+
+
+
+
+
+                                            }
+
+
+                                        }
+                                    },
+                                    error: function (error) {
+                                        $('#jqxLoader').jqxLoader('close');
+                                        $('#messagenotification').jqxNotification({ template: 'error' });
+
+                                        if (error.status == 500) {
+
+                                            $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                                        } else {
+
+                                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                                        }
+
+
+
+                                        $("#messagenotification").jqxNotification("open");
+                                    }
+                                });
+                            }
+
+
+
+
+
+
+
+
+
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+
+                        }
+                    });
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+            } else {
+
+
+
+                var bstartpagenotificationshown;
+
+                if (sessionStorage.getItem("startpagenotificationshown") !== null) {
+
+                    bstartpagenotificationshown = sessionStorage.getItem("startpagenotificationshown");
+                } else {
+
+                    bstartpagenotificationshown = false
+
+
+
+                }
+
+                if (!bstartpagenotificationshown) {
+
+
+
+                    $("#Startpagenotification").jqxNotification({
+                        width: "auto", opacity: 0.9, autoOpen: false,
+                        closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+                    });
+
+                    $("#Startpagenotification").jqxNotification("open");
+
+
+
+                    $("#Startpagenotification").on("open", function (event) {
+
+                        
+
+                        sessionStorage.setItem("startpagenotificationshown", true);
+
+                        var logappnotificationactionsjdata = {};
+
+                        logappnotificationactionsjdata.Pagename = "Startpagenotification"
+
+                        logappnotificationactionsjdata.Action = "OPEN";
+
+
+
+
+                        $.ajax({
+                            type: "POST",
+
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                            cache: false,
+                            data: JSON.stringify(logappnotificationactionsjdata),
+                            success: function (response) {
+                            },
+                            error: function (error) {
+
+                            }
+                        });
+
+
+
+
+                    });
+
+                    $("#Startpagenotification").on("close", function (event) {
+
+
+
+                        $('#Startpagenotification').jqxNotification('destroy');
+
+                        var logappnotificationactionsjdata = {};
+
+                        logappnotificationactionsjdata.Pagename = "Startpagenotification"
+
+                        logappnotificationactionsjdata.Action = "CLOSE";
+
+
+
+
+                        $.ajax({
+                            type: "POST",
+
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                            cache: false,
+                            data: JSON.stringify(logappnotificationactionsjdata),
+                            success: function (response) {
+                            },
+                            error: function (error) {
+
+                            }
+                        });
+
+                    });
+
+                    $("#Startpagenotification").on("click", function (event) {
+
+                        $('#Startpagenotification').jqxNotification('destroy');
+
+
+
+                        $("#Startpagenotificationwindow").jqxWindow({
+                            //width: 600,
+                            //height: 500,
+
+
+                            width: '60%',
+                            height: '60%',
+
+                            position: "center",
+                            resizable: true,
+                            isModal: false,
+                            autoOpen: false,
+
+                            modalOpacity: 1.00
+
+
+
+
+                        });
+
+                        
+
+                        
+                        $("#jqxNavigationBar").jqxNavigationBar({ width: "100%", height: "100%", expandMode: 'multiple', expandedIndexes: [0, 1, 2, 3] });
+
+
+
+
+                        $("#Startpagenotificationwindow").jqxWindow('open');
+
+
+
+
+
+
+                        var logappnotificationactionsjdata = {};
+
+                        logappnotificationactionsjdata.Pagename = "Startpagenotification"
+
+                        logappnotificationactionsjdata.Action = "CLICK";
+
+
+
+
+                        $.ajax({
+                            type: "POST",
+
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                            cache: false,
+                            data: JSON.stringify(logappnotificationactionsjdata),
+                            success: function (response) {
+                            },
+                            error: function (error) {
+
+                            }
+                        });
+
+                    });
+
+
+                    //$("#appNotification").jqxNotification({
+                    //    width: "auto", opacity: 0.9, autoOpen: false,
+                    //    closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+                    //});
+
+                    //$("#appNotification").jqxNotification("open");
+
+
+
+                    //$("#appNotification").on("open", function (event) {
+
+                    //    sessionStorage.setItem("appinfonotificationshown", true);
+
+                    //    var logappnotificationactionsjdata = {};
+
+                    //    logappnotificationactionsjdata.Pagename = "index"
+
+                    //    logappnotificationactionsjdata.Action = "OPEN";
+
+
+
+
+                    //    $.ajax({
+                    //        type: "POST",
+
+                    //        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                    //        cache: false,
+                    //        data: JSON.stringify(logappnotificationactionsjdata),
+                    //        success: function (response) {
+                    //        },
+                    //        error: function (error) {
+
+                    //        }
+                    //    });
+
+
+
+
+                    //});
+
+                    //$("#appNotification").on("close", function (event) {
+
+
+
+                    //    $('#appNotification').jqxNotification('destroy');
+
+                    //    var logappnotificationactionsjdata = {};
+
+                    //    logappnotificationactionsjdata.Pagename = "index"
+
+                    //    logappnotificationactionsjdata.Action = "CLOSE";
+
+
+
+
+                    //    $.ajax({
+                    //        type: "POST",
+
+                    //        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                    //        cache: false,
+                    //        data: JSON.stringify(logappnotificationactionsjdata),
+                    //        success: function (response) {
+                    //        },
+                    //        error: function (error) {
+
+                    //        }
+                    //    });
+
+                    //});
+
+                    //$("#appNotification").on("click", function (event) {
+
+                    //    $('#appNotification').jqxNotification('destroy');
+
+
+
+                    //    $("#appinfowindow").jqxWindow({
+                    //        width: 500,
+                    //        height: 700,
+                    //        position: "center",
+                    //        resizable: true,
+                    //        isModal: false,
+                    //        autoOpen: false,
+
+                    //        modalOpacity: 0.01
+
+
+                    //    });
+
+                    //    document.getElementById("appinfowindow").style.display = 'block';
+
+                    //    $('#photoGallery2').jqxScrollView({ width: 280, height: 620, showButtons: false });
+
+
+
+
+
+
+
+                    //    $("#appinfowindow").jqxWindow('open');
+
+
+
+
+
+
+                    //    var logappnotificationactionsjdata = {};
+
+                    //    logappnotificationactionsjdata.Pagename = "index"
+
+                    //    logappnotificationactionsjdata.Action = "CLICK";
+
+
+
+
+                    //    $.ajax({
+                    //        type: "POST",
+
+                    //        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                    //        cache: false,
+                    //        data: JSON.stringify(logappnotificationactionsjdata),
+                    //        success: function (response) {
+                    //        },
+                    //        error: function (error) {
+
+                    //        }
+                    //    });
+
+                    //});
+
+
+
+
+
+                } else {
+
+                    //$("#appNotification").jqxNotification({
+                    //    width: "auto", opacity: 0.9, autoOpen: false,
+                    //    closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+                    //});
+
+                    $("#Startpagenotification").jqxNotification({
+                        width: "auto", opacity: 0.9, autoOpen: false,
+                        closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+                    });
+
+                    /*$('#appNotification').jqxNotification('destroy');*/
+
+                    $('#Startpagenotification').jqxNotification('destroy');
+
+
+                }
+
+
+
+
+
+
+
+            }
+
+
+            $("#quickrequestpromptwindow").jqxWindow({
+                resizable: false,
+
+
+                width: "50%",
+                height: "20%",
+
+
+                autoOpen: false,
+                showCollapseButton: false,
+
+                showCloseButton: false,
+
+                /* okButton: $('#quickrequestpromptwindow_yes'), cancelButton: $('#quickrequestpromptwindow_no'),*/
+
+                initContent: function () {
+
+
+
+
+
+
+
+
+
+                }
+
+            });
+
+            $('#quickrequestpromptwindow_help').jqxButton({ template: 'info', width: 200 });
+
+            $('#quickrequestpromptwindow_yes').jqxButton({ template: 'primary', width: 60 });
+
+            $('#quickrequestpromptwindow_no').jqxButton({ template: 'primary', width: 60 });
+
+            $("#quickrequestpromptwindow").jqxWindow({ title: '' });
+
+            $("#quickrequestpromptwindow_help").on('click', function () {
+
+
+                $("#assistedrequesthelpwindow").jqxWindow('open');
+
+                $("#assistedrequesthelpwindow").jqxWindow("move", $(window).width() / 2 - $("#assistedrequesthelpwindow").jqxWindow("width") / 2, $(window).height() / 2 - $("#assistedrequesthelpwindow").jqxWindow("height") / 2);
+
+                $('#assistedrequesthelpwindow').jqxWindow('bringToFront');
+
+            });
+
+            $("#quickrequestpromptwindow_yes").on('click', function () {
+
+
+                $('#quickrequestpromptwindow').jqxWindow('close');
+
+                $('#popupwindowquickrequestform').jqxWindow('open');
+
+                $("#popupwindowquickrequestform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequestform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+            });
+
+            $("#quickrequestpromptwindow_no").on('click', function () {
+
+
+                $('#quickrequestpromptwindow').jqxWindow('close');
+
+
+
+
+            });
+
+
+
+
+            if (sessionStorage.hasOwnProperty("openquickrequest")) {
+
+                if (sessionStorage.getItem("openquickrequest") !== null) {
+
+
+                    var openquickrequest = sessionStorage.getItem("openquickrequest");
+
+                    if (isNotEmpty(openquickrequest)) {
+
+                        if (openquickrequest === "YES") {
+
+                            sessionStorage.setItem("openquickrequest", "");
+
+
+                            $('#popupwindowquickrequestform').jqxWindow('open');
+
+                            $("#popupwindowquickrequestform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequestform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+                        }
+
+
+
+                    }
+
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>

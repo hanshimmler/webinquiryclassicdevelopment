@@ -1,0 +1,3811 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>AKos webrequest</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+
+
+    <script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+
+
+    <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxwindow.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxscrollview.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxeditor.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdropdownbutton.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxcombobox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxnavbar.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxpopover.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxvalidator.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxtextarea.js"></script>
+
+    <script type="text/javascript" src="scripts/demos.js"></script>
+
+    <!-- Matomo
+    <script>
+        var _paq = window._paq = window._paq || [];
+
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//akoscompounds.de/matomo/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+
+    <style>
+
+
+        .photo {
+            width: 280px;
+            height: 620px;
+            background-color: #000;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .photosmall {
+            width: 600px;
+            height: 263px;
+            background-color: #000;
+            background-repeat: no-repeat;
+        }
+
+
+
+
+        .jqx-fill-state-normal {
+            background-color: transparent;
+            border-style: none;
+        }
+
+        .jqx-fill-state-hover {
+            background-color: #A80D0D;
+            color: white;
+        }
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+        .jqx-window-header {
+            height: 20px;
+        }
+
+        .search {
+            display: flex;
+            align-items: normal;
+            justify-content: center
+        }
+
+
+
+        .flex {
+            max-width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            margin-top: 10px;
+            position: relative;
+            width: 100%;
+            margin: 0px auto;
+            height: 250px;
+        }
+
+        .inner_left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: white;
+            width: 160px;
+            color: gray
+        }
+
+        .inner_right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 160px;
+            background: white;
+        }
+
+
+        .boxtext {
+            max-width: 30%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .boxpicture {
+            flex-basis: 50%;
+            height: 100%;
+            background-color: white;
+        }
+
+
+        .searchlabel {
+            display: flex;
+            align-items: normal;
+            justify-content: flex-start
+        }
+
+        .navigation-container {
+            height: 60px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            display: block;
+            align-items: center;
+        }
+
+        .navigation-row {
+            width: 100%;
+        }
+
+        .navigationflex-item {
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+        }
+
+
+        .unselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+
+        .vericaltext {
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            font-size: x-large;
+        }
+
+        /*.parent {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            align-items: center;*/ /* Align Items Vertically */
+            /*justify-content: space-between;*/ /* Align Items Horizontally (with equal space in between each of them */
+            /*background: #eee;
+            margin-top: 5px;
+        }*/
+
+        .parentmain {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center; /* Align Items Vertically */
+            /*justify-content: space-between;*/ /* Align Items Horizontally (with equal space in between each of them */
+            background: #eee;
+            margin-top: 5px;
+        }
+
+        /*.children {
+            display: flex;
+        }
+
+        .child {*/
+            /*margin: 0 5px;*/
+            /*margin-right: 5px;*/
+            /*padding: 0 5px;*/
+            /*padding: 0 0px;
+            font-size: 30px;
+            background: #ccc;
+            color: #000;
+            border: solid;
+            border-width: thin;
+        }*/
+
+
+        .childrenmain {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+
+        .child1main {
+            /*margin: 0 5px;*/
+            /*margin-right: 5px;*/
+            /*padding: 0 5px;*/
+            padding: 0 0px;
+            font-size: 30px;
+            background: #FFFFFF;
+            color: #000;
+            border: none;
+            /*border-width: thin;*/
+            width: 95%;
+        }
+
+        .child2main {
+            /*margin: 0 5px;*/
+            /*padding: 0 5px;*/
+            padding: 0 0px;
+            /*font-size: 30px;*/
+            background: #FFFFFF;
+            color: #000;
+            border: none;
+            /*border-width: thin;*/
+            width: 5%;
+        }
+
+        .parentquickrequestwindow {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            align-items: center; /* Align Items Vertically */
+            /*justify-content: space-between;*/ /* Align Items Horizontally (with equal space in between each of them */
+            background: #eee;
+            margin-top: 5px;
+        }
+
+        .childrenquickrequestwindow {
+            display: flex;
+        }
+
+        .childquickrequestwindow {
+            /*margin: 0 5px;*/
+            margin-right: 5px;
+            /*padding: 0 5px;*/
+            padding: 0 0px;
+            font-size: 30px;
+            background: #ccc;
+            color: #000;
+            border: solid;
+            border-width: thin;
+        }
+
+
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            /*font-size: 14px;
+            font-weight: normal;*/
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: none;
+            /*border: 1px solid transparent;
+            border-radius: 4px;*/
+            /*background:aqua ;*/
+
+            background: transparent;
+            /*width: 50px;*/
+            /*margin-left: 20px;*/
+        }
+
+            .btn:hover {
+                background-image: none !important;
+                background-color: rgb(168, 13, 13) !important;
+                color: white;
+            }   
+
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+
+
+    <!--<div style="height: 100%; width: 100%">-->
+    <!--<div id="container" style="float: right; width: 60%; height: 70px; margin-top: 2px; overflow: auto;"></div>-->
+    <!--<div id="navbar">
+            <ul>
+                <li><p class="vericaltext">
+        Hi This is Vertical Text!
+    </p></li>
+
+            </ul>
+        </div>-->
+    <!--<div style="float: right;">-->
+    <!--<input type="button" value="<span ><p class="vericaltext">
+    Hi This is Vertical Text!
+    </p></span>" id='jqxButton' />
+        <input type="button" value="<span ><p Hi This is Vertical Text!</p></span>" id='jqxButton' />
+
+    </div>-->
+    <!--<div style="float: right; background-color:aqua"><input type="button" value="<span><p class='vericaltext'>Quick request</p></span>" id='btn_quickrequest' /></div>-->
+    <!--<div style="display: flex; align-items: normal; justify-content: center;margin-top: 5px"><div style="font-size: 20px; color: gray;">How to request/order compounds with AKos</div></div>
+
+    <div style="margin-top: 20px; display: flex; align-items: normal; justify-content: center;margin-left: 10%; margin-right: 10%">
+
+
+
+
+        <div id="slideshow">
+
+            <div>
+
+                <div class="wrapper">
+                    <div class="inner_left">We send you an offer that shows all possible suppliers of the compound</div>
+                    <div class="inner_right"><img src="images/offerpicturewithouttext.jpg" width="342" height="263" onclick="offerimageclick()"></div>
+
+                </div>
+
+
+            </div>
+
+            <div>
+
+                <div class="wrapper">
+                    <div class="inner_left">If you are satisfied with an offer and order one or more substances, we will first send you the corresponding structures.</div>
+                    <div class="inner_right"><img src="images/offerpicturewithouttext.jpg" width="342" height="263"> </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div>
+
+                <div class="wrapper">
+                    <div class="inner_left">When one or more substances are ready for delivery, you will receive written notification from us.</div>
+                    <div class="inner_right"><img src="images/offerpicturewithouttext.jpg" width="342" height="263"> </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div>
+
+                <div class="wrapper">
+                    <div class="inner_left">If you require specific documents for import, we will send them to you as soon as possible.</div>
+                    <div class="inner_right"><img src="images/offerpicturewithouttext.jpg" width="342" height="263"> </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>-->
+    <!--<div id="offerimagewindow" style="display: none;">
+
+        <div>Example of AKos offer</div>
+        <div>
+
+            <img style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)" src="images/offerpicturewithouttext.jpg" width="342" height="263">
+        </div>
+
+    </div>-->
+    <!--</div>-->
+
+    <div>
+
+        <div class="navigation-container">
+
+
+
+            <div style="float: left;"><img style="display: flex; align-items: normal; justify-content: center;" src="images/AK0S-logo-weit.png" height="60" width="80" /></div>
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Search" id='btn_navigation_search' /></span></div>
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Draw structure" id='btn_navigation_drawstructure' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Results" id='btn_navigation_results' /></span></div>
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="About us" id='btn_navigation_about' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Contact us" id='btn_navigation_contact' /></span></div>
+
+
+
+            <!--<div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' style="float: right; margin-right: 10px; cursor: pointer" /></span></div>-->
+
+            <div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' style="float: left; margin-left: 20px; cursor: pointer" /></span></div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <div class="parentmain">
+
+        <!--<div class="children left-children">-->
+
+        <div class="childrenmain">
+            <div class="child1main">
+
+                <div style="display: flex; align-items: normal; justify-content: center;">
+                    <img src="images/AK0S-logo-weit.png" style="height: 100px; width: 150px; margin-top: 30px; margin-right: 100px" />
+
+
+                </div>
+
+                <div style="display: flex; align-items: normal; justify-content: center;">
+
+                    <div style="font-size: 30px; color: #A80D0D;">Consulting & Solutions Deutschland GmbH</div>
+
+                </div>
+
+
+
+
+
+
+
+                <div class="search">
+
+
+                    <div id="registrynumberinput" style="margin-top: 30px;">
+                        <input type="text" />
+
+                    </div>
+
+
+
+                    <div><input type="button" value="Search" id='btn_namelookup' style="margin-top: 30px; margin-left: 10px; cursor: pointer; border-style: solid" /></div>
+                    <div><input type="button" value="Draw structure" id='btn_drawstructure' style="margin-top: 30px; margin-left: 10px; cursor: pointer; border-style: solid" /></div>
+
+                </div>
+
+
+            </div>
+
+            <div class="child2main">
+
+
+                <div style="display: flex; justify-content: center; ">
+
+                    <button class="btn" id="btn_quickrequest">
+
+
+
+
+                        <div class='vericaltext'>Quick request</div>
+
+
+                    </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--<div id="navbarcontent">
+
+        <ul>
+
+            <li>
+
+                <div style="display: flex; align-items: normal; justify-content: center;">
+                    <img src="images/AK0S-logo-weit.png" style="height: 100px; width: 150px; margin-top: 30px; margin-right: 100px" />
+
+
+                </div>
+
+                <div style="display: flex; align-items: normal; justify-content: center;">
+
+                    <div style="font-size: 30px; color: #A80D0D;">Consulting & Solutions Deutschland GmbH</div>
+
+                </div>
+
+
+
+
+
+
+
+                <div class="search">
+
+
+                    <div id="registrynumberinput" style="margin-top: 30px;">
+                        <input type="text" />
+
+                    </div>
+
+
+
+                    <div><input type="button" value="Search" id='btn_namelookup' style="margin-top: 30px; margin-left: 10px; cursor: pointer; border-style: solid" /></div>
+                    <div><input type="button" value="Draw structure" id='btn_drawstructure' style="margin-top: 30px; margin-left: 10px; cursor: pointer; border-style: solid" /></div>
+
+                </div>
+
+
+            </li>
+
+
+            <li>-->
+                <!--<div><center><input type="button" value="<span><p class='vericaltext'>Quick request</p></span>" id='btn_quickrequest' /></center></div>-->
+                <!--<div style="background-color: aqua;width: 100%" ><p class='vericaltext'>Quick request</p></div>-->
+                <!--<div style="background-color: aqua"><input type="button" value="Quick request" id='btn_quickrequest' /></div>-->
+
+
+                <!--<button class="btn" id="btn_quickrequest">
+
+                    <span><p class='vericaltext'>Quick request</p></span>
+
+                </button>
+
+
+
+
+            </li>
+
+
+        </ul>
+
+
+
+    </div>-->
+
+
+    <div id="appNotification">New! AKos <span style="color:tomato;">MOBILE APP</span> Click for more information.</div>
+
+    <!--<div id="btn_quickrequestform_navbarhelppopover">
+        <div>Help about AKos quick request via form</div>
+    </div>-->
+    <!--<div id="btn_quickrequestemailclient_navbarhelppopover">
+        <div>Help about AKos quick request via email client</div>
+    </div>-->
+    <!--<div id="popupwindowquickrequestmailchoice">
+
+        <div>How would you like to reach us?</div>
+        <div>
+
+
+
+            <div id="popupwindowquickrequestmailchoice_navbar_buttons">
+
+                <ul>
+
+                    <li>
+
+                        <input type="button" id="btn_popupwindowquickrequestmailchoice_form" value="Webform" />
+
+
+
+                    </li>
+
+                    <li>
+                        <div><input type="button" id="btn_popupwindowquickrequestmailchoice_emailclient" value="Email Client" /></div>
+
+
+                    </li>
+
+
+
+
+
+                </ul>
+
+            </div>
+
+            <div id="popupwindowquickrequestmailchoice_navbar_text">
+
+                <ul>
+
+                    <li>
+                        <div>This explains pros/cons form</div>-->
+    <!--<textarea id="popupwindowquickrequestmailchoice_navbar_formTextArea">This explains pros/cons form</textarea>-->
+    <!--</li>
+
+    <li>
+
+        <div>This explains pros/cons email client</div>-->
+    <!--<textarea id="popupwindowquickrequestmailchoice_navbar_emailclientTextArea">This explains pros/cons email client</textarea>-->
+    <!--</li>
+
+
+
+
+
+                </ul>
+
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>-->
+    <!--<div id="popupwindowquickrequest" style="position: fixed; left: 50%; top: 50%;">-->
+    <!--<div id="popupwindowquickrequestform">-->
+
+
+
+    <div id="quickrequestpromptwindow">
+        <div></div>
+        <div>
+            <div style="margin-top: 10px;">
+                Do you want to create a quick request?
+            </div>
+            <div>
+                <div style="float: right; margin-top: 15px;">
+                    <input type="button" id="quickrequestpromptwindow_yes" value="Yes" style="margin-right: 10px" />
+                    <input type="button" id="quickrequestpromptwindow_no" value="No" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="popupwindowquickrequestform" style="position: fixed; left: 50%; top: 50%;">
+        <div>AKos quick request</div>
+        <div>
+
+
+
+
+            <div style="height: 33px; border-width: 1px; border-style: solid; padding:10px;" id="btn_quickrequestform_navbarhelppopoverheader">
+
+                Let us know what compound you would like to inquiry. You can also inquire a list of compounds. We will come back to you with quotation and availability details.
+
+
+            </div>
+
+
+            <div id="testform">
+
+                <div class="parentquickrequestwindow">
+
+                    <div class="childrenquickrequestwindow">
+
+                        <div class="childquickrequestwindow"><input id="firstname" /></div>
+
+                        <!--<div ><input type="text" id="firstname" height: 30, width: 100  /></div>-->
+
+                        <div class="childquickrequestwindow"><input id="lastname" /></div>
+
+                        <div class="childquickrequestwindow"><input id="company" /></div>
+
+                        <div class="childquickrequestwindow"><input id="email" /></div>
+
+                        <div class="childquickrequestwindow"><div id="country"></div></div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div style="margin-top: 5px; border: solid; border-width: thin; ">
+
+                    How to enter your query?</br>You can use the following information that describe your molecule : AKos number, CAS, Molname, Molformula, InChI, Smiles, PubChem CID.<br />f none of the above matches your needs, feel free to express your molecule details using free text.<br />If possible we appreciate you also let us know the amount you would like to inquire for a given compound.
+
+                </div>
+
+
+                <div style="margin-top: 5px; border: solid; border-width: thin; "><textarea id="quickrequestformeditor"></textarea></div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div style="height: 33px; border-width: 1px; border-style: solid; padding: 10px; margin-top: 5px;">
+
+
+                <input type="button" id="btn_quickrequestform_ok" value="Send request" style="margin-right: 10px" />
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <!--</div>-->
+    <!--<div id="popupwindowquickrequestemailclient">
+        <div>AKos quick request via email client</div>
+        <div style="overflow: hidden;">
+
+
+
+
+            <div style="height: 33px; border-width: 1px; border-style: solid; padding:10px;" id="btn_quickrequestemailclient_navbarhelppopoverheader">-->
+    <!--<input type="button" id="btn_quickrequestemailclient_ok"  value="Send email to compounds@akosgmbh.eu" />-->
+    <!--<a id="btn_quickrequestemailclient_ok" href="mailto:contact@hjhimmler.de?subject=akosquickrequest" target="_blank" rel="noopener noreferrer">Send email to compounds@akosgmbh.eu</a>-->
+    <!--<a id="btn_quickrequestemailclient_ok" href="#" target="_blank" rel="noopener noreferrer">Send email to compounds@akosgmbh.eu</a>-->
+    <!--<a id="btn_quickrequestemailclient_ok" href="#" target="_blank" rel="noopener noreferrer">Send email to compounds@akosgmbh.eu</a>-->
+    <!--<input type="button" id="btn_quickrequestemailclient_cancel" value="Cancel" />
+
+
+        <button style="float: right; margin-right: 10px; padding: 8px 12px; border-radius: 6px;" id="btn_quickrequestemailclient_navbarhelp">Help</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div>
+
+
+        <div id="quickrequestemailclient_navbar">
+
+            <ul>
+
+                <li><input id="quickrequestemailclient_name" /></li>-->
+    <!--<li><input id="quickrequestform_email" /></li>-->
+    <!--<li><div style="margin-top: 10px;" id="quickrequestemailclient_country"></div></li>
+
+
+                    </ul>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>-->
+    <!--<div id="popupwindowcontactcard" style="display: none;position: fixed; left: 50%; top: 50%;"></div>-->
+
+
+    <div id="appinfowindow" style="display: none;">
+        <div>
+            NEW: AKos inquiry Android phone and tablet app
+        </div>
+        <div>
+            <div style="margin-top: 2%;">
+                <!--<div style="display: flex; align-items: normal; justify-content: center;font-size: 20px;"><div style="color:red;">NEW:</div>&nbsp;AKos inquiry Android phone and tablet app</div>-->
+                <div style="display: flex; align-items: normal; justify-content: center;padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">The app allows you to perform the identical tasks as our webpage with some extensions such as reusable search history, chemical intelligent auto-completion (PubChem), possibility to save contact information. The app supports so-called mobile deep linking for PubChem/ChemSpider and ChemExper AKos links. That means that clicking an AKos compound vendor link on e.g. PubChem/ChemSpider/ChemExper web pages opens the app instead of using a browser to open a web page.</div>
+                <!--<div style="display: flex; align-items: normal; justify-content: center; padding-top: 1%;padding-left: 10%;padding-right: 1%;padding-bottom: 1%;">Currently, the app can only be installed via a download APK file. We provide a webpage with a download link for the app installer file and detailed information about the installation process and information about the app itself.</div>-->
+
+                <div style="display: flex; align-items: center; justify-content: center;margin-top: 20px;">
+                    <div style="font-size: 30px;">App screenshots</div>
+                </div>
+
+
+
+
+                <div style="display: flex; align-items: center; justify-content: center;margin-top: 20px;">
+                    <div id="photoGallery2">
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/start.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/autocompletion.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/tooltip.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/history.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/results.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/structurezoom.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/amountvalidation_1.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/amountvalidation_2.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/nextaction.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/shop.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/navigation.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/contactform_1.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/contactform_2.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/requestsent.jpg)"></div>
+                        </div>
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/feedback.jpg)"></div>
+                        </div>
+
+                        <div>
+                            <div class="photo" style="background-image: url(images/slideshow/deeplinkscreenshot.jpg) "></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div style="display: flex; align-items: normal; justify-content: center; font-size: 20px; margin-top: 20px;padding-left: 10%; padding-right: 10%; padding-bottom: 1%;">How to install the app?</div>
+                <div style="display: flex; align-items: normal; justify-content: center; padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">Use your smartphone or tablet camera to scan the following QR code and open the APK file download page using your phone or tablet default browser.</div>
+                <div style="display: flex; align-items: normal; justify-content: center; padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;"><img src=images/qrcode_downloadpage.png></div>
+                <div style="display: flex; align-items: normal; justify-content: center; font-size: 20px;padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">Problems or questions?</div>
+                <div style="display: flex; align-items: normal; justify-content: center; padding-top: 1%;padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">Send email to&nbsp;<span style="color:blue"><a href="mailto:it@akosgmbh.eu">it@akosgmbh.eu</a></span></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="jqxLoader"></div>
+
+
+
+
+
+    <div style="display: none" id="messagenotification">
+        <div id="messagenotification_content"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        var country_required_validationrule = function (input, commit) {
+            //var value = $("#quickrequestform_country").jqxComboBox('val');
+
+
+
+            //var quickrequestform = $("#testform");
+
+            //var country = quickrequestform.jqxForm('getComponentByName', 'Country');
+
+            /*var value = country.jqxComboBox('val');*/
+
+            var value = $("#country").jqxDropDownList('val');
+
+            //var value = country.val();
+
+            /*alert("Country " + value)*/
+
+            if (isNotEmpty(value)) {
+
+                return true;
+            } else {
+
+                return false;
+            }
+
+        };
+
+
+        var requestdetails_required_validationrule = function (input, commit) {
+
+            debugger;
+
+            /*alert("editor validation")*/
+
+            var editor = $("#quickrequestformeditor")
+
+
+            var value = editor.jqxEditor('val');
+
+            //alert("request text " + value)
+
+
+            //var completeEditorValue = input.val(),
+            //    editorValue = $.trim($(completeEditorValue).text()),
+            //    charCode = editorValue.charCodeAt(0);
+
+            var completeEditorValue = editor.jqxEditor('val'),
+                editorValue = $.trim($(completeEditorValue).text()),
+                charCode = editorValue.charCodeAt(0);
+
+
+            if (completeEditorValue.charAt(0) === '<' && (editorValue.length === 1 && charCode === 8203 || editorValue === "" || editorValue === '') || completeEditorValue === '<br>' || completeEditorValue === '') {
+                /*alert("false")*/
+                return false;
+            } else {
+                /*alert("true")*/
+                return true;
+            }
+
+            //debugger;
+
+            //var htmlvalue = $("#quickrequestformeditor").jqxEditor('val');
+
+            //let nonhtmlvalue = ""
+
+            //nonhtmlvalue = $(htmlvalue).text();
+
+            //alert("Non html value " + "->" + nonhtmlvalue + "<-")
+
+            //if (typeof nonhtmlvalue === "string" && nonhtmlvalue.length === 0) {
+            //    console.log("The string is empty");
+            //}
+
+            //if (nonhtmlvalue === null) {
+
+            //    alert("empty")
+
+            //}
+
+
+            //if (isNotEmpty(nonhtmlvalue)) {
+
+            //    alert("OK")
+
+            //    return true;
+            //} else {
+            //    alert("NOT OK")
+            //    return false;
+            //}
+
+        };
+
+
+        //function offerimageclick() {
+
+
+
+        //    //alert("offerimageclick");
+
+        //    $("#offerimagewindow").jqxWindow({
+        //        width: "80%",
+        //        height: "80%",
+        //        position: "center",
+        //        resizable: true,
+        //        isModal: false,
+        //        autoOpen: false,
+
+        //        modalOpacity: 0.01
+
+
+        //    });
+
+        //    $("#offerimagewindow").jqxWindow('open');
+
+
+
+
+        //}
+
+
+
+        function isNotEmpty(value) {
+
+
+
+            if (typeof value !== 'undefined') {
+
+
+
+                if (value !== null) {
+
+
+                    if (value) {
+
+
+
+                        return true;
+
+
+                    } else {
+
+
+
+
+                        return false;
+
+
+                    }
+
+
+
+                } else {
+
+
+                    return false;
+
+
+                }
+
+
+
+
+
+
+            } else {
+                return false;
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+        function doName2Structurelookup(origin) {
+
+
+
+
+
+            var n2sinput = $('#registrynumberinput').jqxInput('val');
+
+            if (isNotEmpty(n2sinput)) {
+
+
+                jdata = {};
+
+                if (sessionStorage.getItem("sessionid") !== null) {
+
+                    var sessionid = sessionStorage.getItem("sessionid");
+
+                    if (isNotEmpty(sessionid)) {
+
+                        jdata.sessionid = sessionid;
+
+
+                    }
+                }
+
+                jdata.name = n2sinput;
+
+                jdata.origin = origin;
+
+
+                $('#jqxLoader').jqxLoader('open');
+                $.ajax({
+                    type: "POST",
+
+                    url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Name2Structure",
+                    cache: false,
+                    data: JSON.stringify(jdata),
+                    success: function (response) {
+
+
+
+                        $('#jqxLoader').jqxLoader('close');
+
+                        if (response.errorflag) {
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                            $("#messagenotification").jqxNotification("open");
+                        } else {
+
+                            if (response.noCIDMatch) {
+
+
+                                // add new code here
+
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually or send us a quick request.");
+                                $("#messagenotification").jqxNotification("open");
+
+                                
+
+                                $('#quickrequestpromptwindow').jqxWindow('open');
+
+                                $("#quickrequestpromptwindow").jqxWindow("move", $(window).width() / 2 - $("#quickrequestpromptwindow").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+
+                            } else {
+
+
+                                var jData = {};
+                                jData.registryid = "";
+                                jData.smiles = response.smiles;
+                                jData.molfile = response.bestchoiceCIDMolfile;
+
+
+
+                                doSearch(jData);
+
+
+
+
+                            }
+
+
+                        }
+                    },
+                    error: function (error) {
+                        $('#jqxLoader').jqxLoader('close');
+                        $('#messagenotification').jqxNotification({ template: 'error' });
+
+                        if (error.status == 500) {
+
+                            $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                        } else {
+
+                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                        }
+
+
+
+
+                        $("#messagenotification").jqxNotification("open");
+                    }
+                });
+
+
+
+            } else {
+
+                $("#registrynumberinput").jqxTooltip({ autoHideDelay: 2000, content: "Please enter name", position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+                $("#registrynumberinput").jqxTooltip("open");
+
+                return;
+
+            }
+
+
+        }
+
+
+        function doSearch(jdata) {
+
+            if (sessionStorage.getItem("sessionid") !== null) {
+
+                var sessionid = sessionStorage.getItem("sessionid");
+
+                if (isNotEmpty(sessionid)) {
+
+                    jdata.sessionid = sessionid;
+
+
+                }
+
+
+
+
+
+            }
+
+
+            $('#jqxLoader').jqxLoader('open');
+
+            $.ajax({
+                type: "POST",
+
+
+
+
+                url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Executecompletefullstructuresearch",
+                cache: false,
+
+                data: JSON.stringify(jdata),
+
+                success: function (response) {
+
+
+
+                    $('#jqxLoader').jqxLoader('close');
+
+
+                    if (response.errorflag) {
+
+                        $('#messagenotification').jqxNotification({ template: 'error' });
+                        $("#messagenotification").find("div").first().text("Error calling Executecompletefullstructuresearch. Message : " + response.errortext);
+                        $("#messagenotification").jqxNotification("open");
+
+
+                    } else {
+
+
+
+
+
+
+
+
+
+                        var data = response.initialsearchresults;
+
+                        sessionStorage.setItem("structurequery", JSON.stringify(jdata));
+
+                        var exportdata = JSON.stringify(data);
+
+
+
+
+                        sessionStorage.setItem("griddata", exportdata);
+
+
+
+                        sessionStorage.setItem("enablesimilaritybutton", true);
+
+
+                        // add new code here
+
+                        sessionStorage.setItem("searchexecuted", "YES");
+
+
+                        window.location.href = "results.html";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    }
+
+                },
+                error: function (error) {
+
+                    $('#jqxLoader').jqxLoader('close');
+                    $('#messagenotification').jqxNotification({ template: 'error' });
+
+                    if (error.status == 500) {
+
+                        $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                    } else {
+
+                        $("#messagenotification").find("div").first().text("Error calling Executecompletefullstructuresearch. Status : " + error.status);
+                    }
+
+
+                    $("#messagenotification").jqxNotification("open");
+
+
+                }
+            });
+
+
+        }
+
+
+
+
+
+
+        $(document).ready(function () {
+
+            document.getElementById("popupwindowquickrequestform").style.display = 'block';
+
+            document.getElementById("quickrequestpromptwindow").style.display = 'block';
+
+            $('#testform').jqxValidator({
+
+                position: "bottom",
+
+                arrow: false,
+                rules: [
+
+
+                    { input: '#firstname', message: 'First name is required', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#lastname', message: 'Last name is required', action: 'keyup, blur', rule: 'required' },
+
+                    { input: '#company', message: 'Company name is required', action: 'keyup, blur', rule: 'required' },
+
+
+                    { input: '#email', message: 'E-mail is required', action: 'keyup, blur', rule: 'required' },
+
+
+                    { input: '#email', message: 'Invalid e-mail', action: 'keyup', rule: 'email' },
+
+
+                    { input: '#country', message: 'Country is required', action: 'keyup, blur, change', rule: country_required_validationrule },
+
+
+                    //{ input: '#quickrequestformeditor', message: 'Request details are required', action: 'keyup', rule: requestdetails_required_validationrule }
+
+                    { input: '#quickrequestformeditor', message: 'Request details are required', action: 'keyup', rule: 'required' }
+
+                ]
+                //onSuccess: function () {
+
+                //    alert("success")
+                //},
+
+                //onError: function () {
+
+                //    alert("error")
+                //}
+
+
+
+
+            });
+
+
+
+
+            //$("#navbar").jqxNavBar({ height: 800, width: 100, orientation: 'vertical', selectedItem: 0 });
+
+            debugger;
+
+            var countries = [
+
+                { value: 'Afghanistan' },
+                { value: 'Aland Islands' },
+                { value: 'Albania' },
+                { value: 'Algeria' },
+                { value: 'American Samoa' },
+                { value: 'AndorrA' },
+                { value: 'Angola' },
+                { value: 'Anguilla' },
+                { value: 'Antarctica' },
+                { value: 'Antigua and Barbuda' },
+                { value: 'Argentina' },
+                { value: 'Armenia' },
+                { value: 'Aruba' },
+                { value: 'Australia' },
+                { value: 'Austria' },
+                { value: 'Azerbaijan' },
+                { value: 'Bahamas' },
+                { value: 'Bahrain' },
+                { value: 'Bangladesh' },
+                { value: 'Barbados' },
+                { value: 'Belarus' },
+                { value: 'Belgium' },
+                { value: 'Belize' },
+                { value: 'Benin' },
+                { value: 'Bermuda' },
+                { value: 'Bhutan' },
+                { value: 'Bolivia' },
+                { value: 'Bosnia and Herzegovina' },
+                { value: 'Botswana' },
+                { value: 'Bouvet Island' },
+                { value: 'Brazil' },
+                { value: 'British Indian Ocean Territory' },
+                { value: 'Brunei Darussalam' },
+                { value: 'Bulgaria' },
+                { value: 'Burkina Faso' },
+                { value: 'Burundi' },
+                { value: 'Cambodia' },
+                { value: 'Cameroon' },
+                { value: 'Canada' },
+                { value: 'Cape Verde' },
+                { value: 'Cayman Islands' },
+                { value: 'Central African Republic' },
+                { value: 'Chad' },
+                { value: 'Chile' },
+                { value: 'China' },
+                { value: 'Christmas Island' },
+                { value: 'Cocos (Keeling) Islands' },
+                { value: 'Colombia' },
+                { value: 'Comoros' },
+                { value: 'Congo' },
+                { value: 'Congo, The Democratic Republic of the' },
+                { value: 'Cook Islands' },
+                { value: 'Costa Rica' },
+                { value: 'Cote D\'Ivoire' },
+                { value: 'Croatia' },
+                { value: 'Cuba' },
+                { value: 'Cyprus' },
+                { value: 'Czech Republic' },
+                { value: 'Denmark' },
+                { value: 'Djibouti' },
+                { value: 'Dominica' },
+                { value: 'Dominican Republic' },
+                { value: 'Ecuador' },
+                { value: 'Egypt' },
+                { value: 'El Salvador' },
+                { value: 'Equatorial Guinea' },
+                { value: 'Eritrea' },
+                { value: 'Estonia' },
+                { value: 'Ethiopia' },
+                { value: 'Falkland Islands (Malvinas)' },
+                { value: 'Faroe Islands' },
+                { value: 'Fiji' },
+                { value: 'Finland' },
+                { value: 'France' },
+                { value: 'French Guiana' },
+                { value: 'French Polynesia' },
+                { value: 'French Southern Territories' },
+                { value: 'Gabon' },
+                { value: 'Gambia' },
+                { value: 'Georgia' },
+                { value: 'Germany' },
+                { value: 'Ghana' },
+                { value: 'Gibraltar' },
+                { value: 'Greece' },
+                { value: 'Greenland' },
+                { value: 'Grenada' },
+                { value: 'Guadeloupe' },
+                { value: 'Guam' },
+                { value: 'Guatemala' },
+                { value: 'Guernsey' },
+                { value: 'Guinea' },
+                { value: 'Guinea-Bissau' },
+                { value: 'Guyana' },
+                { value: 'Haiti' },
+                { value: 'Heard Island and Mcdonald Islands' },
+                { value: 'Holy See (Vatican City State)' },
+                { value: 'Honduras' },
+                { value: 'Hong Kong' },
+                { value: 'Hungary' },
+                { value: 'Iceland' },
+                { value: 'India' },
+                { value: 'Indonesia' },
+                { value: 'Iran, Islamic Republic Of' },
+                { value: 'Iraq' },
+                { value: 'Ireland' },
+                { value: 'Isle of Man' },
+                { value: 'Israel' },
+                { value: 'Italy' },
+                { value: 'Jamaica' },
+                { value: 'Japan' },
+                { value: 'Jersey' },
+                { value: 'Jordan' },
+                { value: 'Kazakhstan' },
+                { value: 'Kenya' },
+                { value: 'Kiribati' },
+                { value: 'Korea, Democratic People\'S Republic of' },
+                { value: 'Korea, Republic of' },
+                { value: 'Kuwait' },
+                { value: 'Kyrgyzstan' },
+                { value: 'Lao People\'S Democratic Republic' },
+                { value: 'Latvia' },
+                { value: 'Lebanon' },
+                { value: 'Lesotho' },
+                { value: 'Liberia' },
+                { value: 'Libyan Arab Jamahiriya' },
+                { value: 'Liechtenstein' },
+                { value: 'Lithuania' },
+                { value: 'Luxembourg' },
+                { value: 'Macao' },
+                { value: 'Macedonia, The Former Yugoslav Republic of' },
+                { value: 'Madagascar' },
+                { value: 'Malawi' },
+                { value: 'Malaysia' },
+                { value: 'Maldives' },
+                { value: 'Mali' },
+                { value: 'Malta' },
+                { value: 'Marshall Islands' },
+                { value: 'Martinique' },
+                { value: 'Mauritania' },
+                { value: 'Mauritius' },
+                { value: 'Mayotte' },
+                { value: 'Mexico' },
+                { value: 'Micronesia, Federated States of' },
+                { value: 'Moldova, Republic of' },
+                { value: 'Monaco' },
+                { value: 'Mongolia' },
+                { value: 'Montserrat' },
+                { value: 'Morocco' },
+                { value: 'Mozambique' },
+                { value: 'Myanmar' },
+                { value: 'Namibia' },
+                { value: 'Nauru' },
+                { value: 'Nepal' },
+                { value: 'Netherlands' },
+                { value: 'Netherlands Antilles' },
+                { value: 'New Caledonia' },
+                { value: 'New Zealand' },
+                { value: 'Nicaragua' },
+                { value: 'Niger' },
+                { value: 'Nigeria' },
+                { value: 'Niue' },
+                { value: 'Norfolk Island' },
+                { value: 'Northern Mariana Islands' },
+                { value: 'Norway' },
+                { value: 'Oman' },
+                { value: 'Pakistan' },
+                { value: 'Palau' },
+                { value: 'Palestinian Territory, Occupied' },
+                { value: 'Panama' },
+                { value: 'Papua New Guinea' },
+                { value: 'Paraguay' },
+                { value: 'Peru' },
+                { value: 'Philippines' },
+                { value: 'Pitcairn' },
+                { value: 'Poland' },
+                { value: 'Portugal' },
+                { value: 'Puerto Rico' },
+                { value: 'Qatar' },
+                { value: 'Reunion' },
+                { value: 'Romania' },
+                { value: 'Russian Federation' },
+                { value: 'RWANDA' },
+                { value: 'Saint Helena' },
+                { value: 'Saint Kitts and Nevis' },
+                { value: 'Saint Lucia' },
+                { value: 'Saint Pierre and Miquelon' },
+                { value: 'Saint Vincent and the Grenadines' },
+                { value: 'Samoa' },
+                { value: 'San Marino' },
+                { value: 'Sao Tome and Principe' },
+                { value: 'Saudi Arabia' },
+                { value: 'Senegal' },
+                { value: 'Serbia and Montenegro' },
+                { value: 'Seychelles' },
+                { value: 'Sierra Leone' },
+                { value: 'Singapore' },
+                { value: 'Slovakia' },
+                { value: 'Slovenia' },
+                { value: 'Solomon Islands' },
+                { value: 'Somalia' },
+                { value: 'South Africa' },
+                { value: 'South Georgia and the South Sandwich Islands' },
+                { value: 'Spain' },
+                { value: 'Sri Lanka' },
+                { value: 'Sudan' },
+                { value: 'Suriname' },
+                { value: 'Svalbard and Jan Mayen' },
+                { value: 'Swaziland' },
+                { value: 'Sweden' },
+                { value: 'Switzerland' },
+                { value: 'Syrian Arab Republic' },
+                { value: 'Taiwan' },
+                { value: 'Tajikistan' },
+                { value: 'Tanzania, United Republic of' },
+                { value: 'Thailand' },
+                { value: 'Timor-Leste' },
+                { value: 'Togo' },
+                { value: 'Tokelau' },
+                { value: 'Tonga' },
+                { value: 'Trinidad and Tobago' },
+                { value: 'Tunisia' },
+                { value: 'Turkey' },
+                { value: 'Turkmenistan' },
+                { value: 'Turks and Caicos Islands' },
+                { value: 'Tuvalu' },
+                { value: 'Uganda' },
+                { value: 'Ukraine' },
+                { value: 'United Arab Emirates' },
+                { value: 'United Kingdom' },
+                { value: 'United States' },
+                { value: 'United States Minor Outlying Islands' },
+                { value: 'Uruguay' },
+                { value: 'Uzbekistan' },
+                { value: 'Vanuatu' },
+                { value: 'Venezuela' },
+                { value: 'Viet Nam' },
+                { value: 'Virgin Islands, British' },
+                { value: 'Virgin Islands, U.S.' },
+                { value: 'Wallis and Futuna' },
+                { value: 'Western Sahara' },
+                { value: 'Yemen' },
+                { value: 'Zambia' },
+                { value: 'Zimbabwe' }
+            ];
+
+            /*$("#country").jqxDropDownList({ source: countries, placeHolder: "Select delivery country", width: 100, height: 30 });*/
+
+            /*$("#country").jqxDropDownList({ source: countries, placeHolder: "Select delivery country", height: 30 });*/
+            //$('#quickrequestformeditor').jqxEditor({
+
+            //    /*height: 300*/
+            //    /*height: auto*/
+            //    /*height: "65%"*/
+
+            //    //width: getWidth('editor')
+            //});
+
+            //$("#popupwindowquickrequestmailchoice").jqxWindow({
+
+
+            //    resizable: false,
+            //    width: "80%",
+            //    height: "30%",
+
+            //    //width: 800,
+            //    //height: 500,
+            //    autoOpen: false,
+
+            //    initContent: function () {
+
+
+            //        var btn_popupwindowquickrequestmailchoice_form = $("#btn_popupwindowquickrequestmailchoice_form");
+
+            //        btn_popupwindowquickrequestmailchoice_form.jqxButton({ template: "primary" });
+
+            //        btn_popupwindowquickrequestmailchoice_form.click(function (event) {
+
+
+            //            //alert("Open form window");
+
+            //            $('#popupwindowquickrequestmailchoice').jqxWindow('close');
+
+            //            $('#popupwindowquickrequestform').jqxWindow('open');
+
+
+            //        });
+
+            //        var btn_popupwindowquickrequestmailchoice_emailclient = $("#btn_popupwindowquickrequestmailchoice_emailclient");
+
+            //        btn_popupwindowquickrequestmailchoice_emailclient.jqxButton({ template: "primary" });
+
+            //        btn_popupwindowquickrequestmailchoice_emailclient.click(function (event) {
+
+
+            //            alert("Start email client window");
+
+            //            $('#popupwindowquickrequestmailchoice').jqxWindow('close');
+
+
+            //            $('#popupwindowquickrequestemailclient').jqxWindow('open');
+            //        });
+
+            //        $("#popupwindowquickrequestmailchoice_navbar_buttons").jqxNavBar({ selection: false, height: 40, columns: ['50%', '50%'], selectedItem: 0 });
+
+            //        //$('#popupwindowquickrequestmailchoice_navbar_formTextArea').jqxTextArea({});
+
+            //        //$('#popupwindowquickrequestmailchoice_navbar_emailclientTextArea').jqxTextArea({});
+
+            //        $("#popupwindowquickrequestmailchoice_navbar_text").jqxNavBar({ selection: false, height: 40, columns: ['50%', '50%'], selectedItem: 0 });
+
+
+
+
+            //    }
+
+
+
+
+            //});
+
+
+            // UNCOMMENT
+
+            //$("#btn_quickrequestform_navbarhelp").jqxButton({ template: "inverse" });
+
+            //$("#btn_quickrequestform_navbarhelppopover").jqxPopover({ isModal: false, offset: { left: -50, top: 0 }, arrowOffsetValue: 50, title: "Help", showCloseButton: true, selector: $("#btn_quickrequestform_navbarhelp") });
+
+            // UNCOMMENT
+
+            //$("#btn_quickrequestemailclient_navbarhelp").jqxButton({ template: "inverse" });
+
+            //$("#btn_quickrequestemailclient_navbarhelppopover").jqxPopover({ isModal: false, offset: { left: -50, top: 0 }, arrowOffsetValue: 50, title: "Help", showCloseButton: true, selector: $("#btn_quickrequestemailclient_navbarhelp") });
+
+
+
+            //$("#btn_quickrequestform_navbarhelppopoverheader").addClass('jqx-widget-header');
+
+            /*$("#quickrequestformeditor").jqxEditor({ width: '100%', height: '80%' });*/
+
+
+
+            /*document.getElementById("popupwindowquickrequest").style.display = 'block';*/
+
+            debugger;
+
+
+
+
+            $("#popupwindowquickrequestform").jqxWindow({
+                resizable: false,
+                //width: "100%",
+                //height: "75%",
+
+                width: "90%",
+                height: "90%",
+
+
+                autoOpen: false,
+                showCollapseButton: true,
+
+                /*cancelButton: $('#btn_quickrequestform_cancel'),*/
+                initContent: function () {
+
+                    debugger;
+
+                    $("#firstname").jqxInput({ placeHolder: "First name", theme: "", height: "100%", width: "100%" });
+
+                    $('#firstname').jqxInput('val', '');
+
+                    //$("#firstname").jqxInput({
+                    //    placeHolder: "new text"
+                    //});
+
+
+                    $("#lastname").jqxInput({ placeHolder: "Last name", theme: "", height: "100%", width: "100%" });
+                    $('#lastname').jqxInput('val', '');
+
+
+                    $("#company").jqxInput({ placeHolder: "Company name", theme: "", height: "100%", width: "100%" });
+                    $('#company').jqxInput('val', '');
+
+                    $("#email").jqxInput({ placeHolder: "EMail", theme: "", width: "100%", height: "100%" });
+                    $('#email').jqxInput('val', '');
+
+                    var countries = new Array("Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic", "Congo, Republic of the", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Greenland", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Mongolia", "Morocco", "Monaco", "Mozambique", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", " Sao Tome", "Saudi Arabia", "Senegal", "Serbia and Montenegro", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe");
+
+
+                    $("#country").jqxDropDownList({ source: countries, placeHolder: "Select delivery country", height: 30, width: 180, theme: "" });
+
+                    let placeholdertext = "Please enter your inquiry details"
+
+                    $('#quickrequestformeditor').jqxTextArea({ placeHolder: placeholdertext, height: '60%', width: '100%', theme: "" });
+
+
+
+                    /*$('#quickrequestformeditor').jqxTextArea({ placeHolder: 'test', height: 90, width: 255, minLength: 1 });*/
+
+                    //$('#quickrequestformeditor').jqxTextArea('refresh');
+
+                    //var width = $('#quickrequestformeditor').jqxTextArea('width');
+
+
+                    //alert("actual " + width)
+
+                    //var width = $('#popupwindowquickrequestform').jqxWindow('width');
+
+                    //const element = document.getElementById('popupwindowquickrequestform');
+
+                    //const windowwidth = element?.clientWidth;
+
+                    //const height = element?.clientHeight;
+
+
+                    //alert("clientwidth "+windowwidth)
+
+
+                    //$('#quickrequestformeditor').jqxTextArea({ placeHolder: 'test', height: 80, width: windowwidth });
+
+                    //var width = $('#quickrequestformeditor').jqxTextArea('width');
+
+                    //alert("actual " + width)
+
+                    /*$('#quickrequestformeditor').jqxTextArea({ placeHolder: 'Enter company address', height: 90, width: 255, minLength: 1 });*/
+
+                    /*$('#quickrequestformeditor').jqxTextArea({ placeHolder: 'test', height: 90, width: '30%', minLength: 1 });*/
+
+                    /*$('#quickrequestformeditor').jqxTextArea({ placeHolder: 'test', height: 90, width: 800, minLength: 1 });*/
+
+                    //$('#quickrequestformeditor').jqxTextArea({
+
+                    //    width: "100%",
+                    //    height: "65%"
+
+                    //});
+
+                    //$('#quickrequestformeditor').jqxEditor({
+
+                    //    width: "100%",
+
+
+                    //    height: "65%"
+
+
+
+
+                    //});
+
+
+
+                    // comment start
+
+                    /*$('#testform').jqxValidator('validate');*/
+
+
+                    // comment end
+
+
+                    //$('#quickrequestformeditor').on('change', function (event) {
+                    //    // type
+                    //    //var type = event.args.type; // keyboard, mouse or null depending on how the value was changed.
+
+                    //    debugger;
+
+                    //    var value = $('#quickrequestformeditor').val();
+
+                    //    if (isNotEmpty(value)) {
+
+                    //        alert("Hide hint")
+                    //        $('#testform').jqxValidator('hideHint', '#quickrequestformeditor');
+
+                    //        $('#testform').jqxValidator('updatePosition', '#quickrequestformeditor');
+
+                    //    }
+
+
+                    //});
+
+
+
+
+
+
+                }
+
+            });
+
+            $('#popupwindowquickrequestform').on('collapse', function (event) {
+
+                $('#testform').jqxValidator('hide');
+
+            });
+
+            $('#popupwindowquickrequestform').on('expand', function (event) {
+
+                $('#testform').jqxValidator('validate');
+
+            });
+
+            $('#popupwindowquickrequestform').on('close', function (event) {
+
+
+
+                $('#testform').jqxValidator('hide');
+
+            });
+
+            //var country_required_validationrule = function (input, commit) {
+            //    var value = $("#quickrequestform_country").jqxComboBox('val');
+            //    if (isNotEmpty(value)) {
+
+            //        return true;
+            //    } else {
+
+            //        return false;
+            //    }
+
+            //};
+
+
+            //var requestdetails_required_validationrule = function (input, commit) {
+
+            //    debugger;
+
+            //    var completeEditorValue = input.val(),
+            //        editorValue = $.trim($(completeEditorValue).text()),
+            //        charCode = editorValue.charCodeAt(0);
+
+
+
+            //    if (completeEditorValue.charAt(0) === '<' && (editorValue.length === 1 && charCode === 8203 || editorValue === "" || editorValue === '') || completeEditorValue === '<br>' || completeEditorValue === '') {
+            //        return false;
+            //    } else {
+            //        return true;
+            //    }
+
+            //    //debugger;
+
+            //    //var htmlvalue = $("#quickrequestformeditor").jqxEditor('val');
+
+            //    //let nonhtmlvalue = ""
+
+            //    //nonhtmlvalue = $(htmlvalue).text();
+
+            //    //alert("Non html value " + "->" + nonhtmlvalue + "<-")
+
+            //    //if (typeof nonhtmlvalue === "string" && nonhtmlvalue.length === 0) {
+            //    //    console.log("The string is empty");
+            //    //}
+
+            //    //if (nonhtmlvalue === null) {
+
+            //    //    alert("empty")
+
+            //    //}
+
+
+            //    //if (isNotEmpty(nonhtmlvalue)) {
+
+            //    //    alert("OK")
+
+            //    //    return true;
+            //    //} else {
+            //    //    alert("NOT OK")
+            //    //    return false;
+            //    //}
+
+            //};
+
+            // UNCOMMENT
+
+
+
+
+
+            var btn_quickrequestform_ok = $("#btn_quickrequestform_ok");
+
+            btn_quickrequestform_ok.jqxButton({ template: 'primary' });
+
+            btn_quickrequestform_ok.click(function (event) {
+
+
+                var validationresult = $('#testform').jqxValidator('validate');
+
+                if (validationresult) {
+
+                    $('#testform').jqxValidator('hide');
+
+                    //alert("Hide hint")
+                    //$('#testform').jqxValidator('hideHint', '#quickrequestformeditor');
+
+                    //$('#testform').jqxValidator('updatePosition', '#quickrequestformeditor');
+
+
+                    debugger;
+
+
+                    var firstname_value = $('#firstname').val();
+
+                    /*alert("First name " + firstname_value);*/
+
+                    var lastname_value = $('#lastname').val();
+
+                    var company_value = $('#company').val();
+
+                    /*alert("Last name " + lastname_value);*/
+
+                    var email_value = $('#email').val();
+
+                    /*alert("email " + email_value);*/
+
+                    /*var country_value = $("#country").jqxDropDownList('getSelectedItem');*/
+
+                    var country_value = $("#country").jqxDropDownList('val');
+
+
+                    /*alert("country " + country_value);*/
+
+
+
+                    var editor_value = $("#quickrequestformeditor").jqxTextArea('val')
+
+                    /*alert("editor " + editor_value);*/
+
+                    var jdata = {};
+
+                    jdata.firstname = firstname_value;
+
+                    jdata.lastname = lastname_value;
+
+                    jdata.companyname = company_value;
+
+                    jdata.email = email_value;
+
+                    jdata.country = country_value;
+
+                    jdata.requesttext = editor_value;
+
+                    $('#jqxLoader').jqxLoader('open');
+
+                    $.ajax({
+                        type: "POST",
+                        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/ProcessQuickrequest",
+                        cache: false,
+                        data: JSON.stringify(jdata),
+
+                        success: function (response) {
+
+                            //alert(response.errortext)
+
+                            debugger;
+
+                            $('#jqxLoader').jqxLoader('close');
+
+                            $('#messagenotification').jqxNotification({ template: 'info' });
+
+                            $("#messagenotification").find("div").first().text("Thank you. You will soon receive a confirmation mail from us.");
+
+
+                            $("#messagenotification").jqxNotification("open");
+
+
+
+                        },
+                        error: function (error) {
+
+                            debugger;
+
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+
+                            $("#messagenotification").find("div").first().text("Error. Message : " + error);
+
+
+                            $("#messagenotification").jqxNotification("open");
+
+                        }
+                    });
+
+
+                    $('#popupwindowquickrequestform').jqxWindow('close');
+
+                }
+            });
+
+            //btn_quickrequestform_ok.click(function (event) {
+
+
+
+            //    var validationresult = $('#testform').jqxValidator('validate');
+
+            //    if (validationresult) {
+
+            //        $('#testform').jqxValidator('hide');
+
+            //        //alert("Hide hint")
+            //        //$('#testform').jqxValidator('hideHint', '#quickrequestformeditor');
+
+            //        //$('#testform').jqxValidator('updatePosition', '#quickrequestformeditor');
+
+
+            //        debugger;
+
+
+            //        var firstname_value = $('#firstname').val();
+
+            //        /*alert("First name " + firstname_value);*/
+
+            //        var lastname_value = $('#lastname').val();
+
+            //        /*alert("Last name " + lastname_value);*/
+
+            //        var email_value = $('#email').val();
+
+            //        /*alert("email " + email_value);*/
+
+            //        /*var country_value = $("#country").jqxDropDownList('getSelectedItem');*/
+
+            //        var country_value = $("#country").jqxDropDownList('val');
+
+
+            //        /*alert("country " + country_value);*/
+
+
+
+            //        var editor_value = $("#quickrequestformeditor").jqxEditor('val')
+
+            //        /*alert("editor " + editor_value);*/
+
+            //        //alert("Name " + name_value + " email " + email_value + " country " + selectedcountryitem.label + " editor " + editorvalue);
+
+            //        /*alert("submit")*/
+
+
+            //        // execute api call to send email
+
+
+            //        // IMPORTANT: return ERROR in case the api call fails to send mail due to incorrect email address
+
+
+            //        var jdata = {};
+
+            //        jdata.firstname = firstname_value;
+
+            //        jdata.lastname = lastname_value;
+
+            //        jdata.email = email_value;
+
+            //        jdata.country = country_value;
+
+            //        jdata.requesttext = editor_value;
+
+            //        $('#jqxLoader').jqxLoader('open');
+
+            //        $.ajax({
+            //            type: "POST",
+            //            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/ProcessQuickrequest",
+            //            cache: false,
+            //            data: JSON.stringify(jdata),
+
+            //            success: function (response) {
+
+            //                //alert(response.errortext)
+
+            //                debugger;
+
+            //                $('#jqxLoader').jqxLoader('close');
+
+            //                $('#messagenotification').jqxNotification({ template: 'info' });
+
+            //                $("#messagenotification").find("div").first().text("Thank you. You will soon receive a confirmation mail from us.");
+
+
+            //                $("#messagenotification").jqxNotification("open");
+
+
+
+            //            },
+            //            error: function (error) {
+
+            //                debugger;
+
+            //                $('#jqxLoader').jqxLoader('close');
+            //                $('#messagenotification').jqxNotification({ template: 'error' });
+
+            //                $("#messagenotification").find("div").first().text("Error. Message : " + error);
+
+
+            //                $("#messagenotification").jqxNotification("open");
+
+            //            }
+            //        });
+
+
+            //        $('#popupwindowquickrequestform').jqxWindow('close');
+
+
+
+            //    }
+
+            //    //var name_value = $('#quickrequestform_name').val();
+
+            //    ////alert(name_value)
+
+            //    //if (!isNotEmpty(name_value)) {
+
+
+
+            //    //    alert("please enter name")
+
+            //    //    return;
+
+            //    //} else {
+
+            //    //    debugger;
+            //    //    var item = $("#quickrequestform_country").jqxComboBox('getSelectedItem');
+
+
+            //    //    if (!isNotEmpty(item)) {
+
+            //    //        alert("Please choose country")
+
+            //    //    } else {
+
+            //    //        //TBD validate email
+
+            //    //        var email_value = $('#quickrequestform_email').val();
+
+            //    //        if (!isNotEmpty(email_value)) {
+
+            //    //            alert("Please enter valid email address")
+
+            //    //        } else {
+
+            //    //            // now validate email
+
+            //    //            var validateresult = /\S+@\S+\.\S+/.test(email_value)
+
+            //    //            //alert(validateresult)
+
+            //    //            if (!validateresult) {
+
+            //    //                alert("The entered email address is not valid")
+
+            //    //            } else {
+
+            //    //                alert("submit")
+
+            //    //                // execute api call to send email
+
+            //    //                // IMPORTANT: return ERROR in case the api call fails to send mail due to incorrect email address
+
+            //    //                $('#popupwindowquickrequestform').jqxWindow('close');
+
+            //    //            }
+
+
+
+
+
+            //    //        }
+
+
+
+            //    //    }
+            //    //    debugger;
+
+
+            //    //    //alert(item.value)
+            //    //    //alert(item.label)
+
+
+            //    //    //var countryvalue = $("#quickrequestform_country").jqxComboBox('val');
+
+
+
+            //    //    //var countryvalueindex = countries.map(i => i.code).indexOf(countryvalue);
+
+            //    //    //var countryobject = countries[countryvalueindex];
+
+            //    //    //var countryname = countryobject.name;
+
+
+
+
+
+
+            //    //}
+
+
+            //});
+
+
+
+
+
+            //var btn_quickrequestform_cancel = $("#btn_quickrequestform_cancel");
+
+
+
+            //btn_quickrequestform_cancel.jqxButton({});
+
+            //btn_quickrequestform_cancel.click(function (event) {
+
+            //    alert("Cancel");
+
+            //    $('#popupwindowquickrequestform').jqxWindow('close');
+            //});
+
+            // UNCOMMENT
+
+            //debugger;
+
+            //$("#btn_quickrequest").jqxButton({ height: 400 });
+
+            //$("#btn_quickrequest").on('click', function () {
+
+            //    $('#popupwindowquickrequestform').jqxWindow('open');
+
+            //    $("#popupwindowquickrequestform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequestform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+            //    //$('#popupwindowquickrequestmailchoice').jqxWindow('open');
+
+            //    //$("#btn_quickrequest").jqxButton({ value: "<span style='font-style: italic;'>Clicked!</span>" });
+            //});
+
+            $("#btn_quickrequest").click(function () {
+
+
+                $('#popupwindowquickrequestform').jqxWindow('open');
+
+                $("#popupwindowquickrequestform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequestform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+                
+            }); 
+
+            //$("#navbarcontent").jqxNavBar({ width: "100%", orientation: 'horizontal', columns: ['95%', '5%'], selection: false, selectedItem: 0 });
+
+
+
+            //$("#popupwindowquickrequestemailclient").jqxWindow({
+            //    resizable: false,
+            //    width: "100%",
+            //    height: "80%",
+
+            //    //width: 800,
+            //    //height: 500,
+            //    autoOpen: false,
+            //    showCollapseButton: true,
+
+            //    /*cancelButton: $('#btn_quickrequestform_cancel'),*/
+            //    initContent: function () {
+
+            //        //debugger;
+
+            //        //$("#btn_quickrequestemailclient_navbarhelppopoverheader").append('<a target="_blank" href="' + "http://www.google.com" + '">' + "Google" + '</a>');
+
+
+            //        // UNCOMMENT
+
+            //        $("#quickrequestemailclient_name").jqxInput({ placeHolder: "Enter name", minLength: 1, height: 30 });
+
+
+
+
+
+            //        var countries = [
+            //            { name: 'Afghanistan', code: 'AF' },
+            //            { name: 'Aland Islands', code: 'AX' },
+            //            { name: 'Albania', code: 'AL' },
+            //            { name: 'Algeria', code: 'DZ' },
+            //            { name: 'American Samoa', code: 'AS' },
+            //            { name: 'AndorrA', code: 'AD' },
+            //            { name: 'Angola', code: 'AO' },
+            //            { name: 'Anguilla', code: 'AI' },
+            //            { name: 'Antarctica', code: 'AQ' },
+            //            { name: 'Antigua and Barbuda', code: 'AG' },
+            //            { name: 'Argentina', code: 'AR' },
+            //            { name: 'Armenia', code: 'AM' },
+            //            { name: 'Aruba', code: 'AW' },
+            //            { name: 'Australia', code: 'AU' },
+            //            { name: 'Austria', code: 'AT' },
+            //            { name: 'Azerbaijan', code: 'AZ' },
+            //            { name: 'Bahamas', code: 'BS' },
+            //            { name: 'Bahrain', code: 'BH' },
+            //            { name: 'Bangladesh', code: 'BD' },
+            //            { name: 'Barbados', code: 'BB' },
+            //            { name: 'Belarus', code: 'BY' },
+            //            { name: 'Belgium', code: 'BE' },
+            //            { name: 'Belize', code: 'BZ' },
+            //            { name: 'Benin', code: 'BJ' },
+            //            { name: 'Bermuda', code: 'BM' },
+            //            { name: 'Bhutan', code: 'BT' },
+            //            { name: 'Bolivia', code: 'BO' },
+            //            { name: 'Bosnia and Herzegovina', code: 'BA' },
+            //            { name: 'Botswana', code: 'BW' },
+            //            { name: 'Bouvet Island', code: 'BV' },
+            //            { name: 'Brazil', code: 'BR' },
+            //            { name: 'British Indian Ocean Territory', code: 'IO' },
+            //            { name: 'Brunei Darussalam', code: 'BN' },
+            //            { name: 'Bulgaria', code: 'BG' },
+            //            { name: 'Burkina Faso', code: 'BF' },
+            //            { name: 'Burundi', code: 'BI' },
+            //            { name: 'Cambodia', code: 'KH' },
+            //            { name: 'Cameroon', code: 'CM' },
+            //            { name: 'Canada', code: 'CA' },
+            //            { name: 'Cape Verde', code: 'CV' },
+            //            { name: 'Cayman Islands', code: 'KY' },
+            //            { name: 'Central African Republic', code: 'CF' },
+            //            { name: 'Chad', code: 'TD' },
+            //            { name: 'Chile', code: 'CL' },
+            //            { name: 'China', code: 'CN' },
+            //            { name: 'Christmas Island', code: 'CX' },
+            //            { name: 'Cocos (Keeling) Islands', code: 'CC' },
+            //            { name: 'Colombia', code: 'CO' },
+            //            { name: 'Comoros', code: 'KM' },
+            //            { name: 'Congo', code: 'CG' },
+            //            { name: 'Congo, The Democratic Republic of the', code: 'CD' },
+            //            { name: 'Cook Islands', code: 'CK' },
+            //            { name: 'Costa Rica', code: 'CR' },
+            //            { name: 'Cote D\'Ivoire', code: 'CI' },
+            //            { name: 'Croatia', code: 'HR' },
+            //            { name: 'Cuba', code: 'CU' },
+            //            { name: 'Cyprus', code: 'CY' },
+            //            { name: 'Czech Republic', code: 'CZ' },
+            //            { name: 'Denmark', code: 'DK' },
+            //            { name: 'Djibouti', code: 'DJ' },
+            //            { name: 'Dominica', code: 'DM' },
+            //            { name: 'Dominican Republic', code: 'DO' },
+            //            { name: 'Ecuador', code: 'EC' },
+            //            { name: 'Egypt', code: 'EG' },
+            //            { name: 'El Salvador', code: 'SV' },
+            //            { name: 'Equatorial Guinea', code: 'GQ' },
+            //            { name: 'Eritrea', code: 'ER' },
+            //            { name: 'Estonia', code: 'EE' },
+            //            { name: 'Ethiopia', code: 'ET' },
+            //            { name: 'Falkland Islands (Malvinas)', code: 'FK' },
+            //            { name: 'Faroe Islands', code: 'FO' },
+            //            { name: 'Fiji', code: 'FJ' },
+            //            { name: 'Finland', code: 'FI' },
+            //            { name: 'France', code: 'FR' },
+            //            { name: 'French Guiana', code: 'GF' },
+            //            { name: 'French Polynesia', code: 'PF' },
+            //            { name: 'French Southern Territories', code: 'TF' },
+            //            { name: 'Gabon', code: 'GA' },
+            //            { name: 'Gambia', code: 'GM' },
+            //            { name: 'Georgia', code: 'GE' },
+            //            { name: 'Germany', code: 'DE' },
+            //            { name: 'Ghana', code: 'GH' },
+            //            { name: 'Gibraltar', code: 'GI' },
+            //            { name: 'Greece', code: 'GR' },
+            //            { name: 'Greenland', code: 'GL' },
+            //            { name: 'Grenada', code: 'GD' },
+            //            { name: 'Guadeloupe', code: 'GP' },
+            //            { name: 'Guam', code: 'GU' },
+            //            { name: 'Guatemala', code: 'GT' },
+            //            { name: 'Guernsey', code: 'GG' },
+            //            { name: 'Guinea', code: 'GN' },
+            //            { name: 'Guinea-Bissau', code: 'GW' },
+            //            { name: 'Guyana', code: 'GY' },
+            //            { name: 'Haiti', code: 'HT' },
+            //            { name: 'Heard Island and Mcdonald Islands', code: 'HM' },
+            //            { name: 'Holy See (Vatican City State)', code: 'VA' },
+            //            { name: 'Honduras', code: 'HN' },
+            //            { name: 'Hong Kong', code: 'HK' },
+            //            { name: 'Hungary', code: 'HU' },
+            //            { name: 'Iceland', code: 'IS' },
+            //            { name: 'India', code: 'IN' },
+            //            { name: 'Indonesia', code: 'ID' },
+            //            { name: 'Iran, Islamic Republic Of', code: 'IR' },
+            //            { name: 'Iraq', code: 'IQ' },
+            //            { name: 'Ireland', code: 'IE' },
+            //            { name: 'Isle of Man', code: 'IM' },
+            //            { name: 'Israel', code: 'IL' },
+            //            { name: 'Italy', code: 'IT' },
+            //            { name: 'Jamaica', code: 'JM' },
+            //            { name: 'Japan', code: 'JP' },
+            //            { name: 'Jersey', code: 'JE' },
+            //            { name: 'Jordan', code: 'JO' },
+            //            { name: 'Kazakhstan', code: 'KZ' },
+            //            { name: 'Kenya', code: 'KE' },
+            //            { name: 'Kiribati', code: 'KI' },
+            //            { name: 'Korea, Democratic People\'S Republic of', code: 'KP' },
+            //            { name: 'Korea, Republic of', code: 'KR' },
+            //            { name: 'Kuwait', code: 'KW' },
+            //            { name: 'Kyrgyzstan', code: 'KG' },
+            //            { name: 'Lao People\'S Democratic Republic', code: 'LA' },
+            //            { name: 'Latvia', code: 'LV' },
+            //            { name: 'Lebanon', code: 'LB' },
+            //            { name: 'Lesotho', code: 'LS' },
+            //            { name: 'Liberia', code: 'LR' },
+            //            { name: 'Libyan Arab Jamahiriya', code: 'LY' },
+            //            { name: 'Liechtenstein', code: 'LI' },
+            //            { name: 'Lithuania', code: 'LT' },
+            //            { name: 'Luxembourg', code: 'LU' },
+            //            { name: 'Macao', code: 'MO' },
+            //            { name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK' },
+            //            { name: 'Madagascar', code: 'MG' },
+            //            { name: 'Malawi', code: 'MW' },
+            //            { name: 'Malaysia', code: 'MY' },
+            //            { name: 'Maldives', code: 'MV' },
+            //            { name: 'Mali', code: 'ML' },
+            //            { name: 'Malta', code: 'MT' },
+            //            { name: 'Marshall Islands', code: 'MH' },
+            //            { name: 'Martinique', code: 'MQ' },
+            //            { name: 'Mauritania', code: 'MR' },
+            //            { name: 'Mauritius', code: 'MU' },
+            //            { name: 'Mayotte', code: 'YT' },
+            //            { name: 'Mexico', code: 'MX' },
+            //            { name: 'Micronesia, Federated States of', code: 'FM' },
+            //            { name: 'Moldova, Republic of', code: 'MD' },
+            //            { name: 'Monaco', code: 'MC' },
+            //            { name: 'Mongolia', code: 'MN' },
+            //            { name: 'Montserrat', code: 'MS' },
+            //            { name: 'Morocco', code: 'MA' },
+            //            { name: 'Mozambique', code: 'MZ' },
+            //            { name: 'Myanmar', code: 'MM' },
+            //            { name: 'Namibia', code: 'NA' },
+            //            { name: 'Nauru', code: 'NR' },
+            //            { name: 'Nepal', code: 'NP' },
+            //            { name: 'Netherlands', code: 'NL' },
+            //            { name: 'Netherlands Antilles', code: 'AN' },
+            //            { name: 'New Caledonia', code: 'NC' },
+            //            { name: 'New Zealand', code: 'NZ' },
+            //            { name: 'Nicaragua', code: 'NI' },
+            //            { name: 'Niger', code: 'NE' },
+            //            { name: 'Nigeria', code: 'NG' },
+            //            { name: 'Niue', code: 'NU' },
+            //            { name: 'Norfolk Island', code: 'NF' },
+            //            { name: 'Northern Mariana Islands', code: 'MP' },
+            //            { name: 'Norway', code: 'NO' },
+            //            { name: 'Oman', code: 'OM' },
+            //            { name: 'Pakistan', code: 'PK' },
+            //            { name: 'Palau', code: 'PW' },
+            //            { name: 'Palestinian Territory, Occupied', code: 'PS' },
+            //            { name: 'Panama', code: 'PA' },
+            //            { name: 'Papua New Guinea', code: 'PG' },
+            //            { name: 'Paraguay', code: 'PY' },
+            //            { name: 'Peru', code: 'PE' },
+            //            { name: 'Philippines', code: 'PH' },
+            //            { name: 'Pitcairn', code: 'PN' },
+            //            { name: 'Poland', code: 'PL' },
+            //            { name: 'Portugal', code: 'PT' },
+            //            { name: 'Puerto Rico', code: 'PR' },
+            //            { name: 'Qatar', code: 'QA' },
+            //            { name: 'Reunion', code: 'RE' },
+            //            { name: 'Romania', code: 'RO' },
+            //            { name: 'Russian Federation', code: 'RU' },
+            //            { name: 'RWANDA', code: 'RW' },
+            //            { name: 'Saint Helena', code: 'SH' },
+            //            { name: 'Saint Kitts and Nevis', code: 'KN' },
+            //            { name: 'Saint Lucia', code: 'LC' },
+            //            { name: 'Saint Pierre and Miquelon', code: 'PM' },
+            //            { name: 'Saint Vincent and the Grenadines', code: 'VC' },
+            //            { name: 'Samoa', code: 'WS' },
+            //            { name: 'San Marino', code: 'SM' },
+            //            { name: 'Sao Tome and Principe', code: 'ST' },
+            //            { name: 'Saudi Arabia', code: 'SA' },
+            //            { name: 'Senegal', code: 'SN' },
+            //            { name: 'Serbia and Montenegro', code: 'CS' },
+            //            { name: 'Seychelles', code: 'SC' },
+            //            { name: 'Sierra Leone', code: 'SL' },
+            //            { name: 'Singapore', code: 'SG' },
+            //            { name: 'Slovakia', code: 'SK' },
+            //            { name: 'Slovenia', code: 'SI' },
+            //            { name: 'Solomon Islands', code: 'SB' },
+            //            { name: 'Somalia', code: 'SO' },
+            //            { name: 'South Africa', code: 'ZA' },
+            //            { name: 'South Georgia and the South Sandwich Islands', code: 'GS' },
+            //            { name: 'Spain', code: 'ES' },
+            //            { name: 'Sri Lanka', code: 'LK' },
+            //            { name: 'Sudan', code: 'SD' },
+            //            { name: 'Suriname', code: 'SR' },
+            //            { name: 'Svalbard and Jan Mayen', code: 'SJ' },
+            //            { name: 'Swaziland', code: 'SZ' },
+            //            { name: 'Sweden', code: 'SE' },
+            //            { name: 'Switzerland', code: 'CH' },
+            //            { name: 'Syrian Arab Republic', code: 'SY' },
+            //            { name: 'Taiwan', code: 'TW' },
+            //            { name: 'Tajikistan', code: 'TJ' },
+            //            { name: 'Tanzania, United Republic of', code: 'TZ' },
+            //            { name: 'Thailand', code: 'TH' },
+            //            { name: 'Timor-Leste', code: 'TL' },
+            //            { name: 'Togo', code: 'TG' },
+            //            { name: 'Tokelau', code: 'TK' },
+            //            { name: 'Tonga', code: 'TO' },
+            //            { name: 'Trinidad and Tobago', code: 'TT' },
+            //            { name: 'Tunisia', code: 'TN' },
+            //            { name: 'Turkey', code: 'TR' },
+            //            { name: 'Turkmenistan', code: 'TM' },
+            //            { name: 'Turks and Caicos Islands', code: 'TC' },
+            //            { name: 'Tuvalu', code: 'TV' },
+            //            { name: 'Uganda', code: 'UG' },
+            //            { name: 'Ukraine', code: 'UA' },
+            //            { name: 'United Arab Emirates', code: 'AE' },
+            //            { name: 'United Kingdom', code: 'GB' },
+            //            { name: 'United States', code: 'US' },
+            //            { name: 'United States Minor Outlying Islands', code: 'UM' },
+            //            { name: 'Uruguay', code: 'UY' },
+            //            { name: 'Uzbekistan', code: 'UZ' },
+            //            { name: 'Vanuatu', code: 'VU' },
+            //            { name: 'Venezuela', code: 'VE' },
+            //            { name: 'Viet Nam', code: 'VN' },
+            //            { name: 'Virgin Islands, British', code: 'VG' },
+            //            { name: 'Virgin Islands, U.S.', code: 'VI' },
+            //            { name: 'Wallis and Futuna', code: 'WF' },
+            //            { name: 'Western Sahara', code: 'EH' },
+            //            { name: 'Yemen', code: 'YE' },
+            //            { name: 'Zambia', code: 'ZM' },
+            //            { name: 'Zimbabwe', code: 'ZW' }
+            //        ];
+
+            //        var source = {
+            //            datatype: "json",
+            //            datafields: [
+            //                { name: 'name' },
+            //                { name: 'code' }
+            //            ],
+            //            localdata: countries,
+            //            async: true
+            //        };
+
+            //        var dataAdapter = new $.jqx.dataAdapter(source);
+
+            //        $("#quickrequestemailclient_country").jqxComboBox({
+            //            source: dataAdapter, placeHolder: "Select country", displayMember: "name", valueMember: "code", height: 30
+            //        });
+
+            //        // UNCOMMENT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //        //debugger;
+
+
+            //        // UNCOMMENT
+            //        $("#quickrequestemailclient_navbar").jqxNavBar({ selection: false, height: 40, columns: ['50%', '50%'], selectedItem: 0 });
+            //        // UNCOMMENT
+            //        //debugger;
+
+            //        //debugger;
+
+
+            //        //$('#quickrequestformeditor').jqxEditor({
+            //        //    height: "80%",
+            //        //    width: "100%"
+            //        //    //width: getWidth('editor')
+            //        //});
+
+
+            //        //$('#quickrequestformeditor').jqxEditor({
+
+            //        //});
+
+
+            //        //var btn_quickrequestform_ok = $("#btn_quickrequestform_ok");
+
+            //        //btn_quickrequestform_ok.jqxButton({});
+
+            //        //btn_quickrequestform_ok.click(function (event) {
+
+
+            //        //    alert("Submit");
+
+            //        //    $('#popupwindowquickrequest').jqxWindow('close');
+            //        //});
+
+
+
+
+
+            //        //var btn_quickrequestform_cancel = $("#btn_quickrequestform_cancel");
+
+
+
+            //        //btn_quickrequestform_cancel.jqxButton({});
+
+            //        //btn_quickrequestform_cancel.click(function (event) {
+
+            //        //    alert("Cancel");
+            //        //});
+
+
+
+
+            //    }
+
+            //});
+
+            //$('#btn_quickrequestemailclient_ok').attr('target', '_blank');
+
+            //$('#btn_quickrequestemailclient_ok').attr('rel', 'noopener noreferrer');
+
+            //var btn_quickrequestemailclient_ok = $("#btn_quickrequestemailclient_ok");
+
+
+
+
+            //btn_quickrequestemailclient_ok.jqxButton({ template: "link" });
+
+            //btn_quickrequestemailclient_ok.click(function (event) {
+
+
+            //    btn_quickrequestemailclient_ok
+
+            //    $('#popupwindowquickrequestemailclient').jqxWindow('close');
+
+            //    //location.href = "mailto:contact@hjhimmler.de?subject=akosquickrequest&body=some text"
+
+            //    location.href = "https:\\www.google.com"
+
+
+
+
+            //});
+
+
+            //$("#btn_quickrequestemailclient_ok").click(function (e) {
+
+            //    var name_value = $('#quickrequestemailclient_name').val();
+
+            //    //alert(name_value)
+
+            //    if (!isNotEmpty(name_value)) {
+
+            //        event.preventDefault();
+
+            //        alert("please enter name")
+
+            //        return;
+
+            //    } else {
+
+            //        var item = $("#quickrequestemailclient_country").jqxComboBox('getSelectedItem');
+
+            //        if (!isNotEmpty(item)) {
+
+            //            event.preventDefault();
+
+            //            alert("please choose country")
+
+            //            return;
+            //        } else {
+
+            //            $('#popupwindowquickrequestemailclient').jqxWindow('close');
+
+            //            e.target.href = 'mailto:contact@hjhimmler.de?subject=akosquickrequest&body=' + item.label;
+
+            //        }
+
+
+
+
+            //    }
+
+
+
+
+
+
+
+            //});
+
+
+            //var btn_quickrequestemailclient_cancel = $("#btn_quickrequestemailclient_cancel");
+
+
+
+            //btn_quickrequestemailclient_cancel.jqxButton({});
+
+            //btn_quickrequestemailclient_cancel.click(function (event) {
+
+            //    alert("Cancel");
+
+            //    $('#popupwindowquickrequestemailclient').jqxWindow('close');
+            //});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //var btn_quickrequest = $("#btn_quickrequest");
+
+            //btn_quickrequest.jqxButton({ width: 100, height: "100%" });
+
+            //btn_quickrequest.click(function (event) {
+
+
+            //    debugger;
+
+
+
+            //    //alert("open window")
+
+            //    $('#popupwindowquickrequest').jqxWindow('open');
+            //});
+
+
+            //debugger;
+
+            //var btn_quickrequestform_ok = $("#btn_quickrequestform_ok");
+
+            //btn_quickrequestform_ok.jqxButton({});
+
+            //btn_quickrequestform_ok.click(function (event) {
+
+
+            //    alert("Submit");
+            //});
+
+
+
+
+
+            //var btn_quickrequestform_cancel = $("#btn_quickrequestform_cancel");
+
+
+
+            //btn_quickrequestform_cancel.jqxButton({});
+
+            //btn_quickrequestform_cancel.click(function (event) {
+
+            //    alert("Cancel");
+            //});
+
+            //$("#popupwindowquickrequest").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequest").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequest").jqxWindow("height") / 2);
+
+            //document.getElementById("appinfowindow").style.display = 'block';
+
+            //$("#appinfowindow").jqxWindow({
+            //    width: 800,
+            //    height: 700,
+            //    position: "center",
+            //    resizable: true,
+            //    isModal: false,
+            //    autoOpen: false,
+
+            //    modalOpacity: 0.01
+
+
+            //});
+
+            //$('#appinfowindow').jqxWindow('destroy');
+
+
+            debugger;
+
+
+            /*$('#slideshow').jqxScrollView({ width: 500, height: 250, showButtons: true, buttonsOffset: [0, 0] });*/
+
+
+            $("#appNotification").jqxNotification({
+                width: "auto", opacity: 0.9, autoOpen: false,
+                closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+            });
+
+            debugger;
+
+            //$('#appNotification').jqxNotification('closeLast');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (sessionStorage.getItem("sessionid") === null) {
+
+                $('#jqxLoader').jqxLoader('open');
+                $.ajax({
+                    type: "GET",
+                    url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/CreateSessionID",
+                    cache: false,
+
+                    success: function (response) {
+                        $('#jqxLoader').jqxLoader('close');
+                        if (response.errorflag) {
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Message : " + response.errortext);
+                            $("#messagenotification").jqxNotification("open");
+                        } else {
+
+                            var sessionid = response.resultobject;
+
+
+
+                            sessionStorage.setItem("sessionid", sessionid);
+
+
+
+
+                        }
+                    },
+                    error: function (error) {
+                        $('#jqxLoader').jqxLoader('close');
+                        $('#messagenotification').jqxNotification({ template: 'error' });
+                        $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Status : " + error.status);
+                        $("#messagenotification").jqxNotification("open");
+                    }
+                });
+
+
+
+
+            } else {
+
+
+
+            }
+
+
+
+
+
+
+            document.getElementById("messagenotification").style.display = 'block';
+
+
+
+
+            var ketcher;
+
+            $("#messagenotification").jqxNotification({
+                width: 250,
+                position: "top-right",
+                opacity: 0.9,
+                autoOpen: false,
+                animationOpenDelay: 800,
+                autoClose: false,
+                autoCloseDelay: 3000,
+                showCloseButton: true
+            });
+
+
+
+
+            $("#registrynumberinput").jqxInput({ placeHolder: "AKOS no.,CAS,name,MFCD no.", height: 50, width: 400 });
+
+            $("#registrynumberinput").on('keyup', function (e) {
+                if (e.key === 'Enter' || e.keyCode === 13) {
+
+                    doName2Structurelookup("registrynumberinput keyup");
+
+
+                }
+            });
+
+
+
+
+
+            $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top', isModal: true, text: "Processing..." });
+
+
+
+            var btn_navigation_search = $("#btn_navigation_search");
+
+
+            btn_navigation_search.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_search.click(function (event) {
+
+                window.location.href = "index.html";
+            });
+
+            var btn_navigation_drawstructure = $("#btn_navigation_drawstructure");
+
+
+
+            btn_navigation_drawstructure.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_drawstructure.click(function (event) {
+
+                window.location.href = "draw-search.html";
+            });
+
+            var btn_navigation_results = $("#btn_navigation_results");
+
+
+
+            btn_navigation_results.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_results.click(function (event) {
+
+                window.location.href = "results.html";
+            });
+
+
+
+            var btn_navigation_contact = $("#btn_navigation_contact");
+
+
+
+            btn_navigation_contact.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_contact.click(function (event) {
+
+                window.location.href = "contact.html";
+            });
+
+            var btn_navigation_about = $("#btn_navigation_about");
+
+
+
+            btn_navigation_about.jqxButton({ width: 120, height: 50 });
+
+            btn_navigation_about.click(function (event) {
+
+                window.location.href = "about.html";
+            });
+
+
+            var btn_navigation_requests = $("#btn_navigation_requests");
+
+            btn_navigation_requests.jqxButton({ width: 120, height: 50 });
+
+
+            if (sessionStorage.getItem("shoppingitems") === null) {
+
+                $('#btn_navigation_requests').jqxButton({ value: "Requests (0)" });
+
+
+
+
+            } else {
+
+                var data = sessionStorage.getItem("shoppingitems")
+
+                var rows = JSON.parse(data);
+
+                $('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")" });
+
+
+
+
+            }
+
+
+            btn_navigation_requests.click(function (event) {
+
+                window.location.href = "requests.html";
+
+
+
+
+
+
+            });
+
+
+            var drawstructurebutton = $("#btn_drawstructure");
+
+            drawstructurebutton.jqxButton({ width: 120, height: 50 });
+
+            drawstructurebutton.click(function (event) {
+
+
+                window.location.href = "draw-search.html";
+
+
+
+            });
+
+
+
+
+
+
+
+
+            var namelookupbutton = $("#btn_namelookup");
+
+            namelookupbutton.jqxButton({ width: 100, height: 50, template: 'default' });
+            namelookupbutton.click(function (event) {
+
+                doName2Structurelookup("btn_namelookup");
+
+
+
+            });
+
+
+
+
+
+
+            var searchparameters = window.location.search
+            if (isNotEmpty(searchparameters)) {
+
+
+
+
+
+
+
+                const params = new URLSearchParams(window.location.search);
+
+                const alluppercaseParams = new URLSearchParams();
+
+                for (const [name, value] of params) {
+                    alluppercaseParams.append(name.toUpperCase(), value);
+                }
+
+                var origin = alluppercaseParams.get('ORIGIN');
+
+                if (origin == "AKOSWEBSITE") {
+
+                    // do nothing
+                } else {
+
+                    var id = alluppercaseParams.get('ID');
+
+                    jdata = {};
+
+
+                    if (sessionStorage.getItem("sessionid") !== null) {
+
+                        var sessionid = sessionStorage.getItem("sessionid");
+
+                        if (isNotEmpty(sessionid)) {
+
+                            jdata.sessionid = sessionid;
+
+
+                        }
+                    }
+
+                    jdata.name = id;
+
+                    if (isNotEmpty(origin)) {
+
+                        if (origin == "PUBCHEM") {
+
+                            jdata.origin = "PubChemLink";
+
+                        }
+
+                        if (origin == "CHEMSPIDER") {
+
+                            jdata.origin = "ChemspiderLink";
+
+                        }
+
+                        if (origin == "ZINCDB") {
+
+                            jdata.origin = "ZincdbLink";
+
+                        }
+
+
+                        if (origin == "CHEMEXPER") {
+
+                            jdata.origin = "ChemexperLink";
+
+                        }
+
+                        if (origin == "AKOSWEBSITE") {
+
+                            jdata.origin = "AKoswebsiteLink";
+
+                        }
+
+
+                    }
+
+                    if (!isNotEmpty(jdata.origin)) {
+
+
+                        jdata.origin = "Link";
+                    }
+
+
+                    $('#jqxLoader').jqxLoader('open');
+
+                    var useragentinformationjdata = {};
+
+                    useragentinformationjdata.origin = jdata.origin
+
+                    useragentinformationjdata.name = id;
+
+                    useragentinformationjdata.useragentrawstring = navigator.userAgent
+
+
+                    $.ajax({
+                        type: "POST",
+
+                        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogUseragentinformation",
+                        cache: false,
+                        data: JSON.stringify(useragentinformationjdata),
+                        success: function (response) {
+
+                            $('#jqxLoader').jqxLoader('close');
+
+
+                            const agent = window.navigator.userAgent;
+
+                            //agent = "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.264 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+
+                            //agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)"
+
+                            //agent = "Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)"
+
+                            const botUserAgentsArray = [
+                                'googlebot',
+                                'bingbot',
+                                'linkedinbot',
+                                'mediapartners-google',
+                                'lighthouse',
+                                'insights',
+                                'applebot',
+                                'ahrefs'
+
+                            ];
+
+                            var isBotUserAgent = 0;
+                            for (var j = 0; j < botUserAgentsArray.length; j++) {
+                                if (agent.toLowerCase().indexOf(botUserAgentsArray[j].toLowerCase()) !== -1) {
+
+                                    isBotUserAgent = 1;
+                                    break;
+                                }
+                            }
+
+                            if (isBotUserAgent == 0) {
+
+                                $('#jqxLoader').jqxLoader('open');
+
+
+                                $.ajax({
+                                    type: "POST",
+
+                                    url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Name2Structure",
+                                    cache: false,
+                                    data: JSON.stringify(jdata),
+                                    success: function (response) {
+
+
+
+
+
+
+
+                                        $('#jqxLoader').jqxLoader('close');
+                                        if (response.errorflag) {
+                                            $('#messagenotification').jqxNotification({ template: 'error' });
+                                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                                            $("#messagenotification").jqxNotification("open");
+                                        } else {
+
+                                            if (response.noCIDMatch) {
+
+                                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                                $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually or send us a quick request.");
+                                                $("#messagenotification").jqxNotification("open");
+
+                                                $('#quickrequestpromptwindow').jqxWindow('open');
+
+                                                $("#quickrequestpromptwindow").jqxWindow("move", $(window).width() / 2 - $("#quickrequestpromptwindow").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+                                            } else {
+                                                var jData = {};
+                                                jData.registryid = "";
+
+                                                jData.molfile = response.bestchoiceCIDMolfile;
+
+                                                jData.smiles = response.smiles;
+
+                                                doSearch(jData);
+
+
+
+
+
+
+                                            }
+
+
+                                        }
+                                    },
+                                    error: function (error) {
+                                        $('#jqxLoader').jqxLoader('close');
+                                        $('#messagenotification').jqxNotification({ template: 'error' });
+
+                                        if (error.status == 500) {
+
+                                            $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                                        } else {
+
+                                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                                        }
+
+
+
+                                        $("#messagenotification").jqxNotification("open");
+                                    }
+                                });
+                            }
+
+
+
+
+
+
+
+
+
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+
+                        }
+                    });
+
+
+
+
+
+
+                }
+
+                //var openquickrequest = alluppercaseParams.get('OPENQUICKREQUEST');
+
+                //if (isNotEmpty(openquickrequest)) {
+
+                //    /*alert("quick request")*/
+
+                //    $('#popupwindowquickrequestform').jqxWindow('open');
+
+                //    $("#popupwindowquickrequestform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequestform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+                //} else {
+
+                    
+
+
+
+                //}
+
+
+
+
+
+
+
+            } else {
+
+                //$("#appinfowindow").jqxWindow({
+                //    width: 800,
+                //    height: 700,
+                //    position: "center",
+                //    resizable: true,
+                //    isModal: false,
+                //    autoOpen: false,
+
+                //    modalOpacity: 0.01
+
+
+                //});
+
+                //$("#appNotification").jqxNotification({
+                //    width: "auto", opacity: 0.9, autoOpen: false,
+                //    closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+                //});
+
+                //$("#appNotification").jqxNotification("open");
+
+
+
+                //$("#appNotification").on("open", function (event) {
+
+                //    sessionStorage.setItem("appinfonotificationshown", true);
+
+                //});
+
+                //$("#appNotification").on("close", function (event) {
+
+                //    $('#appNotification').jqxNotification('destroy');
+
+                //});
+
+                //$("#appNotification").on("click", function (event) {
+
+                //    $('#appNotification').jqxNotification('destroy');
+
+                //    $("#appinfowindow").jqxWindow('open');
+
+                //});
+
+                var bappinfonotificationshown;
+
+                if (sessionStorage.getItem("appinfonotificationshown") !== null) {
+
+                    bappinfonotificationshown = sessionStorage.getItem("appinfonotificationshown");
+                } else {
+
+                    bappinfonotificationshown = false
+
+
+
+                }
+
+                if (!bappinfonotificationshown) {
+
+
+
+                    $("#appNotification").jqxNotification({
+                        width: "auto", opacity: 0.9, autoOpen: false,
+                        closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+                    });
+
+                    $("#appNotification").jqxNotification("open");
+
+
+
+                    $("#appNotification").on("open", function (event) {
+
+                        sessionStorage.setItem("appinfonotificationshown", true);
+
+                        var logappnotificationactionsjdata = {};
+
+                        logappnotificationactionsjdata.Pagename = "index"
+
+                        logappnotificationactionsjdata.Action = "OPEN";
+
+
+
+
+                        $.ajax({
+                            type: "POST",
+
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                            cache: false,
+                            data: JSON.stringify(logappnotificationactionsjdata),
+                            success: function (response) {
+                            },
+                            error: function (error) {
+
+                            }
+                        });
+
+
+
+
+                    });
+
+                    $("#appNotification").on("close", function (event) {
+
+
+
+                        $('#appNotification').jqxNotification('destroy');
+
+                        var logappnotificationactionsjdata = {};
+
+                        logappnotificationactionsjdata.Pagename = "index"
+
+                        logappnotificationactionsjdata.Action = "CLOSE";
+
+
+
+
+                        $.ajax({
+                            type: "POST",
+
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                            cache: false,
+                            data: JSON.stringify(logappnotificationactionsjdata),
+                            success: function (response) {
+                            },
+                            error: function (error) {
+
+                            }
+                        });
+
+                    });
+
+                    $("#appNotification").on("click", function (event) {
+
+                        $('#appNotification').jqxNotification('destroy');
+
+
+
+                        $("#appinfowindow").jqxWindow({
+                            width: 500,
+                            height: 700,
+                            position: "center",
+                            resizable: true,
+                            isModal: false,
+                            autoOpen: false,
+
+                            modalOpacity: 0.01
+
+
+                        });
+
+                        document.getElementById("appinfowindow").style.display = 'block';
+
+                        $('#photoGallery2').jqxScrollView({ width: 280, height: 620, showButtons: false });
+
+
+
+
+
+
+
+                        $("#appinfowindow").jqxWindow('open');
+
+
+
+
+
+
+                        var logappnotificationactionsjdata = {};
+
+                        logappnotificationactionsjdata.Pagename = "index"
+
+                        logappnotificationactionsjdata.Action = "CLICK";
+
+
+
+
+                        $.ajax({
+                            type: "POST",
+
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/LogAppnotificationActions",
+                            cache: false,
+                            data: JSON.stringify(logappnotificationactionsjdata),
+                            success: function (response) {
+                            },
+                            error: function (error) {
+
+                            }
+                        });
+
+                    });
+
+
+
+
+
+                } else {
+
+                    $("#appNotification").jqxNotification({
+                        width: "auto", opacity: 0.9, autoOpen: false,
+                        closeOnClick: true, autoClose: false, showCloseButton: true, template: "info"
+                    });
+
+                    //$('#jqxNoappinfowindowtification').jqxNotification('closeAll');
+
+                    $('#appNotification').jqxNotification('destroy');
+
+
+
+
+                }
+
+
+
+
+
+
+
+            }
+
+
+            $("#quickrequestpromptwindow").jqxWindow({
+                resizable: false,
+                //width: "100%",
+                //height: "75%",
+
+                width: "50%",
+                height: "20%",
+
+
+                autoOpen: false,
+                showCollapseButton: false,
+
+                showCloseButton: false,
+
+                okButton: $('#quickrequestpromptwindow_yes'), cancelButton: $('#quickrequestpromptwindow_no'),
+                /*okButton: $('#btn_quickrequestlistboxwindow_OK'),*/
+                initContent: function () {
+
+                    //$('#quickrequestpromptwindow_yes').jqxButton({ width: '65px' });
+
+                    //$('#quickrequestpromptwindow_no').jqxButton({ width: '65px' });
+
+                    //debugger;
+
+                    //var rows = $('#grid_relatedcids').jqxGrid('getrows');
+                    //var akosnumbers = [];
+
+
+                    //for (var i = 0; i < rows.length; i++) {
+
+
+                    //    akosnumbers.push(rows[i].registryid);
+
+
+
+                    //}
+
+                    //$("#quickrequestlistbox").jqxListBox({ source: akosnumbers, width: '100%', height: '75%', checkboxes: true });
+
+
+
+
+                    //debugger;
+                    //$('#btn_quickrequestlistboxwindow_OK').jqxButton({ width: '65px' });
+                    ///*$('#btn_quickrequestlistboxwindow_CANCEL').jqxButton({ width: '65px' });*/
+
+
+
+
+
+
+
+                }
+
+            });
+
+            $('#quickrequestpromptwindow_yes').jqxButton({ template: 'primary' });
+
+            $('#quickrequestpromptwindow_no').jqxButton({ template: 'primary' });
+
+            $("#quickrequestpromptwindow").jqxWindow({ title: '' });
+
+            $("#quickrequestpromptwindow_yes").on('click', function () {
+
+
+                $('#popupwindowquickrequestform').jqxWindow('open');
+
+                $("#popupwindowquickrequestform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequestform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+            });
+
+            // add code to test for quick request
+
+
+            if (sessionStorage.hasOwnProperty("openquickrequest")) {
+
+                if (sessionStorage.getItem("openquickrequest") !== null) {
+
+
+                    var openquickrequest = sessionStorage.getItem("openquickrequest");
+
+                    if (isNotEmpty(openquickrequest)) {
+
+                        if (openquickrequest === "YES") {
+
+                            sessionStorage.setItem("openquickrequest", "");
+                           
+
+                            $('#popupwindowquickrequestform').jqxWindow('open');
+
+                            $("#popupwindowquickrequestform").jqxWindow("move", $(window).width() / 2 - $("#popupwindowquickrequestform").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowquickrequestform").jqxWindow("height") / 2);
+
+
+
+                        }
+
+
+
+                    }
+
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>

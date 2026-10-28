@@ -1,0 +1,852 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>AKos webrequest</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    
+
+    <script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+
+    
+    <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+
+    
+    <style>
+
+        
+
+        /*.jqx-fill-state-hover {
+            background-color: DarkGrey;
+        }*/
+
+        .jqx-fill-state-normal {
+            background-color: transparent;
+            border-style : none;
+        }
+
+        .jqx-fill-state-hover {
+            background-color: #A80D0D;
+            color: white;
+        }
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+        .search {
+            
+
+
+            display: flex;
+            align-items: normal;
+            justify-content: center
+        }
+
+        .searchlabel {
+            
+
+
+            display: flex;
+            align-items: normal;
+            justify-content:flex-start
+        }
+
+        .navigation-container {
+            
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            display: block;
+            align-items: center;
+        }
+
+        .navigation-row {
+            width: 100%;
+        }
+
+        .navigationflex-item {
+            
+            padding: 10px;
+            
+            text-align: center;
+            display: inline-block;
+        }
+
+
+        .unselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body >
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+    
+
+    <div style="height: 100%;">
+
+        <div class="navigation-container" style="height: 50px;">
+
+
+            <!--<div class="navigation-row"><img class="navigationflex-item" style="padding: 0px;float: left; margin-left: 10px;" src="images/akos_logo_4rings_1_blue.jpg" height="50" width="100" /></div>-->
+            <div class="navigation-row"><img class="navigationflex-item" style="padding: 0px;float: left; margin-left: 10px;" src="images/AK0S-logo-weit.png" height="65" width="80" /></div>
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Search" id='btn_navigation_search' /></span></div>
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Draw structure" id='btn_navigation_drawstructure' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Results" id='btn_navigation_results' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Contact Us" id='btn_navigation_contact' /></span></div>
+
+
+
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' style="float: right; margin-right: 10px; cursor: pointer" /></span></div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+        <!--<center><img src="images/akos_logo_4rings_1_blue.jpg" style="height: 210px; width: 400px; margin-top: 30px" /></center>-->
+        <!--<div><center><div><img src="images/AK0S-logo-weit.png" style="height: 100px; width: 150px; margin-top: 30px;" /></div><div style="font-size: 30px; color: #A80D0D;">Consulting & Solutions Deutschland GmbH</div></center></div>-->
+
+
+        <div style="display: flex; align-items: normal; justify-content: center;">
+            <img src="images/AK0S-logo-weit.png" style="height: 100px; width: 150px; margin-top: 30px; margin-right: 100px" />
+            
+
+        </div>
+
+        <div style="display: flex; align-items: normal; justify-content: center;">
+            
+            <div style="font-size: 30px; color: #A80D0D;">Consulting & Solutions Deutschland GmbH</div>
+
+        </div>
+
+
+
+
+        <div class="search" style="height: 100%;">
+
+
+            <div id="registrynumberinput" style="margin-top: 30px;">
+                <input type="text" />
+                <div id="btn_registrynumberinputsearch"><img style="margin-top: 3px; cursor: pointer" alt="search" width="40" height="40" src="images/search_lg.png" /></div>
+            </div>
+
+
+
+            <div><input type="button" value="Search" id='btn_namelookup' style="margin-top: 30px; margin-left: 10px; cursor: pointer" /></div>
+            <div><input type="button" value="Draw structure" id='btn_drawstructure' style="margin-top: 30px; margin-left: 10px; cursor: pointer" /></div>
+
+        </div>
+
+
+
+
+    </div>
+
+        
+        
+
+
+
+        <div id="jqxLoader"></div>
+
+
+
+
+        
+        <div style="display: none" id="messagenotification">
+            <div id="messagenotification_content"></div>
+        </div>
+
+
+        
+
+        
+
+
+
+        
+
+        <script>
+           
+
+
+
+
+
+            function isNotEmpty(value) {
+
+
+
+                if (typeof value !== 'undefined') {
+
+
+
+                    if (value !== null) {
+
+
+                        if (value) {
+
+
+
+                            return true;
+
+
+                        } else {
+
+
+
+
+                            return false;
+
+
+                        }
+
+
+
+                    } else {
+
+
+                        return false;
+
+
+                    }
+
+
+
+
+
+
+                } else {
+                    return false;
+                }
+
+
+
+            }
+
+
+
+
+            
+
+
+
+            function doName2Structurelookup(origin) {
+
+                
+                
+
+
+                var n2sinput = $('#registrynumberinput').jqxInput('val');
+
+                if (isNotEmpty(n2sinput)) {
+
+
+                    jdata = {};
+
+                    jdata.name = n2sinput;
+
+                    jdata.origin = origin;
+
+
+                    $('#jqxLoader').jqxLoader('open');
+                    $.ajax({
+                        type: "POST",
+                        
+                        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Name2Structure",
+                        cache: false,
+                        data: JSON.stringify(jdata),
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            
+                            if (response.errorflag) {
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                if (response.noCIDMatch) {
+
+                                    $('#messagenotification').jqxNotification({ template: 'error' });
+                                    $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+                                    $("#messagenotification").jqxNotification("open");
+
+                                } else {
+
+
+                                    var jData = {};
+                                    jData.registryid = "";
+                                    jData.smiles = response.smiles;
+                                    jData.molfile = response.bestchoiceCIDMolfile;
+
+
+
+                                    doSearch(jData);
+
+
+
+
+                                }
+
+
+                            }
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+
+                            if (error.status == 500) {
+
+                                $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                            } else {
+
+                                $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                            }
+
+
+
+                            
+                            $("#messagenotification").jqxNotification("open");
+                        }
+                    });
+
+
+
+                } else {
+
+                    $("#registrynumberinput").jqxTooltip({ autoHideDelay: 2000, content: "Please enter name", position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+                    $("#registrynumberinput").jqxTooltip("open");
+
+                    return;
+
+                }
+
+
+            }
+
+
+            function doSearch(jdata) {
+
+
+                
+
+                $('#jqxLoader').jqxLoader('open');
+
+                $.ajax({
+                    type: "POST",
+
+
+                    
+                    //url: "http://akoscompounds.de/webinquiriesapibingo/api/akoswebrequestsapi/Executeinitialsearch",
+                    url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Executecompletefullstructuresearch",
+                    cache: false,
+
+                    data: JSON.stringify(jdata),
+
+                    success: function (response) {
+
+                       
+
+                        $('#jqxLoader').jqxLoader('close');
+
+
+                        if (response.errorflag) {
+
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling Executecompletefullstructuresearch. Message : " + response.errortext);
+                            $("#messagenotification").jqxNotification("open");
+
+
+                        } else {
+
+
+
+                            
+
+
+
+                            
+
+                            var data = response.initialsearchresults;
+
+                            sessionStorage.setItem("structurequery", JSON.stringify(jdata));
+
+                            var exportdata = JSON.stringify(data);
+
+
+                            
+
+                            sessionStorage.setItem("griddata", exportdata);
+
+                            //alert("Set enablesimilaritybutton to true")
+
+                            sessionStorage.setItem("enablesimilaritybutton", true);
+
+                            /*sessionStorage.setItem("enableextendedfullstructuresearchbutton", true);*/
+
+                            window.location.href = "results.html";
+
+
+                            
+
+
+
+
+
+
+
+
+
+
+
+                        }
+
+                    },
+                    error: function (error) {
+
+                        $('#jqxLoader').jqxLoader('close');
+                        $('#messagenotification').jqxNotification({ template: 'error' });
+
+                        if (error.status == 500) {
+
+                            $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                        } else {
+
+                            $("#messagenotification").find("div").first().text("Error calling Executecompletefullstructuresearch. Status : " + error.status);
+                        }
+
+                        
+                        $("#messagenotification").jqxNotification("open");
+
+
+                    }
+                });
+
+
+            }
+
+
+
+
+
+
+            $(document).ready(function () {
+
+                
+
+                if (sessionStorage.getItem("sessionid") === null) {
+                    
+                    $('#jqxLoader').jqxLoader('open');
+                    $.ajax({
+                        type: "GET",
+                        url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/CreateSessionID",
+                        cache: false,
+
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            if (response.errorflag) {
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                var sessionid = response.resultobject;
+
+                                
+
+                                sessionStorage.setItem("sessionid", sessionid);
+
+
+
+
+                            }
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Status : " + error.status);
+                            $("#messagenotification").jqxNotification("open");
+                        }
+                    });
+
+
+
+
+                } else {
+
+
+                    
+                }
+
+
+
+
+
+                
+                document.getElementById("messagenotification").style.display = 'block';
+
+
+               
+
+                var ketcher;
+
+                $("#messagenotification").jqxNotification({
+                    width: 250,
+                    position: "top-right",
+                    opacity: 0.9,
+                    autoOpen: false,
+                    animationOpenDelay: 800,
+                    autoClose: false,
+                    autoCloseDelay: 3000,
+                    showCloseButton: true
+                });
+
+
+                
+
+                $("#registrynumberinput").jqxInput({ placeHolder: "AKOS no.,CAS,name,MFCD no.", height: 50, width: 400 });
+
+                $("#registrynumberinput").on('keyup', function (e) {
+                    if (e.key === 'Enter' || e.keyCode === 13) {
+                        
+                        doName2Structurelookup("registrynumberinput keyup");
+
+
+                    }
+                });
+
+
+
+                
+
+                $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top', isModal: true, text: "Processing..." });
+
+                
+
+                var btn_navigation_search = $("#btn_navigation_search");
+
+                
+                btn_navigation_search.jqxButton({ width: 120, height: 50});
+
+                btn_navigation_search.click(function (event) {
+
+                    window.location.href = "index.html";
+                });
+
+                var btn_navigation_drawstructure = $("#btn_navigation_drawstructure");
+
+                
+
+                btn_navigation_drawstructure.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_drawstructure.click(function (event) {
+
+                    window.location.href = "draw-search.html";
+                });
+
+                var btn_navigation_results = $("#btn_navigation_results");
+
+                
+
+                btn_navigation_results.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_results.click(function (event) {
+
+                    window.location.href = "results.html";
+                });
+
+
+
+                var btn_navigation_contact = $("#btn_navigation_contact");
+
+                
+
+                btn_navigation_contact.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_contact.click(function (event) {
+
+                    window.location.href = "contact.html";
+                });
+                
+
+                var btn_navigation_requests = $("#btn_navigation_requests");
+
+                btn_navigation_requests.jqxButton({ width: 120, height: 50 });
+
+
+                if (sessionStorage.getItem("shoppingitems") === null) {
+
+                    $('#btn_navigation_requests').jqxButton({ value: "Requests (0)"});
+
+                   
+
+                    
+                } else {
+
+                    var data = sessionStorage.getItem("shoppingitems")
+
+                    var rows = JSON.parse(data);
+
+                    $('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")"});
+
+                    
+
+
+                }
+
+                
+                btn_navigation_requests.click(function (event) {
+
+                    window.location.href = "requests.html";
+
+                    
+
+
+
+
+                });
+
+                
+
+                
+
+                var drawstructurebutton = $("#btn_drawstructure");
+
+                drawstructurebutton.jqxButton({ width: 120, height: 50, template: 'primary' });
+
+                drawstructurebutton.click(function (event) {
+
+
+                    window.location.href = "draw-search.html";
+
+                    
+
+                });
+
+               
+
+                $("#btn_registrynumberinputsearch").click(function (event) {
+
+                    doName2Structurelookup("btn_registrynumberinputsearch");
+
+
+
+                });
+
+                var namelookupbutton = $("#btn_namelookup");
+                namelookupbutton.jqxButton({ width: 100, height: 50, template: 'primary' });
+                namelookupbutton.click(function (event) {
+
+                    doName2Structurelookup("btn_namelookup");
+
+
+
+                });
+
+
+
+
+                
+
+                var searchparameters = window.location.search
+                if (isNotEmpty(searchparameters)) {
+                    const params = new URLSearchParams(window.location.search);
+
+                    const alluppercaseParams = new URLSearchParams();
+
+                    for (const [name, value] of params) {
+                        alluppercaseParams.append(name.toUpperCase(), value);
+                    }
+
+
+                    
+
+                    var origin = alluppercaseParams.get('ORIGIN');
+                    
+                    if (origin =="AKOSWEBSITE") {
+                    	
+                    	// do nothing
+                  	} else {
+                  		
+                  		var id = alluppercaseParams.get('ID');
+                  		
+                  		jdata = {};
+                  		
+                  		jdata.name = id;
+                  		
+                  		if (isNotEmpty(origin)) {
+
+                        if (origin == "PUBCHEM") {
+
+                            jdata.origin = "PubChemLink";
+
+                        }
+
+                        if (origin == "CHEMSPIDER") {
+
+                            jdata.origin = "ChemspiderLink";
+
+                        }
+
+                        if (origin == "ZINCDB") {
+
+                            jdata.origin = "ZincdbLink";
+
+                        }
+
+
+			if (origin == "CHEMEXPER") {
+
+                            jdata.origin = "ChemexperLink";
+
+                        }
+
+                        if (origin == "AKOSWEBSITE") {
+
+                            jdata.origin = "AKoswebsiteLink";
+
+                        }
+
+
+                    	}
+
+                    	if (!isNotEmpty(jdata.origin)) {
+
+
+                        jdata.origin = "Link";
+                    	}
+
+                    
+                    	$('#jqxLoader').jqxLoader('open');
+
+                    	$.ajax({
+                        type: "POST",
+                        
+                            url: "http://akoscompounds.de/webinquiriesapibingodev/api/akoswebrequestsapi/Name2Structure",
+                        cache: false,
+                        data: JSON.stringify(jdata),
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            if (response.errorflag) {
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                if (response.noCIDMatch) {
+
+                                    $('#messagenotification').jqxNotification({ template: 'error' });
+                                    $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+                                    $("#messagenotification").jqxNotification("open");
+
+                                } else {
+                                    var jData = {};
+                                    jData.registryid = "";
+
+                                    jData.molfile = response.bestchoiceCIDMolfile;
+
+                                    jData.smiles = response.smiles;
+
+                                    doSearch(jData);
+
+
+
+
+
+
+                                }
+
+
+                            }
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+
+                            if (error.status == 500) {
+
+                                $("#messagenotification").find("div").first().text("Server is busy. Please try again in a few moments.");
+
+                            } else {
+
+                                $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                            }
+
+
+                            
+                            $("#messagenotification").jqxNotification("open");
+                        }
+                    	});
+                  		
+                  		
+                  		
+                  	}
+                    
+                    
+
+
+                }
+
+
+
+
+
+
+                
+
+
+
+
+
+
+            });
+
+        </script>
+</body>
+</html>

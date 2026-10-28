@@ -1,0 +1,2506 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+    <!--<meta name="theme-color" content="#000000" />-->
+    <!--<meta name="description" content="Ketcher is a web-based chemical structure editor" />-->
+    <!--<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />-->
+    <!--<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />-->
+    <!--<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />-->
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />-->
+    <!--<link rel="manifest" href="./manifest.json" />-->
+    <!--<link href="./static/css/2.1a1d4f17.chunk.css" rel="stylesheet">-->
+    <!--<link href="./static/css/main.4b33aa94.chunk.css" rel="stylesheet">-->
+
+    <!--<link href="./static/css/main.4b33aa94.chunk.css" rel="stylesheet">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    <!--<script type="text/javascript" src="jqwidgets/jqxnavbar.js"></script>-->
+    <!--<script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>-->
+
+    <script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+
+    <!--<script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>-->
+    <!--<script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.edit.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.columnsresize.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.columnsreorder.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.sort.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxslider.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdragdrop.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxwindow.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxform.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxvalidator.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxnumberinput.js"></script>-->
+    <!--<script type="text/javascript" src="jqwidgets/jqxcombobox.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxexport.js"></script>
+
+    <script type="text/javascript" src="jqwidgets/jqxradiobutton.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttongroup.js"></script>-->
+    <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+
+    <!--<script type="text/javascript" src="scripts/vfs_fonts.js"></script>-->
+    <style>
+
+        /*.jqx-grid-card-cell-label {
+            display: none;
+        }
+
+        .jqx-grid-card-cell table {
+            padding: 0px;
+        }
+
+        .jqx-grid-card-cell {
+            padding: 0px;
+        }
+
+
+        .jqx-notification-container {
+            z-index: 100000;
+        }
+
+
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+
+        .LightSeaGreen {
+            background-color: LightSeaGreen;
+        }
+
+        .LightGreen {
+            background-color: LightGreen;
+        }
+
+        .LightBlue {
+            background-color: LightBlue;
+        }
+
+        .header {
+            background: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .img {
+            max-width: 100%
+        }
+
+        .header_image {
+            flex-basis: 40%
+        }
+
+        .header_text_left {
+            font-size: 10px;
+            padding-left: 20px;
+        }
+
+        .header_text_right {
+            font-size: 10px;
+            padding-left: 20px;
+        }*/
+
+        .jqx-fill-state-hover {
+            background-color: DarkGrey;
+        }
+
+
+        .jqx-tooltip-text {
+            font-size: 20px;
+            color: red;
+        }
+
+        .search {
+            /*background-color:antiquewhite;*/
+
+
+            display: flex;
+            align-items: normal;
+            justify-content: center
+        }
+
+        .navigation-container {
+            /*display: flex;
+            flex-direction: row;
+            align-items: normal;
+            justify-content: center;
+            margin: auto;*/
+            /*background-color: aqua;*/
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            display: block;
+            align-items: center;
+        }
+
+        .navigation-row {
+            width: 100%;
+        }
+
+        .navigationflex-item {
+            /*cursor: pointer !important;*/
+            padding: 10px;
+            /*margin-top: 10px;*/
+            /*padding: 5px;*/
+            /*width: 200px;
+            height: 150px;
+            margin: 10px;
+            line-height: 150px;*/
+            /*color: white;*/
+            /*font-weight: bold;
+            font-size: 3em;*/
+            text-align: center;
+            display: inline-block;
+        }
+
+
+        .unselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+    </style>
+</head>
+
+<body >
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+    <!--<div class="header">
+
+        <div class="header_text_left">
+            <h3>AKos GmbH chooses the best supplier for you dependent on price, delivery times and reliability. We manage your inquiry, communicate with suppliers, deliver and send you the final invoice.</h3>
+        </div>
+
+        <div class="header_image">
+            <center><img src="banner.jpg" width="200" height="50" /></center>
+
+        </div>
+
+        <div class="header_text_right">
+            <h3>We will provide you a free, no obligation quote, giving you the best price, selected from hundreds of suppliers.</h3>
+        </div>
+    </div>-->
+
+    <div style="height: 100%;">
+
+        <div class="navigation-container" style="height: 50px;">
+
+            <!--<div class="navigation-row"><span><img class="navigationflex-item" src="banner.jpg" width="200" height="50" style="float: left; margin-left: 10px" /></span></div>-->
+            <!--<div class="navigation-row" style="background-color: lightblue"><img class="navigationflex-item" style="background-color:transparent;padding: 0px; float: left; margin-left: 10px; " src="images/logo_simple_new.png" height="50" width="150" /></div>-->
+            <!--<div class="navigationflex-item" style="float: left; background-color: lightblue; height: 50px; width: 150px" ></div>-->
+            <!--<div class="navigation-row"><img class="navigationflex-item" style="border:solid; border-width: 1px; padding: 0px;float: left; margin-left: 10px;" src="images/logo_simple_new.png" height="50" width="150" /></div>-->
+            <!--<div class="navigation-row"><img class="navigationflex-item" style="padding: 0px;float: left; margin-left: 10px;" src="images/logo_simple_new_blue.jpg" height="50" width="150" /></div>-->
+
+            <div class="navigation-row"><img class="navigationflex-item" style="padding: 0px;float: left; margin-left: 10px;" src="images/akos_logo_cyclohexane_1_blue.jpg" height="50" width="100" /></div>
+
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Search" id='btn_navigation_search' /></span></div>
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Draw structure" id='btn_navigation_drawstructure' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Results" id='btn_navigation_results' /></span></div>
+
+            <div class="navigation-row"><span><input class="navigationflex-item" style="float: left; margin-left: 10px; cursor: pointer" type="button" value="Contact Us" id='btn_navigation_contact' /></span></div>
+
+
+
+
+            <!--<div class="navigation-row"><span><input class="navigationflex-item" type="button" value="" id='btn_navigation_requests' style="float: right; margin-right: 10px; cursor: pointer" /></span></div>-->
+
+            <div class="navigation-row"><span><input class="navigationflex-item" type="button" id='btn_navigation_requests' style="float: right; margin-right: 10px; cursor: pointer" /></span></div>
+
+
+            <!--<div class="navigation-row"><span><input class="navigationflex-item" type="text" value="" id='shoppingcartitems' style="border-style: solid; border-width: 2px; float: right; margin-right: 10px" /></span></div>-->
+
+
+
+
+
+
+
+        </div>
+
+
+        <!--<center><img src="images/logo_startpage_new.jpg" style="height: 200px;width:177px" /></center>-->
+        <!--<center><img src="images/startpage_logo_picture_final.jpg" style="height: 197px;width:231px;" /></center>-->
+
+        <center><img src="images/akos_logo_cyclohexane_1_blue.jpg" style="height: 210px;width:400px;margin-top: 30px" /></center>
+
+
+
+
+        <!--<center><div class="unselectable" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; height: 50px; width: 200px ">Consulting & Solutions Deutschland GmbH</div></center>-->
+        <div style="height: 30px;font-family: Arial, Helvetica, sans-serif;font-size: 30px; font-weight:bold; margin-top: 10px"><center>Search</center></div>
+
+        <!--<div class="search" style="height: calc(100% - 300px);">-->
+        <div class="search" style="height: 100%;">
+
+            <div id="registrynumberinput" style="margin-top: 30px;">
+                <input type="text" />
+                <div id="btn_registrynumberinputsearch"><img style="margin-top: 3px; cursor: pointer" alt="search" width="40" height="40" src="images/search_lg.png" /></div>
+            </div>
+
+
+
+            <div><input type="button" value="Search" id='btn_namelookup' style="margin-top: 30px; margin-left: 10px; cursor: pointer" /></div>
+            <div><input type="button" value="Draw structure" id='btn_drawstructure' style="margin-top: 30px; margin-left: 10px; cursor: pointer" /></div>
+
+        </div>
+
+
+
+
+    </div>
+
+        
+        <!--<div id="popupwindowshoppingcard" style="display: none; position: fixed; left: 50%; top: 50%;">
+            <div>Add</div>
+            <div style="overflow: hidden;">
+                <form id="popupwindowshoppingcardform" action="./">
+                    <table>
+                        <tr>
+                            <td align="right">AKos number:</td>
+                            <td align="left"><input id="akosnumber" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Quantity:</td>
+                            <td align="left"><div id="quantity"></div></td>
+                        </tr>
+
+
+                        <tr>
+                            <td align="right">Unit:</td>
+                            <td align="left"><div id="units"></div></td>
+                        </tr>
+
+
+                        <tr>
+                            <td align="right">Additional information:</td>
+                            <td align="left"><input id="additionalinformation" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right"></td>-->
+                            <!--<td style="padding-top: 10px;" align="right"><input style="margin-right: 5px;" type="button" id="btn_popupwindowshoppingcard_addquantity" value="Add" /><input id="btn_popupwindowshoppingcard_editquantity" type="button" value="Edit" /></td>-->
+
+                            <!--<td style="padding-top: 10px;" align="right"><input style="margin-right: 5px;" type="button" id="btn_popupwindowshoppingcard_addquantity" value="Add" /></td>
+                        </tr>
+
+
+                        <tr>
+                            <td align="right"></td>
+                            <td style="padding-top: 10px;" align="right"><input style="margin-right: 5px;" type="button" id="btn_popupwindowshoppingcard_done" value="Done" /><input id="btn_popupwindowshoppingcard_cancel" type="button" value="Cancel" /></td>
+                        </tr>
+
+
+
+
+                    </table>-->
+                    <!--<label id="addquantitylabel" style="display: none;">You can add additional quantities if you like or click Done button.</label>-->
+                <!--</form>
+            </div>
+        </div>-->
+
+
+
+
+        <!--<div style="display: none" id="ketcherwindow">
+            <div>Draw structure</div>
+            <div style="overflow: hidden;">
+                <div>
+                    <div>
+                        <iframe id="ketcherwindow_ketcher" src="ketcher.html" style="width: 100%; height: 80%"></iframe>
+                        <div>
+
+                            <input type="text" id="n2sinput" name="n2sinput" style="margin-top: 10px; margin-left: 10px" />
+                            <input type="button" value="Name2Structure" id="btn_n2sinput" style="margin-left: 10px" />
+
+                            <input type="button" value="Search" id="btn_startsearch" style="float: right; margin-top: 10px; margin-right: 10px" />
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>-->
+
+
+        <!--<div style="display: none" id="zoomketcherwindow">
+            <div>Zoom</div>
+            <div style="overflow: hidden;">
+                <div>
+                    <div>
+                        <iframe id="zoomketcherwindow_ketcher" src="ketcher.html" style="width: 100%; height: 100%"></iframe>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>-->
+
+
+
+        <div id="jqxLoader"></div>
+
+
+
+
+        <!--<div id="navigation" style="display: none; margin-top: 5px; height: 60px;">
+
+        <ul>
+
+            <li>
+
+            </li>
+
+
+        </ul>
+
+
+    </div>-->
+        <!--<div id="search_navbar" style="display: none; margin-top: 100px;height: 100%;">
+        <center>
+            <ul>
+                <li>-->
+        <!--<div id="registrynumberinput">
+        <input type="text" />
+        <div id="btn_registrynumberinputsearch"><img style="margin-top:3px;" alt="search" width="40" height="40" src="images/search_lg.png" /></div>
+    </div>-->
+        <!--</li>-->
+        <!--<li>
+
+
+        <div id="grid_relatedcids" style="display: none; margin-top: 10px "></div>
+
+
+    </li>-->
+        <!--</ul>
+        </center>
+    </div>-->
+
+        
+
+
+        <!--<div style="display: none" id="confirmwindow">
+            <div>
+
+
+            </div>
+            <div>
+                <div>
+                    You already added this compound to your shopping card. Do you want to continue?
+                </div>
+                <div>
+                    <div style="float: right; margin-top: 15px;">
+                        <input type="button" id="ok" value="Yes" style="margin-right: 10px" />
+                        <input type="button" id="cancel" value="No" />
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div style="display: none" id="messagenotification">
+            <div id="messagenotification_content"></div>
+        </div>
+
+
+        
+
+        <!--<div style="display: none" id='resultgridcellmenu'>
+        <ul>
+            <li>Copy cell value</li>
+            <li>Copy row values</li>
+
+        </ul>
+    </div>-->
+
+
+
+        <!--<script>!function (e) { function r(r) { for (var n, a, p = r[0], l = r[1], c = r[2], i = 0, s = []; i < p.length; i++)a = p[i], Object.prototype.hasOwnProperty.call(o, a) && o[a] && s.push(o[a][0]), o[a] = 0; for (n in l) Object.prototype.hasOwnProperty.call(l, n) && (e[n] = l[n]); for (f && f(r); s.length;)s.shift()(); return u.push.apply(u, c || []), t() } function t() { for (var e, r = 0; r < u.length; r++) { for (var t = u[r], n = !0, p = 1; p < t.length; p++) { var l = t[p]; 0 !== o[l] && (n = !1) } n && (u.splice(r--, 1), e = a(a.s = t[0])) } return e } var n = {}, o = { 1: 0 }, u = []; function a(r) { if (n[r]) return n[r].exports; var t = n[r] = { i: r, l: !1, exports: {} }; return e[r].call(t.exports, t, t.exports, a), t.l = !0, t.exports } a.m = e, a.c = n, a.d = function (e, r, t) { a.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: t }) }, a.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, a.t = function (e, r) { if (1 & r && (e = a(e)), 8 & r) return e; if (4 & r && "object" == typeof e && e && e.__esModule) return e; var t = Object.create(null); if (a.r(t), Object.defineProperty(t, "default", { enumerable: !0, value: e }), 2 & r && "string" != typeof e) for (var n in e) a.d(t, n, function (r) { return e[r] }.bind(null, n)); return t }, a.n = function (e) { var r = e && e.__esModule ? function () { return e.default } : function () { return e }; return a.d(r, "a", r), r }, a.o = function (e, r) { return Object.prototype.hasOwnProperty.call(e, r) }, a.p = "./"; var p = this["webpackJsonpketcher-react-app"] = this["webpackJsonpketcher-react-app"] || [], l = p.push.bind(p); p.push = r, p = p.slice(); for (var c = 0; c < p.length; c++)r(p[c]); var f = l; t() }([])</script>
+        <script src="./static/js/2.43f6f78e.chunk.js"></script>
+        <script src="./static/js/main.730396f6.chunk.js"></script>-->
+
+        <script>
+            /*var shoppingakosnumber;*/
+
+            //var units = [
+            //    {
+            //        "UnitUIlabel": "milligram",
+            //        "UnitValue": "mg"
+            //    },
+            //    {
+            //        "UnitUIlabel": "gram",
+            //        "UnitValue": "g"
+            //    },
+            //    {
+            //        "UnitUIlabel": "kilogram",
+            //        "UnitValue": "kg"
+            //    },
+            //    {
+            //        "UnitUIlabel": "milliliter",
+            //        "UnitValue": "ml"
+            //    },
+            //    {
+            //        "UnitUIlabel": "liter",
+            //        "UnitValue": "l"
+            //    }
+
+            //];
+
+
+            //var editshoppingrow = -1;
+
+            //var editcontactrow = -1;
+
+
+            //var downloadFile = function (data, type, fileName) {
+
+            //    let file;
+
+            //    if (!fileName) {
+            //        return data;
+            //    }
+
+            //    if (data instanceof Blob) {
+            //        file = data;
+            //    }
+            //    else {
+            //        file = new Blob([data], { type: type });
+            //    }
+
+            //    if (window.navigator.msSaveOrOpenBlob) { // Edge
+            //        window.navigator.msSaveOrOpenBlob(file, fileName);
+            //    }
+            //    else { // Chrome, Firefox, Safari
+            //        const a = document.createElement('a'),
+            //            url = URL.createObjectURL(file);
+
+            //        a.href = url;
+            //        a.download = fileName;
+            //        a.style.position = 'absolute';
+            //        a.style.visibility = 'hidden';
+
+            //        document.body.appendChild(a);
+
+            //        a.click();
+
+            //        setTimeout(function () {
+            //            document.body.removeChild(a);
+            //            window.URL.revokeObjectURL(url);
+            //        }, 0);
+            //    }
+            //};
+
+
+
+            //var cellsrenderer_pubchemstructure_cid = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+            //    var html = "<img width='100' height= '100' src='https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/" + value + "/PNG?image_size=200x200'" + " style='border-style: solid;border-color:black;' title='Click to Zoom structure' >";
+
+
+            //    return html;
+
+
+
+
+
+
+
+
+            //};
+
+            //var cellsrenderer_akosdbstructure = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+            //    var datarow = $("#grid_relatedcids").jqxGrid("getrowdata", row);
+
+
+
+
+
+            //    var html = "<img width='200' height= '200' src='http://87.128.24.152/akosrelatedcompoundsweb/structureimages/" + datarow.registryid + ".png" + "'" + " title='Click to Zoom structure' >";
+
+
+            //    return html;
+
+
+
+
+
+
+
+
+            //};
+
+            //var cellsrenderer_structureimageurl = function (row, columnfield, value, defaulthtml, columnproperties) {
+
+
+
+            //    //debugger;
+
+            //    /*var datarow = $("#grid_relatedcids").jqxGrid("getrowdata", row);*/
+            //    //if (value.indexOf('#') != -1) {
+            //    //    value = value.substring(0, value.indexOf('#'));
+            //    //}
+            //    var format = { target: '"_blank"' };
+            //    var html = $.jqx.dataFormat.formatlink(value, format);
+            //    return html;
+
+
+
+
+
+
+
+
+            //};
+
+
+
+
+
+            function isNotEmpty(value) {
+
+
+
+                if (typeof value !== 'undefined') {
+
+
+
+                    if (value !== null) {
+
+
+                        if (value) {
+
+
+
+                            return true;
+
+
+                        } else {
+
+
+
+
+                            return false;
+
+
+                        }
+
+
+
+                    } else {
+
+
+                        return false;
+
+
+                    }
+
+
+
+
+
+
+                } else {
+                    return false;
+                }
+
+
+
+            }
+
+
+
+
+            //var cellclass = function (row, columnfield, value) {
+
+            //    var datarow = $("#grid_relatedcids").jqxGrid("getrowdata", row);
+
+
+            //    if (datarow.type == "EXACT") {
+
+            //        return 'LightGreen';
+            //    } else if (datarow.type == "FULL") {
+
+            //        return 'LightSeaGreen';
+            //    } else if (datarow.type == "SIMILAR") {
+
+            //        return 'LightBlue';
+            //    }
+
+
+
+            //}
+
+
+
+
+            function doName2Structurelookup() {
+
+                debugger;
+                //alert("doName2Structurelookup")
+
+                /*var isregistryidinputdisabled = $('#registrynumberinput').jqxInput('disabled');*/
+
+
+                var n2sinput = $('#registrynumberinput').jqxInput('val');
+
+                if (isNotEmpty(n2sinput)) {
+
+
+                    jdata = {};
+
+                    jdata.name = n2sinput;
+                    $('#jqxLoader').jqxLoader('open');
+                    $.ajax({
+                        type: "POST",
+                        url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/Name2Structure",
+                        cache: false,
+                        data: JSON.stringify(jdata),
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            //alert(response)
+                            if (response.errorflag) {
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                if (response.noCIDMatch) {
+
+                                    $('#messagenotification').jqxNotification({ template: 'error' });
+                                    $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+                                    $("#messagenotification").jqxNotification("open");
+
+                                } else {
+
+
+                                    var jData = {};
+                                    jData.registryid = "";
+                                    jData.smiles = response.smiles;
+                                    jData.molfile = response.bestchoiceCIDMolfile;
+
+
+
+                                    doSearch(jData);
+
+
+
+
+                                }
+
+
+                            }
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                            $("#messagenotification").jqxNotification("open");
+                        }
+                    });
+
+
+
+                } else {
+
+                    $("#registrynumberinput").jqxTooltip({ autoHideDelay: 2000, content: "Please enter name", position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+                    $("#registrynumberinput").jqxTooltip("open");
+
+                    return;
+
+                }
+
+
+            }
+
+
+            function doSearch(jdata) {
+
+
+                /*$("#ketcherwindow").jqxWindow('close');*/
+
+                debugger;
+
+                $('#jqxLoader').jqxLoader('open');
+
+                $.ajax({
+                    type: "POST",
+
+
+                    url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/FindRelatedCompounds",
+                    cache: false,
+
+                    data: JSON.stringify(jdata),
+
+                    success: function (response) {
+
+                        //alert(JSON.stringify(response));
+
+                        $('#jqxLoader').jqxLoader('close');
+
+
+                        if (response.errorflag) {
+
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling FindRelatedCompounds. Message : " + response.errortext);
+                            $("#messagenotification").jqxNotification("open");
+
+
+                        } else {
+
+
+
+
+                            //var relatedcids_gridsource_dataFields = [
+
+                            //    { name: 'strucutureimageurl', type: 'string' },
+
+
+                            //    { name: 'cid', type: 'int' },
+
+                            //    { name: 'registryid', type: 'string' },
+
+                            //    { name: 'type', type: 'string' },
+
+                            //    { name: 'bisidenticalwithquery', type: 'bool' },
+
+                            //    { name: 'molname', type: 'string' },
+
+                            //    { name: 'molformula', type: 'string' },
+
+                            //    { name: 'molweight', type: 'number' },
+
+                            //    { name: 'casnumber', type: 'string' }
+                            //];
+
+
+                            //var relatedcids_gridsource = {
+
+                            //    datatype: "json",
+
+                            //    datafields: relatedcids_gridsource_dataFields,
+
+
+
+
+                            //    localdata: response.relatedcids
+
+
+                            //};
+
+                            //var relatedcids_griddataAdapter = new $.jqx.dataAdapter(relatedcids_gridsource);
+
+                            //$("#grid_relatedcids").jqxGrid({ source: relatedcids_griddataAdapter });
+
+                            ////$('#grid_relatedcids').jqxGrid('updatebounddata');
+
+                            //document.getElementById("grid_relatedcids").style.display = 'block';
+
+
+
+
+                            //alert("Now call export")
+
+                            //$("#grid_relatedcids").jqxGrid('exportdata', 'xlsx', 'jqxGrid');
+
+                            //alert("Done calling export")
+
+                            //var data = $("#grid_relatedcids").jqxGrid('exportdata', 'json');
+
+                            //debugger;
+
+                            var data = response.relatedcids;
+
+                            var exportdata = JSON.stringify(data);
+
+                            sessionStorage.setItem("griddata", exportdata);
+
+                            window.location.href = "results.html";
+
+
+                            //sessionStorage.setItem("showgrid", true);
+
+                            //var numberofsearches = $('#numberofsearches').val();
+
+                            //$('#numberofsearches').jqxNumberInput('val', numberofsearches + 1);
+
+                            //$('#numberofhits').jqxNumberInput('val', response.relatedcids.length);
+
+
+
+
+
+
+
+
+
+
+
+
+                        }
+
+                    },
+                    error: function (error) {
+
+                        $('#jqxLoader').jqxLoader('close');
+                        $('#messagenotification').jqxNotification({ template: 'error' });
+                        $("#messagenotification").find("div").first().text("Error calling FindRelatedCompounds. Status : " + error.status);
+                        $("#messagenotification").jqxNotification("open");
+
+
+                    }
+                });
+
+
+            }
+
+
+
+
+
+
+            $(document).ready(function () {
+
+                debugger;
+
+                if (sessionStorage.getItem("sessionid") === null) {
+                    //alert("No sessionid found. Create session id")
+                    $('#jqxLoader').jqxLoader('open');
+                    $.ajax({
+                        type: "GET",
+                        url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/CreateSessionID",
+                        cache: false,
+
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            if (response.errorflag) {
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                var sessionid = response.resultobject;
+
+                                //alert(sessionid);
+
+                                sessionStorage.setItem("sessionid", sessionid);
+
+
+
+
+                            }
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling CreateSessionID. Status : " + error.status);
+                            $("#messagenotification").jqxNotification("open");
+                        }
+                    });
+
+
+
+
+                } else {
+
+
+                    //alert("sessionid = " + sessionStorage.getItem("sessionid"));
+                }
+
+
+
+
+
+                //document.getElementById("popupwindowshoppingcard").style.display = 'block';
+
+                //document.getElementById("ketcherwindow").style.display = 'block';
+                //document.getElementById("zoomketcherwindow").style.display = 'block';
+                //document.getElementById("navigation").style.display = 'block';
+                /*document.getElementById("search_navbar").style.display = 'block';*/
+                /*document.getElementById("confirmwindow").style.display = 'block';*/
+                document.getElementById("messagenotification").style.display = 'block';
+
+
+                /*document.getElementById("resultgridcellmenu").style.display = 'block';*/
+
+                var ketcher;
+
+                $("#messagenotification").jqxNotification({
+                    width: 250,
+                    position: "top-right",
+                    opacity: 0.9,
+                    autoOpen: false,
+                    animationOpenDelay: 800,
+                    autoClose: false,
+                    autoCloseDelay: 3000,
+                    showCloseButton: true
+                });
+
+
+                //var startsearchbutton = $("#btn_startsearch");
+
+                //startsearchbutton.jqxButton({ width: 80, height: 30, template: 'primary' });
+
+                //startsearchbutton.click(function (event) {
+
+
+
+
+
+
+
+                //    var ketcherFrame = document.getElementById('ketcherwindow_ketcher');
+
+
+
+
+                //    var ketcher = null;
+
+                //    ketcher = ketcherFrame.contentWindow.ketcher;
+
+                //    var smiles = ketcher.getSmiles();
+
+                //    var molfile = ketcher.getMolfile();
+
+
+
+
+
+
+                //    const Emptystructurecheck = async () => {
+                //        const currentstructureassmiles = await smiles;
+                //        if (!isNotEmpty(currentstructureassmiles)) {
+
+                //            $("#ketcherwindow_ketcher").jqxTooltip({ autoHideDelay: 2000, content: 'Structure cannot be empty', position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+                //            $("#ketcherwindow_ketcher").jqxTooltip("open");
+
+                //        } else {
+
+                //            const currentstructuremolfile = await molfile;
+
+                //            //alert(currentstructuremolfile)
+
+
+                //            var jData = {};
+                //            jData.registryid = "";
+                //            jData.smiles = currentstructureassmiles;
+                //            jData.molfile = currentstructuremolfile;
+
+                //            doSearch(jData);
+
+
+                //        }
+
+                //    };
+
+                //    Emptystructurecheck();
+
+
+
+
+
+
+
+
+
+
+                //})
+
+                //$("#n2sinput").jqxInput({ height: 30, width: 200, placeHolder: "AKOS no.,CAS,name,MFCD no.", });
+
+                //$("#n2sinput").on('keyup', function (e) {
+                //    if (e.key === 'Enter' || e.keyCode === 13) {
+                //        //alert("Enter was pressed!")
+
+                //        var n2sinput = $('#n2sinput').jqxInput('val');
+
+
+                //        if (isNotEmpty(n2sinput)) {
+
+                //            jdata = {};
+
+                //            jdata.name = n2sinput;
+                //            $('#jqxLoader').jqxLoader('open');
+                //            $.ajax({
+                //                type: "POST",
+                //                url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/Name2Structure",
+                //                cache: false,
+                //                data: JSON.stringify(jdata),
+                //                success: function (response) {
+                //                    $('#jqxLoader').jqxLoader('close');
+                //                    if (response.errorflag) {
+                //                        $('#messagenotification').jqxNotification({ template: 'error' });
+                //                        $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                //                        $("#messagenotification").jqxNotification("open");
+                //                    } else {
+
+                //                        if (response.noCIDMatch) {
+
+                //                            $('#messagenotification').jqxNotification({ template: 'error' });
+                //                            $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+                //                            $("#messagenotification").jqxNotification("open");
+
+                //                        } else {
+
+                //                            var ketcherFrame = document.getElementById('ketcherwindow_ketcher');
+                //                            var ketcher = ketcherFrame.contentWindow.ketcher;
+                //                            ketcher.setMolecule(response.bestchoiceCIDMolfile);
+                //                            $("#ketcherwindow").jqxWindow('open');
+
+                //                        }
+
+
+                //                    }
+                //                },
+                //                error: function (error) {
+                //                    $('#jqxLoader').jqxLoader('close');
+                //                    $('#messagenotification').jqxNotification({ template: 'error' });
+                //                    $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                //                    $("#messagenotification").jqxNotification("open");
+                //                }
+                //            });
+
+
+
+
+
+
+
+
+
+                //        } else {
+                //            $("#n2sinput").jqxTooltip({ autoHideDelay: 2000, content: 'Please enter name', position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+                //            $("#n2sinput").jqxTooltip("open");
+
+
+                //        }
+                //    }
+                //});
+
+
+                //var n2ssearchbutton = $("#btn_n2sinput");
+                //n2ssearchbutton.jqxButton({ width: 130, height: 30, template: 'primary' });
+                //n2ssearchbutton.click(function (event) {
+
+
+
+                //    var n2sinput = $('#n2sinput').jqxInput('val');
+
+
+
+
+                //    if (isNotEmpty(n2sinput)) {
+
+                //        jdata = {};
+
+                //        jdata.name = n2sinput;
+                //        $('#jqxLoader').jqxLoader('open');
+                //        $.ajax({
+                //            type: "POST",
+                //            url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/Name2Structure",
+                //            cache: false,
+                //            data: JSON.stringify(jdata),
+                //            success: function (response) {
+                //                $('#jqxLoader').jqxLoader('close');
+                //                if (response.errorflag) {
+                //                    $('#messagenotification').jqxNotification({ template: 'error' });
+                //                    $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                //                    $("#messagenotification").jqxNotification("open");
+                //                } else {
+
+                //                    if (response.noCIDMatch) {
+
+                //                        $('#messagenotification').jqxNotification({ template: 'error' });
+                //                        $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+                //                        $("#messagenotification").jqxNotification("open");
+
+                //                    } else {
+
+                //                        var ketcherFrame = document.getElementById('ketcherwindow_ketcher');
+                //                        var ketcher = ketcherFrame.contentWindow.ketcher;
+                //                        ketcher.setMolecule(response.bestchoiceCIDMolfile);
+                //                        $("#ketcherwindow").jqxWindow('open');
+
+                //                    }
+
+
+                //                }
+                //            },
+                //            error: function (error) {
+                //                $('#jqxLoader').jqxLoader('close');
+                //                $('#messagenotification').jqxNotification({ template: 'error' });
+                //                $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                //                $("#messagenotification").jqxNotification("open");
+                //            }
+                //        });
+
+
+
+
+
+
+
+
+
+                //    } else {
+                //        $("#n2sinput").jqxTooltip({ autoHideDelay: 2000, content: 'Please enter name', position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+                //        $("#n2sinput").jqxTooltip("open");
+
+
+                //    }
+
+
+                //});
+
+
+
+
+                //$("#ketcherwindow").jqxWindow({
+                //    width: 650,
+                //    height: 500,
+                //    position: "center",
+                //    resizable: true,
+                //    isModal: false,
+                //    autoOpen: false,
+
+                //    modalOpacity: 0.01
+
+
+
+
+                //});
+
+                //$('#ketcherwindow').on('close', function (event) {
+                //    $("#registrynumberinput").jqxInput({ disabled: false });
+
+
+                //});
+
+
+                //$("#zoomketcherwindow").jqxWindow({
+                //    width: 800,
+                //    height: 700,
+                //    position: "center",
+                //    resizable: true,
+                //    isModal: false,
+                //    autoOpen: false,
+
+                //    modalOpacity: 0.01
+
+
+                //});
+
+                //$("#akosnumber").jqxInput({ height: 30, width: 200, disabled: true });
+
+                //$("#quantity").jqxNumberInput({ inputMode: 'advanced', decimalDigits: 0, groupSeparator: "", digits: 4, groupSize: 0, min: 1, width: 200, height: 23, spinButtons: false });
+
+                //$("#additionalinformation").jqxInput({ placeHolder: "Enter information", opened: false, height: 30, width: 200, minLength: 1 });
+                //$('#additionalinformation').jqxInput('val', '');
+
+
+
+
+
+
+
+                //$("#popupwindowshoppingcard").jqxWindow({
+
+                //    position: "center",
+                //    resizable: true,
+                //    isModal: false,
+                //    autoOpen: false,
+                //    cancelButton: $("#btn_popupwindowshoppingcard_cancel"),
+                //    modalOpacity: 0.01
+
+
+                //});
+                //$("#popupwindowshoppingcard").on('open', function () {
+
+                //    $('#popupwindowshoppingcard').jqxWindow({ width: 350 });
+                //    $('#popupwindowshoppingcard').jqxWindow({ height: 300 });
+                //    if (editshoppingrow >= 0) {
+                //        $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: true });
+                //        /*$("#btn_popupwindowshoppingcard_editquantity").jqxButton({ disabled: false });*/
+                //        $("#btn_popupwindowshoppingcard_done").jqxButton({ disabled: true });
+                //        /*$("#addquantitylabel").hide();*/
+                //    } else {
+
+                //        $("#btn_popupwindowshoppingcard_addquantity").jqxButton({ disabled: false });
+                //        /*$("#btn_popupwindowshoppingcard_editquantity").jqxButton({ disabled: true });*/
+                //        $("#btn_popupwindowshoppingcard_done").jqxButton({ disabled: true });
+                //        /*$("#addquantitylabel").hide();*/
+
+
+                //    }
+                //});
+
+                //$("#popupwindowshoppingcard").on('close', function () {
+
+                //    editshoppingrow = -1;
+
+                //});
+
+                // editing shopping list items is now done in cart.html
+
+                //$("#btn_popupwindowshoppingcard_editquantity").jqxButton({});
+                //$("#btn_popupwindowshoppingcard_editquantity").click(function () {
+
+                //    var rowID = $('#shoppinggrid').jqxGrid('getrowid', editshoppingrow);
+                //    var data = $('#shoppinggrid').jqxGrid('getrowdatabyid', rowID);
+                //    const rowquantity = data.quantity;
+
+                //    const rowunit = data.unit;
+
+
+
+                //    var row = {};
+                //    row["registryid"] = $("#akosnumber").val();
+
+                //    var unitvalue = $("#units").jqxDropDownList('val');
+
+
+                //    var quantityvalue = $('#quantity').jqxNumberInput('val');
+
+                //    row["quantity"] = quantityvalue;
+                //    row["unit"] = unitvalue;
+                //    row["additionalinformation"] = $("#additionalinformation").val();
+
+
+
+                //    //if (rowquantity != quantityvalue || rowunit != unitvalue) {
+
+                //    //    var allrows = $('#shoppinggrid').jqxGrid('getrows');
+
+                //    //    for (var i = 0; i < allrows.length; i++) {
+
+
+
+                //    //        var shoppinggridrow = allrows[i];
+
+
+
+                //    //        if (shoppinggridrow["registryid"] == row["registryid"] && shoppinggridrow["quantity"] == row["quantity"] && shoppinggridrow["unit"] == row["unit"]) {
+
+                //    //            $("#btn_popupwindowshoppingcard_editquantity").jqxTooltip({ autoHideDelay: 2000, content: 'You already entered this amount for this compound', position: 'right', autoHide: false, trigger: "none", closeOnClick: true });
+                //    //            $("#btn_popupwindowshoppingcard_editquantity").jqxTooltip("open");
+
+
+                //    //            return;
+                //    //        }
+
+
+                //    //    }
+
+                //    //}
+
+                //    //$('#shoppinggrid').jqxGrid('updaterow', rowID, row);
+                //    $("#btn_popupwindowshoppingcard_done").jqxButton({ disabled: false });
+
+
+                //    $("#btn_popupwindowshoppingcard_editquantity").jqxTooltip({ autoHideDelay: 2000, content: 'Quantity edited. Click Done button when you are finished with editing.', position: 'right', autoHide: false, trigger: "none", closeOnClick: true });
+                //    $("#btn_popupwindowshoppingcard_editquantity").jqxTooltip("open");
+
+
+
+
+                //});
+
+                /*$("#btn_popupwindowshoppingcard_addquantity").jqxButton({});*/
+                //$("#btn_popupwindowshoppingcard_addquantity").click(function () {
+
+                //    var validationresult = $('#popupwindowshoppingcardform').jqxValidator('validate');
+                //    if (validationresult) {
+
+                //        //debugger;
+
+                //        var akosnumber = $("#akosnumber").val();
+
+
+
+                //        var unitvalue = $("#units").jqxDropDownList('val');
+
+
+                //        var quantityvalue = $('#quantity').jqxNumberInput('val');
+
+
+
+
+
+                //        var row = {};
+
+
+                //        row["strucutureimageurl"] = "<a href='http://87.128.24.152/akosrelatedcompoundsweb/structureimages/" + $("#akosnumber").val() + ".png" + "' target='_blank'>" + $("#akosnumber").val() + "</a>";
+
+                //        row["cid"] = $("#akosnumber").val();
+                //        row["registryid"] = $("#akosnumber").val();
+                //        row["quantity"] = quantityvalue;
+                //        row["unit"] = unitvalue;
+                //        row["additionalinformation"] = $("#additionalinformation").val();
+
+                //        if (sessionStorage.getItem("shoppingitems") === null) {
+
+                //            var rows = new Array();
+
+                //            rows.push(row);
+
+                //            var jsonstring = JSON.stringify(rows);
+
+                //            //alert(jsonstring)
+
+                //            sessionStorage.setItem("shoppingitems", jsonstring);
+
+                //            $('#shoppingcartitems').jqxInput('val', rows.length);
+
+                //        } else {
+
+                //            var data = sessionStorage.getItem("shoppingitems")
+
+                //            var rows = JSON.parse(data);
+
+                //            rows.push(row);
+
+                //            var jsonstring = JSON.stringify(rows);
+
+                //            sessionStorage.setItem("shoppingitems", jsonstring);
+
+
+                //            $('#shoppingcartitems').jqxInput('val', rows.length);
+
+                //        }
+
+
+
+
+
+
+
+
+
+                //        //var allrows = $('#shoppinggrid').jqxGrid('getrows');
+
+                //        //for (var i = 0; i < allrows.length; i++) {
+
+
+
+                //        //    var shoppinggridrow = allrows[i];
+
+
+
+                //        //    if (shoppinggridrow["registryid"] == row["registryid"] && shoppinggridrow["quantity"] == row["quantity"] && shoppinggridrow["unit"] == row["unit"]) {
+
+
+                //        //        $("#btn_popupwindowshoppingcard_addquantity").jqxTooltip({ autoHideDelay: 2000, content: 'You already entered this amount for this compound.', position: 'right', autoHide: false, trigger: "none", closeOnClick: true });
+                //        //        $("#btn_popupwindowshoppingcard_addquantity").jqxTooltip("open");
+
+
+
+
+                //        //        return;
+                //        //    }
+
+
+                //        //}
+
+                //        //var commit = $("#shoppinggrid").jqxGrid('addrow', null, row);
+
+                //        $("#btn_popupwindowshoppingcard_addquantity").jqxTooltip({ autoHideDelay: 3000, content: '<span style="color: black;">You can add additional quantities or click Done button when finished.</span>', position: 'right', autoHide: true, trigger: "click", closeOnClick: true });
+
+
+                //        $("#btn_popupwindowshoppingcard_addquantity").jqxTooltip("open");
+
+                //        $("#btn_popupwindowshoppingcard_done").jqxButton({ disabled: false });
+
+                //        /*$("#addquantitylabel").show();*/
+
+
+
+
+                //    }
+
+                //});
+
+
+                //$("#btn_popupwindowshoppingcard_cancel").jqxButton({});
+                //$("#btn_popupwindowshoppingcard_done").jqxButton({});
+                //// update the edited row when the user clicks the 'Save' button.
+                //$("#btn_popupwindowshoppingcard_done").click(function () {
+                //    $("#popupwindowshoppingcard").jqxWindow('hide');
+
+                //});
+
+
+                //var quantity_liter_validationrule = function (input, commit) {
+                //    var value = $('#quantity').jqxNumberInput('val');
+
+                //    var unitvalue = $("#units").jqxDropDownList('val');
+
+                //    //alert(unitvalue)
+
+
+
+                //    if (value > 1 && unitvalue == "l") {
+
+                //        return false;
+                //    } else {
+
+                //        return true;
+                //    }
+
+                //};
+
+
+                //var quantity_milliliter_validationrule = function (input, commit) {
+                //    var value = $('#quantity').jqxNumberInput('val');
+
+                //    var unitvalue = $("#units").jqxDropDownList('val');
+
+                //    //alert(unitvalue)
+
+
+
+                //    if (value > 1000 && unitvalue == "ml") {
+
+                //        return false;
+                //    } else {
+
+                //        return true;
+                //    }
+
+                //};
+
+                //var quantity_milliliter_validationrule = function (input, commit) {
+                //    var value = $('#quantity').jqxNumberInput('val');
+
+                //    var unitvalue = $("#units").jqxDropDownList('val');
+
+                //    //alert(unitvalue)
+
+
+
+                //    if (value > 1000 && unitvalue == "ml") {
+
+                //        return false;
+                //    } else {
+
+                //        return true;
+                //    }
+
+                //};
+
+                //var quantity_kilogram_validationrule = function (input, commit) {
+                //    var value = $('#quantity').jqxNumberInput('val');
+
+                //    var unitvalue = $("#units").jqxDropDownList('val');
+
+                //    //alert(unitvalue)
+
+
+
+                //    if (value > 1 && unitvalue == "kg") {
+
+                //        return false;
+                //    } else {
+
+                //        return true;
+                //    }
+
+                //};
+
+
+                //var quantity_gram_validationrule = function (input, commit) {
+                //    var value = $('#quantity').jqxNumberInput('val');
+
+                //    var unitvalue = $("#units").jqxDropDownList('val');
+
+                //    //alert(unitvalue)
+
+
+
+                //    if (value > 1000 && unitvalue == "g") {
+
+                //        return false;
+                //    } else {
+
+                //        return true;
+                //    }
+
+                //};
+
+
+                //var quantity_valuehigherthanzero_validationrule = function (input, commit) {
+                //    var value = $('#quantity').jqxNumberInput('val');
+                //    if (value <= 0) {
+
+                //        return false;
+                //    } else {
+
+                //        return true;
+                //    }
+
+                //};
+
+                //$('#popupwindowshoppingcardform').jqxValidator({
+                //    rules: [
+                //        { input: '#akosnumber', message: 'AKos number is required!', action: 'keyup, blur', rule: 'required' },
+
+                //        { input: '#quantity', message: 'You need to enter a number higher than 0', action: 'keyup, blur', rule: quantity_valuehigherthanzero_validationrule },
+
+                //        { input: '#quantity', message: 'Only up to 1 liter can be requested', action: 'keyup, blur', rule: quantity_liter_validationrule },
+
+                //        { input: '#quantity', message: 'Only up to 1000 milliliter can be requested', action: 'keyup, blur', rule: quantity_milliliter_validationrule },
+
+                //        { input: '#quantity', message: 'Only up to 1 kilo gram can be requested', action: 'keyup, blur', rule: quantity_kilogram_validationrule },
+
+                //        { input: '#quantity', message: 'Only up to 1000 gram can be requested', action: 'keyup, blur', rule: quantity_gram_validationrule }
+
+
+
+
+
+
+
+
+                //    ]
+                //});
+
+                $("#registrynumberinput").jqxInput({ placeHolder: "AKOS no.,CAS,name,MFCD no.", height: 50, width: 400 });
+
+                $("#registrynumberinput").on('keyup', function (e) {
+                    if (e.key === 'Enter' || e.keyCode === 13) {
+                        //alert("Enter was pressed!")
+                        doName2Structurelookup();
+
+
+                    }
+                });
+
+
+
+                /*$("#shoppingcartitems").jqxInput({ height: 50, width: 100, disabled: true });*/
+
+                //if (sessionStorage.getItem("shoppingitems") === null) {
+
+                //    $('#btn_navigation_cart').jqxButton({ value: "Cart (0)" }); 
+
+                //    /*$('#shoppingcartitems').jqxInput('val', '0');*/
+                //} else {
+
+                //    var data = sessionStorage.getItem("shoppingitems")
+
+                //    var rows = JSON.parse(data);
+
+                //    $('#btn_navigation_cart').jqxButton({ value: "Cart (" + rows.length+")"});
+
+                //    /*$('#shoppingcartitems').jqxInput('val', rows.length);*/
+
+
+                //}
+
+                $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top', isModal: true, text: "Processing..." });
+
+                debugger;
+
+                /*$("#navigation").jqxNavBar({ height: 60, selection: false, orientation: "horizontal" });*/
+
+                var btn_navigation_search = $("#btn_navigation_search");
+
+                /*btn_navigation_search.jqxButton({ width: 120, height: 50, template: 'inverse' });*/
+                btn_navigation_search.jqxButton({ width: 120, height: 50});
+
+                btn_navigation_search.click(function (event) {
+
+                    window.location.href = "index.html";
+                });
+
+                var btn_navigation_drawstructure = $("#btn_navigation_drawstructure");
+
+                /*btn_navigation_drawstructure.jqxButton({ width: 120, height: 50, template: 'inverse' });*/
+
+                btn_navigation_drawstructure.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_drawstructure.click(function (event) {
+
+                    window.location.href = "draw-search.html";
+                });
+
+                var btn_navigation_results = $("#btn_navigation_results");
+
+                /*btn_navigation_results.jqxButton({ width: 120, height: 50, template: 'inverse' });*/
+
+                btn_navigation_results.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_results.click(function (event) {
+
+                    window.location.href = "results.html";
+                });
+
+
+
+                var btn_navigation_contact = $("#btn_navigation_contact");
+
+                /*btn_navigation_results.jqxButton({ width: 120, height: 50, template: 'inverse' });*/
+
+                btn_navigation_contact.jqxButton({ width: 120, height: 50 });
+
+                btn_navigation_contact.click(function (event) {
+
+                    window.location.href = "contact.html";
+                });
+                
+
+                var btn_navigation_requests = $("#btn_navigation_requests");
+
+                btn_navigation_requests.jqxButton({ width: 120, height: 50 });
+
+
+                if (sessionStorage.getItem("shoppingitems") === null) {
+
+                    $('#btn_navigation_requests').jqxButton({ value: "Requests (0)"});
+
+                   
+
+                    /*$('#shoppingcartitems').jqxInput('val', '0');*/
+                } else {
+
+                    var data = sessionStorage.getItem("shoppingitems")
+
+                    var rows = JSON.parse(data);
+
+                    $('#btn_navigation_requests').jqxButton({ value: "Requests (" + rows.length + ")"});
+
+                    /*$('#shoppingcartitems').jqxInput('val', rows.length);*/
+
+
+                }
+
+                //btn_navigation_cart.jqxButton({ width: 120, height: 50, imgSrc: "images/shopping_cart.png", imgWidth: 26, imgHeight: 25, imgPosition: "left", textPosition: "right" });
+
+                btn_navigation_requests.click(function (event) {
+
+                    window.location.href = "requests.html";
+
+                    //window.open('cart.html', '_self', 'resizable=yes')
+
+
+
+
+                });
+
+                
+
+                /*$("#navigation_cart_items").jqxInput({ height: 50, width: 100, disabled: true });*/
+
+
+                //$("#search_navbar").jqxNavBar({ columns: ['10%', '90%'], selection: false, orientation: "vertical" });
+
+                //$("#search_navbar").jqxNavBar({ selection: false, orientation: "vertical" });
+
+                /*$("#search_navbar").jqxNavBar({ height: 60, selection: false, orientation: "horizontal" });*/
+
+
+
+                //var gotocartbutton = $("#btn_gotocart");
+
+                //gotocartbutton.jqxButton({ width: 120, height: 50, template: 'inverse' });
+
+                //gotocartbutton.click(function (event) {
+
+                //    window.location.href = "cart.html";
+
+                //    //window.open('cart.html', '_self', 'resizable=yes')
+
+
+
+
+                //});
+
+                var drawstructurebutton = $("#btn_drawstructure");
+
+                drawstructurebutton.jqxButton({ width: 120, height: 50, template: 'primary' });
+
+                drawstructurebutton.click(function (event) {
+
+
+                    window.location.href = "draw-search.html";
+
+                    //$("#registrynumberinput").jqxInput({ disabled: true });
+
+                    //$("#ketcherwindow").jqxWindow('open');
+
+                });
+
+                //debugger;
+
+                //$("#btn_registrynumberinputsearch").jqxButton({ imgSrc: "images/search_lg.png", imgPosition: "center", width: 40, height: 40, template: 'primary' });
+
+
+                $("#btn_registrynumberinputsearch").click(function (event) {
+
+                    doName2Structurelookup();
+
+
+
+                });
+
+                var namelookupbutton = $("#btn_namelookup");
+                namelookupbutton.jqxButton({ width: 100, height: 50, template: 'primary' });
+                namelookupbutton.click(function (event) {
+
+                    doName2Structurelookup();
+
+
+
+                });
+
+
+
+
+                //$('#confirmwindow').jqxWindow({
+                //    autoOpen: false,
+                //    //position: { x: offset.left + 50, y: offset.top + 50} ,
+                //    maxHeight: 180, maxWidth: 280, minHeight: 30, minWidth: 250, height: 165, width: 270,
+                //    resizable: false, isModal: true, modalOpacity: 0.3,
+                //    okButton: $('#ok'), cancelButton: $('#cancel'),
+                //    showCloseButton: false,
+                //    initContent: function () {
+                //        $('#ok').jqxButton({ width: '65px' });
+                //        $('#cancel').jqxButton({ width: '65px' });
+                //        $('#cancel').focus();
+                //    }
+                //});
+
+
+                var searchparameters = window.location.search
+                if (isNotEmpty(searchparameters)) {
+                    const params = new URLSearchParams(window.location.search);
+                    var id = params.get('id');
+
+                    jdata = {};
+
+                    jdata.name = id;
+                    $('#jqxLoader').jqxLoader('open');
+
+                    $.ajax({
+                        type: "POST",
+                        url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/Name2Structure",
+                        cache: false,
+                        data: JSON.stringify(jdata),
+                        success: function (response) {
+                            $('#jqxLoader').jqxLoader('close');
+                            if (response.errorflag) {
+                                $('#messagenotification').jqxNotification({ template: 'error' });
+                                $("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : " + response.errortext);
+                                $("#messagenotification").jqxNotification("open");
+                            } else {
+
+                                if (response.noCIDMatch) {
+
+                                    $('#messagenotification').jqxNotification({ template: 'error' });
+                                    $("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+                                    $("#messagenotification").jqxNotification("open");
+
+                                } else {
+                                    var jData = {};
+                                    jData.registryid = "";
+
+                                    jData.molfile = response.bestchoiceCIDMolfile;
+
+                                    jData.smiles = response.smiles;
+
+                                    doSearch(jData);
+
+
+
+
+
+
+                                }
+
+
+                            }
+                        },
+                        error: function (error) {
+                            $('#jqxLoader').jqxLoader('close');
+                            $('#messagenotification').jqxNotification({ template: 'error' });
+                            $("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : " + error.status);
+                            $("#messagenotification").jqxNotification("open");
+                        }
+                    });
+
+
+                }
+
+
+
+
+
+
+                //if (sessionStorage.getItem("showgrid") != null) {
+
+                //    //alert(sessionStorage.getItem("showgrid"))
+
+                //    if (sessionStorage.getItem("showgrid")) {
+
+                //        document.getElementById("grid_relatedcids").style.display = 'block';
+                //    }
+
+
+
+                //}
+
+
+                //$("#grid_relatedcids").jqxGrid({
+                //    width: "100%",
+                //    height: "100%",
+                //    rowsheight: 200,
+
+                //    enablebrowserselection: true,
+
+                //    //source: relatedcids_griddataAdapter,
+                //    columnsresize: true,
+
+
+                //    selectionmode: 'singlecell',
+                //    //editmode: 'selectedcell',
+                //    showheader: true,
+                //    showstatusbar: true,
+
+                //    showtoolbar: true,
+                //    toolbarheight: 40,
+                //    rendertoolbar: function (statusbar) {
+
+                //        var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+                //        var exporthtmlbutton = $("<div style='float: left; margin-left: 5px;'><span style='margin-left: 4px; position: relative; top: -3px;'>Export to HTML</span></div>");
+                //        container.append(exporthtmlbutton);
+
+                //        var exportsdfbutton = $("<div style='float: left; margin-left: 5px;'><span style='margin-left: 4px; position: relative; top: -3px;'>Export to SDF</span></div>");
+                //        container.append(exportsdfbutton);
+                //        statusbar.append(container);
+
+
+                //        exporthtmlbutton.jqxButton({ width: 110, height: 20, template: 'primary' });
+                //        exporthtmlbutton.click(function (event) {
+
+                //            //alert("calling export")
+
+
+
+
+                //            //$("#grid_relatedcids").jqxGrid('exportdata', 'html', 'test',true,null,true);
+
+                //            $("#grid_relatedcids").jqxGrid('exportview', 'html', 'testresults');
+
+                //            /*$("#grid_relatedcids").jqxGrid('exportdata', 'pdf', 'test', true, null, true);*/
+
+                //            //alert("done exporting")
+
+
+                //        });
+
+                //        exportsdfbutton.jqxButton({ width: 100, height: 20, template: 'primary' });
+                //        exportsdfbutton.click(function (event) {
+
+
+                //            //debugger;
+
+                //            var rows = $('#grid_relatedcids').jqxGrid('getrows');
+
+                //            var akosnumbers = [];
+
+
+                //            for (var i = 0; i < rows.length; i++) {
+
+
+                //                akosnumbers.push(rows[i].registryid);
+
+
+
+                //            }
+
+                //            //alert(JSON.stringify(akosnumbers));
+
+
+                //            $('#jqxLoader').jqxLoader('open');
+
+                //            $.ajax({
+                //                type: "POST",
+                //                url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/CreateSDFileForAKosnumbers",
+                //                cache: false,
+                //                data: JSON.stringify(akosnumbers),
+                //                success: function (response) {
+                //                    $('#jqxLoader').jqxLoader('close');
+                //                    if (response.errorflag) {
+                //                        $('#messagenotification').jqxNotification({ template: 'error' });
+                //                        $("#messagenotification").find("div").first().text("Error calling CreateSDFileForAKosnumbers. Message : " + response.errortext);
+                //                        $("#messagenotification").jqxNotification("open");
+                //                    } else {
+
+
+                //                        let data = response.resultobject;
+
+                //                        //alert("sdfile content " + data);
+
+
+                //                        downloadFile(data, 'text/plain', "mytest.sdf");
+
+                //                        alert("SDF downloaded")
+
+                //                    }
+                //                },
+                //                error: function (error) {
+                //                    $('#jqxLoader').jqxLoader('close');
+                //                    $('#messagenotification').jqxNotification({ template: 'error' });
+                //                    $("#messagenotification").find("div").first().text("Error calling CreateSDFileForAKosnumbers. Status : " + error.status);
+                //                    $("#messagenotification").jqxNotification("open");
+                //                }
+                //            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                //        });
+
+                //    },
+                //    renderstatusbar: function (statusbar) {
+
+                //        var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+
+
+                //        var numberofsearcheslabel = $("<div style='float: left; margin-left: 5px;'><input id='numberofsearcheslabel'/></div>");
+
+                //        container.append(numberofsearcheslabel);
+
+                //        var numberofsearches = $("<div style='float: left; margin-left: 5px;'><div id='numberofsearches'></div></div>");
+
+                //        container.append(numberofsearches);
+
+                //        var numberofhitslabel = $("<div style='float: left; margin-left: 5px;'><input id='numberofhitslabel'/></div>");
+
+                //        container.append(numberofhitslabel);
+
+                //        var numberofhits = $("<div style='float: left; margin-left: 5px;'><div id='numberofhits'></div></div>");
+
+                //        container.append(numberofhits);
+
+                //        statusbar.append(container);
+
+
+                //        $("#numberofsearcheslabel").jqxInput({ height: 23, width: 150, disabled: true });
+
+                //        $('#numberofsearcheslabel').jqxInput('val', 'Number of searches');
+
+                //        $("#numberofsearches").jqxNumberInput({ inputMode: 'simple', disabled: true, decimalDigits: 0, groupSeparator: "", digits: 2, groupSize: 0, min: 0, width: 50, height: 23, spinButtons: false });
+
+                //        $('#numberofsearches').jqxNumberInput('val', 1);
+
+                //        $("#numberofhitslabel").jqxInput({ height: 23, width: 150, disabled: true });
+
+                //        $('#numberofhitslabel').jqxInput('val', 'Number of hits');
+
+                //        $("#numberofhits").jqxNumberInput({ inputMode: 'simple', disabled: true, decimalDigits: 0, groupSeparator: "", digits: 2, groupSize: 0, min: 0, width: 50, height: 23, spinButtons: false });
+
+                //        //$('#numberofhits').jqxNumberInput('val', response.relatedcids.length);
+
+
+                //    },
+
+
+
+
+
+                //    columns: [
+
+
+                //        { text: 'Picturelink', datafield: 'strucutureimageurl', width: 100, hidden: true, editable: false },
+
+
+                //        { text: '', datafield: 'cid', width: 200, cellsrenderer: cellsrenderer_akosdbstructure, editable: false, exportable: false },
+
+                //        { text: 'AKos number', datafield: 'registryid', cellclassname: cellclass, width: 200 },
+
+                //        { text: 'Type', datafield: 'type', cellclassname: cellclass, width: 100 },
+
+                //        { text: 'Molname', datafield: 'molname', cellclassname: cellclass },
+
+                //        { text: 'CAS Number', datafield: 'casnumber', cellclassname: cellclass },
+
+                //        { text: 'Molformula', datafield: 'molformula', cellclassname: cellclass },
+
+                //        { text: 'Molweight', datafield: 'molweight', cellclassname: cellclass },
+
+                //        //{ text: 'Identical', datafield: 'bisidenticalwithquery',cellclassname: cellclass },
+
+                //        {
+                //            text: "",
+                //            datafield: "Add",
+                //            columntype: "button",
+                //            width: 80,
+                //            exportable: false,
+                //            cellsrenderer: function () {
+                //                return "Add";
+                //            },
+                //            buttonclick: function (row) {
+
+
+                //                // TBD: (re)implement using new design
+
+
+                //                var data = $('#grid_relatedcids').jqxGrid('getrowdata', row);
+                //                $("#akosnumber").val(data.registryid);
+
+
+
+                //                //var numberofsearches = $('#numberofsearches').val();
+
+
+
+                //                //if (numberofsearches > 1) {
+
+
+                //                //    var akosnumberalreadypresentinshoppinggrid = false;
+                //                //    var akosnumber = data.registryid
+
+                //                //    var allshoppingcarditems = $('#shoppinggrid').jqxGrid('getrows');
+
+                //                //    for (var i = 0; i < allshoppingcarditems.length; i++) {
+
+                //                //        var shoppinggridrow = allshoppingcarditems[i];
+                //                //        if (akosnumber == shoppinggridrow["registryid"]) {
+
+
+                //                //            akosnumberalreadypresentinshoppinggrid = true;
+
+                //                //        }
+
+
+                //                //    }
+
+                //                //    if (akosnumberalreadypresentinshoppinggrid) {
+
+
+                //                //        $('#confirmwindow').jqxWindow('open')
+                //                //        $('#confirmwindow').on('close', function (event) {
+
+
+                //                //            if (event.type === 'close') {
+
+                //                //                if (event.args.dialogResult.OK) {
+                //                //                    var eventData = 'OK';
+                //                //                } else if (event.args.dialogResult.Cancel) {
+                //                //                    var eventData = 'Cancel';
+                //                //                } else {
+                //                //                    var eventData = 'None';
+                //                //                }
+                //                //            }
+
+
+
+                //                //            if (eventData == "Cancel") {
+
+                //                //                $("#popupwindowshoppingcard").jqxWindow('close');
+                //                //                return;
+
+                //                //            }
+                //                //        });
+                //                //    }
+                //                //}
+
+
+
+
+
+
+
+
+
+                //                $('#quantity').jqxNumberInput('val', 1);
+
+                //                var source = {
+                //                    datatype: "json",
+                //                    datafields: [
+                //                        { name: 'UnitUIlabel' },
+                //                        { name: 'UnitValue' }
+                //                    ],
+                //                    localdata: units,
+                //                    async: true
+                //                };
+                //                var dataAdapter = new $.jqx.dataAdapter(source);
+                //                $("#units").jqxDropDownList({
+                //                    selectedIndex: 1, source: dataAdapter, displayMember: "UnitUIlabel", valueMember: "UnitValue", width: 200, height: 30
+                //                });
+                //                $('#additionalinformation').jqxInput('val', '');
+                //                $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+
+                //                $("#popupwindowshoppingcard").jqxWindow({ resizable: true });
+
+                //                $("#popupwindowshoppingcard").jqxWindow('open');
+
+
+                //            }
+                //        }
+                //    ]
+                //});
+
+
+
+                //if (sessionStorage.getItem("griddata") != null) {
+
+                //    //alert(sessionStorage.getItem("showgrid"))
+
+                //    //debugger;
+
+                //    var data = sessionStorage.getItem("griddata");
+
+                //    var importdata = JSON.parse(data);
+
+                //    var relatedcids_gridsource_dataFields = [
+
+                //        { name: 'strucutureimageurl', type: 'string' },
+
+                //        { name: 'cid', type: 'int' },
+
+                //        { name: 'registryid', type: 'string' },
+
+                //        { name: 'type', type: 'string' },
+
+                //        { name: 'bisidenticalwithquery', type: 'bool' },
+
+                //        { name: 'molname', type: 'string' },
+
+                //        { name: 'molformula', type: 'string' },
+
+                //        { name: 'molweight', type: 'number' },
+
+                //        { name: 'casnumber', type: 'string' }
+                //    ];
+
+
+                //    var relatedcids_gridsource = {
+
+                //        datatype: "json",
+
+                //        datafields: relatedcids_gridsource_dataFields,
+
+
+
+
+                //        localdata: importdata
+
+
+                //    };
+
+                //    var relatedcids_griddataAdapter = new $.jqx.dataAdapter(relatedcids_gridsource);
+
+                //    $("#grid_relatedcids").jqxGrid({ source: relatedcids_griddataAdapter });
+
+                //    $('#grid_relatedcids').jqxGrid('updatebounddata');
+
+
+
+
+
+
+                //}
+
+
+
+                //var contextMenu = $("#resultgridcellmenu").jqxMenu({ width: '150px', height: '60px', autoOpenPopup: false, mode: 'popup' });
+
+                //$("#grid_relatedcids").on('contextmenu', function (e) {
+                //    return false;
+                //});
+
+                //$("#resultgridcellmenu").on('itemclick', function (event) {
+
+
+                //    var element = event.args;
+
+
+                //    if (element.innerText == "Copy cell value") {
+
+
+                //        var cell = $('#grid_relatedcids').jqxGrid('getselectedcell');
+
+                //        var cellvalue = cell.value
+
+                //        const el = document.createElement('textarea');
+                //        el.value = cellvalue;	//str is your string to copy
+                //        document.body.appendChild(el);
+                //        el.select();
+                //        document.execCommand('copy');	// Copy command
+                //        document.body.removeChild(el);
+
+                //        $('#messagenotification').jqxNotification({ template: 'success' });
+
+                //        $("#messagenotification").find("div").first().text("Copied cell value to clipboard");
+                //        $("#messagenotification").jqxNotification("open");
+
+                //        //alert("Copied cell value to clipboard")
+
+                //        //if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+                //        //    alert("Copied value to clipboard")
+                //        //    navigator.clipboard.writeText(cellvalue);
+
+                //        //} else {
+
+                //        //    alert("The Clipboard API is not available.");
+
+                //        //}
+
+
+
+
+                //        //var rowindex = $("#grid_relatedcids").jqxGrid('getselectedrowindex');
+
+
+
+                //    }
+
+                //    if (element.innerText == "Copy row values") {
+
+
+
+                //        var rowindex = $("#grid_relatedcids").jqxGrid('getselectedrowindex');
+
+                //        var dataRecord = $("#grid_relatedcids").jqxGrid('getrowdata', rowindex);
+
+                //        var resultstring = dataRecord.registryid + "," + dataRecord.molname + "," + dataRecord.casnumber + "," + dataRecord.molformula + "," + dataRecord.molweight;
+
+                //        const el = document.createElement('textarea');
+                //        el.value = resultstring;	//str is your string to copy
+                //        document.body.appendChild(el);
+                //        el.select();
+                //        document.execCommand('copy');	// Copy command
+                //        document.body.removeChild(el);
+
+                //        $('#messagenotification').jqxNotification({ template: 'success' });
+
+                //        $("#messagenotification").find("div").first().text("Copied row values to clipboard");
+                //        $("#messagenotification").jqxNotification("open");
+
+                //        //alert("Copied row values to clipboard")
+
+                //        //alert(resultstring)
+
+
+
+                //    }
+
+                //});
+
+
+                //$("#grid_relatedcids").on("cellclick", function (event) {
+
+
+                //    //debugger;
+
+
+                //    var args = event.args;
+                //    // row's bound index.
+                //    var rowBoundIndex = args.rowindex;
+                //    // row's visible index.
+                //    var rowVisibleIndex = args.visibleindex;
+                //    // right click.
+                //    var rightclick = args.rightclick;
+                //    // original event.
+                //    var ev = args.originalEvent;
+                //    // column index.
+                //    var columnindex = args.columnindex;
+                //    // column data field.
+                //    var dataField = args.datafield;
+
+
+                //    $("#grid_relatedcids").jqxGrid('selectrow', rowBoundIndex);
+
+                //    //alert("cellclick fired. Column name " + dataField);
+
+                //    if (dataField == "cid") {
+
+                //        var datarow = $('#grid_relatedcids').jqxGrid('getrowdata', rowBoundIndex);
+                //        //var cid = args.value;
+                //        var akosnumber = datarow.registryid
+
+                //        //jQuery.support.cors = true;
+                //        jdata = {};
+
+                //        //jdata.pubchemcid = cid;
+                //        jdata.akosnumber = akosnumber;
+
+                //        $('#jqxLoader').jqxLoader('open');
+                //        $.ajax({
+
+                //            type: "POST",
+                //            url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/GetMolfiledataforAkosnumber",
+                //            cache: false,
+                //            data: JSON.stringify(jdata),
+                //            success: function (response) {
+                //                $('#jqxLoader').jqxLoader('close');
+                //                if (response.errorflag) {
+                //                    $('#messagenotification').jqxNotification({ template: 'error' });
+                //                    $("#messagenotification").find("div").first().text("Error calling GetMolfiledataforAkosnumber. Message : " + response.errortext);
+                //                    $("#messagenotification").jqxNotification("open");
+                //                } else {
+
+                //                    var molfile = response.resultobject;
+
+
+                //                    var ketcherFrame = document.getElementById('zoomketcherwindow_ketcher');
+
+                //                    var ketcher = ketcherFrame.contentWindow.ketcher;
+
+                //                    ketcher.setMolecule(molfile);
+
+                //                    $("#zoomketcherwindow").jqxWindow('open');
+
+
+
+                //                }
+
+
+                //            },
+                //            error: function (error) {
+                //                $('#jqxLoader').jqxLoader('close');
+
+                //                $('#jqxLoader').jqxLoader('close');
+                //                $('#messagenotification').jqxNotification({ template: 'error' });
+                //                $("#messagenotification").find("div").first().text("Error calling GetMolfiledataforAkosnumber. Status : " + error.status);
+                //                $("#messagenotification").jqxNotification("open");
+
+
+                //            }
+
+
+
+
+                //        });
+
+
+
+                //    } else {
+
+
+
+                //        if (dataField != "Add") {
+
+
+                //            //if (rightclick) {
+
+                //            //    var left = ev.clientX;
+
+                //            //    var top = ev.clientY;
+
+
+
+                //            //    var scrollTop = $(window).scrollTop();
+                //            //    var scrollLeft = $(window).scrollLeft();
+
+                //            //    $("#resultgridcellmenu").jqxMenu('open', parseInt(ev.clientX) + 5 + scrollLeft, parseInt(ev.clientY) + 5 + scrollTop);
+
+                //            //    return false;
+
+                //            //}
+
+
+                //        }
+
+
+
+
+
+
+
+
+
+
+                //    }
+
+
+                //});
+
+
+                //var ready = $('#grid_relatedcids').jqxGrid('ready');
+
+                //alert("after init" +ready)
+
+
+
+
+
+
+            });
+
+        </script>
+</body>
+</html>

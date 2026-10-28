@@ -1,0 +1,2818 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
+	<meta name="theme-color" content="#000000"/>
+	<meta name="description" content="Ketcher is a web-based chemical structure editor"/>
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png"/>
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/>
+	<link rel="manifest" href="./manifest.json"/>
+	<link href="./static/css/2.1a1d4f17.chunk.css" rel="stylesheet">
+	<link href="./static/css/main.4b33aa94.chunk.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+	
+	
+	
+	<link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+	<script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxnavbar.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+	
+	<script type="text/javascript" src="jqwidgets/jqxnotification.js"></script>
+	
+	<script type="text/javascript" src="jqwidgets/jqxloader.js"></script>
+	
+	<script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+	
+	<script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxgrid.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxgrid.selection.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxgrid.edit.js"></script>  
+  <script type="text/javascript" src="jqwidgets/jqxgrid.columnsresize.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxgrid.columnsreorder.js"></script> 
+  <script type="text/javascript" src="jqwidgets/jqxgrid.sort.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxmenu.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxslider.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxdragdrop.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxwindow.js"></script>
+   <script type="text/javascript" src="jqwidgets/jqxpanel.js"></script>
+   <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxform.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxvalidator.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxnumberinput.js"></script>
+  
+  <script type="text/javascript" src="jqwidgets/jqxcombobox.js"></script>
+  
+  <script type="text/javascript" src="jqwidgets/jqxdata.js"></script> 	
+  <script type="text/javascript" src="jqwidgets/jqxdata.export.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqxgrid.export.js"></script> 
+	<script type="text/javascript" src="jqwidgets/jqxexport.js"></script>
+	
+	<script type="text/javascript" src="jqwidgets/jqxradiobutton.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxbuttongroup.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>
+<style>
+  	
+  	.jqx-grid-card-cell-label{
+  display:none;
+}
+
+.jqx-grid-card-cell table{
+  padding: 0px;
+}
+
+.jqx-grid-card-cell{
+	
+	padding: 0px;
+	
+}
+
+
+.jqx-notification-container {
+  z-index: 100000;
+}
+
+
+
+
+.jqx-tooltip-text {
+	
+	font-size: 20px;
+	color : red;
+	
+	
+	
+	
+	
+}
+
+
+.LightSeaGreen {
+            
+            background-color: LightSeaGreen;
+}
+        
+.LightGreen {
+            
+            background-color: LightGreen;
+}
+		
+.LightBlue {
+            
+            background-color: LightBlue;
+}
+
+.header {
+				background:  lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center
+}
+      
+.img {
+	
+	
+        max-width: 100%
+}
+
+.header_image {
+	      
+        flex-basis: 40%
+}
+
+.header_text_left {
+				
+        font-size: 10px;
+        padding-left: 20px;
+}
+
+.header_text_right {
+				
+        font-size: 10px;
+        padding-left: 20px;
+}      
+
+  </style>
+</head>
+
+<body class='default'>
+ <noscript>You need to enable JavaScript to run this app.</noscript>
+<div class="header">
+ 	
+ 	<div class="header_text_left">
+        <h3>AKos GmbH chooses the best supplier for you dependent on price, delivery times and reliability. We manage your inquiry, communicate with suppliers, deliver and send you the final invoice.</h3>
+  </div>
+  
+  <div class="header_image">
+        <center><img src="banner.jpg" width="200" height="50"/></center>
+        
+  </div>
+  
+  <div class="header_text_right">
+        <h3>We will provide you a free, no obligation quote, giving you the best price, selected from hundreds of suppliers.</h3>
+  </div>
+ </div>
+ <div style="display: none" id="popupwindowshoppingcard" style="position: fixed; left: 50%; top: 50%;">
+            <div>Add/Edit</div>
+            <div style="overflow: hidden;">
+            	<form id="popupwindowshoppingcardform" action="./">
+                <table>
+                    <tr>
+                        <td align="right">AKos number:</td>
+                        <td align="left"><input id="akosnumber" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Quantity:</td>
+                        <td align="left"><div id="quantity" ></div></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td align="right">Unit:</td>
+                        <td align="left"><div id="units" ></div></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td align="right">Additional information:</td>
+                        <td align="left"><input id="additionalinformation" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right"></td>
+                        <td style="padding-top: 10px;" align="right"><input style="margin-right: 5px;" type="button" id="btn_popupwindowshoppingcard_addquantity" value="Add" /><input id="btn_popupwindowshoppingcard_editquantity" type="button" value="Edit" /></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td align="right"></td>
+                        <td style="padding-top: 10px;" align="right"><input style="margin-right: 5px;" type="button" id="btn_popupwindowshoppingcard_done" value="Done" /><input id="btn_popupwindowshoppingcard_cancel" type="button" value="Cancel" /></td>
+                    </tr>
+                    
+                    
+                    
+                   
+                </table>
+                <label id="addquantitylabel" style="display: none;" >You can add additional quantities if you like or click Done button.</label>
+              </form>
+            </div>
+ </div>
+ <div style="display: none" id="popupwindowcontactcard" style="position: fixed; left: 50%; top: 50%;">
+            <div>Add/Edit contact</div>
+            <div style="overflow: hidden;">
+            	<form id="popupwindowcontactcardform" action="./">
+                <table>
+                		<tr>
+                        <td align="right">Title:</td>
+                        <td align="left"><div id="title"></div></td>
+                    </tr>
+                    <tr>
+                        <td align="right">First name:</td>
+                        <td align="left"><input id="firstname" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Last name:</td>
+                        <td align="left"><input id="lastname" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">eMail:</td>
+                        <td align="left"><input id="email" /></td>
+                    </tr>
+                    
+                    <tr>
+                        <td align="right">Company:</td>
+                        <td align="left"><input id="company" /></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td align="right">Country:</td>
+                        <td align="left"><div id="country" ></div></td>
+                    </tr>
+                    
+                    <tr>
+                        <td align="right">Which website linked you to this page?</td>
+                        <td align="left"><div id='link_rbgroup'><div id="link_Chemspider">Chemspider</div><div id="link_PubChem" >PubChem</div><div id="link_SciFinder" >SciFinder</div><div><div id="link_Other">Other</div></div><input id="link_OtherInformation" /></div></td>
+                    </tr>
+                    
+                    <tr>
+                        <td align="right">Please indicate your role to help us communicate with you better</td>
+                        <td align="left"><div id='role_rbgroup'><div id="role_Scientist" >Scientist</div><div id="role_Administrator" >Administrator</div><div id="role_Broker" >Broker</div><div><div id="role_Other" >Other</div><input id="role_OtherInformation" /></div></td>
+                    </tr>
+                    
+                    
+                    
+                    
+                    <tr>
+                        <td align="right"></td>
+                        <td style="padding-top: 10px;" align="right"><input style="margin-right: 5px;" type="button" id="btn_popupwindowcontactcard_save" value="Save" /><input id="btn_popupwindowcontactcard_cancel" type="button" value="Cancel" /></td>
+                    </tr>
+                    
+                   
+                </table>
+              </form>
+            </div>
+ </div>
+ 
+ 
+ <div style="display: none" id="popupwindowreport">
+    <div>Review</div>
+    <div style="overflow: hidden;">
+     <div>
+     	
+     	 <div id="popupwindowreport_grid"></div>
+     	 <div style="float: right; margin-top: 15px;">
+           <input type="button" id="btn_popupwindowreport_ok" value="OK" style="margin-right: 10px" />
+           <input type="button" id="btn_popupwindowreport_cancel" value="Cancel" />
+       </div>
+     	
+     </div>	
+    </div>
+ </div>
+ 
+ 
+ <div style="display: none" id="ketcherwindow">
+    <div>Draw structure</div>
+    <div style="overflow: hidden;">
+     <div>
+     	 <div>
+     	  <iframe id="ketcherwindow_ketcher" src="ketcher.html" style="width: 100%; height: 80%"></iframe>
+     	  <div>
+     	  	
+     	  	<input type="text" id="n2sinput" name="n2sinput" style="margin-top: 10px; margin-left: 10px"/>
+     	  	<input type="button" value = "Name2Structure" id="btn_n2sinput"  style="margin-left: 10px"/>
+     	  	
+     	  	<input type="button" value = "Search" id="btn_startsearch" style="float: right; margin-top: 10px; margin-right: 10px"/>
+     		</div>
+     	 </div>
+     	 
+       
+     	
+     </div>	
+    </div>
+ </div>
+ 
+ 
+ <div style="display: none" id="zoomketcherwindow">
+    <div>Zoom</div>
+    <div style="overflow: hidden;">
+     <div>
+     	 <div>
+     	  <iframe id="zoomketcherwindow_ketcher" src="ketcher.html" style="width: 100%; height: 100%"></iframe>
+     	  
+     	 </div>
+     	 
+     	
+     </div>	
+    </div>
+ </div>
+ 
+ 
+ 
+ <div id="jqxLoader"></div>
+ 
+ <div style="display: none" id="navbar" style="margin-top: 5px;height: 90%;">
+        <ul>
+            <li>
+            	<input type="text" id="registrynumberinput" name="registrynumberinput" style="margin-top: 10px; margin-left: 10px"/>
+            	<input type="button" value="Name lookup"  id='btn_namelookup' style="margin-top: 10px;margin-left: 10px" />
+            	<input type="button" value="Draw structure"  id='btn_drawstructure' style="margin-top: 10px;margin-left: 10px" />
+            	
+            	
+            	
+            </li>
+            
+            <li>
+            	<div id="navbar2" style="height: 100%;" >
+            		<ul>
+            			<li>
+            				
+            				<div id="grid_relatedcids" style="margin-top: 10px"></div>
+            				<div style="margin-top: 20px;" id="shoppinggrid"></div>
+            				<div style="margin-top: 5px;" id="contactgrid"></div>
+            				
+            				
+            			</li>
+            			
+            		</ul>	
+            	</div>    
+            </li>
+        </ul>
+ </div>
+ 
+ 
+ <div style="display: none" id="confirmwindow">
+                <div>
+                    
+                    
+                </div>
+                <div>
+                    <div>
+                        You already added this compound to your shopping card. Do you want to continue?
+                    </div>
+                    <div>
+                    	<div style="float: right; margin-top: 15px;">
+                        <input type="button" id="ok" value="Yes" style="margin-right: 10px" />
+                        <input type="button" id="cancel" value="No" />
+                    	</div>
+                    </div>
+                </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <div style="display: none" id="messagenotification" >
+        <div id="messagenotification_content"></div>
+ </div>
+ 
+ 
+  
+  <script>!function(e){function r(r){for(var n,a,p=r[0],l=r[1],c=r[2],i=0,s=[];i<p.length;i++)a=p[i],Object.prototype.hasOwnProperty.call(o,a)&&o[a]&&s.push(o[a][0]),o[a]=0;for(n in l)Object.prototype.hasOwnProperty.call(l,n)&&(e[n]=l[n]);for(f&&f(r);s.length;)s.shift()();return u.push.apply(u,c||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,p=1;p<t.length;p++){var l=t[p];0!==o[l]&&(n=!1)}n&&(u.splice(r--,1),e=a(a.s=t[0]))}return e}var n={},o={1:0},u=[];function a(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,a),t.l=!0,t.exports}a.m=e,a.c=n,a.d=function(e,r,t){a.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,r){if(1&r&&(e=a(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(a.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)a.d(t,n,function(r){return e[r]}.bind(null,n));return t},a.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(r,"a",r),r},a.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},a.p="./";var p=this["webpackJsonpketcher-react-app"]=this["webpackJsonpketcher-react-app"]||[],l=p.push.bind(p);p.push=r,p=p.slice();for(var c=0;c<p.length;c++)r(p[c]);var f=l;t()}([])</script>
+	<script src="./static/js/2.43f6f78e.chunk.js"></script>
+	<script src="./static/js/main.730396f6.chunk.js"></script>
+
+<script>
+	var shoppingakosnumber;
+	
+	var units = [
+      {
+		    "UnitUIlabel": "milligram",
+        "UnitValue": "mg"
+      },
+      {
+		    "UnitUIlabel": "gram",
+        "UnitValue": "g"
+      },
+      {
+		    "UnitUIlabel": "kilogram",
+        "UnitValue": "kg"
+      },
+      {
+		    "UnitUIlabel": "milliliter",
+        "UnitValue": "ml"
+      },
+      {
+		    "UnitUIlabel": "liter",
+        "UnitValue": "l"
+      }
+                  
+	];
+	
+	
+  var editshoppingrow = -1;
+  	
+  var editcontactrow = -1;
+  	
+  	
+    
+  var countries = [ 
+			{name: 'Afghanistan', code: 'AF'}, 
+			{name: '�land Islands', code: 'AX'}, 
+			{name: 'Albania', code: 'AL'}, 
+			{name: 'Algeria', code: 'DZ'}, 
+			{name: 'American Samoa', code: 'AS'}, 
+			{name: 'AndorrA', code: 'AD'}, 
+			{name: 'Angola', code: 'AO'}, 
+			{name: 'Anguilla', code: 'AI'}, 
+			{name: 'Antarctica', code: 'AQ'}, 
+			{name: 'Antigua and Barbuda', code: 'AG'}, 
+			{name: 'Argentina', code: 'AR'}, 
+			{name: 'Armenia', code: 'AM'}, 
+			{name: 'Aruba', code: 'AW'}, 
+			{name: 'Australia', code: 'AU'}, 
+			{name: 'Austria', code: 'AT'}, 
+			{name: 'Azerbaijan', code: 'AZ'}, 
+			{name: 'Bahamas', code: 'BS'}, 
+			{name: 'Bahrain', code: 'BH'}, 
+			{name: 'Bangladesh', code: 'BD'}, 
+			{name: 'Barbados', code: 'BB'}, 
+			{name: 'Belarus', code: 'BY'}, 
+			{name: 'Belgium', code: 'BE'}, 
+			{name: 'Belize', code: 'BZ'}, 
+			{name: 'Benin', code: 'BJ'}, 
+			{name: 'Bermuda', code: 'BM'}, 
+			{name: 'Bhutan', code: 'BT'}, 
+			{name: 'Bolivia', code: 'BO'}, 
+			{name: 'Bosnia and Herzegovina', code: 'BA'}, 
+			{name: 'Botswana', code: 'BW'}, 
+			{name: 'Bouvet Island', code: 'BV'}, 
+			{name: 'Brazil', code: 'BR'}, 
+			{name: 'British Indian Ocean Territory', code: 'IO'}, 
+			{name: 'Brunei Darussalam', code: 'BN'}, 
+			{name: 'Bulgaria', code: 'BG'}, 
+			{name: 'Burkina Faso', code: 'BF'}, 
+			{name: 'Burundi', code: 'BI'}, 
+			{name: 'Cambodia', code: 'KH'}, 
+			{name: 'Cameroon', code: 'CM'}, 
+			{name: 'Canada', code: 'CA'}, 
+			{name: 'Cape Verde', code: 'CV'}, 
+			{name: 'Cayman Islands', code: 'KY'}, 
+			{name: 'Central African Republic', code: 'CF'}, 
+			{name: 'Chad', code: 'TD'}, 
+			{name: 'Chile', code: 'CL'}, 
+			{name: 'China', code: 'CN'}, 
+			{name: 'Christmas Island', code: 'CX'}, 
+			{name: 'Cocos (Keeling) Islands', code: 'CC'}, 
+			{name: 'Colombia', code: 'CO'}, 
+			{name: 'Comoros', code: 'KM'}, 
+			{name: 'Congo', code: 'CG'}, 
+			{name: 'Congo, The Democratic Republic of the', code: 'CD'}, 
+			{name: 'Cook Islands', code: 'CK'}, 
+			{name: 'Costa Rica', code: 'CR'}, 
+			{name: 'Cote D\'Ivoire', code: 'CI'}, 
+			{name: 'Croatia', code: 'HR'}, 
+			{name: 'Cuba', code: 'CU'}, 
+			{name: 'Cyprus', code: 'CY'}, 
+			{name: 'Czech Republic', code: 'CZ'}, 
+			{name: 'Denmark', code: 'DK'}, 
+			{name: 'Djibouti', code: 'DJ'}, 
+			{name: 'Dominica', code: 'DM'}, 
+			{name: 'Dominican Republic', code: 'DO'}, 
+			{name: 'Ecuador', code: 'EC'}, 
+			{name: 'Egypt', code: 'EG'}, 
+			{name: 'El Salvador', code: 'SV'}, 
+			{name: 'Equatorial Guinea', code: 'GQ'}, 
+			{name: 'Eritrea', code: 'ER'}, 
+			{name: 'Estonia', code: 'EE'}, 
+			{name: 'Ethiopia', code: 'ET'}, 
+			{name: 'Falkland Islands (Malvinas)', code: 'FK'}, 
+			{name: 'Faroe Islands', code: 'FO'}, 
+			{name: 'Fiji', code: 'FJ'}, 
+			{name: 'Finland', code: 'FI'}, 
+			{name: 'France', code: 'FR'}, 
+			{name: 'French Guiana', code: 'GF'}, 
+			{name: 'French Polynesia', code: 'PF'}, 
+			{name: 'French Southern Territories', code: 'TF'}, 
+			{name: 'Gabon', code: 'GA'}, 
+			{name: 'Gambia', code: 'GM'}, 
+			{name: 'Georgia', code: 'GE'}, 
+			{name: 'Germany', code: 'DE'}, 
+			{name: 'Ghana', code: 'GH'}, 
+			{name: 'Gibraltar', code: 'GI'}, 
+			{name: 'Greece', code: 'GR'}, 
+			{name: 'Greenland', code: 'GL'}, 
+			{name: 'Grenada', code: 'GD'}, 
+			{name: 'Guadeloupe', code: 'GP'}, 
+			{name: 'Guam', code: 'GU'}, 
+			{name: 'Guatemala', code: 'GT'}, 
+			{name: 'Guernsey', code: 'GG'}, 
+			{name: 'Guinea', code: 'GN'}, 
+			{name: 'Guinea-Bissau', code: 'GW'}, 
+			{name: 'Guyana', code: 'GY'}, 
+			{name: 'Haiti', code: 'HT'}, 
+			{name: 'Heard Island and Mcdonald Islands', code: 'HM'}, 
+			{name: 'Holy See (Vatican City State)', code: 'VA'}, 
+			{name: 'Honduras', code: 'HN'}, 
+			{name: 'Hong Kong', code: 'HK'}, 
+			{name: 'Hungary', code: 'HU'}, 
+			{name: 'Iceland', code: 'IS'}, 
+			{name: 'India', code: 'IN'}, 
+			{name: 'Indonesia', code: 'ID'}, 
+			{name: 'Iran, Islamic Republic Of', code: 'IR'}, 
+			{name: 'Iraq', code: 'IQ'}, 
+			{name: 'Ireland', code: 'IE'}, 
+			{name: 'Isle of Man', code: 'IM'}, 
+			{name: 'Israel', code: 'IL'}, 
+			{name: 'Italy', code: 'IT'}, 
+			{name: 'Jamaica', code: 'JM'}, 
+			{name: 'Japan', code: 'JP'}, 
+			{name: 'Jersey', code: 'JE'}, 
+			{name: 'Jordan', code: 'JO'}, 
+			{name: 'Kazakhstan', code: 'KZ'}, 
+			{name: 'Kenya', code: 'KE'}, 
+			{name: 'Kiribati', code: 'KI'}, 
+			{name: 'Korea, Democratic People\'S Republic of', code: 'KP'}, 
+			{name: 'Korea, Republic of', code: 'KR'}, 
+			{name: 'Kuwait', code: 'KW'}, 
+			{name: 'Kyrgyzstan', code: 'KG'}, 
+			{name: 'Lao People\'S Democratic Republic', code: 'LA'}, 
+			{name: 'Latvia', code: 'LV'}, 
+			{name: 'Lebanon', code: 'LB'}, 
+			{name: 'Lesotho', code: 'LS'}, 
+			{name: 'Liberia', code: 'LR'}, 
+			{name: 'Libyan Arab Jamahiriya', code: 'LY'}, 
+			{name: 'Liechtenstein', code: 'LI'}, 
+			{name: 'Lithuania', code: 'LT'}, 
+			{name: 'Luxembourg', code: 'LU'}, 
+			{name: 'Macao', code: 'MO'}, 
+			{name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK'}, 
+			{name: 'Madagascar', code: 'MG'}, 
+			{name: 'Malawi', code: 'MW'}, 
+			{name: 'Malaysia', code: 'MY'}, 
+			{name: 'Maldives', code: 'MV'}, 
+			{name: 'Mali', code: 'ML'}, 
+			{name: 'Malta', code: 'MT'}, 
+			{name: 'Marshall Islands', code: 'MH'}, 
+			{name: 'Martinique', code: 'MQ'}, 
+			{name: 'Mauritania', code: 'MR'}, 
+			{name: 'Mauritius', code: 'MU'}, 
+			{name: 'Mayotte', code: 'YT'}, 
+			{name: 'Mexico', code: 'MX'}, 
+			{name: 'Micronesia, Federated States of', code: 'FM'}, 
+			{name: 'Moldova, Republic of', code: 'MD'}, 
+			{name: 'Monaco', code: 'MC'}, 
+			{name: 'Mongolia', code: 'MN'}, 
+			{name: 'Montserrat', code: 'MS'}, 
+			{name: 'Morocco', code: 'MA'}, 
+			{name: 'Mozambique', code: 'MZ'}, 
+			{name: 'Myanmar', code: 'MM'}, 
+			{name: 'Namibia', code: 'NA'}, 
+			{name: 'Nauru', code: 'NR'}, 
+			{name: 'Nepal', code: 'NP'}, 
+			{name: 'Netherlands', code: 'NL'}, 
+			{name: 'Netherlands Antilles', code: 'AN'}, 
+			{name: 'New Caledonia', code: 'NC'}, 
+			{name: 'New Zealand', code: 'NZ'}, 
+			{name: 'Nicaragua', code: 'NI'}, 
+			{name: 'Niger', code: 'NE'}, 
+			{name: 'Nigeria', code: 'NG'}, 
+			{name: 'Niue', code: 'NU'}, 
+			{name: 'Norfolk Island', code: 'NF'}, 
+			{name: 'Northern Mariana Islands', code: 'MP'}, 
+			{name: 'Norway', code: 'NO'}, 
+			{name: 'Oman', code: 'OM'}, 
+			{name: 'Pakistan', code: 'PK'}, 
+			{name: 'Palau', code: 'PW'}, 
+			{name: 'Palestinian Territory, Occupied', code: 'PS'}, 
+			{name: 'Panama', code: 'PA'}, 
+			{name: 'Papua New Guinea', code: 'PG'}, 
+			{name: 'Paraguay', code: 'PY'}, 
+			{name: 'Peru', code: 'PE'}, 
+			{name: 'Philippines', code: 'PH'}, 
+			{name: 'Pitcairn', code: 'PN'}, 
+			{name: 'Poland', code: 'PL'}, 
+			{name: 'Portugal', code: 'PT'}, 
+			{name: 'Puerto Rico', code: 'PR'}, 
+			{name: 'Qatar', code: 'QA'}, 
+			{name: 'Reunion', code: 'RE'}, 
+			{name: 'Romania', code: 'RO'}, 
+			{name: 'Russian Federation', code: 'RU'}, 
+			{name: 'RWANDA', code: 'RW'}, 
+			{name: 'Saint Helena', code: 'SH'}, 
+			{name: 'Saint Kitts and Nevis', code: 'KN'}, 
+			{name: 'Saint Lucia', code: 'LC'}, 
+			{name: 'Saint Pierre and Miquelon', code: 'PM'}, 
+			{name: 'Saint Vincent and the Grenadines', code: 'VC'}, 
+			{name: 'Samoa', code: 'WS'}, 
+			{name: 'San Marino', code: 'SM'}, 
+			{name: 'Sao Tome and Principe', code: 'ST'}, 
+			{name: 'Saudi Arabia', code: 'SA'}, 
+			{name: 'Senegal', code: 'SN'}, 
+			{name: 'Serbia and Montenegro', code: 'CS'}, 
+			{name: 'Seychelles', code: 'SC'}, 
+			{name: 'Sierra Leone', code: 'SL'}, 
+			{name: 'Singapore', code: 'SG'}, 
+			{name: 'Slovakia', code: 'SK'}, 
+			{name: 'Slovenia', code: 'SI'}, 
+			{name: 'Solomon Islands', code: 'SB'}, 
+			{name: 'Somalia', code: 'SO'}, 
+			{name: 'South Africa', code: 'ZA'}, 
+			{name: 'South Georgia and the South Sandwich Islands', code: 'GS'}, 
+			{name: 'Spain', code: 'ES'}, 
+			{name: 'Sri Lanka', code: 'LK'}, 
+			{name: 'Sudan', code: 'SD'}, 
+			{name: 'Suriname', code: 'SR'}, 
+			{name: 'Svalbard and Jan Mayen', code: 'SJ'}, 
+			{name: 'Swaziland', code: 'SZ'}, 
+			{name: 'Sweden', code: 'SE'}, 
+			{name: 'Switzerland', code: 'CH'}, 
+			{name: 'Syrian Arab Republic', code: 'SY'}, 
+			{name: 'Taiwan, Province of China', code: 'TW'}, 
+			{name: 'Tajikistan', code: 'TJ'}, 
+			{name: 'Tanzania, United Republic of', code: 'TZ'}, 
+			{name: 'Thailand', code: 'TH'}, 
+			{name: 'Timor-Leste', code: 'TL'}, 
+			{name: 'Togo', code: 'TG'}, 
+			{name: 'Tokelau', code: 'TK'}, 
+			{name: 'Tonga', code: 'TO'}, 
+			{name: 'Trinidad and Tobago', code: 'TT'}, 
+			{name: 'Tunisia', code: 'TN'}, 
+			{name: 'Turkey', code: 'TR'}, 
+			{name: 'Turkmenistan', code: 'TM'}, 
+			{name: 'Turks and Caicos Islands', code: 'TC'}, 
+			{name: 'Tuvalu', code: 'TV'}, 
+			{name: 'Uganda', code: 'UG'}, 
+			{name: 'Ukraine', code: 'UA'}, 
+			{name: 'United Arab Emirates', code: 'AE'}, 
+			{name: 'United Kingdom', code: 'GB'}, 
+			{name: 'United States', code: 'US'}, 
+			{name: 'United States Minor Outlying Islands', code: 'UM'}, 
+			{name: 'Uruguay', code: 'UY'}, 
+			{name: 'Uzbekistan', code: 'UZ'}, 
+			{name: 'Vanuatu', code: 'VU'}, 
+			{name: 'Venezuela', code: 'VE'}, 
+			{name: 'Viet Nam', code: 'VN'}, 
+			{name: 'Virgin Islands, British', code: 'VG'}, 
+			{name: 'Virgin Islands, U.S.', code: 'VI'}, 
+			{name: 'Wallis and Futuna', code: 'WF'}, 
+			{name: 'Western Sahara', code: 'EH'}, 
+			{name: 'Yemen', code: 'YE'}, 
+			{name: 'Zambia', code: 'ZM'}, 
+			{name: 'Zimbabwe', code: 'ZW'} 
+  ];
+                
+  var titles = [
+  
+   {name: 'Mr.', code: 'Mr'},
+   {name: 'Mrs.', code: 'Mrs'},
+   {name: 'Ms.', code: 'Ms'},
+   {name: 'Dr.', code: 'Dr'},
+   {name: 'Prof.', code: 'Prof'}
+   
+  ];	
+	
+	
+	var cellsrenderer_pubchemstructure_cid = function (row, columnfield, value, defaulthtml, columnproperties) {
+			
+			var html = "<img width='100' height= '100' src='https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/"+value+"/PNG?image_size=200x200'"+" style='border-style: solid;border-color:black;' title='Click to Zoom structure' >";
+			
+      
+      return html;
+			
+			
+    
+     
+    
+    
+			
+			
+	};
+	
+	var cellsrenderer_akosdbstructure = function (row, columnfield, value, defaulthtml, columnproperties) {
+	
+			var datarow = $("#grid_relatedcids").jqxGrid("getrowdata", row);
+	
+	        
+			
+	        
+			
+			var html = "<img width='200' height= '200' src='http://87.128.24.152/akosrelatedcompoundsweb/structureimages/"+datarow.registryid+".png"+"'"+" style='border-style: solid;border-color:black;' title='Click to Zoom structure' >";
+			
+      
+      return html;
+			
+			
+    
+     
+    
+    
+			
+			
+	};
+		
+	
+        
+  function GetCheckedRadiobuttonName( radiobutton1, radiobutton2, radiobutton3, radiobutton4) {
+  	
+  	
+  	if( radiobutton1 !== null && radiobutton1.jqxRadioButton( 'checked')  )
+      return radiobutton1[0].textContent ;
+    else if( radiobutton2 !== null && radiobutton2.jqxRadioButton( 'checked') )
+    	return radiobutton2[0].textContent;
+    else if( radiobutton3 !== null && radiobutton3.jqxRadioButton( 'checked') )
+    	return radiobutton3[0].textContent ;
+    else if( radiobutton4 !== null && radiobutton4.jqxRadioButton( 'checked') )
+    	return radiobutton4[0].textContent;
+  	
+  	
+  }
+        
+	function isNotEmpty(value) {
+
+
+
+	 if (typeof value !== 'undefined') {
+
+
+
+		if (value !== null) {
+
+
+			if (value) {
+
+
+
+				return true;
+
+
+			} else {
+
+
+
+
+				return false;
+
+
+			}
+
+
+
+		} else {
+
+
+			return false;
+
+
+		}
+
+
+
+
+
+
+	 } else { 
+	 	return false; 
+	 }
+
+
+
+  }
+  
+  
+  var cellsrenderer_quantityinformation = function (row, columnfield, value, defaulthtml, columnproperties) {
+			
+			
+			var html = "<ul style='padding: 0px'>";
+			
+			const myArray = value.split("^");
+			
+			for (var i = 0; i < myArray.length; i++) {
+        var quantityinfo = myArray[i];
+        html += "<li style='margin-left: 2px;padding: 0px'>"+quantityinfo+"</li>";
+        
+      }
+      
+      html += "</ul>";
+      
+      return html;
+			
+			
+    
+     
+    
+    
+			
+			
+	};
+	
+	var cellclass = function (row, columnfield, value) {
+		
+		var datarow = $("#grid_relatedcids").jqxGrid("getrowdata", row);
+		
+		
+		if (datarow.type == "EXACT") {
+			
+			return 'LightGreen';
+		}  else if (datarow.type == "FULL") {
+		
+		    return 'LightSeaGreen';
+		}  else if (datarow.type == "SIMILAR") {
+		
+			return 'LightBlue';
+		}
+		
+		
+		
+  }
+  
+  
+  var cellclassreport = function (row, columnfield, value) {
+		
+		var datarow = $("#popupwindowreport_grid").jqxGrid("getrowdata", row);
+		
+		if (datarow.bisidenticalwithquery) {
+			
+			return 'green';
+		} 
+  }
+  
+  
+  function doSearch(jdata) {
+  	
+  		
+  	  $("#ketcherwindow").jqxWindow('close');
+  	  
+    	
+    	
+    	$('#jqxLoader').jqxLoader('open');
+    	
+    	$.ajax({
+                type: "POST",
+                
+                
+                url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/FindRelatedCompounds",
+                cache: false,
+                
+                data: JSON.stringify(jdata),
+                
+                success: function (response) {
+                	
+                	//alert(JSON.stringify(response));
+                	
+                	$('#jqxLoader').jqxLoader('close');
+                	
+                	
+                	if (response.errorflag) {
+                		
+                		$('#messagenotification').jqxNotification({ template: 'error' });
+										$("#messagenotification").find("div").first().text("Error calling FindRelatedCompounds. Message : "+response.errortext);
+										$("#messagenotification").jqxNotification("open");
+                		
+                		
+                  } else {
+                  	
+                  	
+                  	
+                    
+                  	var relatedcids_gridsource_dataFields = [
+                        { name: 'cid', type: 'int' },
+                        
+                        { name: 'registryid', type: 'string' },
+                        
+                        { name: 'type',  type: 'string' },
+                        
+                        { name: 'bisidenticalwithquery',  type: 'bool' },
+						
+						{ name: 'molname',  type: 'string' },
+						
+						{ name: 'molformula',  type: 'string' },
+						
+						{ name: 'molweight',  type: 'number' },
+						
+						{ name: 'casnumber',  type: 'string' }
+                    ];
+                    
+                    
+                    var relatedcids_gridsource = {
+                	
+                	    datatype: "json",
+                	  
+                      datafields: relatedcids_gridsource_dataFields,
+                    
+                    
+                    
+                    
+                      localdata: response.relatedcids
+                    
+                    
+                    };
+                
+                    var relatedcids_griddataAdapter = new $.jqx.dataAdapter(relatedcids_gridsource);
+                    
+                    
+                    var ready = $('#grid_relatedcids').jqxGrid('ready');
+                    
+                    if (ready === undefined) {
+                    	
+                     $("#grid_relatedcids").jqxGrid( {
+                      width: "100%",
+                      height: "50%",
+                      rowsheight: 200,
+                
+                      source: relatedcids_griddataAdapter,
+                      columnsresize: true,
+                
+                
+                      selectionmode: 'singlecell',
+                      editmode: 'click',
+                      showheader: true,
+                			showstatusbar: true,
+                			renderstatusbar: function (statusbar) {
+                				
+                				var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+                				
+                				
+                				var numberofsearcheslabel = $("<div style='float: left; margin-left: 5px;'><input id='numberofsearcheslabel'/></div>");
+                				
+                				container.append(numberofsearcheslabel);
+                				
+                				var numberofsearches = $("<div style='float: left; margin-left: 5px;'><div id='numberofsearches'></div></div>");
+                				
+                				container.append(numberofsearches);
+                				
+                				var numberofhitslabel = $("<div style='float: left; margin-left: 5px;'><input id='numberofhitslabel'/></div>");
+                				
+                				container.append(numberofhitslabel);
+                				
+                				var numberofhits = $("<div style='float: left; margin-left: 5px;'><div id='numberofhits'></div></div>");
+                				
+                				container.append(numberofhits);
+                				
+                				statusbar.append(container);
+                				
+                				
+                				$("#numberofsearcheslabel").jqxInput({height: 23, width: 150, disabled: true} );
+                				
+                				$('#numberofsearcheslabel').jqxInput('val', 'Number of searches');
+                				
+                				$("#numberofsearches").jqxNumberInput({inputMode: 'simple',  disabled: true, decimalDigits: 0, groupSeparator: "", digits: 2, groupSize: 0, min: 0, width: 50, height: 23, spinButtons: false });
+
+                				$('#numberofsearches').jqxNumberInput('val', 1);
+                				
+                				$("#numberofhitslabel").jqxInput({height: 23, width: 150, disabled: true} );
+                				
+                				$('#numberofhitslabel').jqxInput('val', 'Number of hits');
+                				
+                				$("#numberofhits").jqxNumberInput({inputMode: 'simple',  disabled: true, decimalDigits: 0, groupSeparator: "", digits: 2, groupSize: 0, min: 0, width: 50, height: 23, spinButtons: false });
+                				
+                				$('#numberofhits').jqxNumberInput('val', response.relatedcids.length);
+
+                				
+                			},
+                
+                
+                
+                
+                
+                      columns: [
+                  
+                        //{ text: ' ', datafield: 'cid', width: 110, cellsrenderer: cellsrenderer_pubchemstructure_cid, editable: false },
+						{ text: ' ', datafield: 'cid', width: 200, cellsrenderer: cellsrenderer_akosdbstructure, editable: false },
+                  
+                        {text: 'AKos number', datafield: 'registryid', cellclassname: cellclass, width: 200},
+                        
+                        { text: 'Type', datafield: 'type',cellclassname: cellclass , width: 100},
+                        
+                        { text: 'Molname', datafield: 'molname',cellclassname: cellclass },
+						
+						{ text: 'CAS Number', datafield: 'casnumber', cellclassname: cellclass },
+						
+						{ text: 'Molformula', datafield: 'molformula',cellclassname: cellclass },
+						
+						{ text: 'Molweight', datafield: 'molweight',cellclassname: cellclass },
+						
+						//{ text: 'Identical', datafield: 'bisidenticalwithquery',cellclassname: cellclass },
+                        
+                        { text: "",
+                          datafield: "Add",
+                          columntype: "button",
+                          width: 80,
+                          cellsrenderer: function () {
+                           return "Add";
+                          },
+                          buttonclick: function (row) {
+      	      	           
+      	                   var data = $('#grid_relatedcids').jqxGrid('getrowdata', row);
+      	                   $("#akosnumber").val(data.registryid);
+      	                   
+      	                   
+      	                   
+      	                   var numberofsearches = $('#numberofsearches').val();
+      	                   
+      	                   
+      	                   
+      	                   if (numberofsearches > 1) {
+      	                   	
+      	                   	
+      	                   	var akosnumberalreadypresentinshoppinggrid = false;
+      	                   	var akosnumber = data.registryid
+      	                   	
+      	                   	var allshoppingcarditems = $('#shoppinggrid').jqxGrid('getrows');
+      	                   	
+      	                   	for(var i = 0; i < allshoppingcarditems.length; i++) {
+      	                   		
+      	                   		var shoppinggridrow = allshoppingcarditems[i];
+      	                   		if (akosnumber == shoppinggridrow["registryid"]) {
+      	                   			
+      	                   			
+      	                   			akosnumberalreadypresentinshoppinggrid = true;
+      	                   			
+      	                   		}
+      	                   		
+      	                   		
+      	                   	}
+      	                   	
+      	                   	if (akosnumberalreadypresentinshoppinggrid) {
+      	                   		
+      	                   		
+      	                   		$('#confirmwindow').jqxWindow('open')
+      	                   		$('#confirmwindow').on('close', function (event) {
+      	                   			
+      	                   		
+            										if (event.type === 'close') {
+                								
+                									if (event.args.dialogResult.OK) {
+                    								var eventData = 'OK';
+                									} else if (event.args.dialogResult.Cancel) {
+                    								var eventData = 'Cancel';
+                									} else {
+                    								var eventData = 'None';
+                									}
+            										}
+                							
+                							
+                							
+                								if (eventData == "Cancel") {
+                								
+                									$("#popupwindowshoppingcard").jqxWindow('close');
+                									return;
+                								
+                								}
+    													});
+    												}
+    											 }
+      	                   
+      	                   
+      	                   
+      	                   
+      	                   
+      	                   
+      	                   
+      	                   
+      	                   
+      	                   $('#quantity').jqxNumberInput('val', 1);
+      	                   
+      	                   var source = {
+                            datatype: "json",
+                            datafields: [
+                            { name: 'UnitUIlabel' },
+                            { name: 'UnitValue' }
+                            ],
+                            localdata: units,
+                            async: true
+                           };
+      	                   var dataAdapter = new $.jqx.dataAdapter(source);
+      	                   $("#units").jqxDropDownList({
+                              selectedIndex: 1, source: dataAdapter, displayMember: "UnitUIlabel", valueMember: "UnitValue", width: 200, height: 30
+                           });
+                           $('#additionalinformation').jqxInput('val', '');
+                           $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+                           
+                           $("#popupwindowshoppingcard").jqxWindow({resizable: true});
+                           
+      	                   $("#popupwindowshoppingcard").jqxWindow('open');
+      	
+      	
+                          }
+                        }
+                      ]
+                    });
+                    
+                    $("#grid_relatedcids").on("cellclick", function (event) {
+                    	var args = event.args;
+                    	// row's bound index.
+                    	var rowBoundIndex = args.rowindex;
+                    	// row's visible index.
+                    	var rowVisibleIndex = args.visibleindex;
+                    	// right click.
+                    	var rightclick = args.rightclick;
+                    	// original event.
+                    	var ev = args.originalEvent;
+                    	// column index.
+                    	var columnindex = args.columnindex;
+                    	// column data field.
+                    	var dataField = args.datafield;
+                    	
+                    	if (dataField == "cid") {
+                    		
+                    	  var datarow = $('#grid_relatedcids').jqxGrid('getrowdata', rowBoundIndex);
+                    	  //var cid = args.value;
+                    	  var akosnumber = datarow.registryid
+                    	  
+                    	  //jQuery.support.cors = true;
+                    	  jdata = {};
+
+												//jdata.pubchemcid = cid;
+												jdata.akosnumber = akosnumber;
+												
+												$('#jqxLoader').jqxLoader('open');
+    	                  $.ajax({
+    	                  	
+    	                  	type: "POST",
+    	                  	url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/GetMolfiledataforAkosnumber",
+    	                  	cache: false,
+    	                  	data: JSON.stringify(jdata),
+    	                  	success: function (response) {
+    	                  		$('#jqxLoader').jqxLoader('close');
+    	                  		if (response.errorflag) {
+    	                  			$('#messagenotification').jqxNotification({ template: 'error' });
+    	                  			$("#messagenotification").find("div").first().text("Error calling GetMolfiledataforAkosnumber. Message : "+response.errortext);
+    	                  			$("#messagenotification").jqxNotification("open");
+    	                  		} else {
+    	                  			
+    	                  			var molfile = response.resultobject;
+    	                  			
+    	                  			
+    	                  			var ketcherFrame = document.getElementById('zoomketcherwindow_ketcher');
+    	                  			
+    	                  			var ketcher = ketcherFrame.contentWindow.ketcher;
+    	                  			
+    	                  			ketcher.setMolecule(molfile);
+    	                  			
+    	                  			$("#zoomketcherwindow").jqxWindow('open');
+    	                  			
+    	                  			
+    	                  			
+    	                  	  }
+                		
+                	
+    	                  	},
+    	                  	error: function (error) {
+    	                  		$('#jqxLoader').jqxLoader('close');
+    	                  		
+    	                  		$('#jqxLoader').jqxLoader('close');
+    	                  		$('#messagenotification').jqxNotification({ template: 'error' });
+    	                  		$("#messagenotification").find("div").first().text("Error calling GetMolfiledataforAkosnumber. Status : "+error.status);
+    	                  		$("#messagenotification").jqxNotification("open");
+    	                  		
+    	                  		
+    	                  	}
+    	                  	
+    	                  	
+    	                  	
+    	                  	
+    	                  });
+                    	  
+                    	  
+                    	  
+                       }
+                    	
+                    	
+                    	});
+                    	
+                    	
+                    	
+                    	
+                  	} else {
+                  		
+                  		$("#grid_relatedcids").jqxGrid( { source: relatedcids_griddataAdapter });
+                  		
+                  		$('#grid_relatedcids').jqxGrid('updatebounddata');
+                  		
+                  		var numberofsearches = $('#numberofsearches').val();
+                  	
+                  		$('#numberofsearches').jqxNumberInput('val', numberofsearches+1);
+                  		
+                  		$('#numberofhits').jqxNumberInput('val', response.relatedcids.length);
+                  		
+                  		
+                  	}
+                  	
+                    
+                    if (ready === undefined) {
+                    	
+                     $("#shoppinggrid").jqxGrid( {
+                    	width: "100%",
+                    	selectionmode: 'singlecell',
+                    	autoheight: true,
+                    	source: { unboundmode: true, datafields:  [
+                         { name: 'registryid' },
+                         { name: 'quantity' },
+                         { name: 'unit' },
+                         { name: 'additionalinformation' }
+                       ]
+                      },
+                      showtoolbar: true,
+                      rendertoolbar: function (statusbar) {
+                      	var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+                      	
+                        
+                        var deleteallshoppingitemsbutton = $("<div style='float: left; margin-left: 5px;'><span style='margin-left: 4px; position: relative; top: -3px;'>Delete all</span></div>");
+                        container.append(deleteallshoppingitemsbutton);
+                        
+                        
+                        
+                        
+                        var requestbutton = $("<div style='float: left; margin-left: 5px;'><span style='margin-left: 4px; position: relative; top: -3px;'>Send request</span></div>");
+                        container.append(requestbutton);
+                        
+                        
+                        
+                        statusbar.append(container);
+                        
+                        requestbutton.jqxButton({  width: 100, height: 20 , template: "primary"});
+                        
+                        requestbutton.click(function (event) {
+						
+						    debugger;
+                        	
+                        	var numberofshoppingitems = $('#shoppinggrid').jqxGrid('getrows');
+                          if (numberofshoppingitems.length == 0) {
+                         	
+                         	
+                         	 requestbutton.jqxTooltip({ autoHideDelay: 2000, content: 'No items added to shopping list', position: 'right', autoHide: true, trigger: "none", closeOnClick: true });
+      										 requestbutton.jqxTooltip("open");
+                         	
+                         	 
+                         } else {
+                         	
+                         	var numberofcontactrows = $('#contactgrid').jqxGrid('getrows');
+                         	if (numberofcontactrows.length == 0) {
+                         	 	
+                         	 	
+                         	 	
+                         	 	requestbutton.jqxTooltip({ autoHideDelay: 2000, content: 'Please add contact information', position: 'right', autoHide: true, trigger: "none", closeOnClick: true });
+      											requestbutton.jqxTooltip("open");
+                         	 	
+                         	 	
+                         	 	
+                         	 	
+                         	 	
+                          } else {
+                          	
+                          	var contact_data = $("#contactgrid").jqxGrid('exportdata', 'json');
+                          	
+                          	
+                          	
+                          	
+                          	
+                          	//alert(contact_data)
+                          	
+                          	var request_data = $("#shoppinggrid").jqxGrid('exportdata', 'json');
+                          	
+                          	
+                          	//alert(request_data)
+                          	
+                          	jdata = {};
+
+														jdata.contactinformation = contact_data;
+														
+														jdata.compoundsinformation = request_data;
+														
+														$('#jqxLoader').jqxLoader('open');
+                          	
+                          	$.ajax({
+                							type: "POST",
+                
+                							url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/ProcessAKosrequest",
+                
+                							cache: false,
+                
+                							data: JSON.stringify(jdata),
+                
+                							success: function (response) {
+                								
+                								$('#jqxLoader').jqxLoader('close');
+                								
+                								//alert("Response "+response);
+												
+												alert(response);
+                								
+                							},
+                							error: function (error) {
+                								
+                	
+                								$('#jqxLoader').jqxLoader('close');
+                								$('#messagenotification').jqxNotification({ template: 'error' });
+																$("#messagenotification").find("div").first().text("Error calling ProcessAKosrequest. Status : "+error.status);
+																$("#messagenotification").jqxNotification("open");
+															}
+														});
+                          	
+                          	
+                          }
+                         	
+                         	
+                         	
+                         }
+                        	
+                        	
+                        	
+                        	
+                        });
+                        
+                        deleteallshoppingitemsbutton.jqxButton({  width: 100, height: 20 , template: "primary"});
+                        deleteallshoppingitemsbutton.click(function (event) {
+                        	
+                        	var rows = $("#shoppinggrid").jqxGrid('getrows');
+                					var ids = new Array();
+                					for (var i = 0; i < rows.length; i++) {
+                    				var id = $("#shoppinggrid").jqxGrid('getrowid', i);
+                    				ids.push(id);
+                					}
+                					$("#shoppinggrid").jqxGrid('deleterow', ids);
+                        	
+                        });
+                        
+                        
+                      },
+                      columns: [
+                       { text: 'AKos Number', dataField: 'registryid', width: 300 },
+                       { text: 'Quantity', dataField: 'quantity', width: 300 },
+                       { text: 'Unit', dataField: 'unit'},
+                       { text: 'Additional information', dataField: 'additionalinformation'},
+                       { text: "", exportable: false,
+                       	datafield: "delete",
+                       	columntype: "button",
+                       	width: 80,
+                       	cellsrenderer: function () {
+                       		return "Delete";
+                        },
+                        buttonclick: function (row) {
+                        	var id = $("#shoppinggrid").jqxGrid("getrowid", row);
+                        	var rowData = $("#shoppinggrid").jqxGrid("getrowdatabyid", id);
+                        	var commit = $("#shoppinggrid").jqxGrid("deleterow", id);
+                        }
+                       },
+                       { text: "", exportable: false,
+                       	datafield: "edit",
+                       	columntype: "button",
+                       	width: 80,
+                       	cellsrenderer: function () {
+                       		return "Edit";
+                        },
+                        buttonclick: function (row) {
+                        	
+                        	editshoppingrow = row;
+                        	
+      	                  var data = $('#shoppinggrid').jqxGrid('getrowdata', editshoppingrow);
+      	                  
+      	                  $("#akosnumber").val(data.registryid);
+      	                  $('#quantity').val(data.quantity);
+      	                  
+      	                  
+      	                  $("#units").jqxDropDownList('val', data.unit);
+      	                  $("#additionalinformation").val(data.additionalinformation);
+      	                  $("#popupwindowshoppingcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowshoppingcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowshoppingcard").jqxWindow("height") / 2);
+      	                  
+      	                  $("#popupwindowshoppingcard").jqxWindow({resizable: true});
+      	                  
+      	                  
+      	                  $("#popupwindowshoppingcard").jqxWindow('open');
+                        }
+                       }
+                       
+                      ]
+                     });
+                    	
+                    	
+                    	
+                    	
+                    	
+                    } 
+                    
+                    
+                    
+                    
+                    
+                    if (ready === undefined) {
+                    	
+                     $("#contactgrid").jqxGrid( {
+                    	width: "100%",
+                    	autoheight: true,
+                    	source: { unboundmode: true, datafields:  [
+                         { name: 'firstname' },
+                         { name: 'lastname' },
+                         { name: 'company' },
+                         { name: 'country' },
+                         { name: 'email' },
+                         { name: 'title' },
+                         { name: 'link' },
+                         { name: 'link_otherinformation' },
+                         { name: 'role' },
+                         { name: 'role_otherinformation' }
+                         
+                       ]
+                      },
+                      showtoolbar: true,
+                      rendertoolbar: function (statusbar) {
+                      	var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+                      	var addcontactbutton = $("<div style='float: left; margin-left: 5px;'><span style='margin-left: 4px; position: relative; top: -3px;'>Add contact</span></div>");
+                        container.append(addcontactbutton);
+                        
+                        
+                        
+                        statusbar.append(container);
+                        addcontactbutton.jqxButton({  width: 100, height: 20 , template: "primary"});
+                        addcontactbutton.click(function (event) {
+                         
+                         var numberofcontactrows = $('#contactgrid').jqxGrid('getrows');
+                         if (numberofcontactrows.length > 0) {
+                         	
+                         	
+                         	
+                         		addcontactbutton.jqxTooltip({ autoHideDelay: 2000, content: 'You can only add one contact. Either DELETE contact and add new contact or EDIT contact.', position: 'right', autoHide: false, trigger: "none", closeOnClick: true });
+      											addcontactbutton.jqxTooltip("open");
+                         	 	
+                         	 	
+                         } else {
+                         	
+                         	
+      	                  $('#firstname').jqxInput('val', '');
+                          $('#lastname').jqxInput('val', '');
+                          $('#email').jqxInput('val', '');
+                          $('#company').jqxInput('val', '');
+                          
+                          $('#link_Chemspider').jqxRadioButton({ checked: false });
+    											$('#link_PubChem').jqxRadioButton({ checked: false});
+    											$('#link_SciFinder').jqxRadioButton({ checked: false});
+    											$('#link_Other').jqxRadioButton({ checked: false});
+    											
+    											$('#role_Scientist').jqxRadioButton({ checked: false });
+    											$('#role_Administrator').jqxRadioButton({ checked: false });
+    											$('#role_Broker').jqxRadioButton({ checked: false });
+    											$('#role_Other').jqxRadioButton({ checked: false });
+    											
+                          
+                          $('#link_OtherInformation').jqxInput('val', '');
+                          
+                          $('#role_OtherInformation').jqxInput('val', '');
+                          
+                          
+      	                  var source = {
+                            datatype: "json",
+                            datafields: [
+                            { name: 'name' },
+                            { name: 'code' }
+                            ],
+                            localdata: countries,
+                            async: true
+                          };
+                          var dataAdapter = new $.jqx.dataAdapter(source);
+                          $("#country").jqxComboBox({
+                              source: dataAdapter, displayMember: "name", valueMember: "code", width: 200, height: 30
+                          });
+                          
+                          
+                          var titlesource = {
+                            datatype: "json",
+                            datafields: [
+                            { name: 'name' },
+                            { name: 'code' }
+                            ],
+                            localdata: titles,
+                            async: true
+                          };
+                          var titledataAdapter = new $.jqx.dataAdapter(titlesource);
+                          $("#title").jqxComboBox({
+                              source: titledataAdapter, displayMember: "name", valueMember: "code", width: 200, height: 30
+                          });
+                          
+                          $("#popupwindowcontactcard").jqxWindow("move", $(window).width() / 2 - $("#popupwindowcontactcard").jqxWindow("width") / 2, $(window).height() / 2 - $("#popupwindowcontactcard").jqxWindow("height") / 2);
+                          
+                          $("#popupwindowcontactcard").jqxWindow({resizable: true});
+      	                  $("#popupwindowcontactcard").jqxWindow('open');
+                         	
+                         	
+                         }
+                         
+                         
+                         
+                         
+      	                   
+                        });
+                        
+                        
+                      },
+                      columns: [
+                       { text: 'Title', dataField: 'title'},
+                       { text: 'Firstname', dataField: 'firstname'},
+                       { text: 'Lastname', dataField: 'lastname' },
+                       { text: 'Company', dataField: 'company' },
+                       { text: 'Country', dataField: 'country'},
+                       { text: 'EMail', dataField: 'email'},
+                                              
+                       { text: 'Link', dataField: 'link'},
+                       { text: 'Other link', dataField: 'link_otherinformation'},
+                       { text: 'Role', dataField: 'role'},
+                       { text: 'Other role', dataField: 'role_otherinformation'},
+                       
+                       { text: "",
+                       	datafield: "delete", exportable: false,
+                       	columntype: "button",
+                       	width: 80,
+                       	cellsrenderer: function () {
+                       		return "Delete";
+                        },
+                        buttonclick: function (row) {
+                        	var id = $("#contactgrid").jqxGrid("getrowid", row);
+                        	
+                        	var commit = $("#contactgrid").jqxGrid("deleterow", id);
+                        }
+                       },
+                       { text: "", exportable: false,
+                       	datafield: "edit",
+                       	columntype: "button",
+                       	width: 80,
+                       	cellsrenderer: function () {
+                       		return "Edit";
+                        },
+                        buttonclick: function (row) {
+                        	
+                        	editcontactrow = row;
+                        	
+      	                  var data = $('#contactgrid').jqxGrid('getrowdata', editcontactrow);
+      	                  
+      	                  $("#firstname").val(data.firstname);
+      	                  $('#lastname').val(data.lastname);
+      	                  
+      	                  $('#email').val(data.email);
+      	                  
+      	                  $("#company").val(data.company);
+      	                  $("#country").jqxComboBox('val', data.country);
+      	                  
+      	                  $("#title").jqxComboBox('val', data.title);
+      	                  
+      	                  $("#popupwindowcontactcard").jqxWindow({resizable: true});
+      	                  
+      	                  $("#popupwindowcontactcard").jqxWindow('open');
+                        }
+                       }
+                    	]
+                    	
+                    	
+                     });
+                    	
+                    	
+                    	
+                    	
+                    }
+
+                    
+                    
+                    
+                    
+                  }
+                
+                },
+                error: function (error) {
+                	
+                	$('#jqxLoader').jqxLoader('close');
+                	$('#messagenotification').jqxNotification({ template: 'error' });
+									$("#messagenotification").find("div").first().text("Error calling FindRelatedCompounds. Status : "+error.status);
+									$("#messagenotification").jqxNotification("open");
+                	
+                	
+                }
+             });
+			       
+                
+  }
+  
+  
+  
+  
+  
+  
+  $(document).ready(function() {
+  	
+  	
+  	
+  	
+    	document.getElementById("popupwindowshoppingcard").style.display = 'block';
+    document.getElementById("popupwindowcontactcard").style.display = 'block';
+    document.getElementById("popupwindowreport").style.display = 'block';
+    document.getElementById("ketcherwindow").style.display = 'block';
+    document.getElementById("zoomketcherwindow").style.display = 'block';
+    document.getElementById("navbar").style.display = 'block';
+    document.getElementById("confirmwindow").style.display = 'block';
+    document.getElementById("messagenotification").style.display = 'block';
+  	
+  	var ketcher;
+  	
+  	$("#messagenotification").jqxNotification({
+                width: 250, 
+                position: "top-right", 
+                opacity: 0.9,
+                autoOpen: false, 
+                animationOpenDelay: 800, 
+                autoClose: false, 
+                autoCloseDelay: 3000,
+                showCloseButton: true
+    });
+    
+    
+    var startsearchbutton = $("#btn_startsearch");
+    
+    startsearchbutton.jqxButton({ width: 80, height: 30 , template: 'primary'});
+    
+    startsearchbutton.click(function (event) {
+    	
+    	
+    	
+    		
+    		
+    		
+    	
+    		var ketcherFrame = document.getElementById('ketcherwindow_ketcher');
+          
+          
+          
+          
+        var ketcher = null;
+          
+        ketcher = ketcherFrame.contentWindow.ketcher;
+        
+        var smiles = ketcher.getSmiles();
+        
+        var molfile = ketcher.getMolfile();
+        
+        
+          
+          
+        
+        
+        const Emptystructurecheck = async () => {
+           const currentstructureassmiles = await smiles;
+           if (!isNotEmpty(currentstructureassmiles)) {
+           	
+           	 $("#ketcherwindow_ketcher").jqxTooltip({ autoHideDelay: 2000, content: 'Structure cannot be empty', position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+      			 $("#ketcherwindow_ketcher").jqxTooltip("open");
+           	 
+           } else {
+           	 
+           	 const currentstructuremolfile = await molfile;
+
+			 //alert(currentstructuremolfile)
+           	 
+           	 
+           	 var jData = {};
+             jData.registryid = "";
+             jData.smiles = currentstructureassmiles;
+             jData.molfile = currentstructuremolfile;
+             
+      		   doSearch(jData);
+      		   
+           	 
+           }
+           
+         };
+        
+        Emptystructurecheck();
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    })
+  	
+  	$("#n2sinput").jqxInput({ height: 30, width: 200,placeHolder: "AKOS number,CAS, name",  });
+  	
+  	
+  	var n2ssearchbutton = $("#btn_n2sinput");
+    n2ssearchbutton.jqxButton({ width: 130, height: 30 , template: 'primary'});
+    n2ssearchbutton.click(function (event) {
+    	
+    	
+    	
+    	var n2sinput = $('#n2sinput').jqxInput('val');
+    	
+    	
+    	
+    	
+    	if (isNotEmpty(n2sinput)) {
+    		
+    		jdata = {};
+
+				jdata.name = n2sinput;
+    		$('#jqxLoader').jqxLoader('open');
+    	  $.ajax({
+    	  	type: "POST",
+    	  	url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/Name2Structure",
+    	  	cache: false,
+    	  	data: JSON.stringify(jdata),
+    	  	success: function (response) {
+    	  		$('#jqxLoader').jqxLoader('close');
+    	  		if (response.errorflag) {
+    	  			$('#messagenotification').jqxNotification({ template: 'error' });
+    	  			$("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : "+response.errortext);
+    	  			$("#messagenotification").jqxNotification("open");
+    	  		} else {
+    	  			
+    	  			if (response.noCIDMatch) {
+    	  				
+    	  				$('#messagenotification').jqxNotification({ template: 'error' });
+    	  				$("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+    	  				$("#messagenotification").jqxNotification("open");
+    	  				
+    	  			} else {
+    	  				
+    	  				var ketcherFrame = document.getElementById('ketcherwindow_ketcher');
+    	  				var ketcher = ketcherFrame.contentWindow.ketcher;
+    	  				ketcher.setMolecule(response.bestchoiceCIDMolfile);
+    	  				$("#ketcherwindow").jqxWindow('open');
+    	  				
+    	  			}
+    	  			
+    	  			
+    	  		}
+    	  	},
+    	  	error: function (error) {
+    	  		$('#jqxLoader').jqxLoader('close');
+    	  		$('#messagenotification').jqxNotification({ template: 'error' });
+    	  		$("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : "+error.status);
+    	  		$("#messagenotification").jqxNotification("open");
+    	  	}
+    	  });
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	} else {
+    		$("#n2sinput").jqxTooltip({ autoHideDelay: 2000, content: 'Please enter name', position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+      	$("#n2sinput").jqxTooltip("open");
+    		
+    		
+    	}
+
+    	
+    });
+  	
+  	
+  	
+    
+    $("#ketcherwindow").jqxWindow({
+      width: 650, 
+      height: 500,
+      position: "center",
+      resizable: true,  
+      isModal: false, 
+      autoOpen: false, 
+      
+      modalOpacity: 0.01
+      
+      
+      
+              
+    });
+    
+    $('#ketcherwindow').on('close', function (event) { 
+    	 $("#registrynumberinput").jqxInput({ disabled: false });
+    	 
+    	 
+    });
+    
+    
+    $("#zoomketcherwindow").jqxWindow({
+      width: 800, 
+      height: 700,
+      position: "center",
+      resizable: true,  
+      isModal: false, 
+      autoOpen: false, 
+      
+      modalOpacity: 0.01
+      
+              
+    });
+    
+  	$("#akosnumber").jqxInput({ height: 30, width: 200, disabled: true });
+  	
+  	$("#quantity").jqxNumberInput({inputMode: 'advanced',  decimalDigits: 0, groupSeparator: "", digits: 4, groupSize: 0, min: 1, width: 200, height: 23, spinButtons: false });
+  	
+  	$("#additionalinformation").jqxInput({placeHolder: "Enter information", opened : false, height: 30, width: 200, minLength: 1 });
+  	$('#additionalinformation').jqxInput('val', '');
+  	
+  	$("#popupwindowreport").jqxWindow({
+      
+      resizable: true,  
+      isModal: false, 
+      autoOpen: false, 
+      cancelButton: $("#btn_popupwindowreport_cancel"),
+      okButton: $("#btn_popupwindowreport_ok"),
+      modalOpacity: 0.01
+      
+
+                
+    });
+    
+    $('#popupwindowreport').on('open', function (event) { 
+    	      
+      	$('#popupwindowreport').jqxWindow({width:"80%"});
+        $('#popupwindowreport').jqxWindow({height:"60%"});
+        
+        var allrows = $('#shoppinggrid').jqxGrid('getrows');
+        
+        var unique = [];
+        var distinct = [];
+        for (var i = 0; i < allrows.length; i++) {
+
+         if( !unique[allrows[i].registryid]){
+          distinct.push(allrows[i].registryid);
+          unique[allrows[i].registryid] = 1;
+         }
+        }
+        var distinctcompounds = [];
+        
+        for (var i = 0; i < distinct.length; i++) {
+        	let registryid = distinct[i];
+        	
+        	var relatedcompoundrows = $('#grid_relatedcids').jqxGrid('getrows');
+          for (var n = 0; n < relatedcompoundrows.length; n++) {
+          		
+          		let relatedcompound = relatedcompoundrows[n];
+          		
+          		if (registryid == relatedcompound.registryid) {
+          			
+          			
+          			
+          			var compound = {};
+          			
+          			compound.registryid = relatedcompound.registryid;
+          			
+          			compound.cid = relatedcompound.cid;
+          			
+          			compound.bisidenticalwithquery = relatedcompound.bisidenticalwithquery;
+          			
+          			distinctcompounds.push(compound);
+          			
+          			break;
+          	  } 
+          }
+        	
+        }
+        
+        var compounds = [];
+        
+        for (var i = 0; i < distinctcompounds.length; i++) {
+        	
+        	let key = distinctcompounds[i].registryid;
+        	
+        	let cid = distinctcompounds[i].cid;
+        	
+        	var jsonObj = {};
+        	
+        	jsonObj.registryid = key;
+        	
+        	jsonObj.cid = cid;
+        	
+        	
+        	
+        	
+        	
+        	var quantities = [];
+        	
+        	for (var n = 0; n < allrows.length; n++) {
+        		
+        		if (allrows[n].registryid == key) {
+        			
+        			var quantity = {}
+        			
+        			quantity.quantity = allrows[n].quantity;
+        			
+        			quantity.unit = allrows[n].unit;
+        			
+        			quantity.additionalinformation = allrows[n].additionalinformation;
+        			
+        			quantities.push(quantity);
+        		}
+        	}
+        	
+        	jsonObj.quantities = quantities;
+        	
+        	
+        	
+        	jsonObj.bisidenticalwithquery = distinctcompounds[i].bisidenticalwithquery;
+        	
+        	
+        	
+        	compounds.push(jsonObj);
+        }
+        
+        var reportcompounds = [];
+        
+        for (var m = 0; m < compounds.length; m++) {
+        	
+        	var reportcompound = {}
+        	
+        	let registryid = compounds[m].registryid;
+        	
+        	reportcompound.registryid = registryid;
+        	
+        	let cid = compounds[m].cid;
+        	
+        	reportcompound.cid = cid;
+        	
+        	
+        	reportcompound.bisidenticalwithquery = compounds[m].bisidenticalwithquery;
+        	
+        	var squantityinformation = "";
+        	
+        	for (var n = 0; n < compounds[m].quantities.length; n++) {
+        		
+        		let quantityitem = compounds[m].quantities[n];
+        		
+        		let quantity = quantityitem.quantity;
+        		
+        		let unit = quantityitem.unit;
+        		
+        		let information = quantityitem.additionalinformation
+        		
+        		squantityinformation += "Amount : "+quantity+" "+unit+" "+"Info: "+information+"^";
+        	}
+        	
+        	reportcompound.quantityinformation = squantityinformation.slice(0, -1);
+        	
+        	reportcompounds.push(reportcompound);
+   			}
+   			
+   			
+   			
+   			
+   			var reportgrid_gridsource_dataFields = [
+   				{ name: 'cid', type: 'int' },
+   				{ name: 'registryid', type: 'string' },
+   				{ name: 'quantityinformation',  type: 'string' },
+   				{ name: 'bisidenticalwithquery',  type: 'bool' }
+   			];
+   			
+   			var reportgrid_gridsource = {
+   				
+   				datatype: "json",
+   				
+   				datafields: reportgrid_gridsource_dataFields,
+   				
+   				localdata: reportcompounds
+   			};
+   			
+   			var reportgrid_griddataAdapter = new $.jqx.dataAdapter(reportgrid_gridsource);
+   			
+   			$("#popupwindowreport_grid").jqxGrid( {
+   				width: "100%",
+          autoheight: true,
+   				
+   				source : reportgrid_griddataAdapter,
+   				rowsheight: 110,
+   				columns: [
+   					{ text: 'CID', dataField: 'cid',width: 110 , cellsrenderer: cellsrenderer_pubchemstructure_cid},
+   					{ text: 'AKos number', dataField: 'registryid', cellclassname: cellclassreport, width: 300 },
+   					
+   					{ text: 'Identical', dataField: 'bisidenticalwithquery', cellclassname: cellclassreport, width: 50 },
+   					
+   					{ text: 'Amount(s)', dataField: 'quantityinformation',cellclassname: cellclassreport, cellsrenderer: cellsrenderer_quantityinformation }
+   				]
+   			});
+   			
+   			
+   			$("#popupwindowreport_grid").on("cellclick", function (event) {
+   				var args = event.args;
+   				// row's bound index.
+   				var rowBoundIndex = args.rowindex;
+   				// row's visible index.
+   				var rowVisibleIndex = args.visibleindex;
+   				// right click.
+   				var rightclick = args.rightclick;
+   				// original event.
+   				var ev = args.originalEvent;
+   				// column index.
+   				var columnindex = args.columnindex;
+   				// column data field.
+   				var dataField = args.datafield;
+   				if (dataField == "cid") {
+   					
+   					// cell value
+   					var cid = args.value;
+   					
+   					jQuery.support.cors = true;
+   					jdata = {};
+   					jdata.pubchemcid = cid;
+   					$('#jqxLoader').jqxLoader('open');
+   					$.ajax({
+    	                  	
+    	                  	type: "POST",
+    	                  	url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/GetMolfiledataforPubChemCID",
+    	                  	cache: false,
+    	                  	data: JSON.stringify(jdata),
+    	                  	success: function (response) {
+    	                  		$('#jqxLoader').jqxLoader('close');
+    	                  		if (response.errorflag) {
+    	                  			$('#messagenotification').jqxNotification({ template: 'error' });
+    	                  			$("#messagenotification").find("div").first().text("Error calling GetMolfiledataforPubChemCID. Message : "+response.errortext);
+    	                  			$("#messagenotification").jqxNotification("open");
+    	                  		} else {
+    	                  			
+    	                  			var molfile = response.resultobject;
+    	                  			
+    	                  			
+    	                  			var ketcherFrame = document.getElementById('zoomketcherwindow_ketcher');
+    	                  			
+    	                  			var ketcher = ketcherFrame.contentWindow.ketcher;
+    	                  			
+    	                  			ketcher.setMolecule(molfile);
+    	                  			
+    	                  			$("#zoomketcherwindow").jqxWindow('open');
+    	                  			
+    	                  			$('#zoomketcherwindow').jqxWindow('bringToFront');
+    	                  			
+    	                  	  }
+                		
+                	
+    	                  	},
+    	                  	error: function (error) {
+    	                  		$('#jqxLoader').jqxLoader('close');
+    	                  		
+    	                  		$('#jqxLoader').jqxLoader('close');
+    	                  		$('#messagenotification').jqxNotification({ template: 'error' });
+    	                  		$("#messagenotification").find("div").first().text("Error calling GetMolfiledataforPubChemCID. Status : "+error.status);
+    	                  		$("#messagenotification").jqxNotification("open");
+    	                  		
+    	                  		
+    	                  	}
+    	                  	
+    	                  	
+    	                  	
+    	                  	
+    	      });
+                    	  
+                    	  
+                    	  
+          }
+                    	
+                    	
+        });
+   			
+   			
+   			
+   			
+   			
+   			
+   			
+ 	 
+        
+      	$("#btn_popupwindowreport_cancel").jqxButton({  });
+  	
+  	    $("#btn_popupwindowreport_ok").jqxButton({  });
+  	
+  	    $("#btn_popupwindowreport_ok").click(function () {
+  		
+  		
+  		   
+  		   $("#popupwindowreport").jqxWindow('close');
+  		
+  	    });
+       
+    }); 
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	$("#popupwindowshoppingcard").jqxWindow({
+      
+      position: "center",
+      resizable: true,  
+      isModal: false, 
+      autoOpen: false, 
+      cancelButton: $("#btn_popupwindowshoppingcard_cancel"), 
+      modalOpacity: 0.01
+      
+                
+    });
+    $("#popupwindowshoppingcard").on('open', function () {
+        
+       	$('#popupwindowshoppingcard').jqxWindow({width:350});
+        $('#popupwindowshoppingcard').jqxWindow({height:300});
+        if (editshoppingrow >= 0) {
+        	$("#btn_popupwindowshoppingcard_addquantity").jqxButton({disabled: true });
+        	$("#btn_popupwindowshoppingcard_editquantity").jqxButton({disabled: false });
+        	$("#btn_popupwindowshoppingcard_done").jqxButton({disabled: true });
+        	$("#addquantitylabel").hide();
+        } else {
+        	
+        	$("#btn_popupwindowshoppingcard_addquantity").jqxButton({disabled: false });
+        	$("#btn_popupwindowshoppingcard_editquantity").jqxButton({disabled: true });
+        	$("#btn_popupwindowshoppingcard_done").jqxButton({disabled: true });
+        	$("#addquantitylabel").hide();
+        	
+        	
+        }
+    });
+    
+    $("#popupwindowshoppingcard").on('close', function () {
+        
+        editshoppingrow = -1;
+        
+    });
+    
+    $("#btn_popupwindowshoppingcard_editquantity").jqxButton({  });
+    $("#btn_popupwindowshoppingcard_editquantity").click(function () {
+    	
+    	var rowID = $('#shoppinggrid').jqxGrid('getrowid', editshoppingrow);
+    	var data = $('#shoppinggrid').jqxGrid('getrowdatabyid', rowID);
+    	const rowquantity = data.quantity;
+    	
+    	const rowunit = data.unit;
+    	
+    	
+    	
+    	var row = {};
+      row["registryid"] = $("#akosnumber").val();
+             
+      var unitvalue = $("#units").jqxDropDownList('val');
+    	   	
+    	   	
+    	var quantityvalue = $('#quantity').jqxNumberInput('val');
+             
+      row["quantity"] = quantityvalue;
+      row["unit"] = unitvalue;
+      row["additionalinformation"] = $("#additionalinformation").val();
+      
+      if (rowquantity != quantityvalue || rowunit != unitvalue) {
+      			
+      	var allrows = $('#shoppinggrid').jqxGrid('getrows');
+      	
+      	for(var i = 0; i < allrows.length; i++) {
+      		
+      		
+      		
+      		var shoppinggridrow = allrows[i];
+      		
+      		
+      		
+      		if (shoppinggridrow["registryid"] == row["registryid"] && shoppinggridrow["quantity"] == row["quantity"] && shoppinggridrow["unit"] == row["unit"]) {
+      			
+      			$("#btn_popupwindowshoppingcard_editquantity").jqxTooltip({ autoHideDelay: 2000, content: 'You already entered this amount for this compound', position: 'right', autoHide: false, trigger: "none", closeOnClick: true });
+      			$("#btn_popupwindowshoppingcard_editquantity").jqxTooltip("open");
+      			
+      			
+      			return;
+      	  }
+      		
+      		
+      	}
+
+    	}
+      
+      $('#shoppinggrid').jqxGrid('updaterow', rowID, row);
+      $("#btn_popupwindowshoppingcard_done").jqxButton({disabled: false });
+      
+      
+      $("#btn_popupwindowshoppingcard_editquantity").jqxTooltip({ autoHideDelay: 2000, content: 'Quantity edited. Click Done button when you are finished with editing.', position: 'right', autoHide: false, trigger: "none", closeOnClick: true });
+      $("#btn_popupwindowshoppingcard_editquantity").jqxTooltip("open");
+      
+           
+    	
+    	
+    });       
+            
+    $("#btn_popupwindowshoppingcard_addquantity").jqxButton({  });
+    $("#btn_popupwindowshoppingcard_addquantity").click(function () {
+    
+      var validationresult = $('#popupwindowshoppingcardform').jqxValidator('validate');
+      if (validationresult) {
+      	
+		debugger;
+      	
+      	var akosnumber = $("#akosnumber").val();
+      	
+      	
+      	
+      	var unitvalue = $("#units").jqxDropDownList('val');
+    	   	
+    	   	
+    	  var quantityvalue = $('#quantity').jqxNumberInput('val');
+    	  
+    	  
+    	  
+    	   	
+    	   	
+    	  var row = {};
+        row["registryid"] = $("#akosnumber").val();
+        row["quantity"] = quantityvalue;
+        row["unit"] = unitvalue;
+        row["additionalinformation"] = $("#additionalinformation").val();
+        
+        
+        
+        var allrows = $('#shoppinggrid').jqxGrid('getrows');
+      	
+      	for(var i = 0; i < allrows.length; i++) {
+      		
+      		
+      		
+      		var shoppinggridrow = allrows[i];
+      		
+      		
+      		
+      		if (shoppinggridrow["registryid"] == row["registryid"] && shoppinggridrow["quantity"] == row["quantity"] && shoppinggridrow["unit"] == row["unit"]) {
+      			
+      			
+      			$("#btn_popupwindowshoppingcard_addquantity").jqxTooltip({ autoHideDelay: 2000, content: 'You already entered this amount for this compound.', position: 'right', autoHide: false, trigger: "none", closeOnClick: true });
+      			$("#btn_popupwindowshoppingcard_addquantity").jqxTooltip("open"); 
+      			
+      			
+      			
+      			
+      			return;
+      	  }
+      		
+      		
+      	}
+          
+        var commit = $("#shoppinggrid").jqxGrid('addrow', null, row);
+        
+        
+        
+        $("#btn_popupwindowshoppingcard_done").jqxButton({disabled: false });
+        
+        $("#addquantitylabel").show();
+        
+        
+      	
+      	
+      }
+    
+    });
+    
+           
+    $("#btn_popupwindowshoppingcard_cancel").jqxButton({  });
+    $("#btn_popupwindowshoppingcard_done").jqxButton({  });
+    // update the edited row when the user clicks the 'Save' button.
+    $("#btn_popupwindowshoppingcard_done").click(function () {
+    	   $("#popupwindowshoppingcard").jqxWindow('hide');
+    	   
+    });
+  	
+  	
+  	var quantity_liter_validationrule = function (input, commit) {
+       var value = $('#quantity').jqxNumberInput('val');
+       
+       var unitvalue = $("#units").jqxDropDownList('val');
+       
+       //alert(unitvalue)
+       
+       
+       
+       if (value  > 1 && unitvalue == "l") {
+       	
+       	return false;
+       } else {
+       	
+       	return true;
+       }
+       
+    };
+    
+    
+    var quantity_milliliter_validationrule = function (input, commit) {
+       var value = $('#quantity').jqxNumberInput('val');
+       
+       var unitvalue = $("#units").jqxDropDownList('val');
+       
+       //alert(unitvalue)
+       
+       
+       
+       if (value  > 1000 && unitvalue == "ml") {
+       	
+       	return false;
+       } else {
+       	
+       	return true;
+       }
+       
+    };
+    
+    var quantity_milliliter_validationrule = function (input, commit) {
+       var value = $('#quantity').jqxNumberInput('val');
+       
+       var unitvalue = $("#units").jqxDropDownList('val');
+       
+       //alert(unitvalue)
+       
+       
+       
+       if (value  > 1000 && unitvalue == "ml") {
+       	
+       	return false;
+       } else {
+       	
+       	return true;
+       }
+       
+    };
+    
+    var quantity_kilogram_validationrule = function (input, commit) {
+       var value = $('#quantity').jqxNumberInput('val');
+       
+       var unitvalue = $("#units").jqxDropDownList('val');
+       
+       //alert(unitvalue)
+       
+       
+       
+       if (value  > 1 && unitvalue == "kg") {
+       	
+       	return false;
+       } else {
+       	
+       	return true;
+       }
+       
+    };
+    
+    
+    var quantity_gram_validationrule = function (input, commit) {
+       var value = $('#quantity').jqxNumberInput('val');
+       
+       var unitvalue = $("#units").jqxDropDownList('val');
+       
+       //alert(unitvalue)
+       
+       
+       
+       if (value  > 1000 && unitvalue == "g") {
+       	
+       	return false;
+       } else {
+       	
+       	return true;
+       }
+       
+    };
+  	
+  	
+  	var quantity_valuehigherthanzero_validationrule = function (input, commit) {
+       var value = $('#quantity').jqxNumberInput('val');
+       if (value <= 0) {
+       	
+       	return false;
+       } else {
+       	
+       	return true;
+       }
+       
+    };
+    
+  	$('#popupwindowshoppingcardform').jqxValidator({
+      rules: [
+        { input: '#akosnumber', message: 'AKos number is required!', action: 'keyup, blur', rule: 'required' },
+        
+        { input: '#quantity', message: 'You need to enter a number higher than 0', action: 'keyup, blur', rule: quantity_valuehigherthanzero_validationrule },
+
+{ input: '#quantity', message: 'Only up to 1 liter can be requested', action: 'keyup, blur', rule: quantity_liter_validationrule },
+        
+        { input: '#quantity', message: 'Only up to 1000 milliliter can be requested', action: 'keyup, blur', rule: quantity_milliliter_validationrule },
+        
+        { input: '#quantity', message: 'Only up to 1 kilo gram can be requested', action: 'keyup, blur', rule: quantity_kilogram_validationrule },
+        
+        { input: '#quantity', message: 'Only up to 1000 gram can be requested', action: 'keyup, blur', rule: quantity_gram_validationrule }
+        
+        
+       
+        
+        
+        
+        
+        
+      ]                 
+    });
+  	
+  	$("#registrynumberinput").jqxInput({ placeHolder: "Lookup AKOS number,CAS, name",height: 50, width: 250 });
+  	
+  	$("#email").jqxInput({placeHolder: "Enter email address", opened : false, height: 30, width: 255, minLength: 1, maxLength: 200 } );
+  	$('#email').jqxInput('val', '');
+  	$("#firstname").jqxInput({placeHolder: "Enter first name", opened : false, height: 30, width: 255, minLength: 1, maxLength: 50 } );
+  	$('#firstname').jqxInput('val', '');
+  	$("#lastname").jqxInput({placeHolder: "Enter last name", opened : false, height: 30, width: 255, minLength: 1 } );
+  	$('#lastname').jqxInput('val', '');
+    $("#company").jqxInput({placeHolder: "Enter company name", opened : false, height: 30, width: 255, minLength: 1, maxLength: 255 } );
+    $('#company').jqxInput('val', '');
+    
+    
+    
+    
+    $('#link_Chemspider').jqxRadioButton({ groupName: "link_rbgroup",width: 120, height: 25, checked:false });
+    $('#link_PubChem').jqxRadioButton({ groupName: "link_rbgroup", width: 100, height: 25,checked:false});
+    $('#link_SciFinder').jqxRadioButton({ groupName: "link_rbgroup", width: 100, height: 25, checked:false});
+    $('#link_Other').jqxRadioButton({ groupName: "link_rbgroup", width: 100, height: 25, checked:false});
+    
+    
+    
+    $("#link_OtherInformation").jqxInput({placeHolder: "Enter other link information", opened : false, height: 30, width: 255, minLength: 1, maxLength: 255 } );
+		$('#link_OtherInformation').jqxInput('val', '');
+		
+		
+    $('#role_Scientist').jqxRadioButton({ groupName: "role_rbgroup", width: 100, height: 25, checked:false});
+    $('#role_Administrator').jqxRadioButton({ groupName: "role_rbgroup", width: 120, height: 25, checked:false});
+    $('#role_Broker').jqxRadioButton({ groupName: "role_rbgroup", width: 100, height: 25, checked:false});
+    $('#role_Other').jqxRadioButton({ groupName: "role_rbgroup", width: 100, height: 25, checked:false});
+    
+    $("#role_OtherInformation").jqxInput({placeHolder: "Enter other role", opened : false, height: 30, width: 255, minLength: 1, maxLength: 255 } );
+    $('#role_OtherInformation').jqxInput('val', '');
+    
+    
+    $("#popupwindowcontactcard").jqxWindow({
+      position: "center", resizable: true,  isModal: false, autoOpen: false, cancelButton: $("#btn_popupwindowcontactcard_cancel"), modalOpacity: 0.01           
+    });
+    
+    
+    
+    
+    
+    
+    $("#popupwindowcontactcard").on('open', function () {
+    	 $('#popupwindowcontactcard').jqxWindow({width:400});
+       $('#popupwindowcontactcard').jqxWindow({height:560});
+       
+    });
+    
+    $("#popupwindowcontactcard").on('close', function () {
+        
+        editcontactrow = -1;
+        
+    });
+    
+    $("#btn_popupwindowcontactcard_cancel").jqxButton({  });
+    $("#btn_popupwindowcontactcard_save").jqxButton({  });
+    $("#btn_popupwindowcontactcard_save").click(function () {
+    	
+    	
+    	
+    	
+    	var validationresult = $('#popupwindowcontactcardform').jqxValidator('validate');
+    	if (validationresult) {
+    		
+    		if (editcontactrow >= 0) {
+    			
+    			var firstnamevalue = $("#firstname").val();
+    	   	
+    	   	
+    	    var lastnamevalue = $("#lastname").val();
+    	  
+    	    var companyvalue = $("#company").val();
+    	   	
+    	    var countryvalue = $("#country").jqxComboBox('val');
+    	   	
+    	    var emailvalue = $("#email").val();
+    	    
+    	    var titlevalue = $("#title").jqxComboBox('val');
+    	    
+    	    
+    	    
+    	    
+    	    var checked_link_radiobutton = GetCheckedRadiobuttonName( $("#link_Chemspider"), $("#link_PubChem"),$("#link_SciFinder"), $("#link_Other"));   
+    	
+    			var link_otherinformation = $("#link_OtherInformation").val();
+    	
+    	    var checked_role_radiobutton = GetCheckedRadiobuttonName( $("#role_Scientist"), $("#role_Administrator"),$("#role_Broker"), $("#role_Other"));   
+    	
+    			var role_otherinformation = $("#role_OtherInformation").val();
+    	    
+    	   
+    	  
+    	    var row = {};
+          row["firstname"] = firstnamevalue;
+          row["lastname"] = lastnamevalue;
+          row["company"] = companyvalue;
+          row["country"] = countryvalue;
+          row["email"] = emailvalue;
+          row["title"] = titlevalue;
+          
+          row["link"] = checked_link_radiobutton;
+          row["link_otherinformation"] = link_otherinformation;
+          row["role"] = checked_role_radiobutton;
+          row["role_otherinformation"] = role_otherinformation;
+          
+          var rowID = $('#contactgrid').jqxGrid('getrowid', editcontactrow);
+          $('#contactgrid').jqxGrid('updaterow', rowID, row);
+             
+          $("#popupwindowcontactcard").jqxWindow('close');
+    			
+    			
+    		} else {
+    			
+    			
+    			var firstnamevalue = $("#firstname").val();
+    	   	
+    	   	
+    	    var lastnamevalue = $("#lastname").val();
+    	  
+    	    var companyvalue = $("#company").val();
+    	   	
+    	    var countryvalue = $("#country").jqxComboBox('val');
+    	    
+    	    var emailvalue = $("#email").val();
+    	    
+    	    var titlevalue = $("#title").jqxComboBox('val');
+    	   	
+    	   	
+    	  	var checked_link_radiobutton = GetCheckedRadiobuttonName( $("#link_Chemspider"), $("#link_PubChem"),$("#link_SciFinder"), $("#link_Other"));   
+    	
+    			var link_otherinformation = $("#link_OtherInformation").val();
+    	
+    	    var checked_role_radiobutton = GetCheckedRadiobuttonName( $("#role_Scientist"), $("#role_Administrator"),$("#role_Broker"), $("#role_Other"));   
+    	
+    			var role_otherinformation = $("#role_OtherInformation").val();
+    	    
+    	  
+    	    var row = {};
+          row["firstname"] = firstnamevalue;
+          row["lastname"] = lastnamevalue;
+          row["company"] = companyvalue;
+          row["country"] = countryvalue;
+          row["email"] = emailvalue;
+          row["title"] = titlevalue;          
+          row["link"] = checked_link_radiobutton;
+          row["link_otherinformation"] = link_otherinformation;
+          row["role"] = checked_role_radiobutton;
+          row["role_otherinformation"] = role_otherinformation;
+          
+          
+          var commit = $("#contactgrid").jqxGrid('addrow', null, row);
+          $("#popupwindowcontactcard").jqxWindow('close');
+    			
+    			
+    			
+    			
+    	  }
+    		
+    		
+    		
+    	}
+    });
+    
+    var country_required_validationrule = function (input, commit) {
+       var value = $("#country").jqxComboBox('val');
+       if (isNotEmpty(value)) {
+       	
+       	return true;
+       } else {
+       	
+       	return false;
+       }
+       
+    };
+    $('#popupwindowcontactcardform').jqxValidator({
+      rules: [
+        { input: '#firstname', message: 'First name is required!', action: 'keyup, blur', rule: 'required' },
+        
+        { input: '#firstname', message: 'First name maximum length is 50 characters', action: 'keyup', rule: 'maxLength=50' },
+        
+        { input: '#email', message: 'EMail is required!', action: 'keyup, blur', rule: 'required' },
+        
+        { input: '#email', message: 'Invalid e-mail', action: 'keyup, blur', rule: 'email' },
+        
+        
+        { input: '#email', message: 'EMail address maximum length is 200 characters', action: 'keyup', rule: 'maxLength=200' },
+        
+        { input: '#lastname', message: 'Last name is required', action: 'keyup, blur', rule: 'required' },
+        
+        { input: '#lastname', message: 'Last name maximum length is 50 characters', action: 'keyup', rule: 'maxLength=50' },
+        
+        
+        
+        { input: '#company', message: 'Company name is required', action: 'keyup, blur', rule: 'required' },
+        
+        { input: '#company', message: 'Company name maximum length is 255 characters', action: 'keyup', rule: 'maxLength=255' },
+        
+        
+        { input: '#country', message: 'Country is required', action: 'keyup, blur', rule: country_required_validationrule },
+        
+        { input: '#link_OtherInformation', message: 'Other link information maximum length is 255 characters', action: 'keyup', rule: 'maxLength=255' },
+        
+        { input: '#role_OtherInformation', message: 'Other role information maximum length is 255 characters', action: 'keyup', rule: 'maxLength=255' }
+      ]                 
+    });
+    
+    $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top' , isModal: true, text: "Processing..."});
+    
+    $("#navbar").jqxNavBar({ columns: ['10%', '90%'], selection: false, orientation: "vertical" });
+    
+    
+    
+    $("#navbar2").jqxNavBar({ columns: ['10%', '90%'], selection: false, orientation: "vertical" });
+    
+    var drawstructurebutton = $("#btn_drawstructure");
+    
+    drawstructurebutton.jqxButton({ width: 120, height: 50 , template: 'primary'});
+    
+    drawstructurebutton.click(function (event) {
+    	
+    	
+    	
+    	
+    	$("#registrynumberinput").jqxInput({disabled: true});
+    	
+    	$("#ketcherwindow").jqxWindow('open');
+    	
+    });
+    
+    
+    
+    var namelookupbutton = $("#btn_namelookup");
+    namelookupbutton.jqxButton({ width: 100, height: 50 , template: 'primary'});
+    namelookupbutton.click(function (event) {
+    	
+    	
+    	var isregistryidinputdisabled = $('#registrynumberinput').jqxInput('disabled');
+    	
+    	
+    	var registrynumber = $('#registrynumberinput').jqxInput('val');
+      	
+      if (isNotEmpty(registrynumber)) {
+      		
+      		
+       		jdata = {};
+
+					jdata.name = registrynumber;
+    			$('#jqxLoader').jqxLoader('open');
+    	  	$.ajax({
+    	  		type: "POST",
+    	  		url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/Name2Structure",
+    	  		cache: false,
+    	  		data: JSON.stringify(jdata),
+    	  		success: function (response) {
+    	  			$('#jqxLoader').jqxLoader('close');
+    	  				if (response.errorflag) {
+    	  					$('#messagenotification').jqxNotification({ template: 'error' });
+    	  					$("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : "+response.errortext);
+    	  					$("#messagenotification").jqxNotification("open");
+    	  				} else {
+    	  			
+    	  					if (response.noCIDMatch) {
+    	  				
+    	  						$('#messagenotification').jqxNotification({ template: 'error' });
+    	  						$("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+    	  						$("#messagenotification").jqxNotification("open");
+    	  				
+    	  					} else {
+    	  				
+    	  						var ketcherFrame = document.getElementById('ketcherwindow_ketcher');
+    	  						var ketcher = ketcherFrame.contentWindow.ketcher;
+    	  						ketcher.setMolecule(response.bestchoiceCIDMolfile);
+    	  						$("#ketcherwindow").jqxWindow('open');
+    	  				
+    	  					}
+    	  			
+    	  			
+    	  				}
+    	  		},
+    	  		error: function (error) {
+    	  			$('#jqxLoader').jqxLoader('close');
+    	  			$('#messagenotification').jqxNotification({ template: 'error' });
+    	  			$("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : "+error.status);
+    	  			$("#messagenotification").jqxNotification("open");
+    	  		}
+    	  	});
+       		
+      		
+      		
+      } else {
+      		
+      		$("#registrynumberinput").jqxTooltip({ autoHideDelay: 2000, content: "Please enter name", position: 'bottom', autoHide: true, trigger: "none", closeOnClick: true });
+      		$("#registrynumberinput").jqxTooltip("open");
+      		
+      		return;
+      		
+      }
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+
+    	
+    	
+    	
+    });
+    
+    
+   	
+   	
+   	$('#confirmwindow').jqxWindow({
+   		          autoOpen: false,
+                //position: { x: offset.left + 50, y: offset.top + 50} ,
+                maxHeight: 180, maxWidth: 280, minHeight: 30, minWidth: 250, height: 165, width: 270,
+                resizable: false, isModal: true, modalOpacity: 0.3,
+                okButton: $('#ok'), cancelButton: $('#cancel'),
+                showCloseButton: false, 
+                initContent: function () {
+                    $('#ok').jqxButton({ width: '65px' });
+                    $('#cancel').jqxButton({ width: '65px' });
+                    $('#cancel').focus();
+                }
+    });
+    
+    
+    var searchparameters = window.location.search
+		if (isNotEmpty(searchparameters)) {
+  		const params = new URLSearchParams(window.location.search);
+  		var id = params.get('id');
+  		
+  		jdata = {};
+
+			jdata.name = id;
+    	$('#jqxLoader').jqxLoader('open');
+    	
+    	$.ajax({
+    	  	type: "POST",
+    	  	url: "http://87.128.24.152/akoswebrequestsapi/api/akoswebrequestsapi/Name2Structure",
+    	  	cache: false,
+    	  	data: JSON.stringify(jdata),
+    	  	success: function (response) {
+    	  		$('#jqxLoader').jqxLoader('close');
+    	  		if (response.errorflag) {
+    	  			$('#messagenotification').jqxNotification({ template: 'error' });
+    	  			$("#messagenotification").find("div").first().text("Error calling Name2Structure. Message : "+response.errortext);
+    	  			$("#messagenotification").jqxNotification("open");
+    	  		} else {
+    	  			
+    	  			if (response.noCIDMatch) {
+    	  				
+    	  				$('#messagenotification').jqxNotification({ template: 'error' });
+    	  				$("#messagenotification").find("div").first().text("Name cannot be resolved. You can try to draw your structure manually.");
+    	  				$("#messagenotification").jqxNotification("open");
+    	  				
+    	  			} else {
+    	  				var jData = {};
+             		jData.registryid = "";
+             		
+             		jData.molfile = response.bestchoiceCIDMolfile;
+             
+      		   		doSearch(jData);
+    	  				
+    	  				
+    	  				
+    	  				
+    	  				
+    	  				
+    	  			}
+    	  			
+    	  			
+    	  		}
+    	  	},
+    	  	error: function (error) {
+    	  		$('#jqxLoader').jqxLoader('close');
+    	  		$('#messagenotification').jqxNotification({ template: 'error' });
+    	  		$("#messagenotification").find("div").first().text("Error calling Name2Structure. Status : "+error.status);
+    	  		$("#messagenotification").jqxNotification("open");
+    	  	}
+    	});
+  		
+  		
+  	}
+   	
+   	
+  });
+ 
+</script>	
+</body>
+</html>
